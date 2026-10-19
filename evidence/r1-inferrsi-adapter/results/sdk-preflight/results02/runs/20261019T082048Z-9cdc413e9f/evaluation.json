@@ -1,0 +1,25 @@
+{
+  "verdict": "INCONCLUSIVE",
+  "reasons": [
+    "baseline trial 1: timeout",
+    "baseline trial 1: [Errno 2] No such file or directory: '/work/r1-sdk-preflight/results02/runs/20261019T082048Z-9cdc413e9f/baseline/trial-001/result.json'",
+    "candidate: expected 1 trials, recorded 0",
+    "quality validation: skipped"
+  ],
+  "metric_key": "metrics.value",
+  "metric_unit": "synthetic",
+  "comparison_scope": "CPU fixture; no inference",
+  "direction": "maximize",
+  "min_improvement_pct": 5,
+  "baseline": null,
+  "candidate": null,
+  "improvement_pct": null,
+  "measurement_method": "Alternating AB/BA sequential trials; median and range are descriptive only.",
+  "quality_contract": "Exit zero covers only the supplied validation command; inspect its logs and coverage.",
+  "source_integrity": {
+    "verified": true,
+    "reason": "Git source snapshots unchanged",
+    "command_checks": 1
+  },
+  "statistical_significance": "not established"
+}

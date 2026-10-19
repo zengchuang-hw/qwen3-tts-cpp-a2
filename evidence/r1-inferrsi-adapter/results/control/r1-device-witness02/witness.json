@@ -1,0 +1,105 @@
+{
+  "status": "MAPPED",
+  "scope": "device/PID observation only, not timing evidence",
+  "attempts": [
+    {
+      "attempt": 0,
+      "match": false
+    },
+    {
+      "attempt": 1,
+      "match": false
+    },
+    {
+      "attempt": 2,
+      "match": false
+    },
+    {
+      "attempt": 3,
+      "match": false
+    },
+    {
+      "attempt": 4,
+      "match": false
+    },
+    {
+      "attempt": 5,
+      "match": false
+    },
+    {
+      "attempt": 6,
+      "match": false
+    },
+    {
+      "attempt": 7,
+      "match": false
+    },
+    {
+      "attempt": 8,
+      "match": false
+    },
+    {
+      "attempt": 9,
+      "match": false
+    },
+    {
+      "attempt": 10,
+      "match": false
+    },
+    {
+      "attempt": 11,
+      "match": false
+    },
+    {
+      "attempt": 12,
+      "match": false
+    },
+    {
+      "attempt": 13,
+      "match": false
+    },
+    {
+      "attempt": 14,
+      "match": false
+    },
+    {
+      "attempt": 15,
+      "match": false
+    },
+    {
+      "attempt": 16,
+      "match": false
+    },
+    {
+      "attempt": 17,
+      "match": false
+    },
+    {
+      "attempt": 18,
+      "match": false
+    },
+    {
+      "attempt": 19,
+      "match": false
+    },
+    {
+      "attempt": 20,
+      "match": false
+    },
+    {
+      "attempt": 21,
+      "match": false
+    },
+    {
+      "attempt": 22,
+      "match": true
+    }
+  ],
+  "physical_device": 3,
+  "host_pid": 2563233,
+  "nspid": "NSpid:\t2563233\t102590",
+  "argv": "/work/venv/bin/python /work/r1-attempt02/source-git/serve.py --reference-root /work/reference --native-build /work/r1-attempt02/build --model /model --port 8199 --max-batch-size 64 --prewarm-decode --predictor-rope paired --audio-delivery inline --rotary-head-tile auto ",
+  "observation_unix_ns": 1792402894826384060,
+  "snapshot": "npu-022.log",
+  "docker_top": "PID                 PPID                COMMAND\n1004067             1004048             sleep infinity\n2556050             1004048             /work/venv/bin/python /work/r1-validate.py --root /work/r1-attempt02\n2559591             2556050             /work/venv/bin/python /work/r1-attempt02/source-git/rsi.py run --inferrsi-root /work/r1-attempt02/inferrsi --reference-root /work/reference --candidate-root /work/r1-attempt02/source-git --native-build /work/r1-attempt02/build --model /model --workload /work/reference/evidence/campaign-20261017/plan/workload-128.jsonl --predictor-rope paired --rotary-head-tile auto --audio-delivery inline --requests 4 --repetitions 1 --primary-concurrency 4 --physical-device 3 --max-minutes 10 --output-root /work/r1-attempt02/results/runs --concurrencies 4\n2563062             2559591             /work/venv/bin/python /work/r1-attempt02/source-git/rsi.py trial --reference-root /work/reference --candidate-root /work/r1-attempt02/source-git --native-build /work/r1-attempt02/build --model /model --workload /work/reference/evidence/campaign-20261017/plan/workload-128.jsonl --inferrsi-root /work/r1-attempt02/inferrsi --predictor-rope paired --rotary-head-tile auto --audio-delivery inline --requests 4 --repetitions 1 --primary-concurrency 4 --physical-device 3 --port 8199 --readiness-timeout 900 --benchmark-timeout 3600 --concurrencies 4 --arm native --output /work/r1-attempt02/results/runs/20261019T094024Z-391a8d3649/candidate/trial-001/result.json\n2563233             2563062             /work/venv/bin/python /work/r1-attempt02/source-git/serve.py --reference-root /work/reference --native-build /work/r1-attempt02/build --model /model --port 8199 --max-batch-size 64 --prewarm-decode --predictor-rope paired --audio-delivery inline --rotary-head-tile auto\n"
+}

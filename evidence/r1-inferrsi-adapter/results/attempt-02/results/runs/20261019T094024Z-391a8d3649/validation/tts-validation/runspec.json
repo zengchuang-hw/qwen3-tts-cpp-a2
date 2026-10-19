@@ -1,0 +1,10 @@
+{
+  "reference_engine": "upstream",
+  "concurrencies": [
+    4
+  ],
+  "requests": 4,
+  "repetitions": 1,
+  "workload_sha256": "5007716c83b29d0247b2c6291b9704c652e01a94362c19e90ea3cb34987060c7",
+  "formal_coverage": false
+}

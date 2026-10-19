@@ -1,0 +1,24 @@
+{
+  "path": "/work/r1-sdk-preflight/results02/runs/20261019T082047Z-47ae439a39/candidate/trial-003",
+  "side": "candidate",
+  "before": {
+    "path": "/work/r1-sdk-preflight/results02/candidate",
+    "available": true,
+    "head": "e517f5216b10e31b52732fa5ebb02ba969387a03",
+    "git_root": "/work/r1-sdk-preflight/results02/candidate",
+    "dirty": false,
+    "dirty_hash": "098fc404b17cd30c582e11aaf0c10bcccf89561e04925b707fc7490d18877adb",
+    "untracked": [],
+    "snapshot_hash": "0ba3fd1a20de9ba488cd0ce51595b99977b8d813b894990893a31c50c2196809"
+  },
+  "after": {
+    "path": "/work/r1-sdk-preflight/results02/candidate",
+    "available": true,
+    "head": "e517f5216b10e31b52732fa5ebb02ba969387a03",
+    "git_root": "/work/r1-sdk-preflight/results02/candidate",
+    "dirty": false,
+    "dirty_hash": "098fc404b17cd30c582e11aaf0c10bcccf89561e04925b707fc7490d18877adb",
+    "untracked": [],
+    "snapshot_hash": "0ba3fd1a20de9ba488cd0ce51595b99977b8d813b894990893a31c50c2196809"
+  }
+}

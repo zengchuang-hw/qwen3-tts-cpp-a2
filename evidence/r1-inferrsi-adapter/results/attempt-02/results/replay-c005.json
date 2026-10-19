@@ -1,0 +1,340 @@
+{
+  "status": "PASS",
+  "formal_coverage": true,
+  "cohorts": [
+    {
+      "concurrency": 1,
+      "reference": [
+        {
+          "throughput_frames_s": 63.62674048528272,
+          "ttfa_p50_ms": 48.30468003638089,
+          "ttfa_p95_ms": 49.27642846014351,
+          "rtf_mean": 0.19795019707942638
+        },
+        {
+          "throughput_frames_s": 62.665710477450546,
+          "ttfa_p50_ms": 48.63743495661765,
+          "ttfa_p95_ms": 50.35015097819269,
+          "rtf_mean": 0.20102572471043845
+        },
+        {
+          "throughput_frames_s": 59.17852227336129,
+          "ttfa_p50_ms": 52.6318249758333,
+          "ttfa_p95_ms": 54.76293448591605,
+          "rtf_mean": 0.21285472825734575
+        }
+      ],
+      "native": [
+        {
+          "throughput_frames_s": 71.38890186592783,
+          "ttfa_p50_ms": 44.695260003209114,
+          "ttfa_p95_ms": 46.04290802963078,
+          "rtf_mean": 0.17677621057482795
+        },
+        {
+          "throughput_frames_s": 71.14984523814253,
+          "ttfa_p50_ms": 44.38823997043073,
+          "ttfa_p95_ms": 45.70933853974566,
+          "rtf_mean": 0.17732353444302087
+        },
+        {
+          "throughput_frames_s": 70.87122854706953,
+          "ttfa_p50_ms": 44.725349987857044,
+          "ttfa_p95_ms": 45.81629199674353,
+          "rtf_mean": 0.17803483340641552
+        }
+      ],
+      "min_native_vs_max_reference_throughput": 1.113859173148474,
+      "max_native_vs_min_reference_ttfa_p95": 0.9343799757499043,
+      "performance": "PASS",
+      "exact_pcm": true
+    },
+    {
+      "concurrency": 2,
+      "reference": [
+        {
+          "throughput_frames_s": 98.16717096170403,
+          "ttfa_p50_ms": 66.34688493795693,
+          "ttfa_p95_ms": 76.1853544274345,
+          "rtf_mean": 0.25498241104045577
+        },
+        {
+          "throughput_frames_s": 97.45530882489801,
+          "ttfa_p50_ms": 66.82702503167093,
+          "ttfa_p95_ms": 77.08065304905176,
+          "rtf_mean": 0.25690548765972915
+        },
+        {
+          "throughput_frames_s": 91.65894111343671,
+          "ttfa_p50_ms": 71.05717493686825,
+          "ttfa_p95_ms": 81.56752539798617,
+          "rtf_mean": 0.2732487667014596
+        }
+      ],
+      "native": [
+        {
+          "throughput_frames_s": 107.74232378740838,
+          "ttfa_p50_ms": 59.975840034894645,
+          "ttfa_p95_ms": 69.43459891481325,
+          "rtf_mean": 0.23236363573634766
+        },
+        {
+          "throughput_frames_s": 107.64756895501948,
+          "ttfa_p50_ms": 60.41723000817001,
+          "ttfa_p95_ms": 69.76576396264136,
+          "rtf_mean": 0.23255116883667282
+        },
+        {
+          "throughput_frames_s": 107.04454293936122,
+          "ttfa_p50_ms": 60.78735494520515,
+          "ttfa_p95_ms": 69.8351954924874,
+          "rtf_mean": 0.23385740410310146
+        }
+      ],
+      "min_native_vs_max_reference_throughput": 1.0904311684923704,
+      "max_native_vs_min_reference_ttfa_p95": 0.9166485608333614,
+      "performance": "PASS",
+      "exact_pcm": true
+    },
+    {
+      "concurrency": 4,
+      "reference": [
+        {
+          "throughput_frames_s": 158.3808812215019,
+          "ttfa_p50_ms": 83.64778512623161,
+          "ttfa_p95_ms": 102.02484701294452,
+          "rtf_mean": 0.3131517552348612
+        },
+        {
+          "throughput_frames_s": 157.59118523239707,
+          "ttfa_p50_ms": 84.2868200270459,
+          "ttfa_p95_ms": 101.78803561720997,
+          "rtf_mean": 0.31449202343433236
+        },
+        {
+          "throughput_frames_s": 154.52820791188356,
+          "ttfa_p50_ms": 86.21075993869454,
+          "ttfa_p95_ms": 107.56629656534639,
+          "rtf_mean": 0.32096383464933215
+        }
+      ],
+      "native": [
+        {
+          "throughput_frames_s": 175.51961726769161,
+          "ttfa_p50_ms": 74.33385995682329,
+          "ttfa_p95_ms": 88.50612295791507,
+          "rtf_mean": 0.2825306471029855
+        },
+        {
+          "throughput_frames_s": 174.79497727458048,
+          "ttfa_p50_ms": 74.74025001283735,
+          "ttfa_p95_ms": 88.4602296166122,
+          "rtf_mean": 0.2835997832010677
+        },
+        {
+          "throughput_frames_s": 174.58903867422615,
+          "ttfa_p50_ms": 74.8800050932914,
+          "ttfa_p95_ms": 89.65966992545873,
+          "rtf_mean": 0.2840403286012396
+        }
+      ],
+      "min_native_vs_max_reference_throughput": 1.1023365783023804,
+      "max_native_vs_min_reference_ttfa_p95": 0.8808468439516617,
+      "performance": "PASS",
+      "exact_pcm": true
+    },
+    {
+      "concurrency": 8,
+      "reference": [
+        {
+          "throughput_frames_s": 247.83642506894608,
+          "ttfa_p50_ms": 104.02984998654574,
+          "ttfa_p95_ms": 155.37826397921881,
+          "rtf_mean": 0.39165133211148073
+        },
+        {
+          "throughput_frames_s": 230.2028998160673,
+          "ttfa_p50_ms": 113.26415510848165,
+          "ttfa_p95_ms": 157.26840703282505,
+          "rtf_mean": 0.4217283243579075
+        },
+        {
+          "throughput_frames_s": 239.76535012306596,
+          "ttfa_p50_ms": 108.17435500212014,
+          "ttfa_p95_ms": 162.15190854854876,
+          "rtf_mean": 0.40381046393263
+        }
+      ],
+      "native": [
+        {
+          "throughput_frames_s": 270.59276737928667,
+          "ttfa_p50_ms": 90.19345487467945,
+          "ttfa_p95_ms": 128.2029005815275,
+          "rtf_mean": 0.35914189781577616
+        },
+        {
+          "throughput_frames_s": 268.15676769438556,
+          "ttfa_p50_ms": 91.11009491607547,
+          "ttfa_p95_ms": 129.03050502063707,
+          "rtf_mean": 0.36243873712822783
+        },
+        {
+          "throughput_frames_s": 267.9079620685984,
+          "ttfa_p50_ms": 91.56153001822531,
+          "ttfa_p95_ms": 128.15214450238273,
+          "rtf_mean": 0.3627727536958602
+        }
+      ],
+      "min_native_vs_max_reference_throughput": 1.0809870340651846,
+      "max_native_vs_min_reference_ttfa_p95": 0.8304282833144174,
+      "performance": "PASS",
+      "exact_pcm": true
+    },
+    {
+      "concurrency": 16,
+      "reference": [
+        {
+          "throughput_frames_s": 358.33432022108025,
+          "ttfa_p50_ms": 142.28922000620514,
+          "ttfa_p95_ms": 263.87434294447297,
+          "rtf_mean": 0.5432212184465454
+        },
+        {
+          "throughput_frames_s": 330.7005021251567,
+          "ttfa_p50_ms": 151.29074489232153,
+          "ttfa_p95_ms": 305.0108864903449,
+          "rtf_mean": 0.5891158899489114
+        },
+        {
+          "throughput_frames_s": 342.86114053688533,
+          "ttfa_p50_ms": 148.23906996753067,
+          "ttfa_p95_ms": 292.6292006042785,
+          "rtf_mean": 0.5698688773565025
+        }
+      ],
+      "native": [
+        {
+          "throughput_frames_s": 392.5090387124258,
+          "ttfa_p50_ms": 121.21677992399782,
+          "ttfa_p95_ms": 202.48025052715084,
+          "rtf_mean": 0.49587912160229497
+        },
+        {
+          "throughput_frames_s": 390.8230658733507,
+          "ttfa_p50_ms": 122.11874010972679,
+          "ttfa_p95_ms": 201.37841345276675,
+          "rtf_mean": 0.4980773382115883
+        },
+        {
+          "throughput_frames_s": 397.2065427727103,
+          "ttfa_p50_ms": 119.66009996831417,
+          "ttfa_p95_ms": 200.6945545319467,
+          "rtf_mean": 0.4897470904182986
+        }
+      ],
+      "min_native_vs_max_reference_throughput": 1.0906660172328064,
+      "max_native_vs_min_reference_ttfa_p95": 0.7673358776292954,
+      "performance": "PASS",
+      "exact_pcm": true
+    },
+    {
+      "concurrency": 32,
+      "reference": [
+        {
+          "throughput_frames_s": 457.7164770674617,
+          "ttfa_p50_ms": 202.80917000491172,
+          "ttfa_p95_ms": 473.99192588636646,
+          "rtf_mean": 0.7896290990247326
+        },
+        {
+          "throughput_frames_s": 421.1984414734241,
+          "ttfa_p50_ms": 219.8181248968467,
+          "ttfa_p95_ms": 521.218627935741,
+          "rtf_mean": 0.8568425354720786
+        },
+        {
+          "throughput_frames_s": 452.66278190588855,
+          "ttfa_p50_ms": 203.87703995220363,
+          "ttfa_p95_ms": 479.66653546318406,
+          "rtf_mean": 0.7995990600253619
+        }
+      ],
+      "native": [
+        {
+          "throughput_frames_s": 495.66797452473196,
+          "ttfa_p50_ms": 170.35204998683184,
+          "ttfa_p95_ms": 456.4106434816494,
+          "rtf_mean": 0.7317505177985633
+        },
+        {
+          "throughput_frames_s": 492.2762012323157,
+          "ttfa_p50_ms": 170.13172002043575,
+          "ttfa_p95_ms": 466.67449302040035,
+          "rtf_mean": 0.7364967324207844
+        },
+        {
+          "throughput_frames_s": 499.0676531659609,
+          "ttfa_p50_ms": 168.648170074448,
+          "ttfa_p95_ms": 442.180141468998,
+          "rtf_mean": 0.7256388953438684
+        }
+      ],
+      "min_native_vs_max_reference_throughput": 1.0755046538553175,
+      "max_native_vs_min_reference_ttfa_p95": 0.9845621149510458,
+      "performance": "PASS",
+      "exact_pcm": true
+    },
+    {
+      "concurrency": 64,
+      "reference": [
+        {
+          "throughput_frames_s": 580.2590315046904,
+          "ttfa_p50_ms": 562.8828400513157,
+          "ttfa_p95_ms": 881.2934404937549,
+          "rtf_mean": 1.1429367264253896
+        },
+        {
+          "throughput_frames_s": 531.037534334791,
+          "ttfa_p50_ms": 639.2027450492606,
+          "ttfa_p95_ms": 1024.3622129200958,
+          "rtf_mean": 1.253287964679042
+        },
+        {
+          "throughput_frames_s": 576.6983254549247,
+          "ttfa_p50_ms": 564.4959249766544,
+          "ttfa_p95_ms": 891.0292055807075,
+          "rtf_mean": 1.1497826246667002
+        }
+      ],
+      "native": [
+        {
+          "throughput_frames_s": 635.313882596498,
+          "ttfa_p50_ms": 536.9829650735483,
+          "ttfa_p95_ms": 849.468107591383,
+          "rtf_mean": 1.0476871963215095
+        },
+        {
+          "throughput_frames_s": 633.4083156997982,
+          "ttfa_p50_ms": 533.1662249518558,
+          "ttfa_p95_ms": 838.9505815692245,
+          "rtf_mean": 1.0506850744383278
+        },
+        {
+          "throughput_frames_s": 637.8534004313406,
+          "ttfa_p50_ms": 525.2847399096936,
+          "ttfa_p95_ms": 822.7223540190606,
+          "rtf_mean": 1.0430461097250479
+        }
+      ],
+      "min_native_vs_max_reference_throughput": 1.091595789654983,
+      "max_native_vs_min_reference_ttfa_p95": 0.9638879271760591,
+      "performance": "PASS",
+      "exact_pcm": true
+    }
+  ],
+  "reference_engine": "upstream",
+  "performance": "PASS",
+  "relative_quality": "PASS_EXACT_PCM",
+  "scope": "matched local comparison against upstream; exact PCM establishes relative equivalence only",
+  "subjective_quality": "NOT_EVALUATED"
+}

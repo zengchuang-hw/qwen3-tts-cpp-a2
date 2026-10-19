@@ -1,0 +1,24 @@
+{
+  "path": "/work/r1-attempt02/results/runs/20261019T094024Z-391a8d3649/candidate/trial-001",
+  "side": "candidate",
+  "before": {
+    "path": "/work/r1-attempt02/source-git",
+    "available": true,
+    "head": "b628b2ac95b6c49a395cc792e5a770c7e9e1fdda",
+    "git_root": "/work/r1-attempt02/source-git",
+    "dirty": false,
+    "dirty_hash": "098fc404b17cd30c582e11aaf0c10bcccf89561e04925b707fc7490d18877adb",
+    "untracked": [],
+    "snapshot_hash": "06c2b19520e7cd90122907298ed0a40a11ab439ba37ccb00deb147c2ac57ce7a"
+  },
+  "after": {
+    "path": "/work/r1-attempt02/source-git",
+    "available": true,
+    "head": "b628b2ac95b6c49a395cc792e5a770c7e9e1fdda",
+    "git_root": "/work/r1-attempt02/source-git",
+    "dirty": false,
+    "dirty_hash": "098fc404b17cd30c582e11aaf0c10bcccf89561e04925b707fc7490d18877adb",
+    "untracked": [],
+    "snapshot_hash": "06c2b19520e7cd90122907298ed0a40a11ab439ba37ccb00deb147c2ac57ce7a"
+  }
+}

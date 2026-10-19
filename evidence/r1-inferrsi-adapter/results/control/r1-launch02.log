@@ -1,0 +1,19 @@
+START cpu-suite
+END cpu-suite exit 0
+START configure
+END configure exit 0
+START build
+END build exit 0
+START ownership
+END ownership exit 0
+START runner-cpu-contracts
+END runner-cpu-contracts exit 0
+START dry-plan
+END dry-plan exit 0
+START rsi-npu-smoke
+END rsi-npu-smoke exit 2
+START replay-c002
+END replay-c002 exit 1
+START replay-c005
+END replay-c005 exit 0
+VALIDATION PASS 

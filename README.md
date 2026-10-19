@@ -1,8 +1,16 @@
 # Qwen3-TTS native graph runtime for Ascend
 
 Research implementation. See [the frozen plan](docs/plan.md).
-Build, complete speech correctness and end-to-end performance must be qualified
-separately; no speed claim is made by this README.
+Build, complete speech correctness and end-to-end performance are qualified
+separately. C005's fixed 128-text A2 comparison passed all seven concurrency
+cohorts: strict throughput gains 7.55-11.39%, with all p95 TTFA improved. See
+[C005 evidence](evidence/c005-rotary-tiling/plan/README.md) and
+[PR #11](https://github.com/zengchuang-hw/qwen3-tts-cpp-a2/pull/11).
+This result applies to the explicitly selected paired/auto/inline options below.
+The additional C007 corpus exposed an intermittent shutdown failure and eight
+inexact C16 outputs; [PR #15](https://github.com/zengchuang-hw/qwen3-tts-cpp-a2/pull/15)
+remains blocked. Later exact runs do not establish a fix. Broader reliability and
+final independent/owner acceptance remain open.
 
 Every iteration starts with its own RFC design before a PR. Except for init PR
 #1, merging requires actual A2 validation and an itemized review comment on the
@@ -40,12 +48,14 @@ export PYTHONPATH=/work/reference:$PYTHONPATH
 # the C++ main loop directly replays the graphs and writes complete WAV files.
 /work/build/qtts --reference-root /work/reference --model /model \
   --workload /work/reference/evidence/campaign-20261017/plan/workload-128.jsonl \
-  --slots 4 --requests 4 --output /work/cli-development-probe
+  --slots 4 --requests 4 --predictor-rope paired --rotary-head-tile auto \
+  --output /work/cli-development-probe
 
 # The protocol-compatible HTTP entrypoint uses the same native C++ core.
 /work/venv/bin/python /work/engine/serve.py \
   --reference-root /work/reference --native-build /work/build --model /model \
-  --max-batch-size 64 --prewarm-decode --port 8199
+  --max-batch-size 64 --prewarm-decode --port 8199 \
+  --predictor-rope paired --rotary-head-tile auto --audio-delivery inline
 ```
 
 The paths above describe the isolated A2 container, not arbitrary host defaults.
@@ -71,6 +81,7 @@ campaign use the default three repeat pairs, 128 requests and C1/2/4/8/16/32/64:
 /work/venv/bin/python /work/engine/campaign.py \
   --reference-root /work/reference --native-build /work/build --model /model \
   --workload /work/reference/evidence/campaign-20261017/plan/workload-128.jsonl \
+  --predictor-rope paired --rotary-head-tile auto --audio-delivery inline \
   --output /work/formal-001
 /work/venv/bin/python /work/engine/assess.py \
   --run /work/formal-001 --output /work/formal-001/assessment.json
@@ -88,6 +99,14 @@ or request data, not a second configuration interface. The reference's frozen
 command JSON is imported provenance, not a user configuration entrypoint.
 
 ## Iteration record
+
+[rsi.py](rsi.py) integrates the pinned InferRSI RunSpec/runner library with
+CLI `run`, `trial` and `validate` commands; see [R1](docs/iterations/r1.md).
+Pass a clean exact SDK checkout with `--inferrsi-root`; `--dry-run` prints a plan
+without certifying model/NPU readiness. Its primary-cohort report stays separate
+from authoritative seven-cohort `tts-final.json`. A short exact-audio smoke
+remains whole-target INCONCLUSIVE. C001-C005 used `campaign.py`; they were not
+retroactively executed by InferRSI.
 
 See [C001](docs/iterations/c001.md), [C002](docs/iterations/c002.md), and
 [C003](docs/iterations/c003.md). The paired predictor rotary path is opt-in via

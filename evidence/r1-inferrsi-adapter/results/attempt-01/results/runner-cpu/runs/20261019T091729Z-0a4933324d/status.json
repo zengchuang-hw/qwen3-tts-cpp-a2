@@ -1,0 +1,8 @@
+{
+  "state": "timeout",
+  "phase": "complete",
+  "verdict": "INCONCLUSIVE",
+  "run_dir": "/work/r1-attempt01/results/runner-cpu/runs/20261019T091729Z-0a4933324d",
+  "elapsed_seconds": 3.0696360000874847,
+  "error": null
+}

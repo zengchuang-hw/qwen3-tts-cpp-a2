@@ -1,0 +1,314 @@
+{
+  "status": "PASS",
+  "scope": "pinned InferRSI Harness, actual CPU cleanup fixtures and NPU C4 smoke; no full speed acceptance",
+  "tested_commit": "dd3ed597211d988ca51a16db32c9e368c9471446",
+  "commands": [
+    {
+      "name": "cpu-suite",
+      "argv": [
+        "/work/venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/work/r1-attempt01/source-git",
+      "exit": 0,
+      "wall_seconds": 0.31424659001640975
+    },
+    {
+      "name": "configure",
+      "argv": [
+        "cmake",
+        "-S",
+        "/work/r1-attempt01/source-git",
+        "-B",
+        "/work/r1-attempt01/build",
+        "-DPython3_EXECUTABLE=/work/venv/bin/python",
+        "-DCMAKE_BUILD_TYPE=Release"
+      ],
+      "cwd": "/work/r1-attempt01/source-git",
+      "exit": 0,
+      "wall_seconds": 18.43839955003932
+    },
+    {
+      "name": "build",
+      "argv": [
+        "cmake",
+        "--build",
+        "/work/r1-attempt01/build",
+        "-j",
+        "2"
+      ],
+      "cwd": "/work/r1-attempt01/source-git",
+      "exit": 0,
+      "wall_seconds": 32.31174429995008
+    },
+    {
+      "name": "ownership",
+      "argv": [
+        "/work/venv/bin/python",
+        "/work/r1-attempt01/source-git/test_native_state.py",
+        "-v"
+      ],
+      "cwd": "/work/r1-attempt01/source-git",
+      "exit": 0,
+      "wall_seconds": 8.676750830141827
+    },
+    {
+      "name": "runner-cpu-contracts",
+      "argv": [
+        "/work/venv/bin/python",
+        "/work/r1-attempt01/cpu-validation.py",
+        "--inferrsi-root",
+        "/work/r1-attempt01/inferrsi",
+        "--output",
+        "/work/r1-attempt01/results/runner-cpu"
+      ],
+      "cwd": "/work/r1-attempt01/source-git",
+      "exit": 0,
+      "wall_seconds": 4.1696863600518554
+    },
+    {
+      "name": "dry-plan",
+      "argv": [
+        "/work/venv/bin/python",
+        "/work/r1-attempt01/source-git/rsi.py",
+        "run",
+        "--inferrsi-root",
+        "/work/r1-attempt01/inferrsi",
+        "--reference-root",
+        "/work/reference",
+        "--candidate-root",
+        "/work/r1-attempt01/source-git",
+        "--native-build",
+        "/work/r1-attempt01/build",
+        "--model",
+        "/model",
+        "--workload",
+        "/work/reference/evidence/campaign-20261017/plan/workload-128.jsonl",
+        "--predictor-rope",
+        "paired",
+        "--rotary-head-tile",
+        "auto",
+        "--audio-delivery",
+        "inline",
+        "--requests",
+        "4",
+        "--repetitions",
+        "1",
+        "--primary-concurrency",
+        "4",
+        "--physical-device",
+        "3",
+        "--max-minutes",
+        "10",
+        "--output-root",
+        "/work/r1-attempt01/results/runs",
+        "--concurrencies",
+        "4",
+        "--dry-run"
+      ],
+      "cwd": "/work/r1-attempt01/source-git",
+      "exit": 0,
+      "wall_seconds": 0.26417949981987476
+    },
+    {
+      "name": "rsi-npu-smoke",
+      "argv": [
+        "/work/venv/bin/python",
+        "/work/r1-attempt01/source-git/rsi.py",
+        "run",
+        "--inferrsi-root",
+        "/work/r1-attempt01/inferrsi",
+        "--reference-root",
+        "/work/reference",
+        "--candidate-root",
+        "/work/r1-attempt01/source-git",
+        "--native-build",
+        "/work/r1-attempt01/build",
+        "--model",
+        "/model",
+        "--workload",
+        "/work/reference/evidence/campaign-20261017/plan/workload-128.jsonl",
+        "--predictor-rope",
+        "paired",
+        "--rotary-head-tile",
+        "auto",
+        "--audio-delivery",
+        "inline",
+        "--requests",
+        "4",
+        "--repetitions",
+        "1",
+        "--primary-concurrency",
+        "4",
+        "--physical-device",
+        "3",
+        "--max-minutes",
+        "10",
+        "--output-root",
+        "/work/r1-attempt01/results/runs",
+        "--concurrencies",
+        "4"
+      ],
+      "cwd": "/work/r1-attempt01/source-git",
+      "exit": 2,
+      "wall_seconds": 106.5787412901409
+    },
+    {
+      "name": "replay-c002",
+      "argv": [
+        "/work/venv/bin/python",
+        "/work/r1-attempt01/source-git/assess.py",
+        "--run",
+        "/work/formal-c002-01",
+        "--output",
+        "/work/r1-attempt01/results/replay-c002.json"
+      ],
+      "cwd": "/work/r1-attempt01/source-git",
+      "exit": 1,
+      "wall_seconds": 1.9665137601550668
+    },
+    {
+      "name": "replay-c005",
+      "argv": [
+        "/work/venv/bin/python",
+        "/work/r1-attempt01/source-git/assess.py",
+        "--run",
+        "/work/c005-formal/results",
+        "--output",
+        "/work/r1-attempt01/results/replay-c005.json"
+      ],
+      "cwd": "/work/r1-attempt01/source-git",
+      "exit": 0,
+      "wall_seconds": 1.916259580058977
+    }
+  ],
+  "environment_before": {
+    "packages": {
+      "torch": "2.10.0+cpu",
+      "torch_npu": "2.10.0.post4",
+      "qwen-tts": "0.1.1",
+      "transformers": "4.57.3",
+      "tokenizers": "0.22.2",
+      "numpy": "2.5.3",
+      "aiohttp": "3.14.3",
+      "triton": "3.5.0",
+      "triton_ascend": "3.2.2",
+      "huggingface-hub": "0.36.2"
+    },
+    "system_libraries": "libc6:arm64=2.35-0ubuntu3.15\nlibstdc++6:arm64=12.3.0-1ubuntu1~22.04.3\n",
+    "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+    "cann_install_sha256": "a9b17ef608ebeb70ade09cde1c12a545eb5e8f3e5312f6806ca0d368b0464848",
+    "variables": {
+      "ASCEND_RT_VISIBLE_DEVICES": "3",
+      "ASCEND_HOME_PATH": "/usr/local/Ascend/cann-9.1.0",
+      "LD_LIBRARY_PATH": "/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/cann-9.1.0/lib64:/usr/local/Ascend/cann-9.1.0/lib64/plugin/opskernel:/usr/local/Ascend/cann-9.1.0/lib64/plugin/nnengine:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe/op_tiling/lib/linux/aarch64:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64/plugin:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/opskernel:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/nnengine:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/python3.12.13/lib:",
+      "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2",
+      "OMP_NUM_THREADS": "4",
+      "PYTHONPATH": "/work/r1-attempt01/build:/work/reference:/usr/local/Ascend/cann-9.1.0/python/site-packages:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe:/usr/local/Ascend/ascend-toolkit/latest/python/site-packages:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe:",
+      "HF_HUB_OFFLINE": "1",
+      "TASK_QUEUE_ENABLE": "1"
+    },
+    "model_assets": {
+      "config.json": "17a07f527a1c25ea30b4e023a184482a23d3e279d697b1dc81b1bde498d29cf9",
+      "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+      "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "model.safetensors": "38b1d5971bdbd982b561cccec982669a53b0537c3cf5e9bd4778ed07bb2f5137",
+      "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+      "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+      "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+      "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+      "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+      "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  },
+  "binaries": {
+    "_qtts_native.cpython-312-aarch64-linux-gnu.so": "943d373ac1a795136c82e5bcdf73e4a3f67ee7ca75d0d4545b08ffd675471cb1",
+    "qtts": "ac2eb83a36e86bcc49e26ec0a367860a2964ea03589b5e38fe902f750e4aa2aa"
+  },
+  "actual_runner_directory": "/work/r1-attempt01/results/runs/20261019T091737Z-e2558a72c9",
+  "smoke": {
+    "status": "INCONCLUSIVE",
+    "scope": "authoritative seven-cohort TTS acceptance; generic report is primary-cohort only",
+    "generic_primary_verdict": "PASS",
+    "tts_verdict": "INCONCLUSIVE",
+    "formal_coverage": false,
+    "infer_rsi_revision": "bd5e356ac9267362c80f27adba61d76e047583c7",
+    "run_directory": "/work/r1-attempt01/results/runs/20261019T091737Z-e2558a72c9",
+    "primary_concurrency": 4
+  },
+  "legacy_replays": [
+    {
+      "campaign": "c002",
+      "actual_exit": 1,
+      "verdict": "FAIL",
+      "scope": "replay only, not new NPU measurement",
+      "old_sha256": "c884dbfc429c65272a41fde68101ef57c5fa8152e08985939d7c60e9f3ec3659",
+      "new_sha256": "e12034a613b1cf185a7045c2a8af8e7c5be4a2bc443c2062d2e50cddfea36e40"
+    },
+    {
+      "campaign": "c005",
+      "actual_exit": 0,
+      "verdict": "PASS",
+      "scope": "replay only, not new NPU measurement",
+      "old_sha256": "20caa94051bf8cca01e912ca541abc71ea6ca4bc52d07f7dc51a142b3e1b1570",
+      "new_sha256": "20caa94051bf8cca01e912ca541abc71ea6ca4bc52d07f7dc51a142b3e1b1570"
+    }
+  ],
+  "environment_after": {
+    "packages": {
+      "torch": "2.10.0+cpu",
+      "torch_npu": "2.10.0.post4",
+      "qwen-tts": "0.1.1",
+      "transformers": "4.57.3",
+      "tokenizers": "0.22.2",
+      "numpy": "2.5.3",
+      "aiohttp": "3.14.3",
+      "triton": "3.5.0",
+      "triton_ascend": "3.2.2",
+      "huggingface-hub": "0.36.2"
+    },
+    "system_libraries": "libc6:arm64=2.35-0ubuntu3.15\nlibstdc++6:arm64=12.3.0-1ubuntu1~22.04.3\n",
+    "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+    "cann_install_sha256": "a9b17ef608ebeb70ade09cde1c12a545eb5e8f3e5312f6806ca0d368b0464848",
+    "variables": {
+      "ASCEND_RT_VISIBLE_DEVICES": "3",
+      "ASCEND_HOME_PATH": "/usr/local/Ascend/cann-9.1.0",
+      "LD_LIBRARY_PATH": "/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/cann-9.1.0/lib64:/usr/local/Ascend/cann-9.1.0/lib64/plugin/opskernel:/usr/local/Ascend/cann-9.1.0/lib64/plugin/nnengine:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe/op_tiling/lib/linux/aarch64:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64/plugin:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/opskernel:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/nnengine:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/python3.12.13/lib:",
+      "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2",
+      "OMP_NUM_THREADS": "4",
+      "PYTHONPATH": "/work/r1-attempt01/build:/work/reference:/usr/local/Ascend/cann-9.1.0/python/site-packages:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe:/usr/local/Ascend/ascend-toolkit/latest/python/site-packages:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe:",
+      "HF_HUB_OFFLINE": "1",
+      "TASK_QUEUE_ENABLE": "1"
+    },
+    "model_assets": {
+      "config.json": "17a07f527a1c25ea30b4e023a184482a23d3e279d697b1dc81b1bde498d29cf9",
+      "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+      "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "model.safetensors": "38b1d5971bdbd982b561cccec982669a53b0537c3cf5e9bd4778ed07bb2f5137",
+      "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+      "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+      "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+      "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+      "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+      "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  },
+  "log_sha256": {
+    "configure.log": "f44c933f564e9e5d234b0ec08fd23f4438d7f7ed64e0690f79e251929f851f96",
+    "runner-cpu-contracts.log": "626d049b51efaed1bdb35df9718cfc5177fecb7d3569ddcd2e18b53c14c620ad",
+    "dry-plan.log": "069817e211febd00633040d25aa8af3736ddd738e62acd624be8b313cba8e188",
+    "replay-c002.log": "e12034a613b1cf185a7045c2a8af8e7c5be4a2bc443c2062d2e50cddfea36e40",
+    "replay-c005.log": "20caa94051bf8cca01e912ca541abc71ea6ca4bc52d07f7dc51a142b3e1b1570",
+    "build.log": "43e845b6ce93e349f93f589131a20c9035bec7852aceb7a856cfede6e3742001",
+    "ownership.log": "470f048633d2309e15f525201bf4072abbae0e142fb6d4d1d0e84fe6b5cc2ff7",
+    "rsi-npu-smoke.log": "693252e930096a6768d19c45002a8b2d06b50898c9c7e32cbb10317f614f917b",
+    "cpu-suite.log": "90dbb452fbe04f1a563e6cbf05a805e35f01c41ed49be69a5ab66a001a9a0f40"
+  }
+}

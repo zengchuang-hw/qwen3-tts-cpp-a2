@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "argv": [
+    "/work/venv/bin/python",
+    "-c",
+    "pass"
+  ],
+  "cwd": "/work/r1-sdk-preflight/results02/candidate",
+  "returncode": 0,
+  "result_path": "/work/r1-sdk-preflight/results02/runs/20261019T082047Z-47ae439a39/validation/result.json",
+  "stdout_path": "/work/r1-sdk-preflight/results02/runs/20261019T082047Z-47ae439a39/validation/stdout.log",
+  "stderr_path": "/work/r1-sdk-preflight/results02/runs/20261019T082047Z-47ae439a39/validation/stderr.log",
+  "metric": null,
+  "metric_error": null,
+  "pid": 96088,
+  "process_group_id": 96088,
+  "elapsed_seconds": 0.06494588009081781
+}

@@ -1,0 +1,1047 @@
+{
+  "status": "ARCHIVED",
+  "scope": "actual pinned InferRSI adapter qualification; no new formal speed acceptance",
+  "attempts": [
+    {
+      "root": "/work/r1-attempt01",
+      "validation": {
+        "status": "PASS",
+        "scope": "pinned InferRSI Harness, actual CPU cleanup fixtures and NPU C4 smoke; no full speed acceptance",
+        "tested_commit": "dd3ed597211d988ca51a16db32c9e368c9471446",
+        "commands": [
+          {
+            "name": "cpu-suite",
+            "argv": [
+              "/work/venv/bin/python",
+              "-m",
+              "unittest",
+              "discover",
+              "-s",
+              "tests",
+              "-v"
+            ],
+            "cwd": "/work/r1-attempt01/source-git",
+            "exit": 0,
+            "wall_seconds": 0.31424659001640975
+          },
+          {
+            "name": "configure",
+            "argv": [
+              "cmake",
+              "-S",
+              "/work/r1-attempt01/source-git",
+              "-B",
+              "/work/r1-attempt01/build",
+              "-DPython3_EXECUTABLE=/work/venv/bin/python",
+              "-DCMAKE_BUILD_TYPE=Release"
+            ],
+            "cwd": "/work/r1-attempt01/source-git",
+            "exit": 0,
+            "wall_seconds": 18.43839955003932
+          },
+          {
+            "name": "build",
+            "argv": [
+              "cmake",
+              "--build",
+              "/work/r1-attempt01/build",
+              "-j",
+              "2"
+            ],
+            "cwd": "/work/r1-attempt01/source-git",
+            "exit": 0,
+            "wall_seconds": 32.31174429995008
+          },
+          {
+            "name": "ownership",
+            "argv": [
+              "/work/venv/bin/python",
+              "/work/r1-attempt01/source-git/test_native_state.py",
+              "-v"
+            ],
+            "cwd": "/work/r1-attempt01/source-git",
+            "exit": 0,
+            "wall_seconds": 8.676750830141827
+          },
+          {
+            "name": "runner-cpu-contracts",
+            "argv": [
+              "/work/venv/bin/python",
+              "/work/r1-attempt01/cpu-validation.py",
+              "--inferrsi-root",
+              "/work/r1-attempt01/inferrsi",
+              "--output",
+              "/work/r1-attempt01/results/runner-cpu"
+            ],
+            "cwd": "/work/r1-attempt01/source-git",
+            "exit": 0,
+            "wall_seconds": 4.1696863600518554
+          },
+          {
+            "name": "dry-plan",
+            "argv": [
+              "/work/venv/bin/python",
+              "/work/r1-attempt01/source-git/rsi.py",
+              "run",
+              "--inferrsi-root",
+              "/work/r1-attempt01/inferrsi",
+              "--reference-root",
+              "/work/reference",
+              "--candidate-root",
+              "/work/r1-attempt01/source-git",
+              "--native-build",
+              "/work/r1-attempt01/build",
+              "--model",
+              "/model",
+              "--workload",
+              "/work/reference/evidence/campaign-20261017/plan/workload-128.jsonl",
+              "--predictor-rope",
+              "paired",
+              "--rotary-head-tile",
+              "auto",
+              "--audio-delivery",
+              "inline",
+              "--requests",
+              "4",
+              "--repetitions",
+              "1",
+              "--primary-concurrency",
+              "4",
+              "--physical-device",
+              "3",
+              "--max-minutes",
+              "10",
+              "--output-root",
+              "/work/r1-attempt01/results/runs",
+              "--concurrencies",
+              "4",
+              "--dry-run"
+            ],
+            "cwd": "/work/r1-attempt01/source-git",
+            "exit": 0,
+            "wall_seconds": 0.26417949981987476
+          },
+          {
+            "name": "rsi-npu-smoke",
+            "argv": [
+              "/work/venv/bin/python",
+              "/work/r1-attempt01/source-git/rsi.py",
+              "run",
+              "--inferrsi-root",
+              "/work/r1-attempt01/inferrsi",
+              "--reference-root",
+              "/work/reference",
+              "--candidate-root",
+              "/work/r1-attempt01/source-git",
+              "--native-build",
+              "/work/r1-attempt01/build",
+              "--model",
+              "/model",
+              "--workload",
+              "/work/reference/evidence/campaign-20261017/plan/workload-128.jsonl",
+              "--predictor-rope",
+              "paired",
+              "--rotary-head-tile",
+              "auto",
+              "--audio-delivery",
+              "inline",
+              "--requests",
+              "4",
+              "--repetitions",
+              "1",
+              "--primary-concurrency",
+              "4",
+              "--physical-device",
+              "3",
+              "--max-minutes",
+              "10",
+              "--output-root",
+              "/work/r1-attempt01/results/runs",
+              "--concurrencies",
+              "4"
+            ],
+            "cwd": "/work/r1-attempt01/source-git",
+            "exit": 2,
+            "wall_seconds": 106.5787412901409
+          },
+          {
+            "name": "replay-c002",
+            "argv": [
+              "/work/venv/bin/python",
+              "/work/r1-attempt01/source-git/assess.py",
+              "--run",
+              "/work/formal-c002-01",
+              "--output",
+              "/work/r1-attempt01/results/replay-c002.json"
+            ],
+            "cwd": "/work/r1-attempt01/source-git",
+            "exit": 1,
+            "wall_seconds": 1.9665137601550668
+          },
+          {
+            "name": "replay-c005",
+            "argv": [
+              "/work/venv/bin/python",
+              "/work/r1-attempt01/source-git/assess.py",
+              "--run",
+              "/work/c005-formal/results",
+              "--output",
+              "/work/r1-attempt01/results/replay-c005.json"
+            ],
+            "cwd": "/work/r1-attempt01/source-git",
+            "exit": 0,
+            "wall_seconds": 1.916259580058977
+          }
+        ],
+        "environment_before": {
+          "packages": {
+            "torch": "2.10.0+cpu",
+            "torch_npu": "2.10.0.post4",
+            "qwen-tts": "0.1.1",
+            "transformers": "4.57.3",
+            "tokenizers": "0.22.2",
+            "numpy": "2.5.3",
+            "aiohttp": "3.14.3",
+            "triton": "3.5.0",
+            "triton_ascend": "3.2.2",
+            "huggingface-hub": "0.36.2"
+          },
+          "system_libraries": "libc6:arm64=2.35-0ubuntu3.15\nlibstdc++6:arm64=12.3.0-1ubuntu1~22.04.3\n",
+          "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+          "cann_install_sha256": "a9b17ef608ebeb70ade09cde1c12a545eb5e8f3e5312f6806ca0d368b0464848",
+          "variables": {
+            "ASCEND_RT_VISIBLE_DEVICES": "3",
+            "ASCEND_HOME_PATH": "/usr/local/Ascend/cann-9.1.0",
+            "LD_LIBRARY_PATH": "/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/cann-9.1.0/lib64:/usr/local/Ascend/cann-9.1.0/lib64/plugin/opskernel:/usr/local/Ascend/cann-9.1.0/lib64/plugin/nnengine:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe/op_tiling/lib/linux/aarch64:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64/plugin:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/opskernel:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/nnengine:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/python3.12.13/lib:",
+            "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2",
+            "OMP_NUM_THREADS": "4",
+            "PYTHONPATH": "/work/r1-attempt01/build:/work/reference:/usr/local/Ascend/cann-9.1.0/python/site-packages:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe:/usr/local/Ascend/ascend-toolkit/latest/python/site-packages:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe:",
+            "HF_HUB_OFFLINE": "1",
+            "TASK_QUEUE_ENABLE": "1"
+          },
+          "model_assets": {
+            "config.json": "17a07f527a1c25ea30b4e023a184482a23d3e279d697b1dc81b1bde498d29cf9",
+            "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+            "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+            "model.safetensors": "38b1d5971bdbd982b561cccec982669a53b0537c3cf5e9bd4778ed07bb2f5137",
+            "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+            "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+            "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+            "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+            "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+            "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+            "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+          }
+        },
+        "binaries": {
+          "_qtts_native.cpython-312-aarch64-linux-gnu.so": "943d373ac1a795136c82e5bcdf73e4a3f67ee7ca75d0d4545b08ffd675471cb1",
+          "qtts": "ac2eb83a36e86bcc49e26ec0a367860a2964ea03589b5e38fe902f750e4aa2aa"
+        },
+        "actual_runner_directory": "/work/r1-attempt01/results/runs/20261019T091737Z-e2558a72c9",
+        "smoke": {
+          "status": "INCONCLUSIVE",
+          "scope": "authoritative seven-cohort TTS acceptance; generic report is primary-cohort only",
+          "generic_primary_verdict": "PASS",
+          "tts_verdict": "INCONCLUSIVE",
+          "formal_coverage": false,
+          "infer_rsi_revision": "bd5e356ac9267362c80f27adba61d76e047583c7",
+          "run_directory": "/work/r1-attempt01/results/runs/20261019T091737Z-e2558a72c9",
+          "primary_concurrency": 4
+        },
+        "legacy_replays": [
+          {
+            "campaign": "c002",
+            "actual_exit": 1,
+            "verdict": "FAIL",
+            "scope": "replay only, not new NPU measurement",
+            "old_sha256": "c884dbfc429c65272a41fde68101ef57c5fa8152e08985939d7c60e9f3ec3659",
+            "new_sha256": "e12034a613b1cf185a7045c2a8af8e7c5be4a2bc443c2062d2e50cddfea36e40"
+          },
+          {
+            "campaign": "c005",
+            "actual_exit": 0,
+            "verdict": "PASS",
+            "scope": "replay only, not new NPU measurement",
+            "old_sha256": "20caa94051bf8cca01e912ca541abc71ea6ca4bc52d07f7dc51a142b3e1b1570",
+            "new_sha256": "20caa94051bf8cca01e912ca541abc71ea6ca4bc52d07f7dc51a142b3e1b1570"
+          }
+        ],
+        "environment_after": {
+          "packages": {
+            "torch": "2.10.0+cpu",
+            "torch_npu": "2.10.0.post4",
+            "qwen-tts": "0.1.1",
+            "transformers": "4.57.3",
+            "tokenizers": "0.22.2",
+            "numpy": "2.5.3",
+            "aiohttp": "3.14.3",
+            "triton": "3.5.0",
+            "triton_ascend": "3.2.2",
+            "huggingface-hub": "0.36.2"
+          },
+          "system_libraries": "libc6:arm64=2.35-0ubuntu3.15\nlibstdc++6:arm64=12.3.0-1ubuntu1~22.04.3\n",
+          "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+          "cann_install_sha256": "a9b17ef608ebeb70ade09cde1c12a545eb5e8f3e5312f6806ca0d368b0464848",
+          "variables": {
+            "ASCEND_RT_VISIBLE_DEVICES": "3",
+            "ASCEND_HOME_PATH": "/usr/local/Ascend/cann-9.1.0",
+            "LD_LIBRARY_PATH": "/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/cann-9.1.0/lib64:/usr/local/Ascend/cann-9.1.0/lib64/plugin/opskernel:/usr/local/Ascend/cann-9.1.0/lib64/plugin/nnengine:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe/op_tiling/lib/linux/aarch64:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64/plugin:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/opskernel:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/nnengine:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/python3.12.13/lib:",
+            "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2",
+            "OMP_NUM_THREADS": "4",
+            "PYTHONPATH": "/work/r1-attempt01/build:/work/reference:/usr/local/Ascend/cann-9.1.0/python/site-packages:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe:/usr/local/Ascend/ascend-toolkit/latest/python/site-packages:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe:",
+            "HF_HUB_OFFLINE": "1",
+            "TASK_QUEUE_ENABLE": "1"
+          },
+          "model_assets": {
+            "config.json": "17a07f527a1c25ea30b4e023a184482a23d3e279d697b1dc81b1bde498d29cf9",
+            "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+            "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+            "model.safetensors": "38b1d5971bdbd982b561cccec982669a53b0537c3cf5e9bd4778ed07bb2f5137",
+            "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+            "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+            "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+            "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+            "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+            "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+            "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+          }
+        },
+        "log_sha256": {
+          "configure.log": "f44c933f564e9e5d234b0ec08fd23f4438d7f7ed64e0690f79e251929f851f96",
+          "runner-cpu-contracts.log": "626d049b51efaed1bdb35df9718cfc5177fecb7d3569ddcd2e18b53c14c620ad",
+          "dry-plan.log": "069817e211febd00633040d25aa8af3736ddd738e62acd624be8b313cba8e188",
+          "replay-c002.log": "e12034a613b1cf185a7045c2a8af8e7c5be4a2bc443c2062d2e50cddfea36e40",
+          "replay-c005.log": "20caa94051bf8cca01e912ca541abc71ea6ca4bc52d07f7dc51a142b3e1b1570",
+          "build.log": "43e845b6ce93e349f93f589131a20c9035bec7852aceb7a856cfede6e3742001",
+          "ownership.log": "470f048633d2309e15f525201bf4072abbae0e142fb6d4d1d0e84fe6b5cc2ff7",
+          "rsi-npu-smoke.log": "693252e930096a6768d19c45002a8b2d06b50898c9c7e32cbb10317f614f917b",
+          "cpu-suite.log": "90dbb452fbe04f1a563e6cbf05a805e35f01c41ed49be69a5ab66a001a9a0f40"
+        }
+      }
+    },
+    {
+      "root": "/work/r1-attempt02",
+      "validation": {
+        "status": "PASS",
+        "scope": "pinned InferRSI Harness, actual CPU cleanup fixtures and NPU C4 smoke; no full speed acceptance",
+        "tested_commit": "b628b2ac95b6c49a395cc792e5a770c7e9e1fdda",
+        "commands": [
+          {
+            "name": "cpu-suite",
+            "argv": [
+              "/work/venv/bin/python",
+              "-m",
+              "unittest",
+              "discover",
+              "-s",
+              "tests",
+              "-v"
+            ],
+            "cwd": "/work/r1-attempt02/source-git",
+            "exit": 0,
+            "wall_seconds": 0.5651868400163949
+          },
+          {
+            "name": "configure",
+            "argv": [
+              "cmake",
+              "-S",
+              "/work/r1-attempt02/source-git",
+              "-B",
+              "/work/r1-attempt02/build",
+              "-DPython3_EXECUTABLE=/work/venv/bin/python",
+              "-DCMAKE_BUILD_TYPE=Release"
+            ],
+            "cwd": "/work/r1-attempt02/source-git",
+            "exit": 0,
+            "wall_seconds": 18.84375326987356
+          },
+          {
+            "name": "build",
+            "argv": [
+              "cmake",
+              "--build",
+              "/work/r1-attempt02/build",
+              "-j",
+              "2"
+            ],
+            "cwd": "/work/r1-attempt02/source-git",
+            "exit": 0,
+            "wall_seconds": 31.874562710057944
+          },
+          {
+            "name": "ownership",
+            "argv": [
+              "/work/venv/bin/python",
+              "/work/r1-attempt02/source-git/test_native_state.py",
+              "-v"
+            ],
+            "cwd": "/work/r1-attempt02/source-git",
+            "exit": 0,
+            "wall_seconds": 8.677147950045764
+          },
+          {
+            "name": "runner-cpu-contracts",
+            "argv": [
+              "/work/venv/bin/python",
+              "/work/r1-attempt02/cpu-validation.py",
+              "--inferrsi-root",
+              "/work/r1-attempt02/inferrsi",
+              "--output",
+              "/work/r1-attempt02/results/runner-cpu"
+            ],
+            "cwd": "/work/r1-attempt02/source-git",
+            "exit": 0,
+            "wall_seconds": 4.1692068302072585
+          },
+          {
+            "name": "dry-plan",
+            "argv": [
+              "/work/venv/bin/python",
+              "/work/r1-attempt02/source-git/rsi.py",
+              "run",
+              "--inferrsi-root",
+              "/work/r1-attempt02/inferrsi",
+              "--reference-root",
+              "/work/reference",
+              "--candidate-root",
+              "/work/r1-attempt02/source-git",
+              "--native-build",
+              "/work/r1-attempt02/build",
+              "--model",
+              "/model",
+              "--workload",
+              "/work/reference/evidence/campaign-20261017/plan/workload-128.jsonl",
+              "--predictor-rope",
+              "paired",
+              "--rotary-head-tile",
+              "auto",
+              "--audio-delivery",
+              "inline",
+              "--requests",
+              "4",
+              "--repetitions",
+              "1",
+              "--primary-concurrency",
+              "4",
+              "--physical-device",
+              "3",
+              "--max-minutes",
+              "10",
+              "--output-root",
+              "/work/r1-attempt02/results/runs",
+              "--concurrencies",
+              "4",
+              "--dry-run"
+            ],
+            "cwd": "/work/r1-attempt02/source-git",
+            "exit": 0,
+            "wall_seconds": 0.26419852999970317
+          },
+          {
+            "name": "rsi-npu-smoke",
+            "argv": [
+              "/work/venv/bin/python",
+              "/work/r1-attempt02/source-git/rsi.py",
+              "run",
+              "--inferrsi-root",
+              "/work/r1-attempt02/inferrsi",
+              "--reference-root",
+              "/work/reference",
+              "--candidate-root",
+              "/work/r1-attempt02/source-git",
+              "--native-build",
+              "/work/r1-attempt02/build",
+              "--model",
+              "/model",
+              "--workload",
+              "/work/reference/evidence/campaign-20261017/plan/workload-128.jsonl",
+              "--predictor-rope",
+              "paired",
+              "--rotary-head-tile",
+              "auto",
+              "--audio-delivery",
+              "inline",
+              "--requests",
+              "4",
+              "--repetitions",
+              "1",
+              "--primary-concurrency",
+              "4",
+              "--physical-device",
+              "3",
+              "--max-minutes",
+              "10",
+              "--output-root",
+              "/work/r1-attempt02/results/runs",
+              "--concurrencies",
+              "4"
+            ],
+            "cwd": "/work/r1-attempt02/source-git",
+            "exit": 2,
+            "wall_seconds": 104.36563602997921
+          },
+          {
+            "name": "replay-c002",
+            "argv": [
+              "/work/venv/bin/python",
+              "/work/r1-attempt02/source-git/assess.py",
+              "--run",
+              "/work/formal-c002-01",
+              "--output",
+              "/work/r1-attempt02/results/replay-c002.json"
+            ],
+            "cwd": "/work/r1-attempt02/source-git",
+            "exit": 1,
+            "wall_seconds": 2.0668904699850827
+          },
+          {
+            "name": "replay-c005",
+            "argv": [
+              "/work/venv/bin/python",
+              "/work/r1-attempt02/source-git/assess.py",
+              "--run",
+              "/work/c005-formal/results",
+              "--output",
+              "/work/r1-attempt02/results/replay-c005.json"
+            ],
+            "cwd": "/work/r1-attempt02/source-git",
+            "exit": 0,
+            "wall_seconds": 2.1169834099709988
+          }
+        ],
+        "environment_before": {
+          "packages": {
+            "torch": "2.10.0+cpu",
+            "torch_npu": "2.10.0.post4",
+            "qwen-tts": "0.1.1",
+            "transformers": "4.57.3",
+            "tokenizers": "0.22.2",
+            "numpy": "2.5.3",
+            "aiohttp": "3.14.3",
+            "triton": "3.5.0",
+            "triton_ascend": "3.2.2",
+            "huggingface-hub": "0.36.2"
+          },
+          "system_libraries": "libc6:arm64=2.35-0ubuntu3.15\nlibstdc++6:arm64=12.3.0-1ubuntu1~22.04.3\n",
+          "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+          "cann_install_sha256": "a9b17ef608ebeb70ade09cde1c12a545eb5e8f3e5312f6806ca0d368b0464848",
+          "variables": {
+            "ASCEND_RT_VISIBLE_DEVICES": "3",
+            "ASCEND_HOME_PATH": "/usr/local/Ascend/cann-9.1.0",
+            "LD_LIBRARY_PATH": "/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/cann-9.1.0/lib64:/usr/local/Ascend/cann-9.1.0/lib64/plugin/opskernel:/usr/local/Ascend/cann-9.1.0/lib64/plugin/nnengine:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe/op_tiling/lib/linux/aarch64:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64/plugin:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/opskernel:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/nnengine:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/python3.12.13/lib:",
+            "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2",
+            "OMP_NUM_THREADS": "4",
+            "PYTHONPATH": "/work/r1-attempt02/build:/work/reference:/usr/local/Ascend/cann-9.1.0/python/site-packages:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe:/usr/local/Ascend/ascend-toolkit/latest/python/site-packages:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe:",
+            "HF_HUB_OFFLINE": "1",
+            "TASK_QUEUE_ENABLE": "1"
+          },
+          "model_assets": {
+            "config.json": "17a07f527a1c25ea30b4e023a184482a23d3e279d697b1dc81b1bde498d29cf9",
+            "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+            "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+            "model.safetensors": "38b1d5971bdbd982b561cccec982669a53b0537c3cf5e9bd4778ed07bb2f5137",
+            "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+            "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+            "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+            "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+            "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+            "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+            "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+          }
+        },
+        "binaries": {
+          "_qtts_native.cpython-312-aarch64-linux-gnu.so": "a401f0a71ff5df0fb78c748299aa140095ae6c8ce2b5c70ad974d206a0ae5e00",
+          "qtts": "d6f1559bc7f65e9a53efff6aef2a173a6e8452847a3b91cee737b5eb24c69154"
+        },
+        "actual_runner_directory": "/work/r1-attempt02/results/runs/20261019T094024Z-391a8d3649",
+        "smoke": {
+          "status": "INCONCLUSIVE",
+          "scope": "authoritative seven-cohort TTS acceptance; generic report is primary-cohort only",
+          "generic_primary_verdict": "PASS",
+          "tts_verdict": "INCONCLUSIVE",
+          "formal_coverage": false,
+          "infer_rsi_revision": "bd5e356ac9267362c80f27adba61d76e047583c7",
+          "run_directory": "/work/r1-attempt02/results/runs/20261019T094024Z-391a8d3649",
+          "primary_concurrency": 4
+        },
+        "legacy_replays": [
+          {
+            "campaign": "c002",
+            "actual_exit": 1,
+            "verdict": "FAIL",
+            "scope": "replay only, not new NPU measurement",
+            "old_sha256": "c884dbfc429c65272a41fde68101ef57c5fa8152e08985939d7c60e9f3ec3659",
+            "new_sha256": "e12034a613b1cf185a7045c2a8af8e7c5be4a2bc443c2062d2e50cddfea36e40"
+          },
+          {
+            "campaign": "c005",
+            "actual_exit": 0,
+            "verdict": "PASS",
+            "scope": "replay only, not new NPU measurement",
+            "old_sha256": "20caa94051bf8cca01e912ca541abc71ea6ca4bc52d07f7dc51a142b3e1b1570",
+            "new_sha256": "20caa94051bf8cca01e912ca541abc71ea6ca4bc52d07f7dc51a142b3e1b1570"
+          }
+        ],
+        "environment_after": {
+          "packages": {
+            "torch": "2.10.0+cpu",
+            "torch_npu": "2.10.0.post4",
+            "qwen-tts": "0.1.1",
+            "transformers": "4.57.3",
+            "tokenizers": "0.22.2",
+            "numpy": "2.5.3",
+            "aiohttp": "3.14.3",
+            "triton": "3.5.0",
+            "triton_ascend": "3.2.2",
+            "huggingface-hub": "0.36.2"
+          },
+          "system_libraries": "libc6:arm64=2.35-0ubuntu3.15\nlibstdc++6:arm64=12.3.0-1ubuntu1~22.04.3\n",
+          "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+          "cann_install_sha256": "a9b17ef608ebeb70ade09cde1c12a545eb5e8f3e5312f6806ca0d368b0464848",
+          "variables": {
+            "ASCEND_RT_VISIBLE_DEVICES": "3",
+            "ASCEND_HOME_PATH": "/usr/local/Ascend/cann-9.1.0",
+            "LD_LIBRARY_PATH": "/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/cann-9.1.0/lib64:/usr/local/Ascend/cann-9.1.0/lib64/plugin/opskernel:/usr/local/Ascend/cann-9.1.0/lib64/plugin/nnengine:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe/op_tiling/lib/linux/aarch64:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64/plugin:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/opskernel:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/nnengine:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/python3.12.13/lib:",
+            "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2",
+            "OMP_NUM_THREADS": "4",
+            "PYTHONPATH": "/work/r1-attempt02/build:/work/reference:/usr/local/Ascend/cann-9.1.0/python/site-packages:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe:/usr/local/Ascend/ascend-toolkit/latest/python/site-packages:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe:",
+            "HF_HUB_OFFLINE": "1",
+            "TASK_QUEUE_ENABLE": "1"
+          },
+          "model_assets": {
+            "config.json": "17a07f527a1c25ea30b4e023a184482a23d3e279d697b1dc81b1bde498d29cf9",
+            "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+            "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+            "model.safetensors": "38b1d5971bdbd982b561cccec982669a53b0537c3cf5e9bd4778ed07bb2f5137",
+            "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+            "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+            "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+            "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+            "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+            "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+            "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+          }
+        },
+        "log_sha256": {
+          "configure.log": "e1f3fd524e3573e673eaa017b12dbd8fcc8e8666ef7756e4537fa6f9c8bbca5e",
+          "runner-cpu-contracts.log": "34c60eedc27ae5b882ed532523865d346fdc32c4d1b36cf521455f1f765bf756",
+          "dry-plan.log": "04c7e8dd5c44db8c5bd2c55bb547b8dcfe164838956043feca199e113af3a08a",
+          "replay-c002.log": "e12034a613b1cf185a7045c2a8af8e7c5be4a2bc443c2062d2e50cddfea36e40",
+          "replay-c005.log": "20caa94051bf8cca01e912ca541abc71ea6ca4bc52d07f7dc51a142b3e1b1570",
+          "build.log": "8222792344c86892aedfe587f3da7bf569aa2584ef7e294778b4cb164f695af6",
+          "ownership.log": "356a01764f53254e2fc7fa18a9cc485f66681945ac9a01a93ec2d94057ff0ef1",
+          "rsi-npu-smoke.log": "e99840b2f9b82f8c7eb8ffffe113d8aef64de647162e0c02bcad52f46a28f063",
+          "cpu-suite.log": "1d893fb60cefdbda257a8a8f9730e787b50d6b50d1286753501732af04718b1c"
+        }
+      }
+    }
+  ],
+  "archives": [
+    {
+      "kind": "metadata",
+      "path": "/work/r1-evidence-20261019/metadata.tar",
+      "bytes": 1269760,
+      "files": 375,
+      "sha256": "3fab33eb58aff0dbdb6e90b0b4da09e9fab5cc16212bda14a569fb53c5176e33",
+      "host_path": "/home/zhuangzeliang/zc/qwen3-tts-cpp-20261019/r1-evidence-20261019/metadata.tar"
+    },
+    {
+      "kind": "media",
+      "path": "/work/r1-evidence-20261019/media.tar",
+      "bytes": 6615040,
+      "files": 32,
+      "sha256": "330a403c1a350cbf19a5651bacdb775c5c967be633efc8f12568d16af5b12c34",
+      "host_path": "/home/zhuangzeliang/zc/qwen3-tts-cpp-20261019/r1-evidence-20261019/media.tar"
+    }
+  ],
+  "device_witness": {
+    "status": "MAPPED",
+    "scope": "device/PID observation only, not timing evidence",
+    "attempts": [
+      {
+        "attempt": 0,
+        "match": false
+      },
+      {
+        "attempt": 1,
+        "match": false
+      },
+      {
+        "attempt": 2,
+        "match": false
+      },
+      {
+        "attempt": 3,
+        "match": false
+      },
+      {
+        "attempt": 4,
+        "match": false
+      },
+      {
+        "attempt": 5,
+        "match": false
+      },
+      {
+        "attempt": 6,
+        "match": false
+      },
+      {
+        "attempt": 7,
+        "match": false
+      },
+      {
+        "attempt": 8,
+        "match": false
+      },
+      {
+        "attempt": 9,
+        "match": false
+      },
+      {
+        "attempt": 10,
+        "match": false
+      },
+      {
+        "attempt": 11,
+        "match": false
+      },
+      {
+        "attempt": 12,
+        "match": false
+      },
+      {
+        "attempt": 13,
+        "match": false
+      },
+      {
+        "attempt": 14,
+        "match": false
+      },
+      {
+        "attempt": 15,
+        "match": false
+      },
+      {
+        "attempt": 16,
+        "match": false
+      },
+      {
+        "attempt": 17,
+        "match": false
+      },
+      {
+        "attempt": 18,
+        "match": false
+      },
+      {
+        "attempt": 19,
+        "match": false
+      },
+      {
+        "attempt": 20,
+        "match": false
+      },
+      {
+        "attempt": 21,
+        "match": false
+      },
+      {
+        "attempt": 22,
+        "match": true
+      }
+    ],
+    "physical_device": 3,
+    "host_pid": 2563233,
+    "nspid": "NSpid:\t2563233\t102590",
+    "argv": "/work/venv/bin/python /work/r1-attempt02/source-git/serve.py --reference-root /work/reference --native-build /work/r1-attempt02/build --model /model --port 8199 --max-batch-size 64 --prewarm-decode --predictor-rope paired --audio-delivery inline --rotary-head-tile auto ",
+    "observation_unix_ns": 1792402894826384060,
+    "snapshot": "npu-022.log",
+    "docker_top": "PID                 PPID                COMMAND\n1004067             1004048             sleep infinity\n2556050             1004048             /work/venv/bin/python /work/r1-validate.py --root /work/r1-attempt02\n2559591             2556050             /work/venv/bin/python /work/r1-attempt02/source-git/rsi.py run --inferrsi-root /work/r1-attempt02/inferrsi --reference-root /work/reference --candidate-root /work/r1-attempt02/source-git --native-build /work/r1-attempt02/build --model /model --workload /work/reference/evidence/campaign-20261017/plan/workload-128.jsonl --predictor-rope paired --rotary-head-tile auto --audio-delivery inline --requests 4 --repetitions 1 --primary-concurrency 4 --physical-device 3 --max-minutes 10 --output-root /work/r1-attempt02/results/runs --concurrencies 4\n2563062             2559591             /work/venv/bin/python /work/r1-attempt02/source-git/rsi.py trial --reference-root /work/reference --candidate-root /work/r1-attempt02/source-git --native-build /work/r1-attempt02/build --model /model --workload /work/reference/evidence/campaign-20261017/plan/workload-128.jsonl --inferrsi-root /work/r1-attempt02/inferrsi --predictor-rope paired --rotary-head-tile auto --audio-delivery inline --requests 4 --repetitions 1 --primary-concurrency 4 --physical-device 3 --port 8199 --readiness-timeout 900 --benchmark-timeout 3600 --concurrencies 4 --arm native --output /work/r1-attempt02/results/runs/20261019T094024Z-391a8d3649/candidate/trial-001/result.json\n2563233             2563062             /work/venv/bin/python /work/r1-attempt02/source-git/serve.py --reference-root /work/reference --native-build /work/r1-attempt02/build --model /model --port 8199 --max-batch-size 64 --prewarm-decode --predictor-rope paired --audio-delivery inline --rotary-head-tile auto\n"
+  },
+  "media": [
+    {
+      "path": "/work/r1-attempt01/results/runs/20261019T091737Z-e2558a72c9/baseline/trial-001/tts/c4/00000.wav",
+      "bytes": 92204,
+      "sha256": "6094ff5a9fd5e6ec7ac253cd2184822d61e4e18bf9bf9850deffad0d06dfe609"
+    },
+    {
+      "path": "/work/r1-attempt01/results/runs/20261019T091737Z-e2558a72c9/baseline/trial-001/tts/c4/00001.wav",
+      "bytes": 149804,
+      "sha256": "d34b9fc9e8edda92f6faea50dd176e6c121d5a192000b76270f7ca932e388368"
+    },
+    {
+      "path": "/work/r1-attempt01/results/runs/20261019T091737Z-e2558a72c9/baseline/trial-001/tts/c4/00002.wav",
+      "bytes": 445484,
+      "sha256": "44b9d6b4197128b53da68b4a6e4ec251bacab6530585871cc47d985cb803fecc"
+    },
+    {
+      "path": "/work/r1-attempt01/results/runs/20261019T091737Z-e2558a72c9/baseline/trial-001/tts/c4/00003.wav",
+      "bytes": 130604,
+      "sha256": "b8725f2553ebfa6ed1a4bdb77d1e61b97af460221429c2ad28fc20868bfe51d2"
+    },
+    {
+      "path": "/work/r1-attempt01/results/runs/20261019T091737Z-e2558a72c9/baseline/trial-001/tts/c4/warmup/00000.wav",
+      "bytes": 92204,
+      "sha256": "6094ff5a9fd5e6ec7ac253cd2184822d61e4e18bf9bf9850deffad0d06dfe609"
+    },
+    {
+      "path": "/work/r1-attempt01/results/runs/20261019T091737Z-e2558a72c9/baseline/trial-001/tts/c4/warmup/00001.wav",
+      "bytes": 149804,
+      "sha256": "d34b9fc9e8edda92f6faea50dd176e6c121d5a192000b76270f7ca932e388368"
+    },
+    {
+      "path": "/work/r1-attempt01/results/runs/20261019T091737Z-e2558a72c9/baseline/trial-001/tts/c4/warmup/00002.wav",
+      "bytes": 445484,
+      "sha256": "44b9d6b4197128b53da68b4a6e4ec251bacab6530585871cc47d985cb803fecc"
+    },
+    {
+      "path": "/work/r1-attempt01/results/runs/20261019T091737Z-e2558a72c9/baseline/trial-001/tts/c4/warmup/00003.wav",
+      "bytes": 130604,
+      "sha256": "b8725f2553ebfa6ed1a4bdb77d1e61b97af460221429c2ad28fc20868bfe51d2"
+    },
+    {
+      "path": "/work/r1-attempt01/results/runs/20261019T091737Z-e2558a72c9/candidate/trial-001/tts/c4/00000.wav",
+      "bytes": 92204,
+      "sha256": "6094ff5a9fd5e6ec7ac253cd2184822d61e4e18bf9bf9850deffad0d06dfe609"
+    },
+    {
+      "path": "/work/r1-attempt01/results/runs/20261019T091737Z-e2558a72c9/candidate/trial-001/tts/c4/00001.wav",
+      "bytes": 149804,
+      "sha256": "d34b9fc9e8edda92f6faea50dd176e6c121d5a192000b76270f7ca932e388368"
+    },
+    {
+      "path": "/work/r1-attempt01/results/runs/20261019T091737Z-e2558a72c9/candidate/trial-001/tts/c4/00002.wav",
+      "bytes": 445484,
+      "sha256": "44b9d6b4197128b53da68b4a6e4ec251bacab6530585871cc47d985cb803fecc"
+    },
+    {
+      "path": "/work/r1-attempt01/results/runs/20261019T091737Z-e2558a72c9/candidate/trial-001/tts/c4/00003.wav",
+      "bytes": 130604,
+      "sha256": "b8725f2553ebfa6ed1a4bdb77d1e61b97af460221429c2ad28fc20868bfe51d2"
+    },
+    {
+      "path": "/work/r1-attempt01/results/runs/20261019T091737Z-e2558a72c9/candidate/trial-001/tts/c4/warmup/00000.wav",
+      "bytes": 92204,
+      "sha256": "6094ff5a9fd5e6ec7ac253cd2184822d61e4e18bf9bf9850deffad0d06dfe609"
+    },
+    {
+      "path": "/work/r1-attempt01/results/runs/20261019T091737Z-e2558a72c9/candidate/trial-001/tts/c4/warmup/00001.wav",
+      "bytes": 149804,
+      "sha256": "d34b9fc9e8edda92f6faea50dd176e6c121d5a192000b76270f7ca932e388368"
+    },
+    {
+      "path": "/work/r1-attempt01/results/runs/20261019T091737Z-e2558a72c9/candidate/trial-001/tts/c4/warmup/00002.wav",
+      "bytes": 445484,
+      "sha256": "44b9d6b4197128b53da68b4a6e4ec251bacab6530585871cc47d985cb803fecc"
+    },
+    {
+      "path": "/work/r1-attempt01/results/runs/20261019T091737Z-e2558a72c9/candidate/trial-001/tts/c4/warmup/00003.wav",
+      "bytes": 130604,
+      "sha256": "b8725f2553ebfa6ed1a4bdb77d1e61b97af460221429c2ad28fc20868bfe51d2"
+    },
+    {
+      "path": "/work/r1-attempt02/results/runs/20261019T094024Z-391a8d3649/baseline/trial-001/tts/c4/00000.wav",
+      "bytes": 92204,
+      "sha256": "6094ff5a9fd5e6ec7ac253cd2184822d61e4e18bf9bf9850deffad0d06dfe609"
+    },
+    {
+      "path": "/work/r1-attempt02/results/runs/20261019T094024Z-391a8d3649/baseline/trial-001/tts/c4/00001.wav",
+      "bytes": 149804,
+      "sha256": "d34b9fc9e8edda92f6faea50dd176e6c121d5a192000b76270f7ca932e388368"
+    },
+    {
+      "path": "/work/r1-attempt02/results/runs/20261019T094024Z-391a8d3649/baseline/trial-001/tts/c4/00002.wav",
+      "bytes": 445484,
+      "sha256": "44b9d6b4197128b53da68b4a6e4ec251bacab6530585871cc47d985cb803fecc"
+    },
+    {
+      "path": "/work/r1-attempt02/results/runs/20261019T094024Z-391a8d3649/baseline/trial-001/tts/c4/00003.wav",
+      "bytes": 130604,
+      "sha256": "b8725f2553ebfa6ed1a4bdb77d1e61b97af460221429c2ad28fc20868bfe51d2"
+    },
+    {
+      "path": "/work/r1-attempt02/results/runs/20261019T094024Z-391a8d3649/baseline/trial-001/tts/c4/warmup/00000.wav",
+      "bytes": 92204,
+      "sha256": "6094ff5a9fd5e6ec7ac253cd2184822d61e4e18bf9bf9850deffad0d06dfe609"
+    },
+    {
+      "path": "/work/r1-attempt02/results/runs/20261019T094024Z-391a8d3649/baseline/trial-001/tts/c4/warmup/00001.wav",
+      "bytes": 149804,
+      "sha256": "d34b9fc9e8edda92f6faea50dd176e6c121d5a192000b76270f7ca932e388368"
+    },
+    {
+      "path": "/work/r1-attempt02/results/runs/20261019T094024Z-391a8d3649/baseline/trial-001/tts/c4/warmup/00002.wav",
+      "bytes": 445484,
+      "sha256": "44b9d6b4197128b53da68b4a6e4ec251bacab6530585871cc47d985cb803fecc"
+    },
+    {
+      "path": "/work/r1-attempt02/results/runs/20261019T094024Z-391a8d3649/baseline/trial-001/tts/c4/warmup/00003.wav",
+      "bytes": 130604,
+      "sha256": "b8725f2553ebfa6ed1a4bdb77d1e61b97af460221429c2ad28fc20868bfe51d2"
+    },
+    {
+      "path": "/work/r1-attempt02/results/runs/20261019T094024Z-391a8d3649/candidate/trial-001/tts/c4/00000.wav",
+      "bytes": 92204,
+      "sha256": "6094ff5a9fd5e6ec7ac253cd2184822d61e4e18bf9bf9850deffad0d06dfe609"
+    },
+    {
+      "path": "/work/r1-attempt02/results/runs/20261019T094024Z-391a8d3649/candidate/trial-001/tts/c4/00001.wav",
+      "bytes": 149804,
+      "sha256": "d34b9fc9e8edda92f6faea50dd176e6c121d5a192000b76270f7ca932e388368"
+    },
+    {
+      "path": "/work/r1-attempt02/results/runs/20261019T094024Z-391a8d3649/candidate/trial-001/tts/c4/00002.wav",
+      "bytes": 445484,
+      "sha256": "44b9d6b4197128b53da68b4a6e4ec251bacab6530585871cc47d985cb803fecc"
+    },
+    {
+      "path": "/work/r1-attempt02/results/runs/20261019T094024Z-391a8d3649/candidate/trial-001/tts/c4/00003.wav",
+      "bytes": 130604,
+      "sha256": "b8725f2553ebfa6ed1a4bdb77d1e61b97af460221429c2ad28fc20868bfe51d2"
+    },
+    {
+      "path": "/work/r1-attempt02/results/runs/20261019T094024Z-391a8d3649/candidate/trial-001/tts/c4/warmup/00000.wav",
+      "bytes": 92204,
+      "sha256": "6094ff5a9fd5e6ec7ac253cd2184822d61e4e18bf9bf9850deffad0d06dfe609"
+    },
+    {
+      "path": "/work/r1-attempt02/results/runs/20261019T094024Z-391a8d3649/candidate/trial-001/tts/c4/warmup/00001.wav",
+      "bytes": 149804,
+      "sha256": "d34b9fc9e8edda92f6faea50dd176e6c121d5a192000b76270f7ca932e388368"
+    },
+    {
+      "path": "/work/r1-attempt02/results/runs/20261019T094024Z-391a8d3649/candidate/trial-001/tts/c4/warmup/00002.wav",
+      "bytes": 445484,
+      "sha256": "44b9d6b4197128b53da68b4a6e4ec251bacab6530585871cc47d985cb803fecc"
+    },
+    {
+      "path": "/work/r1-attempt02/results/runs/20261019T094024Z-391a8d3649/candidate/trial-001/tts/c4/warmup/00003.wav",
+      "bytes": 130604,
+      "sha256": "b8725f2553ebfa6ed1a4bdb77d1e61b97af460221429c2ad28fc20868bfe51d2"
+    }
+  ],
+  "validators": [
+    {
+      "path": "/work/r1-archive.py",
+      "bytes": 3630,
+      "sha256": "12058a458c23f9d007227b80a2556542f89361407a82c3f726b3955e8429b7d0"
+    },
+    {
+      "path": "/work/r1-attempt01/cpu-validation.py",
+      "bytes": 5563,
+      "sha256": "635feef337f052dc4acf4747a8d2f7d932f90041f3264e6e874afb94171dea17"
+    },
+    {
+      "path": "/work/r1-attempt01/results/runner-cpu/baseline/fixture.py",
+      "bytes": 239,
+      "sha256": "df09c4cb11b1f907ffc3bf7d8b993ee3f235ca5ff31b3a8f4663d58b631abcd5"
+    },
+    {
+      "path": "/work/r1-attempt01/results/runner-cpu/baseline/helper.py",
+      "bytes": 466,
+      "sha256": "6ea6c6623f817aaa955d5e95af339b0fccbba390e43a805bec3014f203175ffc"
+    },
+    {
+      "path": "/work/r1-attempt01/results/runner-cpu/baseline/server.py",
+      "bytes": 258,
+      "sha256": "ad5856ab23452e8cc977804634c62f9be3cbfc7df26b50a26a08057738f88720"
+    },
+    {
+      "path": "/work/r1-attempt01/results/runner-cpu/candidate/fixture.py",
+      "bytes": 239,
+      "sha256": "df09c4cb11b1f907ffc3bf7d8b993ee3f235ca5ff31b3a8f4663d58b631abcd5"
+    },
+    {
+      "path": "/work/r1-attempt01/results/runner-cpu/candidate/helper.py",
+      "bytes": 466,
+      "sha256": "6ea6c6623f817aaa955d5e95af339b0fccbba390e43a805bec3014f203175ffc"
+    },
+    {
+      "path": "/work/r1-attempt01/results/runner-cpu/candidate/server.py",
+      "bytes": 258,
+      "sha256": "ad5856ab23452e8cc977804634c62f9be3cbfc7df26b50a26a08057738f88720"
+    },
+    {
+      "path": "/work/r1-attempt02/cpu-validation.py",
+      "bytes": 5563,
+      "sha256": "635feef337f052dc4acf4747a8d2f7d932f90041f3264e6e874afb94171dea17"
+    },
+    {
+      "path": "/work/r1-attempt02/results/runner-cpu/baseline/fixture.py",
+      "bytes": 239,
+      "sha256": "df09c4cb11b1f907ffc3bf7d8b993ee3f235ca5ff31b3a8f4663d58b631abcd5"
+    },
+    {
+      "path": "/work/r1-attempt02/results/runner-cpu/baseline/helper.py",
+      "bytes": 466,
+      "sha256": "6ea6c6623f817aaa955d5e95af339b0fccbba390e43a805bec3014f203175ffc"
+    },
+    {
+      "path": "/work/r1-attempt02/results/runner-cpu/baseline/server.py",
+      "bytes": 258,
+      "sha256": "ad5856ab23452e8cc977804634c62f9be3cbfc7df26b50a26a08057738f88720"
+    },
+    {
+      "path": "/work/r1-attempt02/results/runner-cpu/candidate/fixture.py",
+      "bytes": 239,
+      "sha256": "df09c4cb11b1f907ffc3bf7d8b993ee3f235ca5ff31b3a8f4663d58b631abcd5"
+    },
+    {
+      "path": "/work/r1-attempt02/results/runner-cpu/candidate/helper.py",
+      "bytes": 466,
+      "sha256": "6ea6c6623f817aaa955d5e95af339b0fccbba390e43a805bec3014f203175ffc"
+    },
+    {
+      "path": "/work/r1-attempt02/results/runner-cpu/candidate/server.py",
+      "bytes": 258,
+      "sha256": "ad5856ab23452e8cc977804634c62f9be3cbfc7df26b50a26a08057738f88720"
+    },
+    {
+      "path": "/work/r1-device-watch.py",
+      "bytes": 2182,
+      "sha256": "76c0d163437bb4b4a8bb49aef3a6c19a60798551bf614dc5382cf6c7973fd87f"
+    },
+    {
+      "path": "/work/r1-sdk-preflight/results02/baseline/fixture.py",
+      "bytes": 239,
+      "sha256": "df09c4cb11b1f907ffc3bf7d8b993ee3f235ca5ff31b3a8f4663d58b631abcd5"
+    },
+    {
+      "path": "/work/r1-sdk-preflight/results02/baseline/helper.py",
+      "bytes": 466,
+      "sha256": "6ea6c6623f817aaa955d5e95af339b0fccbba390e43a805bec3014f203175ffc"
+    },
+    {
+      "path": "/work/r1-sdk-preflight/results02/baseline/server.py",
+      "bytes": 258,
+      "sha256": "ad5856ab23452e8cc977804634c62f9be3cbfc7df26b50a26a08057738f88720"
+    },
+    {
+      "path": "/work/r1-sdk-preflight/results02/candidate/fixture.py",
+      "bytes": 239,
+      "sha256": "df09c4cb11b1f907ffc3bf7d8b993ee3f235ca5ff31b3a8f4663d58b631abcd5"
+    },
+    {
+      "path": "/work/r1-sdk-preflight/results02/candidate/helper.py",
+      "bytes": 466,
+      "sha256": "6ea6c6623f817aaa955d5e95af339b0fccbba390e43a805bec3014f203175ffc"
+    },
+    {
+      "path": "/work/r1-sdk-preflight/results02/candidate/server.py",
+      "bytes": 258,
+      "sha256": "ad5856ab23452e8cc977804634c62f9be3cbfc7df26b50a26a08057738f88720"
+    },
+    {
+      "path": "/work/r1-sdk-preflight/source/rsi_cpu_validation.py",
+      "bytes": 5563,
+      "sha256": "635feef337f052dc4acf4747a8d2f7d932f90041f3264e6e874afb94171dea17"
+    },
+    {
+      "path": "/work/r1-validate.py",
+      "bytes": 6583,
+      "sha256": "0cb2063b30a6a34585870741835e697277fa3825683ccf308a6fe0e1cf122313"
+    }
+  ]
+}

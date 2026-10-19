@@ -1,0 +1,24 @@
+{
+  "path": "/work/r1-attempt02/results/runs/20261019T094024Z-391a8d3649/baseline/trial-001",
+  "side": "baseline",
+  "before": {
+    "path": "/work/reference",
+    "available": true,
+    "head": "b4451682abac651f26046f8d27467de3f007e1e7",
+    "git_root": "/work/reference",
+    "dirty": false,
+    "dirty_hash": "098fc404b17cd30c582e11aaf0c10bcccf89561e04925b707fc7490d18877adb",
+    "untracked": [],
+    "snapshot_hash": "eb9427ff51522cef2022e3b2706d385d62369aea43beb0d26b251eaf166749bd"
+  },
+  "after": {
+    "path": "/work/reference",
+    "available": true,
+    "head": "b4451682abac651f26046f8d27467de3f007e1e7",
+    "git_root": "/work/reference",
+    "dirty": false,
+    "dirty_hash": "098fc404b17cd30c582e11aaf0c10bcccf89561e04925b707fc7490d18877adb",
+    "untracked": [],
+    "snapshot_hash": "eb9427ff51522cef2022e3b2706d385d62369aea43beb0d26b251eaf166749bd"
+  }
+}

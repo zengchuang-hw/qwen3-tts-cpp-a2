@@ -1,0 +1,19 @@
+{
+  "status": "completed",
+  "argv": [
+    "/work/venv/bin/python",
+    "/work/r1-attempt01/results/runner-cpu/candidate/fixture.py",
+    "B",
+    "/work/r1-attempt01/results/runner-cpu/order.log"
+  ],
+  "cwd": "/work/r1-attempt01/results/runner-cpu/candidate",
+  "returncode": 0,
+  "result_path": "/work/r1-attempt01/results/runner-cpu/runs/20261019T091728Z-5d993e53b4/candidate/trial-001/result.json",
+  "stdout_path": "/work/r1-attempt01/results/runner-cpu/runs/20261019T091728Z-5d993e53b4/candidate/trial-001/stdout.log",
+  "stderr_path": "/work/r1-attempt01/results/runner-cpu/runs/20261019T091728Z-5d993e53b4/candidate/trial-001/stderr.log",
+  "metric": 120.0,
+  "metric_error": null,
+  "pid": 100746,
+  "process_group_id": 100746,
+  "elapsed_seconds": 0.06531754997558892
+}

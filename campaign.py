@@ -86,7 +86,7 @@ def server_command(args, arm):
     return command
 
 
-def trial(args, arm, target):
+def trial(args, arm, target, *, supervision=None):
     target.mkdir()
     command = server_command(args, arm)
     record = {"arm": arm, "reference_engine": args.reference_engine,
@@ -94,8 +94,13 @@ def trial(args, arm, target):
               "status": "INCONCLUSIVE", "cohorts": []}
     write(target / "lifecycle.json", record)
     with (target / "server.log").open("wb") as log:
-        server = subprocess.Popen(command, cwd=args.reference_root, stdout=log, stderr=log,
-                                  start_new_session=True)
+        if supervision is None:
+            server = subprocess.Popen(command, cwd=args.reference_root, stdout=log, stderr=log,
+                                      start_new_session=True)
+            ownership = None
+        else:
+            server, ownership = supervision.launch_server(command, args.reference_root, None, log)
+            record["process_ownership"] = ownership
         record["server_pid"] = server.pid
         try:
             deadline = time.monotonic() + args.readiness_timeout
@@ -138,7 +143,12 @@ def trial(args, arm, target):
             record["error"] = f"{type(error).__name__}: {error}"
             raise
         finally:
-            if server.poll() is None:
+            if supervision is not None:
+                cleanup = supervision.stop_server(server, ownership, grace_seconds=60)
+                record["cleanup"] = cleanup
+                if cleanup["status"] != "completed":
+                    record["status"] = "FAIL"
+            elif server.poll() is None:
                 os.killpg(server.pid, signal.SIGINT)
                 try:
                     server.wait(timeout=60)

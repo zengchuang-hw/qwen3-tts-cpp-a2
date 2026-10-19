@@ -1,0 +1,36 @@
+{
+  "verdict": "PASS",
+  "reasons": [],
+  "metric_key": "metrics.throughput_frames_s",
+  "metric_unit": "codec_frames/s",
+  "comparison_scope": "http_e2e_C4",
+  "direction": "maximize",
+  "min_improvement_pct": 5.0,
+  "baseline": {
+    "values": [
+      101.94961309226838
+    ],
+    "median": 101.94961309226838,
+    "min": 101.94961309226838,
+    "max": 101.94961309226838,
+    "range_pct_of_median": 0.0
+  },
+  "candidate": {
+    "values": [
+      113.66865646891915
+    ],
+    "median": 113.66865646891915,
+    "min": 113.66865646891915,
+    "max": 113.66865646891915,
+    "range_pct_of_median": 0.0
+  },
+  "improvement_pct": 11.4949365879835,
+  "measurement_method": "Alternating AB/BA sequential trials; median and range are descriptive only.",
+  "quality_contract": "Exit zero covers only the supplied validation command; inspect its logs and coverage.",
+  "source_integrity": {
+    "verified": true,
+    "reason": "Git source snapshots unchanged",
+    "command_checks": 3
+  },
+  "statistical_significance": "not established"
+}

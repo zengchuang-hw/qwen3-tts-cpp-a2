@@ -1,0 +1,3 @@
+{"time": "2026-10-19T08:20:48.046832+00:00", "phase": "source_snapshot"}
+{"time": "2026-10-19T08:20:48.069711+00:00", "phase": "measurement", "side": "baseline", "trial": 1}
+{"time": "2026-10-19T08:20:51.085318+00:00", "phase": "complete", "state": "timeout", "verdict": "INCONCLUSIVE"}

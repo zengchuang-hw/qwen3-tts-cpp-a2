@@ -1,0 +1,146 @@
+[
+  {
+    "file": "validator/cpu-validation-01.py",
+    "raw_sha256": "635feef337f052dc4acf4747a8d2f7d932f90041f3264e6e874afb94171dea17",
+    "git_lf_sha256": "635feef337f052dc4acf4747a8d2f7d932f90041f3264e6e874afb94171dea17",
+    "scope": "actual raw bytes retained in metadata.tar; Git normalizes CRLF"
+  },
+  {
+    "file": "validator/cpu-validation-02.py",
+    "raw_sha256": "635feef337f052dc4acf4747a8d2f7d932f90041f3264e6e874afb94171dea17",
+    "git_lf_sha256": "635feef337f052dc4acf4747a8d2f7d932f90041f3264e6e874afb94171dea17",
+    "scope": "actual raw bytes retained in metadata.tar; Git normalizes CRLF"
+  },
+  {
+    "file": "validator/r1-archive.py",
+    "raw_sha256": "12058a458c23f9d007227b80a2556542f89361407a82c3f726b3955e8429b7d0",
+    "git_lf_sha256": "12058a458c23f9d007227b80a2556542f89361407a82c3f726b3955e8429b7d0",
+    "scope": "actual raw bytes retained in metadata.tar; Git normalizes CRLF"
+  },
+  {
+    "file": "validator/r1-device-watch.py",
+    "raw_sha256": "76c0d163437bb4b4a8bb49aef3a6c19a60798551bf614dc5382cf6c7973fd87f",
+    "git_lf_sha256": "2d708ae5957107f5723cc8ee47285f7517dc434fe93bfd57e6720d147fba2ecb",
+    "scope": "actual raw bytes retained in metadata.tar; Git normalizes CRLF"
+  },
+  {
+    "file": "validator/r1-validate.py",
+    "raw_sha256": "0cb2063b30a6a34585870741835e697277fa3825683ccf308a6fe0e1cf122313",
+    "git_lf_sha256": "2887ec5f53b36ec865b07936a260ea969ce5b9dd11bce8e0e129e7c709a790ef",
+    "scope": "actual raw bytes retained in metadata.tar; Git normalizes CRLF"
+  },
+  {
+    "file": "results/attempt-01/results/runner-cpu/baseline/fixture.py",
+    "raw_sha256": "df09c4cb11b1f907ffc3bf7d8b993ee3f235ca5ff31b3a8f4663d58b631abcd5",
+    "git_lf_sha256": "df09c4cb11b1f907ffc3bf7d8b993ee3f235ca5ff31b3a8f4663d58b631abcd5",
+    "scope": "actual raw bytes retained in metadata.tar; Git normalizes CRLF"
+  },
+  {
+    "file": "results/attempt-01/results/runner-cpu/baseline/helper.py",
+    "raw_sha256": "6ea6c6623f817aaa955d5e95af339b0fccbba390e43a805bec3014f203175ffc",
+    "git_lf_sha256": "6ea6c6623f817aaa955d5e95af339b0fccbba390e43a805bec3014f203175ffc",
+    "scope": "actual raw bytes retained in metadata.tar; Git normalizes CRLF"
+  },
+  {
+    "file": "results/attempt-01/results/runner-cpu/baseline/server.py",
+    "raw_sha256": "ad5856ab23452e8cc977804634c62f9be3cbfc7df26b50a26a08057738f88720",
+    "git_lf_sha256": "ad5856ab23452e8cc977804634c62f9be3cbfc7df26b50a26a08057738f88720",
+    "scope": "actual raw bytes retained in metadata.tar; Git normalizes CRLF"
+  },
+  {
+    "file": "results/attempt-01/results/runner-cpu/candidate/fixture.py",
+    "raw_sha256": "df09c4cb11b1f907ffc3bf7d8b993ee3f235ca5ff31b3a8f4663d58b631abcd5",
+    "git_lf_sha256": "df09c4cb11b1f907ffc3bf7d8b993ee3f235ca5ff31b3a8f4663d58b631abcd5",
+    "scope": "actual raw bytes retained in metadata.tar; Git normalizes CRLF"
+  },
+  {
+    "file": "results/attempt-01/results/runner-cpu/candidate/helper.py",
+    "raw_sha256": "6ea6c6623f817aaa955d5e95af339b0fccbba390e43a805bec3014f203175ffc",
+    "git_lf_sha256": "6ea6c6623f817aaa955d5e95af339b0fccbba390e43a805bec3014f203175ffc",
+    "scope": "actual raw bytes retained in metadata.tar; Git normalizes CRLF"
+  },
+  {
+    "file": "results/attempt-01/results/runner-cpu/candidate/server.py",
+    "raw_sha256": "ad5856ab23452e8cc977804634c62f9be3cbfc7df26b50a26a08057738f88720",
+    "git_lf_sha256": "ad5856ab23452e8cc977804634c62f9be3cbfc7df26b50a26a08057738f88720",
+    "scope": "actual raw bytes retained in metadata.tar; Git normalizes CRLF"
+  },
+  {
+    "file": "results/attempt-02/results/runner-cpu/baseline/fixture.py",
+    "raw_sha256": "df09c4cb11b1f907ffc3bf7d8b993ee3f235ca5ff31b3a8f4663d58b631abcd5",
+    "git_lf_sha256": "df09c4cb11b1f907ffc3bf7d8b993ee3f235ca5ff31b3a8f4663d58b631abcd5",
+    "scope": "actual raw bytes retained in metadata.tar; Git normalizes CRLF"
+  },
+  {
+    "file": "results/attempt-02/results/runner-cpu/baseline/helper.py",
+    "raw_sha256": "6ea6c6623f817aaa955d5e95af339b0fccbba390e43a805bec3014f203175ffc",
+    "git_lf_sha256": "6ea6c6623f817aaa955d5e95af339b0fccbba390e43a805bec3014f203175ffc",
+    "scope": "actual raw bytes retained in metadata.tar; Git normalizes CRLF"
+  },
+  {
+    "file": "results/attempt-02/results/runner-cpu/baseline/server.py",
+    "raw_sha256": "ad5856ab23452e8cc977804634c62f9be3cbfc7df26b50a26a08057738f88720",
+    "git_lf_sha256": "ad5856ab23452e8cc977804634c62f9be3cbfc7df26b50a26a08057738f88720",
+    "scope": "actual raw bytes retained in metadata.tar; Git normalizes CRLF"
+  },
+  {
+    "file": "results/attempt-02/results/runner-cpu/candidate/fixture.py",
+    "raw_sha256": "df09c4cb11b1f907ffc3bf7d8b993ee3f235ca5ff31b3a8f4663d58b631abcd5",
+    "git_lf_sha256": "df09c4cb11b1f907ffc3bf7d8b993ee3f235ca5ff31b3a8f4663d58b631abcd5",
+    "scope": "actual raw bytes retained in metadata.tar; Git normalizes CRLF"
+  },
+  {
+    "file": "results/attempt-02/results/runner-cpu/candidate/helper.py",
+    "raw_sha256": "6ea6c6623f817aaa955d5e95af339b0fccbba390e43a805bec3014f203175ffc",
+    "git_lf_sha256": "6ea6c6623f817aaa955d5e95af339b0fccbba390e43a805bec3014f203175ffc",
+    "scope": "actual raw bytes retained in metadata.tar; Git normalizes CRLF"
+  },
+  {
+    "file": "results/attempt-02/results/runner-cpu/candidate/server.py",
+    "raw_sha256": "ad5856ab23452e8cc977804634c62f9be3cbfc7df26b50a26a08057738f88720",
+    "git_lf_sha256": "ad5856ab23452e8cc977804634c62f9be3cbfc7df26b50a26a08057738f88720",
+    "scope": "actual raw bytes retained in metadata.tar; Git normalizes CRLF"
+  },
+  {
+    "file": "results/sdk-preflight/source/rsi_cpu_validation.py",
+    "raw_sha256": "635feef337f052dc4acf4747a8d2f7d932f90041f3264e6e874afb94171dea17",
+    "git_lf_sha256": "635feef337f052dc4acf4747a8d2f7d932f90041f3264e6e874afb94171dea17",
+    "scope": "actual raw bytes retained in metadata.tar; Git normalizes CRLF"
+  },
+  {
+    "file": "results/sdk-preflight/results02/baseline/fixture.py",
+    "raw_sha256": "df09c4cb11b1f907ffc3bf7d8b993ee3f235ca5ff31b3a8f4663d58b631abcd5",
+    "git_lf_sha256": "df09c4cb11b1f907ffc3bf7d8b993ee3f235ca5ff31b3a8f4663d58b631abcd5",
+    "scope": "actual raw bytes retained in metadata.tar; Git normalizes CRLF"
+  },
+  {
+    "file": "results/sdk-preflight/results02/baseline/helper.py",
+    "raw_sha256": "6ea6c6623f817aaa955d5e95af339b0fccbba390e43a805bec3014f203175ffc",
+    "git_lf_sha256": "6ea6c6623f817aaa955d5e95af339b0fccbba390e43a805bec3014f203175ffc",
+    "scope": "actual raw bytes retained in metadata.tar; Git normalizes CRLF"
+  },
+  {
+    "file": "results/sdk-preflight/results02/baseline/server.py",
+    "raw_sha256": "ad5856ab23452e8cc977804634c62f9be3cbfc7df26b50a26a08057738f88720",
+    "git_lf_sha256": "ad5856ab23452e8cc977804634c62f9be3cbfc7df26b50a26a08057738f88720",
+    "scope": "actual raw bytes retained in metadata.tar; Git normalizes CRLF"
+  },
+  {
+    "file": "results/sdk-preflight/results02/candidate/fixture.py",
+    "raw_sha256": "df09c4cb11b1f907ffc3bf7d8b993ee3f235ca5ff31b3a8f4663d58b631abcd5",
+    "git_lf_sha256": "df09c4cb11b1f907ffc3bf7d8b993ee3f235ca5ff31b3a8f4663d58b631abcd5",
+    "scope": "actual raw bytes retained in metadata.tar; Git normalizes CRLF"
+  },
+  {
+    "file": "results/sdk-preflight/results02/candidate/helper.py",
+    "raw_sha256": "6ea6c6623f817aaa955d5e95af339b0fccbba390e43a805bec3014f203175ffc",
+    "git_lf_sha256": "6ea6c6623f817aaa955d5e95af339b0fccbba390e43a805bec3014f203175ffc",
+    "scope": "actual raw bytes retained in metadata.tar; Git normalizes CRLF"
+  },
+  {
+    "file": "results/sdk-preflight/results02/candidate/server.py",
+    "raw_sha256": "ad5856ab23452e8cc977804634c62f9be3cbfc7df26b50a26a08057738f88720",
+    "git_lf_sha256": "ad5856ab23452e8cc977804634c62f9be3cbfc7df26b50a26a08057738f88720",
+    "scope": "actual raw bytes retained in metadata.tar; Git normalizes CRLF"
+  }
+]
