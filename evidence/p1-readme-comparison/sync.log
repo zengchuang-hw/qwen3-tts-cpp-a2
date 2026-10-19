@@ -1,0 +1,61 @@
+[a2-sync] C:/Users/Administrator/AppData/Local/Temp/qtts-p1-source -> zhuangzeliang@8.92.7.131:/home/zhuangzeliang/zc/qwen3-tts-cpp-20261019/p1-readme/source
+
+Authorized users only. All activities may be monitored and reported.
+tar: ./.gitattributes: time stamp 2026-10-19 19:03:44 is 92.61716613 s in the future
+tar: ./.github/pull_request_template.md: time stamp 2026-10-19 19:03:44 is 92.61697288 s in the future
+tar: ./.github/workflows/cpu.yml: time stamp 2026-10-19 19:03:44 is 92.61683761 s in the future
+tar: ./.github/workflows: time stamp 2026-10-19 19:03:44 is 92.61681431 s in the future
+tar: ./.github: time stamp 2026-10-19 19:03:44 is 92.61680378 s in the future
+tar: ./.gitignore: time stamp 2026-10-19 19:03:44 is 92.61677469 s in the future
+tar: ./AGENTS.md: time stamp 2026-10-19 19:03:44 is 92.61673211 s in the future
+tar: ./assess.py: time stamp 2026-10-19 19:03:45 is 93.61669454 s in the future
+tar: ./campaign.py: time stamp 2026-10-19 19:03:45 is 93.61663932 s in the future
+tar: ./cli_bootstrap.py: time stamp 2026-10-19 19:03:45 is 93.61660716 s in the future
+tar: ./CMakeLists.txt: time stamp 2026-10-19 19:03:44 is 92.61657448 s in the future
+tar: ./data/q1-models.json: time stamp 2026-10-19 19:03:45 is 93.61642639 s in the future
+tar: ./data: time stamp 2026-10-19 19:03:45 is 93.61640644 s in the future
+tar: ./docs/iterations/c001-review.md: time stamp 2026-10-19 19:03:45 is 93.61619421 s in the future
+tar: ./docs/iterations/c001.md: time stamp 2026-10-19 19:03:45 is 93.61614315 s in the future
+tar: ./docs/iterations/c002.md: time stamp 2026-10-19 19:03:45 is 93.61610569 s in the future
+tar: ./docs/iterations/c003.md: time stamp 2026-10-19 19:03:45 is 93.61606284 s in the future
+tar: ./docs/iterations/c004.md: time stamp 2026-10-19 19:03:45 is 93.61602975 s in the future
+tar: ./docs/iterations/c005.md: time stamp 2026-10-19 19:03:45 is 93.61598765 s in the future
+tar: ./docs/iterations/p1.md: time stamp 2026-10-19 19:03:45 is 93.61595127 s in the future
+tar: ./docs/iterations/q1.md: time stamp 2026-10-19 19:03:45 is 93.61590844 s in the future
+tar: ./docs/iterations/r1.md: time stamp 2026-10-19 19:03:45 is 93.61587524 s in the future
+tar: ./docs/iterations: time stamp 2026-10-19 19:03:45 is 93.61585952 s in the future
+tar: ./docs/plan.md: time stamp 2026-10-19 19:03:45 is 93.6158248 s in the future
+tar: ./docs/pr-review-checklist.md: time stamp 2026-10-19 19:03:45 is 93.6157905 s in the future
+tar: ./docs: time stamp 2026-10-19 19:03:45 is 93.61577217 s in the future
+tar: ./graph_model.py: time stamp 2026-10-19 19:03:45 is 93.61572459 s in the future
+tar: ./LICENSE: time stamp 2026-10-19 19:03:45 is 93.61567969 s in the future
+tar: ./native/main.cpp: time stamp 2026-10-19 19:03:45 is 93.61554326 s in the future
+tar: ./native/runtime.cpp: time stamp 2026-10-19 19:03:45 is 93.61548994 s in the future
+tar: ./native/runtime_api.h: time stamp 2026-10-19 19:03:45 is 93.61545359 s in the future
+tar: ./native: time stamp 2026-10-19 19:03:45 is 93.61543722 s in the future
+tar: ./NOTICE.md: time stamp 2026-10-19 19:03:45 is 93.61540482 s in the future
+tar: ./predictor_rope.py: time stamp 2026-10-19 19:03:45 is 93.61536341 s in the future
+tar: ./probe.py: time stamp 2026-10-19 19:03:45 is 93.6153192 s in the future
+tar: ./profile_native.py: time stamp 2026-10-19 19:03:45 is 93.61528409 s in the future
+tar: ./quality_core.py: time stamp 2026-10-19 19:03:46 is 94.61523235 s in the future
+tar: ./README.md: time stamp 2026-10-19 19:03:45 is 93.61518168 s in the future
+tar: ./requirements-a2.txt: time stamp 2026-10-19 19:03:46 is 94.61514705 s in the future
+tar: ./rope_probe.py: time stamp 2026-10-19 19:03:46 is 94.61510634 s in the future
+tar: ./rotary_policy.py: time stamp 2026-10-19 19:03:46 is 94.61507212 s in the future
+tar: ./rsi.py: time stamp 2026-10-19 19:03:46 is 94.61502477 s in the future
+tar: ./serve.py: time stamp 2026-10-19 19:03:46 is 94.61498462 s in the future
+tar: ./source-manifest.json: time stamp 2026-10-19 19:03:46 is 94.6149474 s in the future
+tar: ./speech_quality.py: time stamp 2026-10-19 19:03:46 is 94.61489348 s in the future
+tar: ./speech_scorer.py: time stamp 2026-10-19 19:03:46 is 94.61485292 s in the future
+tar: ./tests/test_evidence_contracts.py: time stamp 2026-10-19 19:03:46 is 94.61470253 s in the future
+tar: ./tests/test_quality_contracts.py: time stamp 2026-10-19 19:03:46 is 94.61465244 s in the future
+tar: ./tests/test_rsi_adapter.py: time stamp 2026-10-19 19:03:46 is 94.61460846 s in the future
+tar: ./tests: time stamp 2026-10-19 19:03:46 is 94.6145881 s in the future
+tar: ./test_native_state.py: time stamp 2026-10-19 19:03:46 is 94.61455074 s in the future
+tar: ./tiling_probe.py: time stamp 2026-10-19 19:03:46 is 94.61449774 s in the future
+tar: .: time stamp 2026-10-19 19:03:46 is 94.61447348 s in the future
+
+Authorized users only. All activities may be monitored and reported.
+
+Authorized users only. All activities may be monitored and reported.
+[a2-sync] OK (local HEAD baa5fe5, README.md md5 8cfb3666fc1794972ea19f10db20966e)

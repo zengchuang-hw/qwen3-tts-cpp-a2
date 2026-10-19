@@ -1,0 +1,21 @@
+{
+  "tested_commit": "baa5fe5d5768a2e87acb84132fbf753d3af79b79",
+  "source_files_unchanged": 44,
+  "uploaded_scripts": {
+    "validation/runner.py": {
+      "raw_sha256": "919e84916cef63f310dc1c21d2d91f5b75286dacbffbdc2639b4fe312d2a1478",
+      "canonical_sha256": "919e84916cef63f310dc1c21d2d91f5b75286dacbffbdc2639b4fe312d2a1478",
+      "normalization": "none"
+    },
+    "validation/validator.py": {
+      "raw_sha256": "66e39a3b4a2110e64be80ff5a741e2ac07ee8550dd12fc760fc35bf8e0515e95",
+      "canonical_sha256": "66e39a3b4a2110e64be80ff5a741e2ac07ee8550dd12fc760fc35bf8e0515e95",
+      "normalization": "none"
+    }
+  },
+  "tracked_publication_scan": {
+    "files_checked": 1209,
+    "matched_token_or_private_key_patterns": 0,
+    "scope": "limited pattern check of tracked files; not a comprehensive security audit"
+  }
+}
