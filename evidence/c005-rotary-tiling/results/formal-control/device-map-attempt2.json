@@ -1,0 +1,5 @@
+{
+  "scope": "metadata collection only",
+  "actual_exit": 1,
+  "error": "lifecycle starts before server_pid is persisted; collector now handles this initial state explicitly"
+}

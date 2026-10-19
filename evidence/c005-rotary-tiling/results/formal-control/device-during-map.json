@@ -1,0 +1,46 @@
+{
+  "scope": "actual live process mapping only; no profiler or performance measurement",
+  "status": "MAPPED",
+  "physical_device": 3,
+  "time_utc": "2026-10-19T06:43:51.773361+00:00",
+  "active_trials": [
+    {
+      "trial": "r3-native",
+      "container_pid": null,
+      "command": [
+        "/work/venv/bin/python",
+        "/work/c005-selected/source/serve.py",
+        "--reference-root",
+        "/work/reference",
+        "--native-build",
+        "/work/c005-selected/build",
+        "--model",
+        "/model",
+        "--port",
+        "8199",
+        "--max-batch-size",
+        "64",
+        "--prewarm-decode",
+        "--predictor-rope",
+        "paired",
+        "--audio-delivery",
+        "inline",
+        "--rotary-head-tile",
+        "auto"
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "host_pid": 2015715,
+      "namespace_pids": [
+        2015715,
+        89884
+      ],
+      "matched_trials": [
+        "r3-native"
+      ],
+      "argv_readable": true
+    }
+  ]
+}

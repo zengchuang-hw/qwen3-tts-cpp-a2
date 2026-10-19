@@ -1,0 +1,50 @@
+{
+  "status": "INCONCLUSIVE",
+  "scope": "development complete-model probe",
+  "engine": "reference",
+  "records": [
+    {
+      "id": 0,
+      "pcm_sha256": "cf44a9cecfd27f48710aa0befecf36272e5714793585da0b84649925e66eceeb",
+      "pcm_bytes": 88320,
+      "frames": 23,
+      "first_audio_seconds": 0.992383309872821,
+      "elapsed_seconds": 1.4256827298086137,
+      "finish_reason": "stop"
+    },
+    {
+      "id": 1,
+      "pcm_sha256": "926a3bf5a53f89c2746c13af9a70f7cfc1966ab2584b4fc3910d98c054e33bb9",
+      "pcm_bytes": 161280,
+      "frames": 42,
+      "first_audio_seconds": 0.9924374299589545,
+      "elapsed_seconds": 1.8333996799774468,
+      "finish_reason": "stop"
+    },
+    {
+      "id": 64,
+      "pcm_sha256": "c077afd10a9804f6650a257b8dd377cd0a96a7dd069f871e0ce2dec23ff42d3f",
+      "pcm_bytes": 264960,
+      "frames": 69,
+      "first_audio_seconds": 0.9924744400195777,
+      "elapsed_seconds": 3.0454237000085413,
+      "finish_reason": "stop"
+    },
+    {
+      "id": 65,
+      "pcm_sha256": "0b63e4a7767247c799753bca06c3a8fc8aefb29008379a068c64cdbebb7a5935",
+      "pcm_bytes": 295680,
+      "frames": 77,
+      "first_audio_seconds": 0.9925073699560016,
+      "elapsed_seconds": 3.831025159917772,
+      "finish_reason": "stop"
+    }
+  ],
+  "wall_seconds": 3.8311151498928666,
+  "cancel_and_reuse": false,
+  "quality": "NOT_SCORED",
+  "performance_acceptance": "NOT_EVALUATED",
+  "audio_delivery": "reference",
+  "callback_checks": [],
+  "rejected_callback_mutations": []
+}

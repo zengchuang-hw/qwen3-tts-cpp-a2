@@ -1,0 +1,5 @@
+{
+  "scope": "metadata collection only",
+  "actual_exit": 1,
+  "error": "host user cannot write root-owned formal directory; retried in owned parent; no model/run change"
+}

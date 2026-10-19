@@ -1,0 +1,14 @@
+{
+  "requests": 128,
+  "successful_requests": 128,
+  "failed_requests": 0,
+  "wall_seconds": 49.362018570071086,
+  "throughput_frames_s": 158.3808812215019,
+  "ttfa_p50_ms": 83.64778512623161,
+  "ttfa_p95_ms": 102.02484701294452,
+  "rtf_mean": 0.3131517552348612,
+  "request_completion_pass": true,
+  "quality": "NOT_EVALUATED",
+  "server_lifecycle": "NOT_EVALUATED",
+  "status": "INCONCLUSIVE"
+}
