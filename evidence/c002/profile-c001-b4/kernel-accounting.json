@@ -1,0 +1,184 @@
+{
+  "status": "DIAGNOSTIC_ONLY",
+  "warning": "Profiler RECORD-stop warning; kernel accounting is not throughput or critical-path attribution",
+  "total_kernel_us": 282681.08,
+  "top_kernels": [
+    {
+      "name": "aclnnMatmul_MatMulCommon_MatMulV2",
+      "us": 90151.14,
+      "calls": 6962
+    },
+    {
+      "name": "RmsNorm",
+      "us": 43489.24,
+      "calls": 6848
+    },
+    {
+      "name": "FusedInferAttentionScore",
+      "us": 40596.72,
+      "calls": 1648
+    },
+    {
+      "name": "aclnnRotaryPositionEmbeddingV2_RotaryPositionEmbedding_RotaryPositionEmbedding",
+      "us": 22507.42,
+      "calls": 2400
+    },
+    {
+      "name": "aclnnCat_ConcatD_ConcatD",
+      "us": 7847.14,
+      "calls": 2660
+    },
+    {
+      "name": "aclnnAdd_AddAiCore_Add",
+      "us": 7516.92,
+      "calls": 3500
+    },
+    {
+      "name": "SwiGlu",
+      "us": 7151.38,
+      "calls": 1648
+    },
+    {
+      "name": "_snake_tiled",
+      "us": 6135.62,
+      "calls": 58
+    },
+    {
+      "name": "aclnnContiguous_SliceAiCore_Slice",
+      "us": 5028.8,
+      "calls": 3296
+    },
+    {
+      "name": "ScatterElements",
+      "us": 3528.16,
+      "calls": 32
+    },
+    {
+      "name": "aclnnConvolution_TransData_TransData",
+      "us": 3167.74,
+      "calls": 218
+    },
+    {
+      "name": "aclnnCumsum_CumsumAiCore_MemSet",
+      "us": 2958.46,
+      "calls": 256
+    },
+    {
+      "name": "aclnnAddmm_MatMulCommon_MatMulV2",
+      "us": 2675.62,
+      "calls": 250
+    },
+    {
+      "name": "aclnnInplaceCopy_CastAiCore_Cast",
+      "us": 2606.08,
+      "calls": 1662
+    },
+    {
+      "name": "aclnnLtTensor_LessAiCore_Less",
+      "us": 2386.2,
+      "calls": 256
+    },
+    {
+      "name": "_rotary",
+      "us": 2223.5,
+      "calls": 896
+    },
+    {
+      "name": "aclnnInplaceCopy_TransposeAiCore_Transpose",
+      "us": 2145.82,
+      "calls": 184
+    },
+    {
+      "name": "aclnnConvolution_ConvTranspose2dWithFlag_Conv2DTranspose",
+      "us": 2027.84,
+      "calls": 12
+    },
+    {
+      "name": "aclnnCat_TransposeAiCore_Transpose",
+      "us": 2024.3,
+      "calls": 164
+    },
+    {
+      "name": "aclnnTopk_TopkV2AiCore_TopKV2",
+      "us": 2003.76,
+      "calls": 256
+    },
+    {
+      "name": "aclnnCumsum_CumsumAiCore_Cumsum",
+      "us": 1842.8,
+      "calls": 256
+    },
+    {
+      "name": "aclnnCat_SliceAiCore_Slice",
+      "us": 1830.46,
+      "calls": 1152
+    },
+    {
+      "name": "aclnnConvolution_Conv2dWithFlag_Conv2D",
+      "us": 1608.44,
+      "calls": 62
+    },
+    {
+      "name": "aclnnSoftmax_SoftmaxAiCore_SoftmaxV2",
+      "us": 1307.64,
+      "calls": 256
+    },
+    {
+      "name": "aclnnEmbedding_GatherV2AiCore_GatherV2",
+      "us": 1255.0,
+      "calls": 512
+    }
+  ],
+  "index_kernels": [
+    {
+      "name": "aclnnIndex_IndexCheck_IndexCheck",
+      "us": 149.46,
+      "calls": 48
+    },
+    {
+      "name": "aclnnIndex_IndexAiCore_Index",
+      "us": 352.26,
+      "calls": 48
+    },
+    {
+      "name": "aclnnEmbedding_GatherV2AiCore_GatherV2",
+      "us": 1255.0,
+      "calls": 512
+    },
+    {
+      "name": "aclnnIndex_StridedSliceAiCore_StridedSlice",
+      "us": 183.66,
+      "calls": 16
+    },
+    {
+      "name": "aclnnScatterValue_BroadcastToAiCore_BroadcastTo",
+      "us": 16.86,
+      "calls": 16
+    },
+    {
+      "name": "ScatterElements",
+      "us": 3528.16,
+      "calls": 32
+    },
+    {
+      "name": "aclnnInplaceScatter_BroadcastToAiCore_BroadcastTo",
+      "us": 33.3,
+      "calls": 16
+    },
+    {
+      "name": "aclnnIndexSelect_GatherV3AiCore_GatherV3",
+      "us": 281.74,
+      "calls": 76
+    },
+    {
+      "name": "aclnnInplaceIndexCopy_ScatterUpdateAiCore_ScatterUpdate",
+      "us": 400.52,
+      "calls": 76
+    },
+    {
+      "name": "aclnnInplaceIndexCopy_SliceAiCore_Slice",
+      "us": 78.98,
+      "calls": 32
+    }
+  ]
+}

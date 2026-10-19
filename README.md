@@ -85,6 +85,10 @@ command JSON is imported provenance, not a user configuration entrypoint.
 
 ## Iteration record
 
-See [C001](docs/iterations/c001.md). CPU evidence tests run with
+See [C001](docs/iterations/c001.md) and [C002](docs/iterations/c002.md).
+The optimized rotary path is explicitly selected with `--predictor-rope paired`
+on `serve.py`, `qtts`, `probe.py` and `campaign.py`; default `native` retains
+the control. The formal gate uses all seven concurrency levels and three pairs.
+CPU evidence tests run with
 `python -m unittest discover -s tests -v`; compiled ownership tests require the
 A2-built extension and run separately with `test_native_state.py -v`.

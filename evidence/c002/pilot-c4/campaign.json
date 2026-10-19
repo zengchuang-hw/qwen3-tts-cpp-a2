@@ -1,0 +1,8 @@
+{
+  "status": "INCONCLUSIVE",
+  "quality": "NOT_SCORED",
+  "completed": [
+    "r1-reference",
+    "r1-native"
+  ]
+}
