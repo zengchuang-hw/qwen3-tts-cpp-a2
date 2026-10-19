@@ -1,0 +1,12 @@
+r1-reference C4 completed
+r1-reference C16 completed
+r1-native C4 completed
+r1-native C16 completed
+Traceback (most recent call last):
+  File "/work/c007/source/campaign.py", line 220, in <module>
+    main()
+  File "/work/c007/source/campaign.py", line 203, in main
+    trial(args, arm, args.output / name)
+  File "/work/c007/source/campaign.py", line 153, in trial
+    raise RuntimeError("server did not complete and shut down cleanly")
+RuntimeError: server did not complete and shut down cleanly

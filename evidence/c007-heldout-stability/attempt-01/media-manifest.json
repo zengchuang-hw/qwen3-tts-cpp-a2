@@ -1,0 +1,8 @@
+{
+  "path": "/work/c007/audio-artifacts.tar",
+  "host_path": "/home/zhuangzeliang/zc/qwen3-tts-cpp-20261019/c007/audio-artifacts.tar",
+  "bytes": 67461120,
+  "sha256": "413766a6d6a6aa04f5fea367300c4534ca322a1851d714dc8c8b1de22ecacc0d",
+  "wav_files": 168,
+  "cancelled_pcm_prefix_files": 0
+}

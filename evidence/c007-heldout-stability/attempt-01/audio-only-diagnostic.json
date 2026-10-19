@@ -1,0 +1,90 @@
+{
+  "overall_status": "FAIL",
+  "scope": "post-failure audio-only diagnosis; does not waive server exit or score perceptual quality",
+  "reference_exit": 0,
+  "native_exit": -9,
+  "C4_exact": 32,
+  "C16_exact": 24,
+  "mismatches": [
+    {
+      "c": 16,
+      "index": "00013",
+      "ref_frames": 77,
+      "native_frames": 77,
+      "first_different_sample": 3373,
+      "first_different_codec_frame": 1,
+      "different_samples_in_common_span": 5721,
+      "max_abs_sample_difference_in_common_span": 64
+    },
+    {
+      "c": 16,
+      "index": "00015",
+      "ref_frames": 165,
+      "native_frames": 165,
+      "first_different_sample": 2895,
+      "first_different_codec_frame": 1,
+      "different_samples_in_common_span": 5080,
+      "max_abs_sample_difference_in_common_span": 80
+    },
+    {
+      "c": 16,
+      "index": "00017",
+      "ref_frames": 44,
+      "native_frames": 44,
+      "first_different_sample": 72963,
+      "first_different_codec_frame": 38,
+      "different_samples_in_common_span": 5878,
+      "max_abs_sample_difference_in_common_span": 128
+    },
+    {
+      "c": 16,
+      "index": "00018",
+      "ref_frames": 88,
+      "native_frames": 88,
+      "first_different_sample": 30720,
+      "first_different_codec_frame": 16,
+      "different_samples_in_common_span": 43338,
+      "max_abs_sample_difference_in_common_span": 320
+    },
+    {
+      "c": 16,
+      "index": "00021",
+      "ref_frames": 42,
+      "native_frames": 42,
+      "first_different_sample": 16810,
+      "first_different_codec_frame": 8,
+      "different_samples_in_common_span": 6102,
+      "max_abs_sample_difference_in_common_span": 224
+    },
+    {
+      "c": 16,
+      "index": "00024",
+      "ref_frames": 78,
+      "native_frames": 78,
+      "first_different_sample": 21128,
+      "first_different_codec_frame": 11,
+      "different_samples_in_common_span": 43850,
+      "max_abs_sample_difference_in_common_span": 224
+    },
+    {
+      "c": 16,
+      "index": "00025",
+      "ref_frames": 73,
+      "native_frames": 73,
+      "first_different_sample": 46093,
+      "first_different_codec_frame": 24,
+      "different_samples_in_common_span": 56870,
+      "max_abs_sample_difference_in_common_span": 256
+    },
+    {
+      "c": 16,
+      "index": "00031",
+      "ref_frames": 187,
+      "native_frames": 187,
+      "first_different_sample": 17775,
+      "first_different_codec_frame": 9,
+      "different_samples_in_common_span": 9854,
+      "max_abs_sample_difference_in_common_span": 72
+    }
+  ]
+}
