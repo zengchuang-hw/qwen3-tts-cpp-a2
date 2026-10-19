@@ -84,7 +84,8 @@ class SpeechScorer:
                 sequence = self.asr.generate(
                     **inputs, decoder_input_ids=torch.tensor([prefix]), language=lang, task='transcribe',
                     return_timestamps=False, do_sample=False, num_beams=1,
-                    max_new_tokens=ASR_NEW_TOKENS, return_dict_in_generate=False)[0].tolist()
+                    max_new_tokens=ASR_NEW_TOKENS, return_dict_in_generate=True,
+                    output_scores=False).sequences[0].tolist()
                 if sequence[:4] != prefix:
                     raise ValueError('Whisper language/task prefix changed')
                 generated = sequence[4:]

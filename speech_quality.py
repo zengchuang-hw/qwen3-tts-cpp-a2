@@ -13,7 +13,7 @@ import time
 
 from assess import EvidenceViolation, audit_cohort
 from campaign import runtime_identity, source_identity
-from quality_core import (MODEL_REVISIONS, PROTOCOL, audit_score, compare_group, sha256)
+from quality_core import (MODEL_REVISIONS, PROTOCOL, audit_boundary, audit_score, compare_group, sha256)
 from serve import load_reference
 
 ROOT = Path(__file__).resolve().parent
@@ -146,13 +146,8 @@ def score(args):
     lock = checked_lock(args.freeze)
     boundary, terminal = read(args.boundary), read(str(args.boundary) + '.terminal.json')
     digest = sha256(args.freeze)
-    if (boundary['status'] != 'STARTED' or boundary['protocol'] != PROTOCOL
-            or boundary['lock_sha256'] != digest or terminal['boundary_sha256'] != sha256(args.boundary)
-            or terminal['identity_unchanged'] is not True or terminal['lock_sha256'] != digest
-            or boundary['run'] != str(args.run.resolve())
-            or not lock['frozen_unix_ns'] < boundary['started_unix_ns'] < terminal['finished_unix_ns']
-            or (args.run / 'runspec.json').stat().st_mtime_ns < boundary['started_unix_ns']):
-        raise ValueError('missing or inconsistent pre-generation boundary')
+    audit_boundary(lock, boundary, terminal, digest, sha256(args.boundary), str(args.run.resolve()),
+                   (args.run / 'runspec.json').stat().st_mtime_ns)
     spec = read(args.run / 'runspec.json')
     if (spec['workload_sha256'] != lock['identity']['workload_sha256']
             or spec['reference_engine'] != 'upstream'

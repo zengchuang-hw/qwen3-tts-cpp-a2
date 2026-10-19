@@ -8,7 +8,7 @@ import sys
 import tempfile
 import unittest
 
-from quality_core import (ASR_NEW_TOKENS, MODEL_REVISIONS, PROTOCOL, audit_score,
+from quality_core import (ASR_NEW_TOKENS, MODEL_REVISIONS, PROTOCOL, audit_boundary, audit_score,
                           compare_group, edit_distance, units, windows)
 from speech_quality import assets, workload_rows
 
@@ -16,13 +16,31 @@ from speech_quality import assets, workload_rows
 def record():
     return {'status': 'SCORED', 'protocol': PROTOCOL, 'models': MODEL_REVISIONS.copy(),
             'lock_sha256': 'lock', 'pcm_sha256': 'pcm', 'language': 'English', 'samples_16k': 16000,
-            'asr': [{'start': 0, 'end': 16000, 'prefix': [1, 2, 3, 4],
-                     'generated_tokens': [5, 6], 'eos_token_id': 6, 'transcript': 'actual transcript'}],
+            'pcm_bytes': 48000,
+            'asr': [{'start': 0, 'end': 16000, 'prefix': [50258, 50259, 50359, 50363],
+                     'generated_tokens': [5, 50257], 'eos_token_id': 50257, 'transcript': 'actual transcript'}],
             'speaker': [{'start': 0, 'end': 16000, 'real_samples': 16000,
                          'embedding': [1.0] + [0.0] * 511}]}
 
 
 class QualityContracts(unittest.TestCase):
+    def test_old_audio_and_mismatched_generation_boundary_never_pass(self):
+        lock = {'frozen_unix_ns': 10}
+        boundary = {'status': 'STARTED', 'protocol': PROTOCOL, 'lock_sha256': 'L',
+                    'run': 'new-run', 'started_unix_ns': 20}
+        terminal = {'lock_sha256': 'L', 'boundary_sha256': 'B',
+                    'identity_unchanged': True, 'finished_unix_ns': 30}
+        audit_boundary(lock, boundary, terminal, 'L', 'B', 'new-run', 21)
+        for mtime in (1, 19):
+            with self.assertRaises(ValueError):
+                audit_boundary(lock, boundary, terminal, 'L', 'B', 'new-run', mtime)
+        for key, value in (('lock_sha256', 'other'), ('identity_unchanged', False), ('finished_unix_ns', 10)):
+            changed = {**terminal, key: value}
+            with self.assertRaises(ValueError):
+                audit_boundary(lock, boundary, changed, 'L', 'B', 'new-run', 21)
+        with self.assertRaises(ValueError):
+            audit_boundary(lock, boundary, terminal, 'L', 'B', 'old-run', 21)
+
     def test_control_import_rejects_accelerator_dependency(self):
         script = '''
 import importlib.abc, sys
@@ -58,6 +76,8 @@ import quality_core, speech_quality, speech_scorer
         self.assertEqual(audit_score(original, 'pcm', 'English', 'lock')[0], 'actual transcript')
         mutations = [lambda r: r.update(status='PASS'), lambda r: r.update(lock_sha256='other'),
                      lambda r: r.update(models={}), lambda r: r.update(pcm_sha256='other'),
+                     lambda r: r.update(pcm_bytes=48002),
+                     lambda r: r['asr'][0].update(prefix=[50258, 50260, 50359, 50363]),
                      lambda r: r['asr'].clear(), lambda r: r['speaker'].clear(),
                      lambda r: r['asr'][0].update(end=15999),
                      lambda r: r['asr'][0].update(transcript=''),

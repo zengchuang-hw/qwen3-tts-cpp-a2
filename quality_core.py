@@ -14,6 +14,17 @@ PROTOCOL = 'Q1-balanced-v1'
 ASR_MAX = 30 * 16000
 SPEAKER_MAX = 6 * 16000
 ASR_NEW_TOKENS = 444
+PREFIX = {'English': [50258, 50259, 50359, 50363], 'Chinese': [50258, 50260, 50359, 50363]}
+
+
+def audit_boundary(lock, boundary, terminal, lock_sha, boundary_sha, run, runspec_mtime_ns):
+    if (boundary['status'] != 'STARTED' or boundary['protocol'] != PROTOCOL
+            or boundary['lock_sha256'] != lock_sha or terminal['boundary_sha256'] != boundary_sha
+            or terminal['identity_unchanged'] is not True or terminal['lock_sha256'] != lock_sha
+            or boundary['run'] != run
+            or not lock['frozen_unix_ns'] < boundary['started_unix_ns'] < terminal['finished_unix_ns']
+            or runspec_mtime_ns < boundary['started_unix_ns']):
+        raise ValueError('missing or inconsistent pre-generation boundary')
 
 
 def sha256(path):
@@ -85,6 +96,9 @@ def audit_score(record, pcm_sha, language, lock_sha):
             or record['status'] != 'SCORED' or record['models'] != MODEL_REVISIONS):
         raise ValueError('score identity, source lock or scope differs')
     samples = record['samples_16k']
+    pcm_bytes = record['pcm_bytes']
+    if type(pcm_bytes) is not int or pcm_bytes <= 0 or pcm_bytes % 2 or samples != (pcm_bytes + 2) // 3:
+        raise ValueError('resampled sample count does not cover the complete PCM')
     rows = record['asr']
     bounds = windows(samples, ASR_MAX)
     if len(rows) != len(bounds):
@@ -94,9 +108,9 @@ def audit_score(record, pcm_sha, language, lock_sha):
         tokens = row['generated_tokens']
         if ((row['start'], row['end']) != (start, end) or not row['transcript'].strip()
                 or not isinstance(tokens, list) or not tokens or len(tokens) >= ASR_NEW_TOKENS
-                or any(type(token) is not int or token < 0 for token in tokens)
-                or len(row.get('prefix', [])) != 4
-                or row['eos_token_id'] not in tokens or tokens[-1] != row['eos_token_id']):
+                or any(type(token) is not int or not 0 <= token < 51865 for token in tokens)
+                or row.get('prefix') != PREFIX[language] or row['eos_token_id'] != 50257
+                or tokens.count(50257) != 1 or tokens[-1] != 50257):
             raise ValueError('ASR transcript, EOS or coverage incomplete')
         transcripts.append(row['transcript'])
     text = ' '.join(transcripts)
