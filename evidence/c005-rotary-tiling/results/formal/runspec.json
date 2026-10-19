@@ -1,0 +1,28 @@
+{
+  "reference_root": "/work/reference",
+  "native_build": "/work/c005-selected/build",
+  "model": "/model",
+  "workload": "/work/reference/evidence/campaign-20261017/plan/workload-128.jsonl",
+  "output": "/work/c005-formal/results",
+  "concurrencies": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "requests": 128,
+  "repetitions": 3,
+  "port": 8199,
+  "readiness_timeout": 900,
+  "benchmark_timeout": 1200.0,
+  "predictor_rope": "paired",
+  "rotary_head_tile": "auto",
+  "audio_delivery": "inline",
+  "reference_engine": "upstream",
+  "candidate_identity": "41e090d77adcded976781e056d47eeeb7a2e2b588563d63fd97872e40b9e3b3b",
+  "workload_sha256": "5007716c83b29d0247b2c6291b9704c652e01a94362c19e90ea3cb34987060c7",
+  "formal_coverage": true
+}

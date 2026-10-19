@@ -19,6 +19,7 @@ def initialize(arguments):
     parser.add_argument("--max-new-tokens", type=int, default=2048)
     parser.add_argument("--prewarm-decode", action="store_true")
     parser.add_argument("--predictor-rope", choices=["native", "paired"], default="native")
+    parser.add_argument("--rotary-head-tile", choices=["4", "8", "16", "auto"], default="4")
     args = parser.parse_args(list(arguments))
     if args.slots < 1 or args.slots & (args.slots - 1) or args.requests < 1:
         parser.error("positive requests and power-of-two slots required")
@@ -33,7 +34,7 @@ def initialize(arguments):
     args.output.mkdir(parents=True, exist_ok=False)
     model = NativeModel(str(args.model), "npu:0", max_slots=args.slots,
                         max_frames=args.max_new_tokens, prewarm_decode=args.prewarm_decode,
-                        predictor_rope=args.predictor_rope)
+                        predictor_rope=args.predictor_rope, rotary_head_tile=args.rotary_head_tile)
     return {"model": model, "inputs": inputs, "slots": args.slots,
             "output": str(args.output),
             "workload_sha256": hashlib.sha256(args.workload.read_bytes()).hexdigest()}

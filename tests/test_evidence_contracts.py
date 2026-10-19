@@ -31,6 +31,20 @@ with patch.dict(sys.modules, {"serve": serve}):
 
 
 class NativeEvidenceContracts(unittest.TestCase):
+    def test_frozen_rotary_policy_boundaries_without_accelerator(self):
+        from rotary_policy import resolve_head_tile
+        for batch in (1, 4, 8, 15):
+            self.assertEqual(resolve_head_tile("auto", batch, 1, 128), 4)
+        for batch in (16, 32, 64):
+            for length in (1, 2):
+                self.assertEqual(resolve_head_tile("auto", batch, length, 128), 16)
+                self.assertEqual(resolve_head_tile("auto", batch, length, 64), 4)
+        self.assertEqual(resolve_head_tile("auto", 64, 3, 128), 4)
+        for tile in (4, 8, 16):
+            self.assertEqual(resolve_head_tile(str(tile), 64, 2, 128), tile)
+        with self.assertRaises(ValueError):
+            resolve_head_tile("32", 16, 1, 128)
+
     def test_native_control_command_does_not_inherit_candidate_delivery(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
@@ -39,11 +53,16 @@ class NativeEvidenceContracts(unittest.TestCase):
             command.write_text(json.dumps(["python", "-m", "qwen3_tts_engine.server", "--model", "old", "--port", "1"]))
             args = SimpleNamespace(reference_root=root, model=root / "model", port=8199,
                                    native_build=root / "build", predictor_rope="paired",
-                                   reference_engine="native-buffered", audio_delivery="inline")
+                                   reference_engine="native-buffered", audio_delivery="inline", rotary_head_tile="auto")
             control = campaign.server_command(args, "reference")
             candidate = campaign.server_command(args, "native")
             self.assertEqual(control[control.index("--audio-delivery") + 1], "buffered")
             self.assertEqual(candidate[candidate.index("--audio-delivery") + 1], "inline")
+            args.reference_engine = "native-tile4"
+            control = campaign.server_command(args, "reference")
+            self.assertEqual(control[control.index("--audio-delivery") + 1], "inline")
+            self.assertEqual(control[control.index("--rotary-head-tile") + 1], "4")
+            self.assertEqual(candidate[candidate.index("--rotary-head-tile") + 1], "auto")
             args.reference_engine = "upstream"
             upstream = campaign.server_command(args, "reference")
             self.assertNotIn("--audio-delivery", upstream)

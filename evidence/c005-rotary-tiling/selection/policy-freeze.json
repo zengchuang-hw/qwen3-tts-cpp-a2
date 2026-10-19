@@ -1,0 +1,47 @@
+{
+  "frozen_before_full_model_validation": true,
+  "frozen_at_local_utc": "2026-10-19T05:46:41.201957+00:00",
+  "policy_commit": "e04abdc877cd2df0c8609a09398b2a65602ee453",
+  "selection_tested_commit": "52e15d8064268c8acefadf8d2013fbad3dd16adb",
+  "policy": "16 if D128 and B>=16 and L in (1,2), otherwise4; default remains4",
+  "selected_points": [
+    {
+      "batch": 16,
+      "length": 1,
+      "tile": 16,
+      "mean_latency_reduction": 0.451644342962374
+    },
+    {
+      "batch": 16,
+      "length": 2,
+      "tile": 16,
+      "mean_latency_reduction": 0.5702888225519195
+    },
+    {
+      "batch": 32,
+      "length": 1,
+      "tile": 16,
+      "mean_latency_reduction": 0.5701384970770065
+    },
+    {
+      "batch": 32,
+      "length": 2,
+      "tile": 16,
+      "mean_latency_reduction": 0.6195515939411682
+    },
+    {
+      "batch": 64,
+      "length": 1,
+      "tile": 16,
+      "mean_latency_reduction": 0.6174349121495721
+    },
+    {
+      "batch": 64,
+      "length": 2,
+      "tile": 16,
+      "mean_latency_reduction": 0.6445573172659116
+    }
+  ],
+  "raw_results_sha256": "c3a370a286974dfacbc67b903b09f6dede621f0300446f8744ad08d84042f82e",
+  "scope": "L0/L1 selection only; full speech and service pending"
+}

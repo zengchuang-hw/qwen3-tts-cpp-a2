@@ -44,6 +44,7 @@ def main():
     p.add_argument("--output", type=Path, required=True)
     p.add_argument("--cancel-and-reuse", action="store_true")
     p.add_argument("--predictor-rope", choices=["native", "paired"], default="native")
+    p.add_argument("--rotary-head-tile", choices=["4", "8", "16", "auto"], default="4")
     p.add_argument("--audio-delivery", choices=["buffered", "inline"], default="buffered")
     p.add_argument("--verify-inline", action="store_true")
     p.add_argument("--fail-emit", action="store_true", help="Test intentional callback exception propagation/cleanup")
@@ -60,7 +61,8 @@ def main():
     if args.engine == "native":
         from graph_model import NativeModel
         model = NativeModel(str(args.model), "npu:0", max_slots=args.slots,
-                            predictor_rope=args.predictor_rope, audio_delivery=args.audio_delivery)
+                            predictor_rope=args.predictor_rope, audio_delivery=args.audio_delivery,
+                            rotary_head_tile=args.rotary_head_tile)
     else:
         model = ContinuousModel(
             str(args.model), "npu:0", max_slots=args.slots, pack_qkv=True,

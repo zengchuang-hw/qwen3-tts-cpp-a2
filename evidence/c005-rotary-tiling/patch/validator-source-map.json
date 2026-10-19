@@ -1,0 +1,17 @@
+{
+  "scope": "raw metadata archives retain exact uploaded validator bytes; Git normalizes text newlines; not part of34 runtime source files",
+  "files": [
+    {
+      "file": "validator\\formal-envelope.py",
+      "raw_archived_sha256": "5cea34458874d12c1236ec0404d022262901053ff6837f5f0149e7641ff68816",
+      "canonical_git_lf_sha256": "729f6edac904d0a7cba1b8540dba2e2fe6e1dfbec2ee566923a6d921960bc7f4",
+      "difference": "CRLF to LF only"
+    },
+    {
+      "file": "validator\\validate.py",
+      "raw_archived_sha256": "6067dbafa88a7e1cf43ccd9fb20b0801b9cddad773193ce84fd1e6f2826b39d9",
+      "canonical_git_lf_sha256": "e60bb395836e4a4482dac0a957957d06065f6ddefa5c32a1b71f6e95b82420c3",
+      "difference": "CRLF to LF only"
+    }
+  ]
+}

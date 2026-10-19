@@ -7,11 +7,13 @@ import torch
 import triton
 import triton.language as tl
 
+from rotary_policy import resolve_head_tile
+
 
 @triton.jit
-def _rotate_one(X, C, S, Y, row, tile, H: tl.constexpr, D: tl.constexpr,
+def _rotate_one(X, C, S, Y, row, tile, H: tl.constexpr, HEAD_TILE: tl.constexpr, D: tl.constexpr,
                 LENGTH: tl.constexpr, SHARED: tl.constexpr, ROUND_BF16: tl.constexpr):
-    heads = tile * 4 + tl.arange(0, 4)[:, None]
+    heads = tile * HEAD_TILE + tl.arange(0, HEAD_TILE)[:, None]
     dims = tl.arange(0, D // 2)[None, :]
     base = (row * H + heads) * D + dims
     mask = heads < H
@@ -35,20 +37,22 @@ def _rotate_one(X, C, S, Y, row, tile, H: tl.constexpr, D: tl.constexpr,
 
 @triton.jit
 def _paired(Q, K, C, S, QO, KO, HQ: tl.constexpr, HK: tl.constexpr,
-            D: tl.constexpr, LENGTH: tl.constexpr, ROWS: tl.constexpr,
+            D: tl.constexpr, HEAD_TILE: tl.constexpr, LENGTH: tl.constexpr, ROWS: tl.constexpr,
             SHARED: tl.constexpr, ROUND_BF16: tl.constexpr):
-    qtiles: tl.constexpr = triton.cdiv(HQ, 4)
-    tiles: tl.constexpr = qtiles + triton.cdiv(HK, 4)
+    qtiles: tl.constexpr = triton.cdiv(HQ, HEAD_TILE)
+    tiles: tl.constexpr = qtiles + triton.cdiv(HK, HEAD_TILE)
     for task in range(tl.program_id(0), ROWS * tiles, tl.num_programs(0)):
         row = task // tiles
         tile = task % tiles
         if tile < qtiles:
-            _rotate_one(Q, C, S, QO, row, tile, HQ, D, LENGTH, SHARED, ROUND_BF16)
+            _rotate_one(Q, C, S, QO, row, tile, HQ, HEAD_TILE, D, LENGTH, SHARED, ROUND_BF16)
         else:
-            _rotate_one(K, C, S, KO, row, tile - qtiles, HK, D, LENGTH, SHARED, ROUND_BF16)
+            _rotate_one(K, C, S, KO, row, tile - qtiles, HK, HEAD_TILE, D, LENGTH, SHARED, ROUND_BF16)
 
 
-def paired_rotary(query, key, cos, sin, *, round_bf16=False):
+def paired_rotary(query, key, cos, sin, *, round_bf16=False, head_tile=4):
+    if head_tile not in (4, 8, 16):
+        raise ValueError("head_tile must be 4, 8 or 16")
     if (query.ndim != 4 or key.ndim != 4 or query.shape[:2] != key.shape[:2]
             or query.shape[-1] != key.shape[-1] or query.shape[-1] not in (64, 128)
             or query.shape[2] not in (8, 16) or key.shape[2] not in (8, 16)):
@@ -60,20 +64,21 @@ def paired_rotary(query, key, cos, sin, *, round_bf16=False):
            for t in (query, key, cos, sin)) or query.device.type != "npu":
         raise ValueError("contiguous matching BF16 NPU tensors required")
     qout, kout = torch.empty_like(query), torch.empty_like(key)
-    tiles = triton.cdiv(heads, 4) + triton.cdiv(key.shape[2], 4)
+    tiles = triton.cdiv(heads, head_tile) + triton.cdiv(key.shape[2], head_tile)
     cores = torch.npu.get_device_properties(query.device).vector_core_num
     _paired[(min(cores, batch * length * tiles),)](
-        query, key, cos, sin, qout, kout, heads, key.shape[2], width, length,
+        query, key, cos, sin, qout, kout, heads, key.shape[2], width, head_tile, length,
         batch * length, cos.shape[0] == 1, round_bf16, enable_fp_fusion=False)
     return qout, kout
 
 
 class PredictorAttention(torch.nn.Module):
-    def __init__(self, packed):
+    def __init__(self, packed, head_tile=4):
         super().__init__()
         if packed.multimodal or not packed.native_gqa or not packed.native_rope:
             raise ValueError("paired rotary only replaces native-GQA predictor attention")
         self.packed = packed
+        self.head_tile = head_tile
 
     def forward(self, hidden_states, position_embeddings, attention_mask,
                 past_key_values=None, cache_position=None, **kwargs):
@@ -86,7 +91,8 @@ class PredictorAttention(torch.nn.Module):
         key = reference.k_norm(key.reshape(heads))
         value = value.reshape(heads).transpose(1, 2)
         cos, sin = position_embeddings
-        query, key = paired_rotary(query, key, cos, sin)
+        query, key = paired_rotary(query, key, cos, sin,
+                                    head_tile=resolve_head_tile(self.head_tile, *query.shape[:2], query.shape[-1]))
         query, key = query.transpose(1, 2), key.transpose(1, 2)
         if past_key_values is not None:
             key, value = past_key_values.update(key, value, reference.layer_idx,
@@ -96,13 +102,13 @@ class PredictorAttention(torch.nn.Module):
         return reference.o_proj(output.reshape(*shape, -1).contiguous()), weights
 
 
-def install(predictor):
+def install(predictor, head_tile=4):
     replacements = []
     for parent in list(predictor.modules()):
         for name, child in list(parent.named_children()):
             if type(child).__name__ == "PackedAttention" and not child.multimodal:
                 replacements.append((parent, name, child))
-                setattr(parent, name, PredictorAttention(child))
+                setattr(parent, name, PredictorAttention(child, head_tile))
     if not replacements:
         raise ValueError("no predictor attention modules were replaced")
     return replacements

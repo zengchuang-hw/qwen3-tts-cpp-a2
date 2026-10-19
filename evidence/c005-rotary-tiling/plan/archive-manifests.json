@@ -1,0 +1,35 @@
+{
+  "scope": "Git keeps full cohort results.json; redundant individual sidecars remain in immutable raw metadata archives",
+  "archives": {
+    "local": {
+      "metadata_path": "/work/c005-selected/evidence-metadata.tar",
+      "metadata_bytes": 11776000,
+      "metadata_sha256": "ea83103c4089db8988d1ecd85261cd0310c80f0027d1ac732588707ce5eb87b1",
+      "media": {
+        "path": "/work/c005-selected/audio-artifacts.tar",
+        "host_path": "/home/zhuangzeliang/zc/qwen3-tts-cpp-20261019/c005-selected/audio-artifacts.tar",
+        "bytes": 590848000,
+        "sha256": "6d1eb417ecbd4a5ebb020f0037d7b3bec7cd1797128da06cde1c5bc6d2220311",
+        "wav_files": 2544,
+        "cancelled_pcm_prefix_files": 0
+      },
+      "metadata_host_path": "/home/zhuangzeliang/zc/qwen3-tts-cpp-20261019/c005-selected/evidence-metadata.tar",
+      "redundant_individual_sidecars_in_raw_archive": 2512
+    },
+    "formal": {
+      "metadata_path": "/work/c005-formal/evidence-metadata.tar",
+      "metadata_bytes": 28774400,
+      "metadata_sha256": "6a6f9a29fafdc62d805d2c0e6432f71902b5a0c2b5272b543a2e932e575db66f",
+      "media": {
+        "path": "/work/c005-formal/audio-artifacts.tar",
+        "host_path": "/home/zhuangzeliang/zc/qwen3-tts-cpp-20261019/c005-formal/audio-artifacts.tar",
+        "bytes": 1430958080,
+        "sha256": "8b90ffd77f8b186b85fc78f06939370bbb93236197d7e0930c79e9b03b1c0fbd",
+        "wav_files": 6144,
+        "cancelled_pcm_prefix_files": 0
+      },
+      "metadata_host_path": "/home/zhuangzeliang/zc/qwen3-tts-cpp-20261019/c005-formal/evidence-metadata.tar",
+      "redundant_individual_sidecars_in_raw_archive": 6144
+    }
+  }
+}

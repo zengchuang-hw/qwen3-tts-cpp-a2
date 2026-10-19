@@ -1,0 +1,103 @@
+{
+  "status": "INCONCLUSIVE",
+  "formal_coverage": false,
+  "cohorts": [
+    {
+      "concurrency": 4,
+      "reference": [
+        {
+          "throughput_frames_s": 174.11110347068623,
+          "ttfa_p50_ms": 74.88519500475377,
+          "ttfa_p95_ms": 92.34662848757577,
+          "rtf_mean": 0.2860689428214645
+        }
+      ],
+      "native": [
+        {
+          "throughput_frames_s": 174.13882316794715,
+          "ttfa_p50_ms": 74.77234513498843,
+          "ttfa_p95_ms": 92.69665949977933,
+          "rtf_mean": 0.2859165528125994
+        }
+      ],
+      "min_native_vs_max_reference_throughput": 1.0001592069472214,
+      "max_native_vs_min_reference_ttfa_p95": 1.0037904038072234,
+      "performance": "INCONCLUSIVE",
+      "exact_pcm": true
+    },
+    {
+      "concurrency": 16,
+      "reference": [
+        {
+          "throughput_frames_s": 392.92806482106204,
+          "ttfa_p50_ms": 120.71912491228431,
+          "ttfa_p95_ms": 206.51142839342347,
+          "rtf_mean": 0.495337556796514
+        }
+      ],
+      "native": [
+        {
+          "throughput_frames_s": 398.21250814658754,
+          "ttfa_p50_ms": 119.73848997149616,
+          "ttfa_p95_ms": 203.58145192731163,
+          "rtf_mean": 0.4889112160685727
+        }
+      ],
+      "min_native_vs_max_reference_throughput": 1.0134488823747727,
+      "max_native_vs_min_reference_ttfa_p95": 0.9858120371889058,
+      "performance": "INCONCLUSIVE",
+      "exact_pcm": true
+    },
+    {
+      "concurrency": 32,
+      "reference": [
+        {
+          "throughput_frames_s": 492.95575569371925,
+          "ttfa_p50_ms": 171.63867503404617,
+          "ttfa_p95_ms": 441.2910898798145,
+          "rtf_mean": 0.7354908135265216
+        }
+      ],
+      "native": [
+        {
+          "throughput_frames_s": 499.95461465319084,
+          "ttfa_p50_ms": 169.23628002405167,
+          "ttfa_p95_ms": 432.84299201332027,
+          "rtf_mean": 0.7245183160188174
+        }
+      ],
+      "min_native_vs_max_reference_throughput": 1.0141977426546573,
+      "max_native_vs_min_reference_ttfa_p95": 0.9808559518643464,
+      "performance": "INCONCLUSIVE",
+      "exact_pcm": true
+    },
+    {
+      "concurrency": 64,
+      "reference": [
+        {
+          "throughput_frames_s": 632.6664726331173,
+          "ttfa_p50_ms": 523.382700048387,
+          "ttfa_p95_ms": 818.2645114720798,
+          "rtf_mean": 1.0506968413822813
+        }
+      ],
+      "native": [
+        {
+          "throughput_frames_s": 639.7737605572496,
+          "ttfa_p50_ms": 523.6008299980313,
+          "ttfa_p95_ms": 823.4579944051801,
+          "rtf_mean": 1.038878794441601
+        }
+      ],
+      "min_native_vs_max_reference_throughput": 1.0112338621241492,
+      "max_native_vs_min_reference_ttfa_p95": 1.0063469487681398,
+      "performance": "INCONCLUSIVE",
+      "exact_pcm": true
+    }
+  ],
+  "reference_engine": "native-tile4",
+  "performance": "INCONCLUSIVE",
+  "relative_quality": "PASS_EXACT_PCM",
+  "scope": "matched local comparison against native-tile4; exact PCM establishes relative equivalence only",
+  "subjective_quality": "NOT_EVALUATED"
+}

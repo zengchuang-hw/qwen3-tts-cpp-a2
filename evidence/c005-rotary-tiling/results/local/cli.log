@@ -1,0 +1,18 @@
+[W1019 05:56:26.417335880 FunctionLoader.cpp:48] Warning: LD_PRELOAD detected, FunctionLoader prefers RTLD_DEFAULT for symbol resolution. (function operator())
+/bin/sh: 1: sox: not found
+SoX could not be found!
+
+    If you do not have SoX, proceed here:
+     - - - http://sox.sourceforge.net/ - - -
+
+    If you do (or think that you should) have SoX, double-check your
+    path variables.
+    
+[W1019 05:56:37.394996190 NPUCachingAllocator.cpp:202] Warning: The current CANN and HDK(driver) versions require processing for 32 padding size, with memory allocation. (function operator())
+[W1019 05:56:40.306716100 TensorFactories.cpp:423] Warning: Cannot create tensor with interal format while allow_internel_format=False, tensor will be created with base format. (function operator())
+
+********
+Warning: flash-attn is not installed. Will only run the manual PyTorch version. Please install flash-attn for faster inference.
+********
+ 
+{"status": "INCONCLUSIVE", "scope": "native executable complete generation", "quality": "NOT_SCORED", "performance_acceptance": "NOT_EVALUATED", "workload_sha256": "5007716c83b29d0247b2c6291b9704c652e01a94362c19e90ea3cb34987060c7", "wall_seconds": 12.41738318, "records": [{"id": 0, "frames": 27, "pcm_bytes": 103680, "finish_reason": "stop", "first_audio_seconds": 1.39461453, "elapsed_seconds": 2.05905275}, {"id": 8, "frames": 31, "pcm_bytes": 119040, "finish_reason": "stop", "first_audio_seconds": 1.39461344, "elapsed_seconds": 2.14632251}, {"id": 9, "frames": 34, "pcm_bytes": 130560, "finish_reason": "stop", "first_audio_seconds": 1.3946134, "elapsed_seconds": 2.26667407}, {"id": 1, "frames": 36, "pcm_bytes": 138240, "finish_reason": "stop", "first_audio_seconds": 1.39461473, "elapsed_seconds": 2.3154406}, {"id": 3, "frames": 38, "pcm_bytes": 145920, "finish_reason": "stop", "first_audio_seconds": 1.39461447, "elapsed_seconds": 2.36463193}, {"id": 4, "frames": 49, "pcm_bytes": 188160, "finish_reason": "stop", "first_audio_seconds": 1.39461422, "elapsed_seconds": 2.66364979}, {"id": 14, "frames": 52, "pcm_bytes": 199680, "finish_reason": "stop", "first_audio_seconds": 1.39461288, "elapsed_seconds": 2.72940151}, {"id": 12, "frames": 53, "pcm_bytes": 203520, "finish_reason": "stop", "first_audio_seconds": 1.39461325, "elapsed_seconds": 2.75961173}, {"id": 5, "frames": 54, "pcm_bytes": 207360, "finish_reason": "stop", "first_audio_seconds": 1.39461404, "elapsed_seconds": 9.62681777}, {"id": 15, "frames": 54, "pcm_bytes": 207360, "finish_reason": "stop", "first_audio_seconds": 1.39461275, "elapsed_seconds": 9.62711418}, {"id": 7, "frames": 58, "pcm_bytes": 222720, "finish_reason": "stop", "first_audio_seconds": 1.39461372, "elapsed_seconds": 9.7287112}, {"id": 13, "frames": 60, "pcm_bytes": 230400, "finish_reason": "stop", "first_audio_seconds": 1.39461305, "elapsed_seconds": 9.77226059}, {"id": 11, "frames": 70, "pcm_bytes": 268800, "finish_reason": "stop", "first_audio_seconds": 1.39461337, "elapsed_seconds": 10.71871027}, {"id": 10, "frames": 72, "pcm_bytes": 276480, "finish_reason": "stop", "first_audio_seconds": 1.39461326, "elapsed_seconds": 10.76771601}, {"id": 6, "frames": 76, "pcm_bytes": 291840, "finish_reason": "stop", "first_audio_seconds": 1.39461381, "elapsed_seconds": 11.61122441}, {"id": 2, "frames": 81, "pcm_bytes": 311040, "finish_reason": "stop", "first_audio_seconds": 1.3946145, "elapsed_seconds": 12.41703251}]}

@@ -19,11 +19,15 @@ LOGGER = logging.getLogger(__name__)
 class NativeModel(ContinuousModel):
     def __init__(self, model_path, device, *, max_slots=64, max_frames=2048,
                  text_capacity=256, codec_batch_size=4, prewarm_decode=False,
-                 predictor_rope="native", audio_delivery="buffered"):
+                 predictor_rope="native", audio_delivery="buffered", rotary_head_tile="4"):
         if predictor_rope not in {"native", "paired"}:
             raise ValueError("predictor_rope must be native or paired")
         if audio_delivery not in {"buffered", "inline"}:
             raise ValueError("audio_delivery must be buffered or inline")
+        if rotary_head_tile not in {"4", "8", "16", "auto"}:
+            raise ValueError("rotary_head_tile must be 4, 8, 16 or auto")
+        if predictor_rope != "paired" and rotary_head_tile != "4":
+            raise ValueError("rotary_head_tile requires paired predictor rope")
         self.audio_delivery = audio_delivery
         self.core = None
         super().__init__(
@@ -40,7 +44,7 @@ class NativeModel(ContinuousModel):
         self.predictor_rope = predictor_rope
         if predictor_rope == "paired":
             from predictor_rope import install
-            self.paired_predictor_modules = install(self.talker.code_predictor)
+            self.paired_predictor_modules = install(self.talker.code_predictor, rotary_head_tile)
         weight = next(self.talker.parameters())
         dim = self.talker.model.config.hidden_size
         vocab = self.talker.config.vocab_size
