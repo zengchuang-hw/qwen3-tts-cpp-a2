@@ -2,8 +2,10 @@
 #include <torch_npu/csrc/core/npu/NPUGraph.h>
 #include <c10/core/InferenceMode.h>
 #include <algorithm>
+#include <atomic>
 #include <cmath>
 #include <cstdint>
+#include <functional>
 #include <map>
 #include <memory>
 #include <stdexcept>
@@ -67,24 +69,28 @@ public:
         return result;
     }
     void set_kv(std::vector<Tensor> kv, int64_t capacity) {
+        require_idle();
         kv_ = std::move(kv);
         capacity_ = capacity;
         decodes_.clear();
     }
-    void set_codec_state(std::vector<Tensor> buffers) { codec_state_ = std::move(buffers); }
+    void set_codec_state(std::vector<Tensor> buffers) { require_idle(); codec_state_ = std::move(buffers); }
     bool has_decode(int64_t batch) const { return decodes_.count(batch) != 0; }
     bool ready() const { return required_position() < capacity_ && has_decode(batch()); }
     void register_decode(int64_t batch, std::shared_ptr<Graph> graph) {
+        require_idle();
         TORCH_CHECK(batch > 0 && batch <= slots_, "invalid graph batch");
         decodes_[batch] = std::move(graph);
     }
     void register_codec(int64_t batch, int64_t frames, std::shared_ptr<Graph> graph,
                         Tensor indices, Tensor codes, Tensor waves) {
+        require_idle();
         codecs_[{batch, frames}] = {std::move(graph), indices, codes, waves};
     }
 
     void admit(int64_t id, Tensor hidden, Tensor token, Tensor trailing, Tensor pad,
                Tensor uniforms, Tensor seen, int64_t position, int64_t rope, int64_t limit) {
+        require_idle();
         c10::InferenceMode inference;
         TORCH_CHECK(size() < slots_, "request arena is full");
         TORCH_CHECK(limit >= 2 && limit <= max_frames_, "output limit exceeds native arena");
@@ -111,12 +117,25 @@ public:
     }
 
     void cancel(const std::vector<int64_t>& ids) {
+        require_idle();
         c10::InferenceMode inference;
         for (int64_t i = size() - 1; i >= 0; --i)
             if (std::find(ids.begin(), ids.end(), requests_[i].id) != ids.end()) erase(i);
     }
 
-    std::vector<Event> step() {
+    using AudioEmit = std::function<void(int64_t, int64_t, const std::string&)>;
+    std::vector<Event> step(const AudioEmit& emit = {}) {
+        require_idle();
+        // Runtime has one owning thread. Callbacks may observe state, but must
+        // not mutate it or recursively advance a frame while this scope is live.
+        struct StepScope {
+            std::atomic<bool>& active;
+            explicit StepScope(std::atomic<bool>& flag) : active(flag) {
+                bool expected = false;
+                TORCH_CHECK(active.compare_exchange_strong(expected, true), "native runtime reentry during step");
+            }
+            ~StepScope() { active.store(false); }
+        } scope(stepping_);
         c10::InferenceMode inference;
         if (requests_.empty()) return {};
         TORCH_CHECK(required_position() < capacity_, "KV capacity must grow before replay");
@@ -172,7 +191,8 @@ public:
                     }
                     r.pcm += pcm;
                     r.emitted = r.frames;
-                    events.push_back({r.id, r.frames, false, std::move(pcm), {}});
+                    if (emit) emit(r.id, r.frames, pcm);
+                    else events.push_back({r.id, r.frames, false, std::move(pcm), {}});
                 }
             }
         }
@@ -185,6 +205,7 @@ public:
     }
 
     void close() {
+        require_idle();
         decodes_.clear();
         codecs_.clear();
         requests_.clear();
@@ -194,6 +215,9 @@ public:
     }
 
 private:
+    void require_idle() const {
+        TORCH_CHECK(!stepping_.load(), "native runtime mutation/reentry during step is not allowed");
+    }
     void erase(int64_t row) {
         auto last = size() - 1;
         if (row != last) {
@@ -214,6 +238,7 @@ private:
     std::vector<Tensor> kv_, codec_state_;
     std::map<int64_t, std::shared_ptr<Graph>> decodes_;
     std::map<std::pair<int64_t, int64_t>, Codec> codecs_;
+    std::atomic<bool> stepping_{false};
 };
 } // namespace qtts
 
@@ -231,14 +256,23 @@ PYBIND11_MODULE(_qtts_native, m) {
         .def("register_codec", &qtts::Runtime::register_codec).def("admit", &qtts::Runtime::admit)
         .def("cancel", &qtts::Runtime::cancel).def("close", &qtts::Runtime::close)
         .def("address", [](qtts::Runtime& runtime) { return reinterpret_cast<uintptr_t>(&runtime); })
-        .def("step", [](qtts::Runtime& runtime) {
+        .def("step", [](qtts::Runtime& runtime, py::object emit) {
+            if (!emit.is_none() && !PyCallable_Check(emit.ptr()))
+                throw py::type_error("emit must be callable or None");
             std::vector<qtts::Event> events;
-            { py::gil_scoped_release release; events = runtime.step(); }
+            {
+                py::gil_scoped_release release;
+                if (emit.is_none()) events = runtime.step();
+                else events = runtime.step([&emit](int64_t id, int64_t, const std::string& pcm) {
+                    py::gil_scoped_acquire acquire;
+                    emit(id, py::bytes(pcm), 24000);
+                });
+            }
             py::list result;
             for (auto& e : events)
                 result.append(py::make_tuple(e.id, e.frames, e.done, py::bytes(e.pcm), e.reason));
             return result;
-        });
+        }, py::arg("emit") = py::none());
 }
 
 namespace {

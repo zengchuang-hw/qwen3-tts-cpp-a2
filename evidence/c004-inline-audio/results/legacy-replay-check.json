@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "scope": "replay of immutable historical evidence only; not a fresh NPU campaign",
+  "command": [
+    "/work/venv/bin/python",
+    "/work/c004/source/assess.py",
+    "--run",
+    "/work/formal-c002-01",
+    "--output",
+    "/work/c004/results/legacy-assessment.json"
+  ],
+  "actual_assessor_exit": 1,
+  "original_and_replayed_verdict": "FAIL",
+  "legacy_assessment_sha256": "c884dbfc429c65272a41fde68101ef57c5fa8152e08985939d7c60e9f3ec3659",
+  "new_assessment_sha256": "e12034a613b1cf185a7045c2a8af8e7c5be4a2bc443c2062d2e50cddfea36e40"
+}

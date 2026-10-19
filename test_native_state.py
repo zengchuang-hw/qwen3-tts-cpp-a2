@@ -71,6 +71,19 @@ class NativeStateTests(unittest.TestCase):
         self.assertEqual(self.core.size(), 0)
         self.assertEqual(self.core.step(), [])
 
+    def test_invalid_callback_rejected_before_state_advances(self):
+        self.add(10)
+        with self.assertRaisesRegex(TypeError, "emit must be callable"):
+            self.core.step(123)
+        self.assertEqual(self.core.identifiers(), [10])
+        self.assertEqual(self.buffers["frames"][0].item(), 0)
+        # A missing graph throws after the step guard starts; unwinding must
+        # restore mutability so cleanup and later requests remain possible.
+        with self.assertRaisesRegex(RuntimeError, "graph has not been prepared"):
+            self.core.step(lambda *_: None)
+        self.core.cancel([10])
+        self.assertEqual(self.core.size(), 0)
+
 
 if __name__ == "__main__":
     unittest.main()

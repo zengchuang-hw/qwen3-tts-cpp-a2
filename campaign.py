@@ -70,18 +70,25 @@ def runtime_identity(model, reference_root):
             "cann_install_sha256": sha256(install), "variables": variables, "model_assets": assets}
 
 
-def trial(args, arm, target):
-    target.mkdir()
+def server_command(args, arm):
     command = json.loads((args.reference_root / "evidence/campaign-20261017/plan/continuous-direct-prompt-command.json").read_text())
     command[0] = sys.executable
     command[command.index("--model") + 1] = str(args.model)
     command[command.index("--port") + 1] = str(args.port)
-    if arm == "native":
+    if arm == "native" or args.reference_engine == "native-buffered":
         command = [sys.executable, str(Path(__file__).with_name("serve.py")),
                    "--reference-root", str(args.reference_root), "--native-build", str(args.native_build),
                    "--model", str(args.model), "--port", str(args.port), "--max-batch-size", "64",
-                   "--prewarm-decode", "--predictor-rope", args.predictor_rope]
-    record = {"arm": arm, "server_command": command, "server_exit": None,
+                   "--prewarm-decode", "--predictor-rope", args.predictor_rope,
+                   "--audio-delivery", args.audio_delivery if arm == "native" else "buffered"]
+    return command
+
+
+def trial(args, arm, target):
+    target.mkdir()
+    command = server_command(args, arm)
+    record = {"arm": arm, "reference_engine": args.reference_engine,
+              "server_command": command, "server_exit": None,
               "status": "INCONCLUSIVE", "cohorts": []}
     write(target / "lifecycle.json", record)
     with (target / "server.log").open("wb") as log:
@@ -107,8 +114,10 @@ def trial(args, arm, target):
                 output = target / f"c{concurrency}"
                 benchmark = [sys.executable, "-m", "qwen3_tts_engine.benchmark",
                              "--endpoint", f"http://127.0.0.1:{args.port}/v1/audio/speech",
-                             "--model", "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice", "--engine", arm,
-                             "--source-revision", REFERENCE_SHA if arm == "reference" else args.candidate_identity,
+                             "--model", "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice", "--engine",
+                             "native-buffered" if arm == "reference" and args.reference_engine == "native-buffered" else arm,
+                             "--source-revision", REFERENCE_SHA if arm == "reference" and args.reference_engine == "upstream"
+                             else args.candidate_identity,
                              "--workload", str(args.workload), "--output", str(output),
                              "--concurrency", str(concurrency), "--requests", str(args.requests),
                              "--warmup", str(max(2, concurrency)), "--frame-rate", "12.5"]
@@ -156,6 +165,8 @@ def main():
     parser.add_argument("--readiness-timeout", type=float, default=900)
     parser.add_argument("--benchmark-timeout", type=float, default=3600)
     parser.add_argument("--predictor-rope", choices=["native", "paired"], default="native")
+    parser.add_argument("--audio-delivery", choices=["buffered", "inline"], default="buffered")
+    parser.add_argument("--reference-engine", choices=["upstream", "native-buffered"], default="upstream")
     args = parser.parse_args()
     if (args.repetitions < 1 or args.requests < 1 or min(args.concurrencies) < 1
             or max(args.concurrencies) > 64 or len(set(args.concurrencies)) != len(args.concurrencies)
@@ -172,7 +183,8 @@ def main():
     write(args.output / "identity.json", source)
     write(args.output / "runspec.json", {**{k: str(v) if isinstance(v, Path) else v for k, v in vars(args).items()},
                                         "workload_sha256": sha256(args.workload),
-                                        "formal_coverage": args.repetitions >= 3 and args.requests == 128
+                                        "formal_coverage": args.reference_engine == "upstream"
+                                        and args.repetitions >= 3 and args.requests == 128
                                         and sorted(args.concurrencies) == [1, 2, 4, 8, 16, 32, 64]})
     summary = {"status": "INCONCLUSIVE", "quality": "NOT_SCORED", "completed": []}
     try:

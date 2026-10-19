@@ -1,0 +1,7 @@
+{
+  "scope": "Git retains full cohort results.json request records; redundant per-request sidecars remain in immutable remote metadata archive",
+  "metadata_archive": "/home/zhuangzeliang/zc/qwen3-tts-cpp-20261019/c004/evidence-metadata.tar",
+  "metadata_archive_sha256": "817f0d1776fa67bed79409664a88b8a808ca0e08f58f45283e8177d0cefff8c0",
+  "bytes": 5918720,
+  "redundant_sidecars_retained_in_archive": 1256
+}

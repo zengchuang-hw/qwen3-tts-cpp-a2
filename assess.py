@@ -77,6 +77,8 @@ def assess(root):
     spec = load(root / "runspec.json")
     campaign = load(root / "campaign.json")
     repetitions = spec["repetitions"]
+    reference_engine = spec.get("reference_engine", "upstream")
+    upstream = reference_engine == "upstream"
     expected = {f"r{r}-{arm}" for r in range(1, repetitions + 1) for arm in ("reference", "native")}
     if campaign["status"] == "FAIL":
         raise EvidenceViolation("campaign execution failed")
@@ -110,14 +112,18 @@ def assess(root):
         rows.append({"concurrency": concurrency, "reference": baseline, "native": native,
                      "min_native_vs_max_reference_throughput": throughput_ratio,
                      "max_native_vs_min_reference_ttfa_p95": ttfa_ratio,
-                     "performance": "PASS" if passed else "FAIL", "exact_pcm": exact})
-    formal = (spec.get("formal_coverage") is True and repetitions >= 3 and spec["requests"] == 128
+                     "performance": ("PASS" if passed else "FAIL") if upstream else "INCONCLUSIVE",
+                     "exact_pcm": exact})
+    formal = (upstream and spec.get("formal_coverage") is True and repetitions >= 3 and spec["requests"] == 128
               and sorted(spec["concurrencies"]) == [1, 2, 4, 8, 16, 32, 64])
     status = "FAIL" if not performance_pass else "PASS" if formal and quality_exact else "INCONCLUSIVE"
-    return {"status": status, "formal_coverage": formal, "cohorts": rows,
-            "performance": "PASS" if performance_pass and formal else "FAIL" if not performance_pass else "INCONCLUSIVE",
+    if not upstream:
+        status = "INCONCLUSIVE"
+    return {"status": status, "formal_coverage": formal, "cohorts": rows, "reference_engine": reference_engine,
+            "performance": (("PASS" if performance_pass and formal else "FAIL" if not performance_pass else "INCONCLUSIVE")
+                            if upstream else "INCONCLUSIVE"),
             "relative_quality": "PASS_EXACT_PCM" if quality_exact else "INCONCLUSIVE_REQUIRES_ASR_AND_SPEAKER",
-            "scope": "matched local comparison; exact PCM establishes relative equivalence only",
+            "scope": f"matched local comparison against {reference_engine}; exact PCM establishes relative equivalence only",
             "subjective_quality": "NOT_EVALUATED"}
 
 

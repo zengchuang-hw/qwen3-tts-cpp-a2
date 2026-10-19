@@ -5,10 +5,31 @@ import hashlib
 import json
 from pathlib import Path
 import sys
+import threading
 import time
 import wave
 
 from serve import load_reference
+
+
+class ProbeEmitError(RuntimeError):
+    """Intentional callback failure; never a completed speech request."""
+
+
+class StepWitness:
+    def __init__(self, core):
+        self.core = core
+        self.inside = False
+
+    def __getattr__(self, name):
+        return getattr(self.core, name)
+
+    def step(self, *args):
+        self.inside = True
+        try:
+            return self.core.step(*args)
+        finally:
+            self.inside = False
 
 
 def main():
@@ -23,7 +44,12 @@ def main():
     p.add_argument("--output", type=Path, required=True)
     p.add_argument("--cancel-and-reuse", action="store_true")
     p.add_argument("--predictor-rope", choices=["native", "paired"], default="native")
+    p.add_argument("--audio-delivery", choices=["buffered", "inline"], default="buffered")
+    p.add_argument("--verify-inline", action="store_true")
+    p.add_argument("--fail-emit", action="store_true", help="Test intentional callback exception propagation/cleanup")
     args = p.parse_args()
+    if (args.verify_inline or args.fail_emit) and (args.engine != "native" or args.audio_delivery != "inline"):
+        p.error("callback witnesses require native inline delivery")
     args.output.mkdir(parents=True, exist_ok=False)
     load_reference(args.reference_root)
     sys.path.insert(0, str(args.native_build.resolve()))
@@ -34,7 +60,7 @@ def main():
     if args.engine == "native":
         from graph_model import NativeModel
         model = NativeModel(str(args.model), "npu:0", max_slots=args.slots,
-                            predictor_rope=args.predictor_rope)
+                            predictor_rope=args.predictor_rope, audio_delivery=args.audio_delivery)
     else:
         model = ContinuousModel(
             str(args.model), "npu:0", max_slots=args.slots, pack_qkv=True,
@@ -59,11 +85,37 @@ def main():
     first = {}
     chunks = {}
     records = []
+    witness = None
+    if args.verify_inline or args.fail_emit:
+        witness = StepWitness(model.core)
+        model.core = witness
+    callback_checks = []
+    rejected_mutations = []
+    owner_thread = threading.get_ident()
     start = time.perf_counter()
 
     def emit(identifier, pcm, rate):
         if rate != 24000 or not pcm:
             raise ValueError("invalid audio chunk")
+        if witness is not None:
+            check = witness.inside and threading.get_ident() == owner_thread
+            callback_checks.append(check)
+            if not check:
+                raise ValueError("callback was deferred beyond core.step or moved threads")
+            if not rejected_mutations:
+                for name, action in (("cancel", lambda: witness.core.cancel([])),
+                                     ("step", lambda: witness.core.step()),
+                                     ("close", lambda: witness.core.close())):
+                    try:
+                        action()
+                    except RuntimeError as error:
+                        if "during step" not in str(error):
+                            raise
+                        rejected_mutations.append(name)
+                    else:
+                        raise ValueError("callback mutation/reentry was allowed: " + name)
+            if args.fail_emit:
+                raise ProbeEmitError("intentional audio callback failure")
         first.setdefault(identifier, time.perf_counter() - start)
         chunks.setdefault(identifier, bytearray()).extend(pcm)
 
@@ -106,7 +158,25 @@ def main():
                   "engine": args.engine, "records": records,
                   "wall_seconds": time.perf_counter() - start,
                   "cancel_and_reuse": args.cancel_and_reuse,
-                  "quality": "NOT_SCORED", "performance_acceptance": "NOT_EVALUATED"}
+                  "quality": "NOT_SCORED", "performance_acceptance": "NOT_EVALUATED",
+                  "audio_delivery": args.audio_delivery if args.engine == "native" else "reference",
+                  "callback_checks": callback_checks,
+                  "rejected_callback_mutations": rejected_mutations}
+        (args.output / "probe.json").write_text(json.dumps(result, indent=2) + "\n")
+        print(json.dumps(result), flush=True)
+        if args.fail_emit:
+            raise ValueError("intentional callback error did not propagate")
+    except ProbeEmitError:
+        if not args.fail_emit or not callback_checks or not all(callback_checks):
+            raise
+        # The exception has unwound the native step guard. Cancel must now be
+        # legal; no partially delivered request is counted as successful.
+        model.core.cancel(model.core.identifiers())
+        if model.states:
+            raise ValueError("failed callback left live requests after cleanup")
+        result = {"status": "PASS", "scope": "intentional callback exception propagation and cleanup only",
+                  "completed_requests": 0, "callback_checks": callback_checks,
+                  "rejected_callback_mutations": rejected_mutations}
         (args.output / "probe.json").write_text(json.dumps(result, indent=2) + "\n")
         print(json.dumps(result), flush=True)
     finally:
