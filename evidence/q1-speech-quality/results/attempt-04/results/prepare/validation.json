@@ -1,0 +1,159 @@
+{
+  "validator_sha256": "5d176f310b62088229dac9013a5409fd3632ea8d6ce42bb7651ad5feb12cbc3b",
+  "status": "PASS",
+  "scope": "Q1 harness validation, not runtime promotion or performance",
+  "phase": "prepare",
+  "tested_commit": "6b1f1931f5fa3b026dac0ab08bcd6f49a7252ed7",
+  "commands": [
+    {
+      "name": "cpu-suite",
+      "argv": [
+        "/work/venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/work/q1-attempt04/source",
+      "exit": 0,
+      "timed_out": false,
+      "wall_seconds": 0.5158637498971075
+    },
+    {
+      "name": "configure",
+      "argv": [
+        "cmake",
+        "-S",
+        "/work/q1-attempt04/source",
+        "-B",
+        "/work/q1-attempt04/build",
+        "-DPython3_EXECUTABLE=/work/venv/bin/python",
+        "-DCMAKE_BUILD_TYPE=Release"
+      ],
+      "cwd": "/work/q1-attempt04/source",
+      "exit": 0,
+      "timed_out": false,
+      "wall_seconds": 19.146317100152373
+    },
+    {
+      "name": "build",
+      "argv": [
+        "cmake",
+        "--build",
+        "/work/q1-attempt04/build",
+        "-j",
+        "2"
+      ],
+      "cwd": "/work/q1-attempt04/source",
+      "exit": 0,
+      "timed_out": false,
+      "wall_seconds": 49.83961830008775
+    },
+    {
+      "name": "ownership",
+      "argv": [
+        "/work/venv/bin/python",
+        "/work/q1-attempt04/source/test_native_state.py",
+        "-v"
+      ],
+      "cwd": "/work/q1-attempt04/source",
+      "exit": 0,
+      "timed_out": false,
+      "wall_seconds": 8.72811492998153
+    }
+  ],
+  "physical_device": 3,
+  "logical_device": 0,
+  "environment_before": {
+    "packages": {
+      "torch": "2.10.0+cpu",
+      "torch_npu": "2.10.0.post4",
+      "qwen-tts": "0.1.1",
+      "transformers": "4.57.3",
+      "tokenizers": "0.22.2",
+      "numpy": "2.5.3",
+      "aiohttp": "3.14.3",
+      "triton": "3.5.0",
+      "triton_ascend": "3.2.2",
+      "huggingface-hub": "0.36.2"
+    },
+    "system_libraries": "libc6:arm64=2.35-0ubuntu3.15\nlibstdc++6:arm64=12.3.0-1ubuntu1~22.04.3\n",
+    "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+    "cann_install_sha256": "a9b17ef608ebeb70ade09cde1c12a545eb5e8f3e5312f6806ca0d368b0464848",
+    "variables": {
+      "ASCEND_RT_VISIBLE_DEVICES": "3",
+      "ASCEND_HOME_PATH": "/usr/local/Ascend/cann-9.1.0",
+      "LD_LIBRARY_PATH": "/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/cann-9.1.0/lib64:/usr/local/Ascend/cann-9.1.0/lib64/plugin/opskernel:/usr/local/Ascend/cann-9.1.0/lib64/plugin/nnengine:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe/op_tiling/lib/linux/aarch64:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64/plugin:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/opskernel:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/nnengine:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/python3.12.13/lib:",
+      "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2",
+      "OMP_NUM_THREADS": "4",
+      "PYTHONPATH": "/work/q1-attempt04/build:/work/reference:/usr/local/Ascend/cann-9.1.0/python/site-packages:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe:/usr/local/Ascend/ascend-toolkit/latest/python/site-packages:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe:",
+      "HF_HUB_OFFLINE": "1",
+      "TASK_QUEUE_ENABLE": "1"
+    },
+    "model_assets": {
+      "config.json": "17a07f527a1c25ea30b4e023a184482a23d3e279d697b1dc81b1bde498d29cf9",
+      "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+      "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "model.safetensors": "38b1d5971bdbd982b561cccec982669a53b0537c3cf5e9bd4778ed07bb2f5137",
+      "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+      "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+      "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+      "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+      "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+      "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  },
+  "binaries": {
+    "_qtts_native.cpython-312-aarch64-linux-gnu.so": "1ab69fe4cc4e4136ca7a7d3826bbf7d8754a238a8c14f56579000cd582456785",
+    "qtts": "268178682ab890f6df0ece11eff743c6caf0f1ecd0bcd48d8dfa3cce8ab67195"
+  },
+  "environment_after": {
+    "packages": {
+      "torch": "2.10.0+cpu",
+      "torch_npu": "2.10.0.post4",
+      "qwen-tts": "0.1.1",
+      "transformers": "4.57.3",
+      "tokenizers": "0.22.2",
+      "numpy": "2.5.3",
+      "aiohttp": "3.14.3",
+      "triton": "3.5.0",
+      "triton_ascend": "3.2.2",
+      "huggingface-hub": "0.36.2"
+    },
+    "system_libraries": "libc6:arm64=2.35-0ubuntu3.15\nlibstdc++6:arm64=12.3.0-1ubuntu1~22.04.3\n",
+    "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+    "cann_install_sha256": "a9b17ef608ebeb70ade09cde1c12a545eb5e8f3e5312f6806ca0d368b0464848",
+    "variables": {
+      "ASCEND_RT_VISIBLE_DEVICES": "3",
+      "ASCEND_HOME_PATH": "/usr/local/Ascend/cann-9.1.0",
+      "LD_LIBRARY_PATH": "/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/cann-9.1.0/lib64:/usr/local/Ascend/cann-9.1.0/lib64/plugin/opskernel:/usr/local/Ascend/cann-9.1.0/lib64/plugin/nnengine:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe/op_tiling/lib/linux/aarch64:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64/plugin:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/opskernel:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/nnengine:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/python3.12.13/lib:",
+      "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2",
+      "OMP_NUM_THREADS": "4",
+      "PYTHONPATH": "/work/q1-attempt04/build:/work/reference:/usr/local/Ascend/cann-9.1.0/python/site-packages:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe:/usr/local/Ascend/ascend-toolkit/latest/python/site-packages:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe:",
+      "HF_HUB_OFFLINE": "1",
+      "TASK_QUEUE_ENABLE": "1"
+    },
+    "model_assets": {
+      "config.json": "17a07f527a1c25ea30b4e023a184482a23d3e279d697b1dc81b1bde498d29cf9",
+      "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+      "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "model.safetensors": "38b1d5971bdbd982b561cccec982669a53b0537c3cf5e9bd4778ed07bb2f5137",
+      "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+      "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+      "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+      "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+      "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+      "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  },
+  "log_sha256": {
+    "configure.log": "1af7c5aa293a6534d12586f9c35c155ac440806bdd80d29ed2a3016bc5b751b6",
+    "build.log": "c69d2e693e057b117bbfbcc3f1022236595eb422c97f81ca38141952c01b964f",
+    "ownership.log": "e9ff2ab0dab5bbcda4b0f208d1c851e2f20b50655c153d23c655d353e212d150",
+    "cpu-suite.log": "664af9aa2aacad1ea6d662e04681aaed9d4e6df71cb04662223b36cf6a1edf90"
+  }
+}

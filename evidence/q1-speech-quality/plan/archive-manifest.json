@@ -1,0 +1,4143 @@
+{
+  "status": "ARCHIVED",
+  "scope": "Q1 tooling qualification only; candidate quality can remain INCONCLUSIVE",
+  "attempts": [
+    {
+      "number": 1,
+      "path": "/work/q1-attempt01",
+      "phase_outcomes": {
+        "prepare": {
+          "status": "PASS",
+          "scope": "Q1 harness validation, not runtime promotion or performance",
+          "phase": "prepare",
+          "tested_commit": "1be558369159381aaae82ca756f5e6d68380df2e",
+          "commands": [
+            {
+              "name": "cpu-suite",
+              "argv": [
+                "/work/venv/bin/python",
+                "-m",
+                "unittest",
+                "discover",
+                "-s",
+                "tests",
+                "-v"
+              ],
+              "cwd": "/work/q1-attempt01/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 0.618065879913047
+            },
+            {
+              "name": "configure",
+              "argv": [
+                "cmake",
+                "-S",
+                "/work/q1-attempt01/source",
+                "-B",
+                "/work/q1-attempt01/build",
+                "-DPython3_EXECUTABLE=/work/venv/bin/python",
+                "-DCMAKE_BUILD_TYPE=Release"
+              ],
+              "cwd": "/work/q1-attempt01/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 21.35437155002728
+            },
+            {
+              "name": "build",
+              "argv": [
+                "cmake",
+                "--build",
+                "/work/q1-attempt01/build",
+                "-j",
+                "2"
+              ],
+              "cwd": "/work/q1-attempt01/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 51.44262378010899
+            },
+            {
+              "name": "ownership",
+              "argv": [
+                "/work/venv/bin/python",
+                "/work/q1-attempt01/source/test_native_state.py",
+                "-v"
+              ],
+              "cwd": "/work/q1-attempt01/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 8.376833640038967
+            }
+          ],
+          "physical_device": 3,
+          "logical_device": 0,
+          "environment_before": {
+            "packages": {
+              "torch": "2.10.0+cpu",
+              "torch_npu": "2.10.0.post4",
+              "qwen-tts": "0.1.1",
+              "transformers": "4.57.3",
+              "tokenizers": "0.22.2",
+              "numpy": "2.5.3",
+              "aiohttp": "3.14.3",
+              "triton": "3.5.0",
+              "triton_ascend": "3.2.2",
+              "huggingface-hub": "0.36.2"
+            },
+            "system_libraries": "libc6:arm64=2.35-0ubuntu3.15\nlibstdc++6:arm64=12.3.0-1ubuntu1~22.04.3\n",
+            "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+            "cann_install_sha256": "a9b17ef608ebeb70ade09cde1c12a545eb5e8f3e5312f6806ca0d368b0464848",
+            "variables": {
+              "ASCEND_RT_VISIBLE_DEVICES": "3",
+              "ASCEND_HOME_PATH": "/usr/local/Ascend/cann-9.1.0",
+              "LD_LIBRARY_PATH": "/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/cann-9.1.0/lib64:/usr/local/Ascend/cann-9.1.0/lib64/plugin/opskernel:/usr/local/Ascend/cann-9.1.0/lib64/plugin/nnengine:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe/op_tiling/lib/linux/aarch64:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64/plugin:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/opskernel:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/nnengine:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/python3.12.13/lib:",
+              "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2",
+              "OMP_NUM_THREADS": "4",
+              "PYTHONPATH": "/work/q1-attempt01/build:/work/reference:/usr/local/Ascend/cann-9.1.0/python/site-packages:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe:/usr/local/Ascend/ascend-toolkit/latest/python/site-packages:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe:",
+              "HF_HUB_OFFLINE": "1",
+              "TASK_QUEUE_ENABLE": "1"
+            },
+            "model_assets": {
+              "config.json": "17a07f527a1c25ea30b4e023a184482a23d3e279d697b1dc81b1bde498d29cf9",
+              "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+              "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+              "model.safetensors": "38b1d5971bdbd982b561cccec982669a53b0537c3cf5e9bd4778ed07bb2f5137",
+              "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+              "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+              "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+              "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+              "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+              "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+              "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+            }
+          },
+          "binaries": {
+            "_qtts_native.cpython-312-aarch64-linux-gnu.so": "5ee0e5139a2090a641f447909199cb9d81e649cb60c6d8bb562a9645f30db956",
+            "qtts": "c104237695c41d7967d9c243b04abc3a46336b1c0a8ffd09e8f031a29742efc6"
+          },
+          "environment_after": {
+            "packages": {
+              "torch": "2.10.0+cpu",
+              "torch_npu": "2.10.0.post4",
+              "qwen-tts": "0.1.1",
+              "transformers": "4.57.3",
+              "tokenizers": "0.22.2",
+              "numpy": "2.5.3",
+              "aiohttp": "3.14.3",
+              "triton": "3.5.0",
+              "triton_ascend": "3.2.2",
+              "huggingface-hub": "0.36.2"
+            },
+            "system_libraries": "libc6:arm64=2.35-0ubuntu3.15\nlibstdc++6:arm64=12.3.0-1ubuntu1~22.04.3\n",
+            "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+            "cann_install_sha256": "a9b17ef608ebeb70ade09cde1c12a545eb5e8f3e5312f6806ca0d368b0464848",
+            "variables": {
+              "ASCEND_RT_VISIBLE_DEVICES": "3",
+              "ASCEND_HOME_PATH": "/usr/local/Ascend/cann-9.1.0",
+              "LD_LIBRARY_PATH": "/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/cann-9.1.0/lib64:/usr/local/Ascend/cann-9.1.0/lib64/plugin/opskernel:/usr/local/Ascend/cann-9.1.0/lib64/plugin/nnengine:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe/op_tiling/lib/linux/aarch64:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64/plugin:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/opskernel:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/nnengine:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/python3.12.13/lib:",
+              "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2",
+              "OMP_NUM_THREADS": "4",
+              "PYTHONPATH": "/work/q1-attempt01/build:/work/reference:/usr/local/Ascend/cann-9.1.0/python/site-packages:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe:/usr/local/Ascend/ascend-toolkit/latest/python/site-packages:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe:",
+              "HF_HUB_OFFLINE": "1",
+              "TASK_QUEUE_ENABLE": "1"
+            },
+            "model_assets": {
+              "config.json": "17a07f527a1c25ea30b4e023a184482a23d3e279d697b1dc81b1bde498d29cf9",
+              "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+              "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+              "model.safetensors": "38b1d5971bdbd982b561cccec982669a53b0537c3cf5e9bd4778ed07bb2f5137",
+              "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+              "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+              "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+              "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+              "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+              "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+              "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+            }
+          },
+          "log_sha256": {
+            "configure.log": "3f4895ea07ff7589d0191467fd9449efbe3ea2a2bf9cb87dc2ba401b7f871124",
+            "build.log": "605ae66fd367cd8bc6040fed35ca435ddf480c859d86b50cb2abd16baa0c34b6",
+            "ownership.log": "0804e03e3dc8cf15c5be014177d0f5c796c8495184bd82151df3a0728f9ccd2e",
+            "cpu-suite.log": "25b839a40b52560483e20ce2d039950f048340d2b67efd071ab5df01c4635f04"
+          }
+        }
+      }
+    },
+    {
+      "number": 2,
+      "path": "/work/q1-attempt02",
+      "phase_outcomes": {
+        "prepare": {
+          "status": "PASS",
+          "scope": "Q1 harness validation, not runtime promotion or performance",
+          "phase": "prepare",
+          "tested_commit": "844bc2e58f7229721e180603af87f130e6158f84",
+          "commands": [
+            {
+              "name": "cpu-suite",
+              "argv": [
+                "/work/venv/bin/python",
+                "-m",
+                "unittest",
+                "discover",
+                "-s",
+                "tests",
+                "-v"
+              ],
+              "cwd": "/work/q1-attempt02/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 0.5164215401746333
+            },
+            {
+              "name": "configure",
+              "argv": [
+                "cmake",
+                "-S",
+                "/work/q1-attempt02/source",
+                "-B",
+                "/work/q1-attempt02/build",
+                "-DPython3_EXECUTABLE=/work/venv/bin/python",
+                "-DCMAKE_BUILD_TYPE=Release"
+              ],
+              "cwd": "/work/q1-attempt02/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 18.63843520008959
+            },
+            {
+              "name": "build",
+              "argv": [
+                "cmake",
+                "--build",
+                "/work/q1-attempt02/build",
+                "-j",
+                "2"
+              ],
+              "cwd": "/work/q1-attempt02/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 49.77555589005351
+            },
+            {
+              "name": "ownership",
+              "argv": [
+                "/work/venv/bin/python",
+                "/work/q1-attempt02/source/test_native_state.py",
+                "-v"
+              ],
+              "cwd": "/work/q1-attempt02/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 8.426297980127856
+            }
+          ],
+          "physical_device": 3,
+          "logical_device": 0,
+          "environment_before": {
+            "packages": {
+              "torch": "2.10.0+cpu",
+              "torch_npu": "2.10.0.post4",
+              "qwen-tts": "0.1.1",
+              "transformers": "4.57.3",
+              "tokenizers": "0.22.2",
+              "numpy": "2.5.3",
+              "aiohttp": "3.14.3",
+              "triton": "3.5.0",
+              "triton_ascend": "3.2.2",
+              "huggingface-hub": "0.36.2"
+            },
+            "system_libraries": "libc6:arm64=2.35-0ubuntu3.15\nlibstdc++6:arm64=12.3.0-1ubuntu1~22.04.3\n",
+            "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+            "cann_install_sha256": "a9b17ef608ebeb70ade09cde1c12a545eb5e8f3e5312f6806ca0d368b0464848",
+            "variables": {
+              "ASCEND_RT_VISIBLE_DEVICES": "3",
+              "ASCEND_HOME_PATH": "/usr/local/Ascend/cann-9.1.0",
+              "LD_LIBRARY_PATH": "/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/cann-9.1.0/lib64:/usr/local/Ascend/cann-9.1.0/lib64/plugin/opskernel:/usr/local/Ascend/cann-9.1.0/lib64/plugin/nnengine:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe/op_tiling/lib/linux/aarch64:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64/plugin:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/opskernel:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/nnengine:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/python3.12.13/lib:",
+              "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2",
+              "OMP_NUM_THREADS": "4",
+              "PYTHONPATH": "/work/q1-attempt02/build:/work/reference:/usr/local/Ascend/cann-9.1.0/python/site-packages:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe:/usr/local/Ascend/ascend-toolkit/latest/python/site-packages:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe:",
+              "HF_HUB_OFFLINE": "1",
+              "TASK_QUEUE_ENABLE": "1"
+            },
+            "model_assets": {
+              "config.json": "17a07f527a1c25ea30b4e023a184482a23d3e279d697b1dc81b1bde498d29cf9",
+              "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+              "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+              "model.safetensors": "38b1d5971bdbd982b561cccec982669a53b0537c3cf5e9bd4778ed07bb2f5137",
+              "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+              "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+              "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+              "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+              "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+              "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+              "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+            }
+          },
+          "binaries": {
+            "_qtts_native.cpython-312-aarch64-linux-gnu.so": "7a0626d679ad89e42b519dc82be3d604fe943eb973bceae91a970b9c2deb6a82",
+            "qtts": "db2803ed79b2616e00c313cdd66110b7bf9a18c56f0f93c46e454fa4da8f1e38"
+          },
+          "environment_after": {
+            "packages": {
+              "torch": "2.10.0+cpu",
+              "torch_npu": "2.10.0.post4",
+              "qwen-tts": "0.1.1",
+              "transformers": "4.57.3",
+              "tokenizers": "0.22.2",
+              "numpy": "2.5.3",
+              "aiohttp": "3.14.3",
+              "triton": "3.5.0",
+              "triton_ascend": "3.2.2",
+              "huggingface-hub": "0.36.2"
+            },
+            "system_libraries": "libc6:arm64=2.35-0ubuntu3.15\nlibstdc++6:arm64=12.3.0-1ubuntu1~22.04.3\n",
+            "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+            "cann_install_sha256": "a9b17ef608ebeb70ade09cde1c12a545eb5e8f3e5312f6806ca0d368b0464848",
+            "variables": {
+              "ASCEND_RT_VISIBLE_DEVICES": "3",
+              "ASCEND_HOME_PATH": "/usr/local/Ascend/cann-9.1.0",
+              "LD_LIBRARY_PATH": "/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/cann-9.1.0/lib64:/usr/local/Ascend/cann-9.1.0/lib64/plugin/opskernel:/usr/local/Ascend/cann-9.1.0/lib64/plugin/nnengine:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe/op_tiling/lib/linux/aarch64:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64/plugin:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/opskernel:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/nnengine:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/python3.12.13/lib:",
+              "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2",
+              "OMP_NUM_THREADS": "4",
+              "PYTHONPATH": "/work/q1-attempt02/build:/work/reference:/usr/local/Ascend/cann-9.1.0/python/site-packages:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe:/usr/local/Ascend/ascend-toolkit/latest/python/site-packages:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe:",
+              "HF_HUB_OFFLINE": "1",
+              "TASK_QUEUE_ENABLE": "1"
+            },
+            "model_assets": {
+              "config.json": "17a07f527a1c25ea30b4e023a184482a23d3e279d697b1dc81b1bde498d29cf9",
+              "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+              "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+              "model.safetensors": "38b1d5971bdbd982b561cccec982669a53b0537c3cf5e9bd4778ed07bb2f5137",
+              "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+              "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+              "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+              "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+              "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+              "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+              "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+            }
+          },
+          "log_sha256": {
+            "configure.log": "df6aa1eadf7fa99aa1cff13c025e048b54b0232101d5a804d05477358ab57dc2",
+            "build.log": "9c4ee1756b75ecf5455c789c0b20076b64ab7d0c13e38217963ecf5e2584d694",
+            "ownership.log": "47c242a2d0729459c855aaf851c608cb03907729dcf4a5601401a3b987a8fca4",
+            "cpu-suite.log": "5931b55238ab0ef847720d0162c0b06b5cfff69b59425cf3e7c4f41d4f23e3e6"
+          }
+        }
+      }
+    },
+    {
+      "number": 3,
+      "path": "/work/q1-attempt03",
+      "phase_outcomes": {
+        "prepare": {
+          "validator_sha256": "43179702db73b3de8192b3c88e95ea9a1d2f9367c8ba203394f0eaa72010ff24",
+          "status": "PASS",
+          "scope": "Q1 harness validation, not runtime promotion or performance",
+          "phase": "prepare",
+          "tested_commit": "3fac48c805e94bcf40581465a8341149446e3d2d",
+          "commands": [
+            {
+              "name": "cpu-suite",
+              "argv": [
+                "/work/venv/bin/python",
+                "-m",
+                "unittest",
+                "discover",
+                "-s",
+                "tests",
+                "-v"
+              ],
+              "cwd": "/work/q1-attempt03/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 0.5159789198078215
+            },
+            {
+              "name": "configure",
+              "argv": [
+                "cmake",
+                "-S",
+                "/work/q1-attempt03/source",
+                "-B",
+                "/work/q1-attempt03/build",
+                "-DPython3_EXECUTABLE=/work/venv/bin/python",
+                "-DCMAKE_BUILD_TYPE=Release"
+              ],
+              "cwd": "/work/q1-attempt03/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 18.437579669989645
+            },
+            {
+              "name": "build",
+              "argv": [
+                "cmake",
+                "--build",
+                "/work/q1-attempt03/build",
+                "-j",
+                "2"
+              ],
+              "cwd": "/work/q1-attempt03/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 50.42432104004547
+            },
+            {
+              "name": "ownership",
+              "argv": [
+                "/work/venv/bin/python",
+                "/work/q1-attempt03/source/test_native_state.py",
+                "-v"
+              ],
+              "cwd": "/work/q1-attempt03/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 8.5268868599087
+            }
+          ],
+          "physical_device": 3,
+          "logical_device": 0,
+          "environment_before": {
+            "packages": {
+              "torch": "2.10.0+cpu",
+              "torch_npu": "2.10.0.post4",
+              "qwen-tts": "0.1.1",
+              "transformers": "4.57.3",
+              "tokenizers": "0.22.2",
+              "numpy": "2.5.3",
+              "aiohttp": "3.14.3",
+              "triton": "3.5.0",
+              "triton_ascend": "3.2.2",
+              "huggingface-hub": "0.36.2"
+            },
+            "system_libraries": "libc6:arm64=2.35-0ubuntu3.15\nlibstdc++6:arm64=12.3.0-1ubuntu1~22.04.3\n",
+            "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+            "cann_install_sha256": "a9b17ef608ebeb70ade09cde1c12a545eb5e8f3e5312f6806ca0d368b0464848",
+            "variables": {
+              "ASCEND_RT_VISIBLE_DEVICES": "3",
+              "ASCEND_HOME_PATH": "/usr/local/Ascend/cann-9.1.0",
+              "LD_LIBRARY_PATH": "/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/cann-9.1.0/lib64:/usr/local/Ascend/cann-9.1.0/lib64/plugin/opskernel:/usr/local/Ascend/cann-9.1.0/lib64/plugin/nnengine:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe/op_tiling/lib/linux/aarch64:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64/plugin:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/opskernel:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/nnengine:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/python3.12.13/lib:",
+              "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2",
+              "OMP_NUM_THREADS": "4",
+              "PYTHONPATH": "/work/q1-attempt03/build:/work/reference:/usr/local/Ascend/cann-9.1.0/python/site-packages:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe:/usr/local/Ascend/ascend-toolkit/latest/python/site-packages:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe:",
+              "HF_HUB_OFFLINE": "1",
+              "TASK_QUEUE_ENABLE": "1"
+            },
+            "model_assets": {
+              "config.json": "17a07f527a1c25ea30b4e023a184482a23d3e279d697b1dc81b1bde498d29cf9",
+              "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+              "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+              "model.safetensors": "38b1d5971bdbd982b561cccec982669a53b0537c3cf5e9bd4778ed07bb2f5137",
+              "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+              "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+              "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+              "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+              "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+              "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+              "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+            }
+          },
+          "binaries": {
+            "_qtts_native.cpython-312-aarch64-linux-gnu.so": "727fbfe11f46611772234b5b93db98a65302fe7cb88ccbaf06545bc05eb7fbf0",
+            "qtts": "3d00c7dea00b75d666b9e169cf1223d13fcf6a0d651d7968e9c276b9bc6e9fc8"
+          },
+          "environment_after": {
+            "packages": {
+              "torch": "2.10.0+cpu",
+              "torch_npu": "2.10.0.post4",
+              "qwen-tts": "0.1.1",
+              "transformers": "4.57.3",
+              "tokenizers": "0.22.2",
+              "numpy": "2.5.3",
+              "aiohttp": "3.14.3",
+              "triton": "3.5.0",
+              "triton_ascend": "3.2.2",
+              "huggingface-hub": "0.36.2"
+            },
+            "system_libraries": "libc6:arm64=2.35-0ubuntu3.15\nlibstdc++6:arm64=12.3.0-1ubuntu1~22.04.3\n",
+            "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+            "cann_install_sha256": "a9b17ef608ebeb70ade09cde1c12a545eb5e8f3e5312f6806ca0d368b0464848",
+            "variables": {
+              "ASCEND_RT_VISIBLE_DEVICES": "3",
+              "ASCEND_HOME_PATH": "/usr/local/Ascend/cann-9.1.0",
+              "LD_LIBRARY_PATH": "/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/cann-9.1.0/lib64:/usr/local/Ascend/cann-9.1.0/lib64/plugin/opskernel:/usr/local/Ascend/cann-9.1.0/lib64/plugin/nnengine:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe/op_tiling/lib/linux/aarch64:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64/plugin:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/opskernel:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/nnengine:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/python3.12.13/lib:",
+              "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2",
+              "OMP_NUM_THREADS": "4",
+              "PYTHONPATH": "/work/q1-attempt03/build:/work/reference:/usr/local/Ascend/cann-9.1.0/python/site-packages:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe:/usr/local/Ascend/ascend-toolkit/latest/python/site-packages:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe:",
+              "HF_HUB_OFFLINE": "1",
+              "TASK_QUEUE_ENABLE": "1"
+            },
+            "model_assets": {
+              "config.json": "17a07f527a1c25ea30b4e023a184482a23d3e279d697b1dc81b1bde498d29cf9",
+              "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+              "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+              "model.safetensors": "38b1d5971bdbd982b561cccec982669a53b0537c3cf5e9bd4778ed07bb2f5137",
+              "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+              "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+              "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+              "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+              "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+              "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+              "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+            }
+          },
+          "log_sha256": {
+            "configure.log": "7e3e5025612cfaaad2b8eea19084316c58d1d8d328c7794f62c5dc130075eade",
+            "build.log": "f63094d3c5e53a6724f908cde6934b878ee358535dcb602e069b277841606650",
+            "ownership.log": "296f6f04425a117ccc33736ba92f0f66dd014ad31205c3121bf3fde54c17b5e4",
+            "cpu-suite.log": "365e826f6109fa875562422c79258cea29ffbcb5663e4d240e1fab51cba5ae0f"
+          }
+        },
+        "evaluate": {
+          "validator_sha256": "43179702db73b3de8192b3c88e95ea9a1d2f9367c8ba203394f0eaa72010ff24",
+          "status": "FAIL",
+          "scope": "Q1 harness validation, not runtime promotion or performance",
+          "phase": "evaluate",
+          "tested_commit": "3fac48c805e94bcf40581465a8341149446e3d2d",
+          "commands": [
+            {
+              "name": "freeze",
+              "argv": [
+                "/work/venv/bin/python",
+                "/work/q1-attempt03/source/speech_quality.py",
+                "freeze",
+                "--models-root",
+                "/work/quality-models",
+                "--native-build",
+                "/work/q1-attempt03/build",
+                "--reference-root",
+                "/work/reference",
+                "--model",
+                "/model",
+                "--workload",
+                "/work/c007/source/data/heldout-32.jsonl",
+                "--output",
+                "/work/q1-attempt03/freeze.json"
+              ],
+              "cwd": "/work/q1-attempt03/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 6.373778759967536
+            },
+            {
+              "name": "compatibility",
+              "argv": [
+                "/work/venv/bin/python",
+                "/work/q1-compatibility-generic.py",
+                "--source",
+                "/work/q1-attempt03/source",
+                "--freeze",
+                "/work/q1-attempt03/freeze.json",
+                "--wav",
+                "/work/c007/results/heldout/r1-reference/c4/00000.wav",
+                "--output",
+                "/work/q1-attempt03/compatibility.json"
+              ],
+              "cwd": "/work/q1-attempt03/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 33.858825240051374
+            },
+            {
+              "name": "generation",
+              "argv": [
+                "/work/venv/bin/python",
+                "/work/q1-attempt03/source/speech_quality.py",
+                "generate",
+                "--freeze",
+                "/work/q1-attempt03/freeze.json",
+                "--boundary",
+                "/work/q1-attempt03/generation.json",
+                "--run",
+                "/work/q1-attempt03/generated",
+                "--concurrencies",
+                "4",
+                "16",
+                "--requests",
+                "32",
+                "--repetitions",
+                "1"
+              ],
+              "cwd": "/work/q1-attempt03/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 207.07377339014784
+            },
+            {
+              "name": "quality-score",
+              "argv": [
+                "/work/venv/bin/python",
+                "/work/q1-attempt03/source/speech_quality.py",
+                "score",
+                "--freeze",
+                "/work/q1-attempt03/freeze.json",
+                "--boundary",
+                "/work/q1-attempt03/generation.json",
+                "--run",
+                "/work/q1-attempt03/generated",
+                "--output",
+                "/work/q1-attempt03/scores"
+              ],
+              "cwd": "/work/q1-attempt03/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 12.832741040037945
+            },
+            {
+              "name": "negative-controls",
+              "argv": [
+                "/work/venv/bin/python",
+                "/work/q1-negative-controls-generic.py",
+                "--source",
+                "/work/q1-attempt03/source",
+                "--freeze",
+                "/work/q1-attempt03/freeze.json",
+                "--scores",
+                "/work/q1-attempt03/scores",
+                "--output",
+                "/work/q1-attempt03/negative-controls.json"
+              ],
+              "cwd": "/work/q1-attempt03/source",
+              "exit": 1,
+              "timed_out": false,
+              "wall_seconds": 0.11515945009887218
+            }
+          ],
+          "physical_device": 3,
+          "logical_device": 0,
+          "environment_before": {
+            "packages": {
+              "torch": "2.10.0+cpu",
+              "torch_npu": "2.10.0.post4",
+              "qwen-tts": "0.1.1",
+              "transformers": "4.57.3",
+              "tokenizers": "0.22.2",
+              "numpy": "2.5.3",
+              "aiohttp": "3.14.3",
+              "triton": "3.5.0",
+              "triton_ascend": "3.2.2",
+              "huggingface-hub": "0.36.2"
+            },
+            "system_libraries": "libc6:arm64=2.35-0ubuntu3.15\nlibstdc++6:arm64=12.3.0-1ubuntu1~22.04.3\n",
+            "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+            "cann_install_sha256": "a9b17ef608ebeb70ade09cde1c12a545eb5e8f3e5312f6806ca0d368b0464848",
+            "variables": {
+              "ASCEND_RT_VISIBLE_DEVICES": "3",
+              "ASCEND_HOME_PATH": "/usr/local/Ascend/cann-9.1.0",
+              "LD_LIBRARY_PATH": "/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/cann-9.1.0/lib64:/usr/local/Ascend/cann-9.1.0/lib64/plugin/opskernel:/usr/local/Ascend/cann-9.1.0/lib64/plugin/nnengine:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe/op_tiling/lib/linux/aarch64:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64/plugin:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/opskernel:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/nnengine:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/python3.12.13/lib:",
+              "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2",
+              "OMP_NUM_THREADS": "4",
+              "PYTHONPATH": "/work/q1-attempt03/build:/work/reference:/usr/local/Ascend/cann-9.1.0/python/site-packages:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe:/usr/local/Ascend/ascend-toolkit/latest/python/site-packages:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe:",
+              "HF_HUB_OFFLINE": "1",
+              "TASK_QUEUE_ENABLE": "1"
+            },
+            "model_assets": {
+              "config.json": "17a07f527a1c25ea30b4e023a184482a23d3e279d697b1dc81b1bde498d29cf9",
+              "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+              "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+              "model.safetensors": "38b1d5971bdbd982b561cccec982669a53b0537c3cf5e9bd4778ed07bb2f5137",
+              "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+              "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+              "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+              "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+              "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+              "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+              "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+            }
+          },
+          "candidate_relative_quality": {
+            "status": "PASS",
+            "protocol": "Q1-balanced-v1",
+            "scope": "Q1 relative quality only; no performance or subjective-quality acceptance",
+            "lock_sha256": "3fd45d51dcb53a06d5e0bd4bb93a99e938f5cdb7562bb1e46f2bcaf99de9b096",
+            "boundary_sha256": "3974d635bc29f0d5e675a62dcf3d1022f2bc69326373a8e02c394470c3db6d4e",
+            "groups": [
+              {
+                "repetition": 1,
+                "concurrency": 4,
+                "exact_pcm": 32,
+                "status": "PASS_EXACT_PCM"
+              },
+              {
+                "repetition": 1,
+                "concurrency": 16,
+                "exact_pcm": 32,
+                "status": "PASS_EXACT_PCM"
+              }
+            ],
+            "scored_pairs": 0,
+            "identity_unchanged": true,
+            "generation_actual_exit": 0
+          },
+          "error": "required command failed: negative-controls",
+          "log_sha256": {
+            "generation.log": "1ab37266740c7dfa3cf89936acbf29e8fcccd04b197a4b0a5c41975d6e526865",
+            "negative-controls.log": "7c9aba27949993a6938fa5a510ddd0d71dd7e64882b456e265acdcca874a8639",
+            "quality-score.log": "04a2bd651a8fbbd0aec3f2693ab34377b13050af7ce55384f9a5c08f21cdb5c3",
+            "freeze.log": "97b3bbabbf15c801252ed37702e19db5e88671cef6d879e20dc9a928c1e3136f",
+            "compatibility.log": "3487a671330e674195015f886633f3aebc2b0c53c7164c7d38831b5958766d58"
+          }
+        }
+      }
+    },
+    {
+      "number": 4,
+      "path": "/work/q1-attempt04",
+      "phase_outcomes": {
+        "prepare": {
+          "validator_sha256": "5d176f310b62088229dac9013a5409fd3632ea8d6ce42bb7651ad5feb12cbc3b",
+          "status": "PASS",
+          "scope": "Q1 harness validation, not runtime promotion or performance",
+          "phase": "prepare",
+          "tested_commit": "6b1f1931f5fa3b026dac0ab08bcd6f49a7252ed7",
+          "commands": [
+            {
+              "name": "cpu-suite",
+              "argv": [
+                "/work/venv/bin/python",
+                "-m",
+                "unittest",
+                "discover",
+                "-s",
+                "tests",
+                "-v"
+              ],
+              "cwd": "/work/q1-attempt04/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 0.5158637498971075
+            },
+            {
+              "name": "configure",
+              "argv": [
+                "cmake",
+                "-S",
+                "/work/q1-attempt04/source",
+                "-B",
+                "/work/q1-attempt04/build",
+                "-DPython3_EXECUTABLE=/work/venv/bin/python",
+                "-DCMAKE_BUILD_TYPE=Release"
+              ],
+              "cwd": "/work/q1-attempt04/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 19.146317100152373
+            },
+            {
+              "name": "build",
+              "argv": [
+                "cmake",
+                "--build",
+                "/work/q1-attempt04/build",
+                "-j",
+                "2"
+              ],
+              "cwd": "/work/q1-attempt04/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 49.83961830008775
+            },
+            {
+              "name": "ownership",
+              "argv": [
+                "/work/venv/bin/python",
+                "/work/q1-attempt04/source/test_native_state.py",
+                "-v"
+              ],
+              "cwd": "/work/q1-attempt04/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 8.72811492998153
+            }
+          ],
+          "physical_device": 3,
+          "logical_device": 0,
+          "environment_before": {
+            "packages": {
+              "torch": "2.10.0+cpu",
+              "torch_npu": "2.10.0.post4",
+              "qwen-tts": "0.1.1",
+              "transformers": "4.57.3",
+              "tokenizers": "0.22.2",
+              "numpy": "2.5.3",
+              "aiohttp": "3.14.3",
+              "triton": "3.5.0",
+              "triton_ascend": "3.2.2",
+              "huggingface-hub": "0.36.2"
+            },
+            "system_libraries": "libc6:arm64=2.35-0ubuntu3.15\nlibstdc++6:arm64=12.3.0-1ubuntu1~22.04.3\n",
+            "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+            "cann_install_sha256": "a9b17ef608ebeb70ade09cde1c12a545eb5e8f3e5312f6806ca0d368b0464848",
+            "variables": {
+              "ASCEND_RT_VISIBLE_DEVICES": "3",
+              "ASCEND_HOME_PATH": "/usr/local/Ascend/cann-9.1.0",
+              "LD_LIBRARY_PATH": "/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/cann-9.1.0/lib64:/usr/local/Ascend/cann-9.1.0/lib64/plugin/opskernel:/usr/local/Ascend/cann-9.1.0/lib64/plugin/nnengine:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe/op_tiling/lib/linux/aarch64:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64/plugin:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/opskernel:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/nnengine:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/python3.12.13/lib:",
+              "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2",
+              "OMP_NUM_THREADS": "4",
+              "PYTHONPATH": "/work/q1-attempt04/build:/work/reference:/usr/local/Ascend/cann-9.1.0/python/site-packages:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe:/usr/local/Ascend/ascend-toolkit/latest/python/site-packages:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe:",
+              "HF_HUB_OFFLINE": "1",
+              "TASK_QUEUE_ENABLE": "1"
+            },
+            "model_assets": {
+              "config.json": "17a07f527a1c25ea30b4e023a184482a23d3e279d697b1dc81b1bde498d29cf9",
+              "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+              "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+              "model.safetensors": "38b1d5971bdbd982b561cccec982669a53b0537c3cf5e9bd4778ed07bb2f5137",
+              "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+              "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+              "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+              "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+              "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+              "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+              "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+            }
+          },
+          "binaries": {
+            "_qtts_native.cpython-312-aarch64-linux-gnu.so": "1ab69fe4cc4e4136ca7a7d3826bbf7d8754a238a8c14f56579000cd582456785",
+            "qtts": "268178682ab890f6df0ece11eff743c6caf0f1ecd0bcd48d8dfa3cce8ab67195"
+          },
+          "environment_after": {
+            "packages": {
+              "torch": "2.10.0+cpu",
+              "torch_npu": "2.10.0.post4",
+              "qwen-tts": "0.1.1",
+              "transformers": "4.57.3",
+              "tokenizers": "0.22.2",
+              "numpy": "2.5.3",
+              "aiohttp": "3.14.3",
+              "triton": "3.5.0",
+              "triton_ascend": "3.2.2",
+              "huggingface-hub": "0.36.2"
+            },
+            "system_libraries": "libc6:arm64=2.35-0ubuntu3.15\nlibstdc++6:arm64=12.3.0-1ubuntu1~22.04.3\n",
+            "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+            "cann_install_sha256": "a9b17ef608ebeb70ade09cde1c12a545eb5e8f3e5312f6806ca0d368b0464848",
+            "variables": {
+              "ASCEND_RT_VISIBLE_DEVICES": "3",
+              "ASCEND_HOME_PATH": "/usr/local/Ascend/cann-9.1.0",
+              "LD_LIBRARY_PATH": "/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/cann-9.1.0/lib64:/usr/local/Ascend/cann-9.1.0/lib64/plugin/opskernel:/usr/local/Ascend/cann-9.1.0/lib64/plugin/nnengine:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe/op_tiling/lib/linux/aarch64:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64/plugin:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/opskernel:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/nnengine:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/python3.12.13/lib:",
+              "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2",
+              "OMP_NUM_THREADS": "4",
+              "PYTHONPATH": "/work/q1-attempt04/build:/work/reference:/usr/local/Ascend/cann-9.1.0/python/site-packages:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe:/usr/local/Ascend/ascend-toolkit/latest/python/site-packages:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe:",
+              "HF_HUB_OFFLINE": "1",
+              "TASK_QUEUE_ENABLE": "1"
+            },
+            "model_assets": {
+              "config.json": "17a07f527a1c25ea30b4e023a184482a23d3e279d697b1dc81b1bde498d29cf9",
+              "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+              "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+              "model.safetensors": "38b1d5971bdbd982b561cccec982669a53b0537c3cf5e9bd4778ed07bb2f5137",
+              "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+              "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+              "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+              "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+              "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+              "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+              "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+            }
+          },
+          "log_sha256": {
+            "configure.log": "1af7c5aa293a6534d12586f9c35c155ac440806bdd80d29ed2a3016bc5b751b6",
+            "build.log": "c69d2e693e057b117bbfbcc3f1022236595eb422c97f81ca38141952c01b964f",
+            "ownership.log": "e9ff2ab0dab5bbcda4b0f208d1c851e2f20b50655c153d23c655d353e212d150",
+            "cpu-suite.log": "664af9aa2aacad1ea6d662e04681aaed9d4e6df71cb04662223b36cf6a1edf90"
+          }
+        },
+        "evaluate": {
+          "validator_sha256": "5d176f310b62088229dac9013a5409fd3632ea8d6ce42bb7651ad5feb12cbc3b",
+          "status": "INCONCLUSIVE",
+          "scope": "Q1 harness validation, not runtime promotion or performance",
+          "phase": "evaluate",
+          "tested_commit": "6b1f1931f5fa3b026dac0ab08bcd6f49a7252ed7",
+          "commands": [
+            {
+              "name": "freeze",
+              "argv": [
+                "/work/venv/bin/python",
+                "/work/q1-attempt04/source/speech_quality.py",
+                "freeze",
+                "--models-root",
+                "/work/quality-models",
+                "--native-build",
+                "/work/q1-attempt04/build",
+                "--reference-root",
+                "/work/reference",
+                "--model",
+                "/model",
+                "--workload",
+                "/work/c007/source/data/heldout-32.jsonl",
+                "--score-all",
+                "--output",
+                "/work/q1-attempt04/freeze.json"
+              ],
+              "cwd": "/work/q1-attempt04/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 6.478198950178921
+            },
+            {
+              "name": "compatibility",
+              "argv": [
+                "/work/venv/bin/python",
+                "/work/q1-compatibility-generic.py",
+                "--source",
+                "/work/q1-attempt04/source",
+                "--freeze",
+                "/work/q1-attempt04/freeze.json",
+                "--wav",
+                "/work/c007/results/heldout/r1-reference/c4/00000.wav",
+                "--output",
+                "/work/q1-attempt04/compatibility.json"
+              ],
+              "cwd": "/work/q1-attempt04/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 34.877075060037896
+            },
+            {
+              "name": "generation",
+              "argv": [
+                "/work/venv/bin/python",
+                "/work/q1-attempt04/source/speech_quality.py",
+                "generate",
+                "--freeze",
+                "/work/q1-attempt04/freeze.json",
+                "--boundary",
+                "/work/q1-attempt04/generation.json",
+                "--run",
+                "/work/q1-attempt04/generated",
+                "--concurrencies",
+                "4",
+                "16",
+                "--requests",
+                "32",
+                "--repetitions",
+                "1"
+              ],
+              "cwd": "/work/q1-attempt04/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 210.27324310992844
+            },
+            {
+              "name": "quality-score",
+              "argv": [
+                "/work/venv/bin/python",
+                "/work/q1-attempt04/source/speech_quality.py",
+                "score",
+                "--freeze",
+                "/work/q1-attempt04/freeze.json",
+                "--boundary",
+                "/work/q1-attempt04/generation.json",
+                "--run",
+                "/work/q1-attempt04/generated",
+                "--output",
+                "/work/q1-attempt04/scores"
+              ],
+              "cwd": "/work/q1-attempt04/source",
+              "exit": 1,
+              "timed_out": false,
+              "wall_seconds": 136.86143069015816
+            }
+          ],
+          "physical_device": 3,
+          "logical_device": 0,
+          "environment_before": {
+            "packages": {
+              "torch": "2.10.0+cpu",
+              "torch_npu": "2.10.0.post4",
+              "qwen-tts": "0.1.1",
+              "transformers": "4.57.3",
+              "tokenizers": "0.22.2",
+              "numpy": "2.5.3",
+              "aiohttp": "3.14.3",
+              "triton": "3.5.0",
+              "triton_ascend": "3.2.2",
+              "huggingface-hub": "0.36.2"
+            },
+            "system_libraries": "libc6:arm64=2.35-0ubuntu3.15\nlibstdc++6:arm64=12.3.0-1ubuntu1~22.04.3\n",
+            "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+            "cann_install_sha256": "a9b17ef608ebeb70ade09cde1c12a545eb5e8f3e5312f6806ca0d368b0464848",
+            "variables": {
+              "ASCEND_RT_VISIBLE_DEVICES": "3",
+              "ASCEND_HOME_PATH": "/usr/local/Ascend/cann-9.1.0",
+              "LD_LIBRARY_PATH": "/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/cann-9.1.0/lib64:/usr/local/Ascend/cann-9.1.0/lib64/plugin/opskernel:/usr/local/Ascend/cann-9.1.0/lib64/plugin/nnengine:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe/op_tiling/lib/linux/aarch64:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64/plugin:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/opskernel:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/nnengine:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/python3.12.13/lib:",
+              "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2",
+              "OMP_NUM_THREADS": "4",
+              "PYTHONPATH": "/work/q1-attempt04/build:/work/reference:/usr/local/Ascend/cann-9.1.0/python/site-packages:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe:/usr/local/Ascend/ascend-toolkit/latest/python/site-packages:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe:",
+              "HF_HUB_OFFLINE": "1",
+              "TASK_QUEUE_ENABLE": "1"
+            },
+            "model_assets": {
+              "config.json": "17a07f527a1c25ea30b4e023a184482a23d3e279d697b1dc81b1bde498d29cf9",
+              "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+              "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+              "model.safetensors": "38b1d5971bdbd982b561cccec982669a53b0537c3cf5e9bd4778ed07bb2f5137",
+              "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+              "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+              "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+              "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+              "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+              "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+              "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+            }
+          },
+          "error": "ValueError: actual evaluator coverage incomplete: {'status': 'INCONCLUSIVE', 'relative_quality': 'INCONCLUSIVE', 'error': 'ValueError: ASR transcript, EOS or coverage incomplete'}",
+          "log_sha256": {
+            "generation.log": "e15cf280a46b7cd91bf4ce9e6012b8858d62ec75601322e78d0ba560b7c709f6",
+            "quality-score.log": "4c74395ec976fd0623968ba295bdfa2f6cb05b8df255a63e5c281f923f46773b",
+            "freeze.log": "bbfe47c0c4ff292c515fd41b9ec6e4405842537a93597c80f97368cbfbe28982",
+            "compatibility.log": "2a2ae6aa43dd9659d7b1efee82b64c4a48bf216f08ea1ee7b8e929a9a6d84f05"
+          }
+        }
+      }
+    },
+    {
+      "number": 5,
+      "path": "/work/q1-attempt05",
+      "phase_outcomes": {
+        "prepare": {
+          "validator_sha256": "1925823a89c14f13bc2146960b57e9e5a421bc40290fe6edebec9a3e05ea2fca",
+          "status": "PASS",
+          "scope": "Q1 harness validation, not runtime promotion or performance",
+          "phase": "prepare",
+          "tested_commit": "359ef11088aa6ac42ba685af449091190d1f9ca6",
+          "commands": [
+            {
+              "name": "cpu-suite",
+              "argv": [
+                "/work/venv/bin/python",
+                "-m",
+                "unittest",
+                "discover",
+                "-s",
+                "tests",
+                "-v"
+              ],
+              "cwd": "/work/q1-attempt05/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 0.5168811599723995
+            },
+            {
+              "name": "configure",
+              "argv": [
+                "cmake",
+                "-S",
+                "/work/q1-attempt05/source",
+                "-B",
+                "/work/q1-attempt05/build",
+                "-DPython3_EXECUTABLE=/work/venv/bin/python",
+                "-DCMAKE_BUILD_TYPE=Release"
+              ],
+              "cwd": "/work/q1-attempt05/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 19.289398239925504
+            },
+            {
+              "name": "build",
+              "argv": [
+                "cmake",
+                "--build",
+                "/work/q1-attempt05/build",
+                "-j",
+                "2"
+              ],
+              "cwd": "/work/q1-attempt05/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 50.18830226990394
+            },
+            {
+              "name": "ownership",
+              "argv": [
+                "/work/venv/bin/python",
+                "/work/q1-attempt05/source/test_native_state.py",
+                "-v"
+              ],
+              "cwd": "/work/q1-attempt05/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 8.727546680020168
+            }
+          ],
+          "physical_device": 3,
+          "logical_device": 0,
+          "environment_before": {
+            "packages": {
+              "torch": "2.10.0+cpu",
+              "torch_npu": "2.10.0.post4",
+              "qwen-tts": "0.1.1",
+              "transformers": "4.57.3",
+              "tokenizers": "0.22.2",
+              "numpy": "2.5.3",
+              "aiohttp": "3.14.3",
+              "triton": "3.5.0",
+              "triton_ascend": "3.2.2",
+              "huggingface-hub": "0.36.2"
+            },
+            "system_libraries": "libc6:arm64=2.35-0ubuntu3.15\nlibstdc++6:arm64=12.3.0-1ubuntu1~22.04.3\n",
+            "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+            "cann_install_sha256": "a9b17ef608ebeb70ade09cde1c12a545eb5e8f3e5312f6806ca0d368b0464848",
+            "variables": {
+              "ASCEND_RT_VISIBLE_DEVICES": "3",
+              "ASCEND_HOME_PATH": "/usr/local/Ascend/cann-9.1.0",
+              "LD_LIBRARY_PATH": "/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/cann-9.1.0/lib64:/usr/local/Ascend/cann-9.1.0/lib64/plugin/opskernel:/usr/local/Ascend/cann-9.1.0/lib64/plugin/nnengine:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe/op_tiling/lib/linux/aarch64:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64/plugin:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/opskernel:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/nnengine:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/python3.12.13/lib:",
+              "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2",
+              "OMP_NUM_THREADS": "4",
+              "PYTHONPATH": "/work/q1-attempt05/build:/work/reference:/usr/local/Ascend/cann-9.1.0/python/site-packages:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe:/usr/local/Ascend/ascend-toolkit/latest/python/site-packages:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe:",
+              "HF_HUB_OFFLINE": "1",
+              "TASK_QUEUE_ENABLE": "1"
+            },
+            "model_assets": {
+              "config.json": "17a07f527a1c25ea30b4e023a184482a23d3e279d697b1dc81b1bde498d29cf9",
+              "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+              "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+              "model.safetensors": "38b1d5971bdbd982b561cccec982669a53b0537c3cf5e9bd4778ed07bb2f5137",
+              "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+              "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+              "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+              "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+              "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+              "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+              "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+            }
+          },
+          "binaries": {
+            "_qtts_native.cpython-312-aarch64-linux-gnu.so": "75ce6d3979d0794eb2fb3a3ede330997df25ed20c3e691339025c9e31fbefaee",
+            "qtts": "b16ff9a8ff9af5f6fa4f1c9855cca98e42d9e2ceba5cbc38152783061d45bd17"
+          },
+          "environment_after": {
+            "packages": {
+              "torch": "2.10.0+cpu",
+              "torch_npu": "2.10.0.post4",
+              "qwen-tts": "0.1.1",
+              "transformers": "4.57.3",
+              "tokenizers": "0.22.2",
+              "numpy": "2.5.3",
+              "aiohttp": "3.14.3",
+              "triton": "3.5.0",
+              "triton_ascend": "3.2.2",
+              "huggingface-hub": "0.36.2"
+            },
+            "system_libraries": "libc6:arm64=2.35-0ubuntu3.15\nlibstdc++6:arm64=12.3.0-1ubuntu1~22.04.3\n",
+            "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+            "cann_install_sha256": "a9b17ef608ebeb70ade09cde1c12a545eb5e8f3e5312f6806ca0d368b0464848",
+            "variables": {
+              "ASCEND_RT_VISIBLE_DEVICES": "3",
+              "ASCEND_HOME_PATH": "/usr/local/Ascend/cann-9.1.0",
+              "LD_LIBRARY_PATH": "/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/cann-9.1.0/lib64:/usr/local/Ascend/cann-9.1.0/lib64/plugin/opskernel:/usr/local/Ascend/cann-9.1.0/lib64/plugin/nnengine:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe/op_tiling/lib/linux/aarch64:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64/plugin:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/opskernel:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/nnengine:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/python3.12.13/lib:",
+              "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2",
+              "OMP_NUM_THREADS": "4",
+              "PYTHONPATH": "/work/q1-attempt05/build:/work/reference:/usr/local/Ascend/cann-9.1.0/python/site-packages:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe:/usr/local/Ascend/ascend-toolkit/latest/python/site-packages:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe:",
+              "HF_HUB_OFFLINE": "1",
+              "TASK_QUEUE_ENABLE": "1"
+            },
+            "model_assets": {
+              "config.json": "17a07f527a1c25ea30b4e023a184482a23d3e279d697b1dc81b1bde498d29cf9",
+              "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+              "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+              "model.safetensors": "38b1d5971bdbd982b561cccec982669a53b0537c3cf5e9bd4778ed07bb2f5137",
+              "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+              "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+              "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+              "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+              "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+              "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+              "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+            }
+          },
+          "log_sha256": {
+            "configure.log": "97040b33a00ae52001cf1e61f65c61e3741a27754731252361af01ff5b19abe9",
+            "build.log": "8e6f173f05aac98574bb96a77b316d14a5055c157b699595fa0637fa32873afa",
+            "ownership.log": "99a7474b0ab7b573b7292866f1420b9aa1bcefa4c158a9174ceabd9e1825d3bc",
+            "cpu-suite.log": "d5a9f8151bbcbef07ffbc49249c4e631b8f9455eec786d5db2b8b3c5a0bd4b18"
+          }
+        },
+        "evaluate": {
+          "validator_sha256": "1925823a89c14f13bc2146960b57e9e5a421bc40290fe6edebec9a3e05ea2fca",
+          "status": "FAIL",
+          "scope": "Q1 harness validation, not runtime promotion or performance",
+          "phase": "evaluate",
+          "tested_commit": "359ef11088aa6ac42ba685af449091190d1f9ca6",
+          "commands": [
+            {
+              "name": "freeze",
+              "argv": [
+                "/work/venv/bin/python",
+                "/work/q1-attempt05/source/speech_quality.py",
+                "freeze",
+                "--models-root",
+                "/work/quality-models",
+                "--native-build",
+                "/work/q1-attempt05/build",
+                "--reference-root",
+                "/work/reference",
+                "--model",
+                "/model",
+                "--workload",
+                "/work/c007/source/data/heldout-32.jsonl",
+                "--score-all",
+                "--output",
+                "/work/q1-attempt05/freeze.json"
+              ],
+              "cwd": "/work/q1-attempt05/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 6.425552079919726
+            },
+            {
+              "name": "compatibility",
+              "argv": [
+                "/work/venv/bin/python",
+                "/work/q1-compatibility-generic.py",
+                "--source",
+                "/work/q1-attempt05/source",
+                "--freeze",
+                "/work/q1-attempt05/freeze.json",
+                "--wav",
+                "/work/c007/results/heldout/r1-reference/c4/00000.wav",
+                "--output",
+                "/work/q1-attempt05/compatibility.json"
+              ],
+              "cwd": "/work/q1-attempt05/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 34.063304639887065
+            },
+            {
+              "name": "generation",
+              "argv": [
+                "/work/venv/bin/python",
+                "/work/q1-attempt05/source/speech_quality.py",
+                "generate",
+                "--freeze",
+                "/work/q1-attempt05/freeze.json",
+                "--boundary",
+                "/work/q1-attempt05/generation.json",
+                "--run",
+                "/work/q1-attempt05/generated",
+                "--concurrencies",
+                "4",
+                "16",
+                "--requests",
+                "32",
+                "--repetitions",
+                "1"
+              ],
+              "cwd": "/work/q1-attempt05/source",
+              "exit": 0,
+              "timed_out": false,
+              "wall_seconds": 209.8710985200014
+            },
+            {
+              "name": "quality-score",
+              "argv": [
+                "/work/venv/bin/python",
+                "/work/q1-attempt05/source/speech_quality.py",
+                "score",
+                "--freeze",
+                "/work/q1-attempt05/freeze.json",
+                "--boundary",
+                "/work/q1-attempt05/generation.json",
+                "--run",
+                "/work/q1-attempt05/generated",
+                "--output",
+                "/work/q1-attempt05/scores"
+              ],
+              "cwd": "/work/q1-attempt05/source",
+              "exit": 1,
+              "timed_out": false,
+              "wall_seconds": 786.4597032901365
+            },
+            {
+              "name": "negative-controls",
+              "argv": [
+                "/work/venv/bin/python",
+                "/work/q1-negative-controls-full.py",
+                "--source",
+                "/work/q1-attempt05/source",
+                "--freeze",
+                "/work/q1-attempt05/freeze.json",
+                "--scores",
+                "/work/q1-attempt05/scores",
+                "--output",
+                "/work/q1-attempt05/negative-controls.json"
+              ],
+              "cwd": "/work/q1-attempt05/source",
+              "exit": 1,
+              "timed_out": false,
+              "wall_seconds": 0.16546271997503936
+            }
+          ],
+          "physical_device": 3,
+          "logical_device": 0,
+          "environment_before": {
+            "packages": {
+              "torch": "2.10.0+cpu",
+              "torch_npu": "2.10.0.post4",
+              "qwen-tts": "0.1.1",
+              "transformers": "4.57.3",
+              "tokenizers": "0.22.2",
+              "numpy": "2.5.3",
+              "aiohttp": "3.14.3",
+              "triton": "3.5.0",
+              "triton_ascend": "3.2.2",
+              "huggingface-hub": "0.36.2"
+            },
+            "system_libraries": "libc6:arm64=2.35-0ubuntu3.15\nlibstdc++6:arm64=12.3.0-1ubuntu1~22.04.3\n",
+            "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+            "cann_install_sha256": "a9b17ef608ebeb70ade09cde1c12a545eb5e8f3e5312f6806ca0d368b0464848",
+            "variables": {
+              "ASCEND_RT_VISIBLE_DEVICES": "3",
+              "ASCEND_HOME_PATH": "/usr/local/Ascend/cann-9.1.0",
+              "LD_LIBRARY_PATH": "/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/cann-9.1.0/lib64:/usr/local/Ascend/cann-9.1.0/lib64/plugin/opskernel:/usr/local/Ascend/cann-9.1.0/lib64/plugin/nnengine:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe/op_tiling/lib/linux/aarch64:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64/plugin:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/opskernel:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/nnengine:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/python3.12.13/lib:",
+              "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2",
+              "OMP_NUM_THREADS": "4",
+              "PYTHONPATH": "/work/q1-attempt05/build:/work/reference:/usr/local/Ascend/cann-9.1.0/python/site-packages:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe:/usr/local/Ascend/ascend-toolkit/latest/python/site-packages:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe:",
+              "HF_HUB_OFFLINE": "1",
+              "TASK_QUEUE_ENABLE": "1"
+            },
+            "model_assets": {
+              "config.json": "17a07f527a1c25ea30b4e023a184482a23d3e279d697b1dc81b1bde498d29cf9",
+              "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+              "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+              "model.safetensors": "38b1d5971bdbd982b561cccec982669a53b0537c3cf5e9bd4778ed07bb2f5137",
+              "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+              "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+              "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+              "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+              "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+              "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+              "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+            }
+          },
+          "candidate_relative_quality": {
+            "status": "INCONCLUSIVE",
+            "protocol": "Q1-balanced-v1",
+            "scope": "Q1 relative quality only; no performance or subjective-quality acceptance",
+            "lock_sha256": "8c22b23504e4e906e44e934f5b3fb86b8379fef7a08a370142a316b8e78cfb76",
+            "boundary_sha256": "66d29bbe9e1e6c9f5a1aef4fb2b1b916209c81964563d61f253023a52e594d06",
+            "relative_quality": "INCONCLUSIVE",
+            "groups": [
+              {
+                "status": "INCONCLUSIVE",
+                "language": "English",
+                "utterances": 16,
+                "scored_utterances": 15,
+                "inconclusive_indices": [
+                  4
+                ],
+                "reason": "incomplete independent scores; no subset error-rate acceptance",
+                "repetition": 1,
+                "concurrency": 4,
+                "exact_pcm": 16
+              },
+              {
+                "language": "Chinese",
+                "utterances": 16,
+                "ground_truth_units": 357,
+                "reference_errors": 104,
+                "candidate_errors": 104,
+                "reference_error_rate": 0.2913165266106443,
+                "candidate_error_rate": 0.2913165266106443,
+                "error_rate_delta": 0.0,
+                "speaker_cosines": [],
+                "speaker_min": null,
+                "speaker_mean": null,
+                "status": "PASS",
+                "repetition": 1,
+                "concurrency": 4,
+                "exact_pcm": 16
+              },
+              {
+                "status": "INCONCLUSIVE",
+                "language": "English",
+                "utterances": 16,
+                "scored_utterances": 15,
+                "inconclusive_indices": [
+                  4
+                ],
+                "reason": "incomplete independent scores; no subset error-rate acceptance",
+                "repetition": 1,
+                "concurrency": 16,
+                "exact_pcm": 16
+              },
+              {
+                "language": "Chinese",
+                "utterances": 16,
+                "ground_truth_units": 357,
+                "reference_errors": 99,
+                "candidate_errors": 99,
+                "reference_error_rate": 0.2773109243697479,
+                "candidate_error_rate": 0.2773109243697479,
+                "error_rate_delta": 0.0,
+                "speaker_cosines": [],
+                "speaker_min": null,
+                "speaker_mean": null,
+                "status": "PASS",
+                "repetition": 1,
+                "concurrency": 16,
+                "exact_pcm": 16
+              }
+            ],
+            "attempted_pairs": 64,
+            "scored_pairs": 62,
+            "inconclusive_pairs": 2,
+            "identity_unchanged": true,
+            "score_all": true,
+            "generation_actual_exit": 0
+          },
+          "error": "required command failed: negative-controls",
+          "log_sha256": {
+            "generation.log": "c0f59fb6faa0bcce52b907ff01c4173afccdbbc0e1da64f8d9cd1ed17fe398d9",
+            "negative-controls.log": "f4c4aeb48bfa493dcefbe3c55e39345e7dc64abb453bba638bd0527e9cca1572",
+            "quality-score.log": "aa634152bec7e6d9bf15ce6a8d65805db6108f3ebcbe32545f6d0004ffed115c",
+            "freeze.log": "10ed94c01bfe267cde38d7047af33353cb58828202f08cc59021fdb2e325b380",
+            "compatibility.log": "688a6cbed6cb7d8fe7cb980c889cf250bbb63c514d8144e10a8792fa1d2d9d5b"
+          }
+        }
+      },
+      "followup_outcome": {
+        "status": "PASS",
+        "scope": "Q1 evaluator completeness, real outputs and rejection contracts only; no runtime promotion",
+        "tested_commit": "359ef11088aa6ac42ba685af449091190d1f9ca6",
+        "freeze_sha256": "8c22b23504e4e906e44e934f5b3fb86b8379fef7a08a370142a316b8e78cfb76",
+        "original_envelope": {
+          "status": "FAIL",
+          "sha256": "8442b66fdbf7555582d511f8158ad930a63c25eb64f473b27e7868750e9eec80",
+          "reason": "negative-control selector mistakenly chose a pair summary labelled SCORED; unchanged original FAIL"
+        },
+        "correction": "select actual raw records requiring pcm_sha256/asr/speaker; all ten control mutations unchanged",
+        "corrected_checker_sha256": "cd8b25eba5152e799a2bdcbb1253ce790d226ad8ed0d0861ea8d386abc061c3c",
+        "corrected_controls_sha256": "2f41a7ea060c7a65dbc393135f443c3131ec243837c374350290eb9c8a8cbb01",
+        "corrected_checker_actual_exit": 0,
+        "cpu_actual_exit": 0,
+        "attempted_pairs": 64,
+        "scored_pairs": 62,
+        "inconclusive_pairs": 2,
+        "candidate_relative_quality": "INCONCLUSIVE",
+        "groups": [
+          {
+            "status": "INCONCLUSIVE",
+            "language": "English",
+            "utterances": 16,
+            "scored_utterances": 15,
+            "inconclusive_indices": [
+              4
+            ],
+            "reason": "incomplete independent scores; no subset error-rate acceptance",
+            "repetition": 1,
+            "concurrency": 4,
+            "exact_pcm": 16
+          },
+          {
+            "language": "Chinese",
+            "utterances": 16,
+            "ground_truth_units": 357,
+            "reference_errors": 104,
+            "candidate_errors": 104,
+            "reference_error_rate": 0.2913165266106443,
+            "candidate_error_rate": 0.2913165266106443,
+            "error_rate_delta": 0.0,
+            "speaker_cosines": [],
+            "speaker_min": null,
+            "speaker_mean": null,
+            "status": "PASS",
+            "repetition": 1,
+            "concurrency": 4,
+            "exact_pcm": 16
+          },
+          {
+            "status": "INCONCLUSIVE",
+            "language": "English",
+            "utterances": 16,
+            "scored_utterances": 15,
+            "inconclusive_indices": [
+              4
+            ],
+            "reason": "incomplete independent scores; no subset error-rate acceptance",
+            "repetition": 1,
+            "concurrency": 16,
+            "exact_pcm": 16
+          },
+          {
+            "language": "Chinese",
+            "utterances": 16,
+            "ground_truth_units": 357,
+            "reference_errors": 99,
+            "candidate_errors": 99,
+            "reference_error_rate": 0.2773109243697479,
+            "candidate_error_rate": 0.2773109243697479,
+            "error_rate_delta": 0.0,
+            "speaker_cosines": [],
+            "speaker_min": null,
+            "speaker_mean": null,
+            "status": "PASS",
+            "repetition": 1,
+            "concurrency": 16,
+            "exact_pcm": 16
+          }
+        ],
+        "rejected_records": [
+          {
+            "concurrency": 4,
+            "index": 4,
+            "errors": [
+              "scorer incomplete: ValueError: ASR window 0:85760 reached 444 new-token limit",
+              "scorer incomplete: ValueError: ASR window 0:85760 reached 444 new-token limit"
+            ]
+          },
+          {
+            "concurrency": 16,
+            "index": 4,
+            "errors": [
+              "scorer incomplete: ValueError: ASR window 322560:645120 reached 444 new-token limit",
+              "scorer incomplete: ValueError: ASR window 322560:645120 reached 444 new-token limit"
+            ]
+          }
+        ],
+        "all_128_timed_requests_complete": true,
+        "all_64_timed_pairs_exact_PCM": true,
+        "physical_device": 3,
+        "host_pid": 2407338,
+        "container_pid": 99636,
+        "source_model_runtime_binaries_assets_unchanged": true,
+        "validator_sha256": "a4376b748b9b5be35b2b998e07f92c7f815416db193c09d3e74dfe446f8bd803"
+      }
+    }
+  ],
+  "archives": [
+    {
+      "kind": "metadata",
+      "path": "/work/q1-evidence-20261019/metadata.tar",
+      "bytes": 8857600,
+      "sha256": "dee45c9b5a6228a950fef06df5ba291bb060ee89b09350a5cdf7420ce3dd1298",
+      "files": 1050,
+      "host_path": "/home/zhuangzeliang/zc/qwen3-tts-cpp-20261019/q1-evidence-20261019/metadata.tar"
+    },
+    {
+      "kind": "media",
+      "path": "/work/q1-evidence-20261019/media.tar",
+      "bytes": 202383360,
+      "sha256": "fb870f553bce9fcafeaaada97a24d299deacaf26119fb011ee315205ff5900f3",
+      "files": 504,
+      "host_path": "/home/zhuangzeliang/zc/qwen3-tts-cpp-20261019/q1-evidence-20261019/media.tar"
+    }
+  ],
+  "media": [
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00000.wav",
+      "bytes": 238124,
+      "sha256": "fbad7f0d512d0fd6cd97b0ec5d54663f361cbad0ffbca6f269e297d496679dc7"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00001.wav",
+      "bytes": 119084,
+      "sha256": "ad4dd4117b25afe7522cdaa7a55942fa34fb1962f4f36e22792a399b85ad2481"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00002.wav",
+      "bytes": 395564,
+      "sha256": "eb82af44f32dc1086a979433dc817ceef7321e400b4bcd895e0f34c4533333b1"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00003.wav",
+      "bytes": 138284,
+      "sha256": "89466275dfae03c943a8765fcbc808db287c291b8fb22a8cfa6dbe0fec05f64b"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00004.wav",
+      "bytes": 1935404,
+      "sha256": "b4f8cf96b9132a7b969fdac6fde3d2fb89da9b2a608e0f318b08afd0588ee1e0"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00005.wav",
+      "bytes": 741164,
+      "sha256": "be4f260d4e538848e4bdf87c25b17e0d56d3338735575a70fd4fc827a46e5acf"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00006.wav",
+      "bytes": 399404,
+      "sha256": "bee3542473a8f7d48cd41577fda1a9faaa2ad178b4564b787cd9cfd983d22805"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00007.wav",
+      "bytes": 299564,
+      "sha256": "18ab3620ab525c73e671b0a458e337f3c16705505f5cdc4959cd4cb9cd77fa1e"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00008.wav",
+      "bytes": 245804,
+      "sha256": "ecd96a4686b44354532b22f108f53061ef993245179a40dbfbbebf4e704f5a3d"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00009.wav",
+      "bytes": 272684,
+      "sha256": "d175fe846d6d2d9273874527c8592a0c5b7f3273935053b9ac9851f2a76a6335"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00010.wav",
+      "bytes": 265004,
+      "sha256": "753c91bd41a908944246c58f14b15606aec0739977754b76877add6b498c9af5"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00011.wav",
+      "bytes": 284204,
+      "sha256": "c902cfc559ae261bf1dccdad05f7055df41e7151ca1110092ea6e4c0069200b4"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00012.wav",
+      "bytes": 295724,
+      "sha256": "e5ad7a1255f250bd6074b01a92e5ae60ae614a27db07194a88e411197da354fb"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00013.wav",
+      "bytes": 295724,
+      "sha256": "8df582226622b5da6a1aade518c44e5dd9278467aa22596e7fdfa3731e812c10"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00014.wav",
+      "bytes": 1048364,
+      "sha256": "7fd43b929d06f1cf9f78814cd23d256e5f9546610c79703ac0f5c37cbd3620af"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00015.wav",
+      "bytes": 633644,
+      "sha256": "7a311f3c4250ba346c7d032f3ecaee4ed9962b9dfb2e371a601368eb27891a80"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00016.wav",
+      "bytes": 126764,
+      "sha256": "04572b42772e405e7f0bd105bd4460340b4145029886aea60e11c70257945497"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00017.wav",
+      "bytes": 169004,
+      "sha256": "4707731f59e5e78788df566d4d172f7a4d2a0a1d226288ce6030b6d571966287"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00018.wav",
+      "bytes": 337964,
+      "sha256": "f4c00151bad92f91df189b81d7eade253e4b42d3a92af5ad4a8650419e6fdb4b"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00019.wav",
+      "bytes": 288044,
+      "sha256": "4f10e2b5f99f535d731450515f4800088d4fac5d920e5a34d4c780c0d61098c5"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00020.wav",
+      "bytes": 253484,
+      "sha256": "3b453082f70de866b0c5063af4631d8f7f9142a251321e21cf4dad4b150ca071"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00021.wav",
+      "bytes": 161324,
+      "sha256": "bf22f05c1ea216384c5b99bb87b857a914e761edfb6aa4edb0e86e6fda9351b7"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00022.wav",
+      "bytes": 238124,
+      "sha256": "7fe6549b3f474f9467d85dc1cd234e8cf231be4ddd5c875930f1f94c5e99bed5"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00023.wav",
+      "bytes": 253484,
+      "sha256": "69999222a0b55c7846c9679a0819c75eabe0c650d5e5bb2d114b87300bcf5a66"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00024.wav",
+      "bytes": 299564,
+      "sha256": "c83ffdad9138a50b07e1ff433420288330204884eee3aa97ab023512c960c858"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00025.wav",
+      "bytes": 280364,
+      "sha256": "fa454f57c852403856bd387bd1e099c8277c8773e143bdf8399ee662c2805086"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00026.wav",
+      "bytes": 299564,
+      "sha256": "a88d0af99a88d01f54f05afffeb21885310883a77a2a2db01d960915eed668f5"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00027.wav",
+      "bytes": 199724,
+      "sha256": "5178c3cf0d2f37e5e4a6719fa13b4110588a6e421fbeecc402521fc315e7bc28"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00028.wav",
+      "bytes": 288044,
+      "sha256": "f20765244fc3cd45eb8d07d79dfc17daad812ef10769ca25f561cb1f3b1ecbcc"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00029.wav",
+      "bytes": 280364,
+      "sha256": "433f9e78ca78e01c74001d43f306063d9f01612682c3465983348dc78a27ca29"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00030.wav",
+      "bytes": 702764,
+      "sha256": "b9d4711aefa59c825bfbc5e15fca371b72daf9daaf58b4585e6e7bd011760f88"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/00031.wav",
+      "bytes": 718124,
+      "sha256": "56a5eec6f1b8903d5268cf66fe5b3d630bdbff7a9a5305845b706ccc822ff453"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/warmup/00000.wav",
+      "bytes": 238124,
+      "sha256": "fbad7f0d512d0fd6cd97b0ec5d54663f361cbad0ffbca6f269e297d496679dc7"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/warmup/00001.wav",
+      "bytes": 119084,
+      "sha256": "ad4dd4117b25afe7522cdaa7a55942fa34fb1962f4f36e22792a399b85ad2481"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/warmup/00002.wav",
+      "bytes": 380204,
+      "sha256": "0b812346bf7f5f14f05cc69f907692fc4360f22853c31bcb9735971f3a34fbdf"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/warmup/00003.wav",
+      "bytes": 138284,
+      "sha256": "89466275dfae03c943a8765fcbc808db287c291b8fb22a8cfa6dbe0fec05f64b"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/warmup/00004.wav",
+      "bytes": 3813164,
+      "sha256": "b9ec53d838b74b35ac48147efddb1208be0cab5877f58d703dd6bbd7453b60e0"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/warmup/00005.wav",
+      "bytes": 660524,
+      "sha256": "f7f225d070d6588afb9e4ef66870149e10cc6b15a8da3c0d234edda52e94772a"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/warmup/00006.wav",
+      "bytes": 407084,
+      "sha256": "283ec6201a7cec3ce9135e4f8af31dd2f070a6f36c62e014e71881ef484c2764"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/warmup/00007.wav",
+      "bytes": 299564,
+      "sha256": "18ab3620ab525c73e671b0a458e337f3c16705505f5cdc4959cd4cb9cd77fa1e"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/warmup/00008.wav",
+      "bytes": 245804,
+      "sha256": "ecd96a4686b44354532b22f108f53061ef993245179a40dbfbbebf4e704f5a3d"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/warmup/00009.wav",
+      "bytes": 272684,
+      "sha256": "d175fe846d6d2d9273874527c8592a0c5b7f3273935053b9ac9851f2a76a6335"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/warmup/00010.wav",
+      "bytes": 265004,
+      "sha256": "753c91bd41a908944246c58f14b15606aec0739977754b76877add6b498c9af5"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/warmup/00011.wav",
+      "bytes": 284204,
+      "sha256": "3f7d70b8d039dc3442c37b798656c8c0f03212303b4f7f74e917211281046cd5"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/warmup/00012.wav",
+      "bytes": 295724,
+      "sha256": "a23efd88eeb56c6d6bc614b95ec3d9a5201e2420e142e2a233952e309361f861"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/warmup/00013.wav",
+      "bytes": 295724,
+      "sha256": "16bee1a624a44b9e90a06e909a94d2ae3d92e25b6b2bd143c84fed5ba6be5ec5"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/warmup/00014.wav",
+      "bytes": 698924,
+      "sha256": "b25570fbd85070f48a29e2a66e968dce7e4b9d81d9cc673b3ccfa9efd933d660"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c16/warmup/00015.wav",
+      "bytes": 625964,
+      "sha256": "ebcd425133839c5ce006afa38780d218d9a5b029293efe8240b2047b6e4872d2"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00000.wav",
+      "bytes": 165164,
+      "sha256": "a21026b8b7305d38ef37fe40a352f4b9321835e622a9b7359530935b139edc2a"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00001.wav",
+      "bytes": 165164,
+      "sha256": "b2eec24b4120f07ad56da0de5abfd288b8714624d875707daa3d3cff585df13a"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00002.wav",
+      "bytes": 349484,
+      "sha256": "9b79e4a2cbe11c745ac99096e3ea59187762519d9ded2d5e928693f8d0e365bf"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00003.wav",
+      "bytes": 215084,
+      "sha256": "eb1d9cea0a8fc96513cbf578eb0a827a5f67b11c505807de3d8c5817efeff841"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00004.wav",
+      "bytes": 257324,
+      "sha256": "648c3ecb08ebfb56691f4d45986ac8cbe530fb920bef9c2d48a48637a4d21828"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00005.wav",
+      "bytes": 245804,
+      "sha256": "563c67b0df5611ba2d8aa36ea7ef05fba25e448d26cfa7f8ef45e0a7ebbb7b40"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00006.wav",
+      "bytes": 1536044,
+      "sha256": "fc95be27a5802d7a5822f284539737faaa8d0a65dbcdf55403b0fa0a335a0748"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00007.wav",
+      "bytes": 322604,
+      "sha256": "c1c555277afe2d3928a7e6005f47ce746133547f6df0064ca6cd7b40e31372e2"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00008.wav",
+      "bytes": 280364,
+      "sha256": "68dcccafb29b88795928375fc93f10f547165e977ae814c703112987e7ce03a9"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00009.wav",
+      "bytes": 238124,
+      "sha256": "35c5ee3b368e7534213ddd69159846f2913a4f4ba0957c4eeb30dc63947fc37c"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00010.wav",
+      "bytes": 261164,
+      "sha256": "0a6877a2c78a9944e3ace4c795a05838a3b7047f58521ad866ecf631e979b30a"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00011.wav",
+      "bytes": 241964,
+      "sha256": "1c07dffda771e60fa2ad0cee1aaada143f2c80cf78c2ec4f4aef4568e56d86d9"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00012.wav",
+      "bytes": 249644,
+      "sha256": "2e7ce8dfecb7629d451bd48ff27f8b25a2ea4eaef8da0f54561d6f2ac0b4b74b"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00013.wav",
+      "bytes": 265004,
+      "sha256": "5ddb1f8566528c699fe01a524c73a92c5728308811806453c48074b5f457516d"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00014.wav",
+      "bytes": 825644,
+      "sha256": "b73f87cb691a680d3a8575a07f27ca588ad4b3c496427007bb6ece3620ff29fd"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00015.wav",
+      "bytes": 660524,
+      "sha256": "74b919b5de6ba9486fbee2a807f8985b7f17fef44aa90932be16894c930682b5"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00016.wav",
+      "bytes": 157484,
+      "sha256": "0323ed93506209c440a461e9c525727f4ad528b78569959b9b885c9ea630cfd1"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00017.wav",
+      "bytes": 203564,
+      "sha256": "f98043889471b6c8b1f0958257b2b087c3977f1b5921620a228585093de82b95"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00018.wav",
+      "bytes": 291884,
+      "sha256": "e78b7bbe7320c9646da5fe828c84bc9d44ffe845dafa50f0da8d8bb10aeb40c4"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00019.wav",
+      "bytes": 249644,
+      "sha256": "996a9e61a9ab53900594b61f3d42d97481dc30886c5dc5cd5703f3e76ab72c7c"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00020.wav",
+      "bytes": 330284,
+      "sha256": "a3a36b7e3a304e59d1105838e499eab47fb484d3dcd6ab46c6386b8a9137c481"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00021.wav",
+      "bytes": 142124,
+      "sha256": "1f417b313a4fd94146c731b2176195f13424dd685b3ee89e5bd246e3dd6c06d1"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00022.wav",
+      "bytes": 249644,
+      "sha256": "e31092ddecc8822f22f6debfd2c7e281f06cbbeed1d50b17f61a4e5843c7482f"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00023.wav",
+      "bytes": 203564,
+      "sha256": "7badd310b6742f84fed01d946d57c2b24508b88816bc09e163e89a74e2c0895f"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00024.wav",
+      "bytes": 276524,
+      "sha256": "d63bb50a850c09d8d9b8193e89cba2df9aec000b97d45e251e446d8f0468eba6"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00025.wav",
+      "bytes": 272684,
+      "sha256": "2749eba4c5ff4ca3bf24180241405e49730797fe35d76dcdf954d9aa9587cfcf"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00026.wav",
+      "bytes": 288044,
+      "sha256": "96c030eaa65f047c85bcdfe1e96ecb459a72b91aefccb739efd386353f569ab1"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00027.wav",
+      "bytes": 218924,
+      "sha256": "fdf1fbfb567f89409e47f38a7418de6750564423fe8c8b65a98cba5865bdf493"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00028.wav",
+      "bytes": 326444,
+      "sha256": "8b1235322eb1095ea0a7899e30819103642c1a85856657d9fa28a438787b644f"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00029.wav",
+      "bytes": 345644,
+      "sha256": "43e2f14533e5c479030ad9b92149fab0348419e584381717cb540afe658051ba"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00030.wav",
+      "bytes": 664364,
+      "sha256": "3c9cfdb8b45422dd63ab4b90ce9984851acb888f1f4325706173790d260085dd"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/00031.wav",
+      "bytes": 633644,
+      "sha256": "91c40eaabab65c16085aa85a3753ba4002ed5853f5b22ade35d844281304aecc"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/warmup/00000.wav",
+      "bytes": 165164,
+      "sha256": "a21026b8b7305d38ef37fe40a352f4b9321835e622a9b7359530935b139edc2a"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/warmup/00001.wav",
+      "bytes": 165164,
+      "sha256": "b2eec24b4120f07ad56da0de5abfd288b8714624d875707daa3d3cff585df13a"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/warmup/00002.wav",
+      "bytes": 349484,
+      "sha256": "9b79e4a2cbe11c745ac99096e3ea59187762519d9ded2d5e928693f8d0e365bf"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-native/c4/warmup/00003.wav",
+      "bytes": 215084,
+      "sha256": "eb1d9cea0a8fc96513cbf578eb0a827a5f67b11c505807de3d8c5817efeff841"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00000.wav",
+      "bytes": 238124,
+      "sha256": "fbad7f0d512d0fd6cd97b0ec5d54663f361cbad0ffbca6f269e297d496679dc7"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00001.wav",
+      "bytes": 119084,
+      "sha256": "ad4dd4117b25afe7522cdaa7a55942fa34fb1962f4f36e22792a399b85ad2481"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00002.wav",
+      "bytes": 395564,
+      "sha256": "eb82af44f32dc1086a979433dc817ceef7321e400b4bcd895e0f34c4533333b1"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00003.wav",
+      "bytes": 138284,
+      "sha256": "89466275dfae03c943a8765fcbc808db287c291b8fb22a8cfa6dbe0fec05f64b"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00004.wav",
+      "bytes": 1935404,
+      "sha256": "b4f8cf96b9132a7b969fdac6fde3d2fb89da9b2a608e0f318b08afd0588ee1e0"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00005.wav",
+      "bytes": 741164,
+      "sha256": "be4f260d4e538848e4bdf87c25b17e0d56d3338735575a70fd4fc827a46e5acf"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00006.wav",
+      "bytes": 399404,
+      "sha256": "bee3542473a8f7d48cd41577fda1a9faaa2ad178b4564b787cd9cfd983d22805"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00007.wav",
+      "bytes": 299564,
+      "sha256": "18ab3620ab525c73e671b0a458e337f3c16705505f5cdc4959cd4cb9cd77fa1e"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00008.wav",
+      "bytes": 245804,
+      "sha256": "ecd96a4686b44354532b22f108f53061ef993245179a40dbfbbebf4e704f5a3d"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00009.wav",
+      "bytes": 272684,
+      "sha256": "d175fe846d6d2d9273874527c8592a0c5b7f3273935053b9ac9851f2a76a6335"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00010.wav",
+      "bytes": 265004,
+      "sha256": "753c91bd41a908944246c58f14b15606aec0739977754b76877add6b498c9af5"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00011.wav",
+      "bytes": 284204,
+      "sha256": "c902cfc559ae261bf1dccdad05f7055df41e7151ca1110092ea6e4c0069200b4"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00012.wav",
+      "bytes": 295724,
+      "sha256": "e5ad7a1255f250bd6074b01a92e5ae60ae614a27db07194a88e411197da354fb"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00013.wav",
+      "bytes": 295724,
+      "sha256": "8df582226622b5da6a1aade518c44e5dd9278467aa22596e7fdfa3731e812c10"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00014.wav",
+      "bytes": 1048364,
+      "sha256": "7fd43b929d06f1cf9f78814cd23d256e5f9546610c79703ac0f5c37cbd3620af"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00015.wav",
+      "bytes": 633644,
+      "sha256": "7a311f3c4250ba346c7d032f3ecaee4ed9962b9dfb2e371a601368eb27891a80"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00016.wav",
+      "bytes": 126764,
+      "sha256": "04572b42772e405e7f0bd105bd4460340b4145029886aea60e11c70257945497"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00017.wav",
+      "bytes": 169004,
+      "sha256": "4707731f59e5e78788df566d4d172f7a4d2a0a1d226288ce6030b6d571966287"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00018.wav",
+      "bytes": 337964,
+      "sha256": "f4c00151bad92f91df189b81d7eade253e4b42d3a92af5ad4a8650419e6fdb4b"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00019.wav",
+      "bytes": 288044,
+      "sha256": "4f10e2b5f99f535d731450515f4800088d4fac5d920e5a34d4c780c0d61098c5"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00020.wav",
+      "bytes": 253484,
+      "sha256": "3b453082f70de866b0c5063af4631d8f7f9142a251321e21cf4dad4b150ca071"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00021.wav",
+      "bytes": 161324,
+      "sha256": "bf22f05c1ea216384c5b99bb87b857a914e761edfb6aa4edb0e86e6fda9351b7"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00022.wav",
+      "bytes": 238124,
+      "sha256": "7fe6549b3f474f9467d85dc1cd234e8cf231be4ddd5c875930f1f94c5e99bed5"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00023.wav",
+      "bytes": 253484,
+      "sha256": "69999222a0b55c7846c9679a0819c75eabe0c650d5e5bb2d114b87300bcf5a66"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00024.wav",
+      "bytes": 299564,
+      "sha256": "c83ffdad9138a50b07e1ff433420288330204884eee3aa97ab023512c960c858"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00025.wav",
+      "bytes": 280364,
+      "sha256": "fa454f57c852403856bd387bd1e099c8277c8773e143bdf8399ee662c2805086"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00026.wav",
+      "bytes": 299564,
+      "sha256": "a88d0af99a88d01f54f05afffeb21885310883a77a2a2db01d960915eed668f5"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00027.wav",
+      "bytes": 199724,
+      "sha256": "5178c3cf0d2f37e5e4a6719fa13b4110588a6e421fbeecc402521fc315e7bc28"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00028.wav",
+      "bytes": 288044,
+      "sha256": "f20765244fc3cd45eb8d07d79dfc17daad812ef10769ca25f561cb1f3b1ecbcc"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00029.wav",
+      "bytes": 280364,
+      "sha256": "433f9e78ca78e01c74001d43f306063d9f01612682c3465983348dc78a27ca29"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00030.wav",
+      "bytes": 702764,
+      "sha256": "b9d4711aefa59c825bfbc5e15fca371b72daf9daaf58b4585e6e7bd011760f88"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/00031.wav",
+      "bytes": 718124,
+      "sha256": "56a5eec6f1b8903d5268cf66fe5b3d630bdbff7a9a5305845b706ccc822ff453"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/warmup/00000.wav",
+      "bytes": 238124,
+      "sha256": "fbad7f0d512d0fd6cd97b0ec5d54663f361cbad0ffbca6f269e297d496679dc7"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/warmup/00001.wav",
+      "bytes": 119084,
+      "sha256": "ad4dd4117b25afe7522cdaa7a55942fa34fb1962f4f36e22792a399b85ad2481"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/warmup/00002.wav",
+      "bytes": 380204,
+      "sha256": "0b812346bf7f5f14f05cc69f907692fc4360f22853c31bcb9735971f3a34fbdf"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/warmup/00003.wav",
+      "bytes": 138284,
+      "sha256": "89466275dfae03c943a8765fcbc808db287c291b8fb22a8cfa6dbe0fec05f64b"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/warmup/00004.wav",
+      "bytes": 3813164,
+      "sha256": "b9ec53d838b74b35ac48147efddb1208be0cab5877f58d703dd6bbd7453b60e0"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/warmup/00005.wav",
+      "bytes": 660524,
+      "sha256": "f7f225d070d6588afb9e4ef66870149e10cc6b15a8da3c0d234edda52e94772a"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/warmup/00006.wav",
+      "bytes": 407084,
+      "sha256": "283ec6201a7cec3ce9135e4f8af31dd2f070a6f36c62e014e71881ef484c2764"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/warmup/00007.wav",
+      "bytes": 299564,
+      "sha256": "18ab3620ab525c73e671b0a458e337f3c16705505f5cdc4959cd4cb9cd77fa1e"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/warmup/00008.wav",
+      "bytes": 245804,
+      "sha256": "ecd96a4686b44354532b22f108f53061ef993245179a40dbfbbebf4e704f5a3d"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/warmup/00009.wav",
+      "bytes": 272684,
+      "sha256": "d175fe846d6d2d9273874527c8592a0c5b7f3273935053b9ac9851f2a76a6335"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/warmup/00010.wav",
+      "bytes": 265004,
+      "sha256": "753c91bd41a908944246c58f14b15606aec0739977754b76877add6b498c9af5"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/warmup/00011.wav",
+      "bytes": 284204,
+      "sha256": "3f7d70b8d039dc3442c37b798656c8c0f03212303b4f7f74e917211281046cd5"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/warmup/00012.wav",
+      "bytes": 295724,
+      "sha256": "a23efd88eeb56c6d6bc614b95ec3d9a5201e2420e142e2a233952e309361f861"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/warmup/00013.wav",
+      "bytes": 295724,
+      "sha256": "16bee1a624a44b9e90a06e909a94d2ae3d92e25b6b2bd143c84fed5ba6be5ec5"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/warmup/00014.wav",
+      "bytes": 698924,
+      "sha256": "b25570fbd85070f48a29e2a66e968dce7e4b9d81d9cc673b3ccfa9efd933d660"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c16/warmup/00015.wav",
+      "bytes": 625964,
+      "sha256": "ebcd425133839c5ce006afa38780d218d9a5b029293efe8240b2047b6e4872d2"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00000.wav",
+      "bytes": 165164,
+      "sha256": "a21026b8b7305d38ef37fe40a352f4b9321835e622a9b7359530935b139edc2a"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00001.wav",
+      "bytes": 165164,
+      "sha256": "b2eec24b4120f07ad56da0de5abfd288b8714624d875707daa3d3cff585df13a"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00002.wav",
+      "bytes": 349484,
+      "sha256": "9b79e4a2cbe11c745ac99096e3ea59187762519d9ded2d5e928693f8d0e365bf"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00003.wav",
+      "bytes": 215084,
+      "sha256": "eb1d9cea0a8fc96513cbf578eb0a827a5f67b11c505807de3d8c5817efeff841"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00004.wav",
+      "bytes": 257324,
+      "sha256": "648c3ecb08ebfb56691f4d45986ac8cbe530fb920bef9c2d48a48637a4d21828"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00005.wav",
+      "bytes": 245804,
+      "sha256": "563c67b0df5611ba2d8aa36ea7ef05fba25e448d26cfa7f8ef45e0a7ebbb7b40"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00006.wav",
+      "bytes": 1536044,
+      "sha256": "fc95be27a5802d7a5822f284539737faaa8d0a65dbcdf55403b0fa0a335a0748"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00007.wav",
+      "bytes": 322604,
+      "sha256": "c1c555277afe2d3928a7e6005f47ce746133547f6df0064ca6cd7b40e31372e2"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00008.wav",
+      "bytes": 280364,
+      "sha256": "68dcccafb29b88795928375fc93f10f547165e977ae814c703112987e7ce03a9"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00009.wav",
+      "bytes": 238124,
+      "sha256": "35c5ee3b368e7534213ddd69159846f2913a4f4ba0957c4eeb30dc63947fc37c"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00010.wav",
+      "bytes": 261164,
+      "sha256": "0a6877a2c78a9944e3ace4c795a05838a3b7047f58521ad866ecf631e979b30a"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00011.wav",
+      "bytes": 241964,
+      "sha256": "1c07dffda771e60fa2ad0cee1aaada143f2c80cf78c2ec4f4aef4568e56d86d9"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00012.wav",
+      "bytes": 249644,
+      "sha256": "2e7ce8dfecb7629d451bd48ff27f8b25a2ea4eaef8da0f54561d6f2ac0b4b74b"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00013.wav",
+      "bytes": 265004,
+      "sha256": "5ddb1f8566528c699fe01a524c73a92c5728308811806453c48074b5f457516d"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00014.wav",
+      "bytes": 825644,
+      "sha256": "b73f87cb691a680d3a8575a07f27ca588ad4b3c496427007bb6ece3620ff29fd"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00015.wav",
+      "bytes": 660524,
+      "sha256": "74b919b5de6ba9486fbee2a807f8985b7f17fef44aa90932be16894c930682b5"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00016.wav",
+      "bytes": 157484,
+      "sha256": "0323ed93506209c440a461e9c525727f4ad528b78569959b9b885c9ea630cfd1"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00017.wav",
+      "bytes": 203564,
+      "sha256": "f98043889471b6c8b1f0958257b2b087c3977f1b5921620a228585093de82b95"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00018.wav",
+      "bytes": 291884,
+      "sha256": "e78b7bbe7320c9646da5fe828c84bc9d44ffe845dafa50f0da8d8bb10aeb40c4"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00019.wav",
+      "bytes": 249644,
+      "sha256": "996a9e61a9ab53900594b61f3d42d97481dc30886c5dc5cd5703f3e76ab72c7c"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00020.wav",
+      "bytes": 330284,
+      "sha256": "a3a36b7e3a304e59d1105838e499eab47fb484d3dcd6ab46c6386b8a9137c481"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00021.wav",
+      "bytes": 142124,
+      "sha256": "1f417b313a4fd94146c731b2176195f13424dd685b3ee89e5bd246e3dd6c06d1"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00022.wav",
+      "bytes": 249644,
+      "sha256": "e31092ddecc8822f22f6debfd2c7e281f06cbbeed1d50b17f61a4e5843c7482f"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00023.wav",
+      "bytes": 203564,
+      "sha256": "7badd310b6742f84fed01d946d57c2b24508b88816bc09e163e89a74e2c0895f"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00024.wav",
+      "bytes": 276524,
+      "sha256": "d63bb50a850c09d8d9b8193e89cba2df9aec000b97d45e251e446d8f0468eba6"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00025.wav",
+      "bytes": 272684,
+      "sha256": "2749eba4c5ff4ca3bf24180241405e49730797fe35d76dcdf954d9aa9587cfcf"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00026.wav",
+      "bytes": 288044,
+      "sha256": "96c030eaa65f047c85bcdfe1e96ecb459a72b91aefccb739efd386353f569ab1"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00027.wav",
+      "bytes": 218924,
+      "sha256": "fdf1fbfb567f89409e47f38a7418de6750564423fe8c8b65a98cba5865bdf493"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00028.wav",
+      "bytes": 326444,
+      "sha256": "8b1235322eb1095ea0a7899e30819103642c1a85856657d9fa28a438787b644f"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00029.wav",
+      "bytes": 345644,
+      "sha256": "43e2f14533e5c479030ad9b92149fab0348419e584381717cb540afe658051ba"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00030.wav",
+      "bytes": 664364,
+      "sha256": "3c9cfdb8b45422dd63ab4b90ce9984851acb888f1f4325706173790d260085dd"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/00031.wav",
+      "bytes": 633644,
+      "sha256": "91c40eaabab65c16085aa85a3753ba4002ed5853f5b22ade35d844281304aecc"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/warmup/00000.wav",
+      "bytes": 165164,
+      "sha256": "a21026b8b7305d38ef37fe40a352f4b9321835e622a9b7359530935b139edc2a"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/warmup/00001.wav",
+      "bytes": 165164,
+      "sha256": "b2eec24b4120f07ad56da0de5abfd288b8714624d875707daa3d3cff585df13a"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/warmup/00002.wav",
+      "bytes": 349484,
+      "sha256": "9b79e4a2cbe11c745ac99096e3ea59187762519d9ded2d5e928693f8d0e365bf"
+    },
+    {
+      "path": "/work/q1-attempt03/generated/r1-reference/c4/warmup/00003.wav",
+      "bytes": 215084,
+      "sha256": "eb1d9cea0a8fc96513cbf578eb0a827a5f67b11c505807de3d8c5817efeff841"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00000.wav",
+      "bytes": 238124,
+      "sha256": "fbad7f0d512d0fd6cd97b0ec5d54663f361cbad0ffbca6f269e297d496679dc7"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00001.wav",
+      "bytes": 119084,
+      "sha256": "ad4dd4117b25afe7522cdaa7a55942fa34fb1962f4f36e22792a399b85ad2481"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00002.wav",
+      "bytes": 395564,
+      "sha256": "eb82af44f32dc1086a979433dc817ceef7321e400b4bcd895e0f34c4533333b1"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00003.wav",
+      "bytes": 138284,
+      "sha256": "89466275dfae03c943a8765fcbc808db287c291b8fb22a8cfa6dbe0fec05f64b"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00004.wav",
+      "bytes": 1935404,
+      "sha256": "b4f8cf96b9132a7b969fdac6fde3d2fb89da9b2a608e0f318b08afd0588ee1e0"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00005.wav",
+      "bytes": 741164,
+      "sha256": "be4f260d4e538848e4bdf87c25b17e0d56d3338735575a70fd4fc827a46e5acf"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00006.wav",
+      "bytes": 399404,
+      "sha256": "bee3542473a8f7d48cd41577fda1a9faaa2ad178b4564b787cd9cfd983d22805"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00007.wav",
+      "bytes": 299564,
+      "sha256": "18ab3620ab525c73e671b0a458e337f3c16705505f5cdc4959cd4cb9cd77fa1e"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00008.wav",
+      "bytes": 245804,
+      "sha256": "ecd96a4686b44354532b22f108f53061ef993245179a40dbfbbebf4e704f5a3d"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00009.wav",
+      "bytes": 272684,
+      "sha256": "d175fe846d6d2d9273874527c8592a0c5b7f3273935053b9ac9851f2a76a6335"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00010.wav",
+      "bytes": 265004,
+      "sha256": "753c91bd41a908944246c58f14b15606aec0739977754b76877add6b498c9af5"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00011.wav",
+      "bytes": 284204,
+      "sha256": "c902cfc559ae261bf1dccdad05f7055df41e7151ca1110092ea6e4c0069200b4"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00012.wav",
+      "bytes": 295724,
+      "sha256": "e5ad7a1255f250bd6074b01a92e5ae60ae614a27db07194a88e411197da354fb"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00013.wav",
+      "bytes": 295724,
+      "sha256": "8df582226622b5da6a1aade518c44e5dd9278467aa22596e7fdfa3731e812c10"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00014.wav",
+      "bytes": 1048364,
+      "sha256": "7fd43b929d06f1cf9f78814cd23d256e5f9546610c79703ac0f5c37cbd3620af"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00015.wav",
+      "bytes": 633644,
+      "sha256": "7a311f3c4250ba346c7d032f3ecaee4ed9962b9dfb2e371a601368eb27891a80"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00016.wav",
+      "bytes": 126764,
+      "sha256": "04572b42772e405e7f0bd105bd4460340b4145029886aea60e11c70257945497"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00017.wav",
+      "bytes": 169004,
+      "sha256": "4707731f59e5e78788df566d4d172f7a4d2a0a1d226288ce6030b6d571966287"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00018.wav",
+      "bytes": 337964,
+      "sha256": "f4c00151bad92f91df189b81d7eade253e4b42d3a92af5ad4a8650419e6fdb4b"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00019.wav",
+      "bytes": 288044,
+      "sha256": "4f10e2b5f99f535d731450515f4800088d4fac5d920e5a34d4c780c0d61098c5"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00020.wav",
+      "bytes": 253484,
+      "sha256": "3b453082f70de866b0c5063af4631d8f7f9142a251321e21cf4dad4b150ca071"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00021.wav",
+      "bytes": 161324,
+      "sha256": "bf22f05c1ea216384c5b99bb87b857a914e761edfb6aa4edb0e86e6fda9351b7"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00022.wav",
+      "bytes": 238124,
+      "sha256": "7fe6549b3f474f9467d85dc1cd234e8cf231be4ddd5c875930f1f94c5e99bed5"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00023.wav",
+      "bytes": 253484,
+      "sha256": "69999222a0b55c7846c9679a0819c75eabe0c650d5e5bb2d114b87300bcf5a66"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00024.wav",
+      "bytes": 299564,
+      "sha256": "c83ffdad9138a50b07e1ff433420288330204884eee3aa97ab023512c960c858"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00025.wav",
+      "bytes": 280364,
+      "sha256": "fa454f57c852403856bd387bd1e099c8277c8773e143bdf8399ee662c2805086"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00026.wav",
+      "bytes": 299564,
+      "sha256": "a88d0af99a88d01f54f05afffeb21885310883a77a2a2db01d960915eed668f5"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00027.wav",
+      "bytes": 199724,
+      "sha256": "5178c3cf0d2f37e5e4a6719fa13b4110588a6e421fbeecc402521fc315e7bc28"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00028.wav",
+      "bytes": 288044,
+      "sha256": "f20765244fc3cd45eb8d07d79dfc17daad812ef10769ca25f561cb1f3b1ecbcc"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00029.wav",
+      "bytes": 280364,
+      "sha256": "433f9e78ca78e01c74001d43f306063d9f01612682c3465983348dc78a27ca29"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00030.wav",
+      "bytes": 702764,
+      "sha256": "b9d4711aefa59c825bfbc5e15fca371b72daf9daaf58b4585e6e7bd011760f88"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/00031.wav",
+      "bytes": 718124,
+      "sha256": "56a5eec6f1b8903d5268cf66fe5b3d630bdbff7a9a5305845b706ccc822ff453"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/warmup/00000.wav",
+      "bytes": 238124,
+      "sha256": "fbad7f0d512d0fd6cd97b0ec5d54663f361cbad0ffbca6f269e297d496679dc7"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/warmup/00001.wav",
+      "bytes": 119084,
+      "sha256": "ad4dd4117b25afe7522cdaa7a55942fa34fb1962f4f36e22792a399b85ad2481"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/warmup/00002.wav",
+      "bytes": 380204,
+      "sha256": "0b812346bf7f5f14f05cc69f907692fc4360f22853c31bcb9735971f3a34fbdf"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/warmup/00003.wav",
+      "bytes": 138284,
+      "sha256": "89466275dfae03c943a8765fcbc808db287c291b8fb22a8cfa6dbe0fec05f64b"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/warmup/00004.wav",
+      "bytes": 3813164,
+      "sha256": "b9ec53d838b74b35ac48147efddb1208be0cab5877f58d703dd6bbd7453b60e0"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/warmup/00005.wav",
+      "bytes": 660524,
+      "sha256": "f7f225d070d6588afb9e4ef66870149e10cc6b15a8da3c0d234edda52e94772a"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/warmup/00006.wav",
+      "bytes": 407084,
+      "sha256": "283ec6201a7cec3ce9135e4f8af31dd2f070a6f36c62e014e71881ef484c2764"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/warmup/00007.wav",
+      "bytes": 299564,
+      "sha256": "18ab3620ab525c73e671b0a458e337f3c16705505f5cdc4959cd4cb9cd77fa1e"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/warmup/00008.wav",
+      "bytes": 245804,
+      "sha256": "ecd96a4686b44354532b22f108f53061ef993245179a40dbfbbebf4e704f5a3d"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/warmup/00009.wav",
+      "bytes": 272684,
+      "sha256": "d175fe846d6d2d9273874527c8592a0c5b7f3273935053b9ac9851f2a76a6335"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/warmup/00010.wav",
+      "bytes": 265004,
+      "sha256": "753c91bd41a908944246c58f14b15606aec0739977754b76877add6b498c9af5"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/warmup/00011.wav",
+      "bytes": 284204,
+      "sha256": "3f7d70b8d039dc3442c37b798656c8c0f03212303b4f7f74e917211281046cd5"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/warmup/00012.wav",
+      "bytes": 295724,
+      "sha256": "a23efd88eeb56c6d6bc614b95ec3d9a5201e2420e142e2a233952e309361f861"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/warmup/00013.wav",
+      "bytes": 295724,
+      "sha256": "16bee1a624a44b9e90a06e909a94d2ae3d92e25b6b2bd143c84fed5ba6be5ec5"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/warmup/00014.wav",
+      "bytes": 698924,
+      "sha256": "b25570fbd85070f48a29e2a66e968dce7e4b9d81d9cc673b3ccfa9efd933d660"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c16/warmup/00015.wav",
+      "bytes": 625964,
+      "sha256": "ebcd425133839c5ce006afa38780d218d9a5b029293efe8240b2047b6e4872d2"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00000.wav",
+      "bytes": 165164,
+      "sha256": "a21026b8b7305d38ef37fe40a352f4b9321835e622a9b7359530935b139edc2a"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00001.wav",
+      "bytes": 165164,
+      "sha256": "b2eec24b4120f07ad56da0de5abfd288b8714624d875707daa3d3cff585df13a"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00002.wav",
+      "bytes": 349484,
+      "sha256": "9b79e4a2cbe11c745ac99096e3ea59187762519d9ded2d5e928693f8d0e365bf"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00003.wav",
+      "bytes": 215084,
+      "sha256": "eb1d9cea0a8fc96513cbf578eb0a827a5f67b11c505807de3d8c5817efeff841"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00004.wav",
+      "bytes": 257324,
+      "sha256": "648c3ecb08ebfb56691f4d45986ac8cbe530fb920bef9c2d48a48637a4d21828"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00005.wav",
+      "bytes": 245804,
+      "sha256": "563c67b0df5611ba2d8aa36ea7ef05fba25e448d26cfa7f8ef45e0a7ebbb7b40"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00006.wav",
+      "bytes": 1536044,
+      "sha256": "fc95be27a5802d7a5822f284539737faaa8d0a65dbcdf55403b0fa0a335a0748"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00007.wav",
+      "bytes": 322604,
+      "sha256": "c1c555277afe2d3928a7e6005f47ce746133547f6df0064ca6cd7b40e31372e2"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00008.wav",
+      "bytes": 280364,
+      "sha256": "68dcccafb29b88795928375fc93f10f547165e977ae814c703112987e7ce03a9"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00009.wav",
+      "bytes": 238124,
+      "sha256": "35c5ee3b368e7534213ddd69159846f2913a4f4ba0957c4eeb30dc63947fc37c"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00010.wav",
+      "bytes": 261164,
+      "sha256": "0a6877a2c78a9944e3ace4c795a05838a3b7047f58521ad866ecf631e979b30a"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00011.wav",
+      "bytes": 241964,
+      "sha256": "1c07dffda771e60fa2ad0cee1aaada143f2c80cf78c2ec4f4aef4568e56d86d9"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00012.wav",
+      "bytes": 249644,
+      "sha256": "2e7ce8dfecb7629d451bd48ff27f8b25a2ea4eaef8da0f54561d6f2ac0b4b74b"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00013.wav",
+      "bytes": 265004,
+      "sha256": "5ddb1f8566528c699fe01a524c73a92c5728308811806453c48074b5f457516d"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00014.wav",
+      "bytes": 825644,
+      "sha256": "b73f87cb691a680d3a8575a07f27ca588ad4b3c496427007bb6ece3620ff29fd"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00015.wav",
+      "bytes": 660524,
+      "sha256": "74b919b5de6ba9486fbee2a807f8985b7f17fef44aa90932be16894c930682b5"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00016.wav",
+      "bytes": 157484,
+      "sha256": "0323ed93506209c440a461e9c525727f4ad528b78569959b9b885c9ea630cfd1"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00017.wav",
+      "bytes": 203564,
+      "sha256": "f98043889471b6c8b1f0958257b2b087c3977f1b5921620a228585093de82b95"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00018.wav",
+      "bytes": 291884,
+      "sha256": "e78b7bbe7320c9646da5fe828c84bc9d44ffe845dafa50f0da8d8bb10aeb40c4"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00019.wav",
+      "bytes": 249644,
+      "sha256": "996a9e61a9ab53900594b61f3d42d97481dc30886c5dc5cd5703f3e76ab72c7c"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00020.wav",
+      "bytes": 330284,
+      "sha256": "a3a36b7e3a304e59d1105838e499eab47fb484d3dcd6ab46c6386b8a9137c481"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00021.wav",
+      "bytes": 142124,
+      "sha256": "1f417b313a4fd94146c731b2176195f13424dd685b3ee89e5bd246e3dd6c06d1"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00022.wav",
+      "bytes": 249644,
+      "sha256": "e31092ddecc8822f22f6debfd2c7e281f06cbbeed1d50b17f61a4e5843c7482f"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00023.wav",
+      "bytes": 203564,
+      "sha256": "7badd310b6742f84fed01d946d57c2b24508b88816bc09e163e89a74e2c0895f"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00024.wav",
+      "bytes": 276524,
+      "sha256": "d63bb50a850c09d8d9b8193e89cba2df9aec000b97d45e251e446d8f0468eba6"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00025.wav",
+      "bytes": 272684,
+      "sha256": "2749eba4c5ff4ca3bf24180241405e49730797fe35d76dcdf954d9aa9587cfcf"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00026.wav",
+      "bytes": 288044,
+      "sha256": "96c030eaa65f047c85bcdfe1e96ecb459a72b91aefccb739efd386353f569ab1"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00027.wav",
+      "bytes": 218924,
+      "sha256": "fdf1fbfb567f89409e47f38a7418de6750564423fe8c8b65a98cba5865bdf493"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00028.wav",
+      "bytes": 326444,
+      "sha256": "8b1235322eb1095ea0a7899e30819103642c1a85856657d9fa28a438787b644f"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00029.wav",
+      "bytes": 345644,
+      "sha256": "43e2f14533e5c479030ad9b92149fab0348419e584381717cb540afe658051ba"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00030.wav",
+      "bytes": 664364,
+      "sha256": "3c9cfdb8b45422dd63ab4b90ce9984851acb888f1f4325706173790d260085dd"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/00031.wav",
+      "bytes": 633644,
+      "sha256": "91c40eaabab65c16085aa85a3753ba4002ed5853f5b22ade35d844281304aecc"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/warmup/00000.wav",
+      "bytes": 165164,
+      "sha256": "a21026b8b7305d38ef37fe40a352f4b9321835e622a9b7359530935b139edc2a"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/warmup/00001.wav",
+      "bytes": 165164,
+      "sha256": "b2eec24b4120f07ad56da0de5abfd288b8714624d875707daa3d3cff585df13a"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/warmup/00002.wav",
+      "bytes": 349484,
+      "sha256": "9b79e4a2cbe11c745ac99096e3ea59187762519d9ded2d5e928693f8d0e365bf"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-native/c4/warmup/00003.wav",
+      "bytes": 215084,
+      "sha256": "eb1d9cea0a8fc96513cbf578eb0a827a5f67b11c505807de3d8c5817efeff841"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00000.wav",
+      "bytes": 238124,
+      "sha256": "fbad7f0d512d0fd6cd97b0ec5d54663f361cbad0ffbca6f269e297d496679dc7"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00001.wav",
+      "bytes": 119084,
+      "sha256": "ad4dd4117b25afe7522cdaa7a55942fa34fb1962f4f36e22792a399b85ad2481"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00002.wav",
+      "bytes": 395564,
+      "sha256": "eb82af44f32dc1086a979433dc817ceef7321e400b4bcd895e0f34c4533333b1"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00003.wav",
+      "bytes": 138284,
+      "sha256": "89466275dfae03c943a8765fcbc808db287c291b8fb22a8cfa6dbe0fec05f64b"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00004.wav",
+      "bytes": 1935404,
+      "sha256": "b4f8cf96b9132a7b969fdac6fde3d2fb89da9b2a608e0f318b08afd0588ee1e0"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00005.wav",
+      "bytes": 741164,
+      "sha256": "be4f260d4e538848e4bdf87c25b17e0d56d3338735575a70fd4fc827a46e5acf"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00006.wav",
+      "bytes": 399404,
+      "sha256": "bee3542473a8f7d48cd41577fda1a9faaa2ad178b4564b787cd9cfd983d22805"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00007.wav",
+      "bytes": 299564,
+      "sha256": "18ab3620ab525c73e671b0a458e337f3c16705505f5cdc4959cd4cb9cd77fa1e"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00008.wav",
+      "bytes": 245804,
+      "sha256": "ecd96a4686b44354532b22f108f53061ef993245179a40dbfbbebf4e704f5a3d"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00009.wav",
+      "bytes": 272684,
+      "sha256": "d175fe846d6d2d9273874527c8592a0c5b7f3273935053b9ac9851f2a76a6335"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00010.wav",
+      "bytes": 265004,
+      "sha256": "753c91bd41a908944246c58f14b15606aec0739977754b76877add6b498c9af5"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00011.wav",
+      "bytes": 284204,
+      "sha256": "c902cfc559ae261bf1dccdad05f7055df41e7151ca1110092ea6e4c0069200b4"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00012.wav",
+      "bytes": 295724,
+      "sha256": "e5ad7a1255f250bd6074b01a92e5ae60ae614a27db07194a88e411197da354fb"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00013.wav",
+      "bytes": 295724,
+      "sha256": "8df582226622b5da6a1aade518c44e5dd9278467aa22596e7fdfa3731e812c10"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00014.wav",
+      "bytes": 1048364,
+      "sha256": "7fd43b929d06f1cf9f78814cd23d256e5f9546610c79703ac0f5c37cbd3620af"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00015.wav",
+      "bytes": 633644,
+      "sha256": "7a311f3c4250ba346c7d032f3ecaee4ed9962b9dfb2e371a601368eb27891a80"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00016.wav",
+      "bytes": 126764,
+      "sha256": "04572b42772e405e7f0bd105bd4460340b4145029886aea60e11c70257945497"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00017.wav",
+      "bytes": 169004,
+      "sha256": "4707731f59e5e78788df566d4d172f7a4d2a0a1d226288ce6030b6d571966287"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00018.wav",
+      "bytes": 337964,
+      "sha256": "f4c00151bad92f91df189b81d7eade253e4b42d3a92af5ad4a8650419e6fdb4b"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00019.wav",
+      "bytes": 288044,
+      "sha256": "4f10e2b5f99f535d731450515f4800088d4fac5d920e5a34d4c780c0d61098c5"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00020.wav",
+      "bytes": 253484,
+      "sha256": "3b453082f70de866b0c5063af4631d8f7f9142a251321e21cf4dad4b150ca071"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00021.wav",
+      "bytes": 161324,
+      "sha256": "bf22f05c1ea216384c5b99bb87b857a914e761edfb6aa4edb0e86e6fda9351b7"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00022.wav",
+      "bytes": 238124,
+      "sha256": "7fe6549b3f474f9467d85dc1cd234e8cf231be4ddd5c875930f1f94c5e99bed5"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00023.wav",
+      "bytes": 253484,
+      "sha256": "69999222a0b55c7846c9679a0819c75eabe0c650d5e5bb2d114b87300bcf5a66"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00024.wav",
+      "bytes": 299564,
+      "sha256": "c83ffdad9138a50b07e1ff433420288330204884eee3aa97ab023512c960c858"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00025.wav",
+      "bytes": 280364,
+      "sha256": "fa454f57c852403856bd387bd1e099c8277c8773e143bdf8399ee662c2805086"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00026.wav",
+      "bytes": 299564,
+      "sha256": "a88d0af99a88d01f54f05afffeb21885310883a77a2a2db01d960915eed668f5"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00027.wav",
+      "bytes": 199724,
+      "sha256": "5178c3cf0d2f37e5e4a6719fa13b4110588a6e421fbeecc402521fc315e7bc28"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00028.wav",
+      "bytes": 288044,
+      "sha256": "f20765244fc3cd45eb8d07d79dfc17daad812ef10769ca25f561cb1f3b1ecbcc"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00029.wav",
+      "bytes": 280364,
+      "sha256": "433f9e78ca78e01c74001d43f306063d9f01612682c3465983348dc78a27ca29"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00030.wav",
+      "bytes": 702764,
+      "sha256": "b9d4711aefa59c825bfbc5e15fca371b72daf9daaf58b4585e6e7bd011760f88"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/00031.wav",
+      "bytes": 718124,
+      "sha256": "56a5eec6f1b8903d5268cf66fe5b3d630bdbff7a9a5305845b706ccc822ff453"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/warmup/00000.wav",
+      "bytes": 238124,
+      "sha256": "fbad7f0d512d0fd6cd97b0ec5d54663f361cbad0ffbca6f269e297d496679dc7"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/warmup/00001.wav",
+      "bytes": 119084,
+      "sha256": "ad4dd4117b25afe7522cdaa7a55942fa34fb1962f4f36e22792a399b85ad2481"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/warmup/00002.wav",
+      "bytes": 380204,
+      "sha256": "0b812346bf7f5f14f05cc69f907692fc4360f22853c31bcb9735971f3a34fbdf"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/warmup/00003.wav",
+      "bytes": 138284,
+      "sha256": "89466275dfae03c943a8765fcbc808db287c291b8fb22a8cfa6dbe0fec05f64b"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/warmup/00004.wav",
+      "bytes": 3813164,
+      "sha256": "b9ec53d838b74b35ac48147efddb1208be0cab5877f58d703dd6bbd7453b60e0"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/warmup/00005.wav",
+      "bytes": 660524,
+      "sha256": "f7f225d070d6588afb9e4ef66870149e10cc6b15a8da3c0d234edda52e94772a"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/warmup/00006.wav",
+      "bytes": 407084,
+      "sha256": "283ec6201a7cec3ce9135e4f8af31dd2f070a6f36c62e014e71881ef484c2764"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/warmup/00007.wav",
+      "bytes": 299564,
+      "sha256": "18ab3620ab525c73e671b0a458e337f3c16705505f5cdc4959cd4cb9cd77fa1e"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/warmup/00008.wav",
+      "bytes": 245804,
+      "sha256": "ecd96a4686b44354532b22f108f53061ef993245179a40dbfbbebf4e704f5a3d"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/warmup/00009.wav",
+      "bytes": 272684,
+      "sha256": "d175fe846d6d2d9273874527c8592a0c5b7f3273935053b9ac9851f2a76a6335"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/warmup/00010.wav",
+      "bytes": 265004,
+      "sha256": "753c91bd41a908944246c58f14b15606aec0739977754b76877add6b498c9af5"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/warmup/00011.wav",
+      "bytes": 284204,
+      "sha256": "3f7d70b8d039dc3442c37b798656c8c0f03212303b4f7f74e917211281046cd5"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/warmup/00012.wav",
+      "bytes": 295724,
+      "sha256": "a23efd88eeb56c6d6bc614b95ec3d9a5201e2420e142e2a233952e309361f861"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/warmup/00013.wav",
+      "bytes": 295724,
+      "sha256": "16bee1a624a44b9e90a06e909a94d2ae3d92e25b6b2bd143c84fed5ba6be5ec5"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/warmup/00014.wav",
+      "bytes": 698924,
+      "sha256": "b25570fbd85070f48a29e2a66e968dce7e4b9d81d9cc673b3ccfa9efd933d660"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c16/warmup/00015.wav",
+      "bytes": 625964,
+      "sha256": "ebcd425133839c5ce006afa38780d218d9a5b029293efe8240b2047b6e4872d2"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00000.wav",
+      "bytes": 165164,
+      "sha256": "a21026b8b7305d38ef37fe40a352f4b9321835e622a9b7359530935b139edc2a"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00001.wav",
+      "bytes": 165164,
+      "sha256": "b2eec24b4120f07ad56da0de5abfd288b8714624d875707daa3d3cff585df13a"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00002.wav",
+      "bytes": 349484,
+      "sha256": "9b79e4a2cbe11c745ac99096e3ea59187762519d9ded2d5e928693f8d0e365bf"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00003.wav",
+      "bytes": 215084,
+      "sha256": "eb1d9cea0a8fc96513cbf578eb0a827a5f67b11c505807de3d8c5817efeff841"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00004.wav",
+      "bytes": 257324,
+      "sha256": "648c3ecb08ebfb56691f4d45986ac8cbe530fb920bef9c2d48a48637a4d21828"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00005.wav",
+      "bytes": 245804,
+      "sha256": "563c67b0df5611ba2d8aa36ea7ef05fba25e448d26cfa7f8ef45e0a7ebbb7b40"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00006.wav",
+      "bytes": 1536044,
+      "sha256": "fc95be27a5802d7a5822f284539737faaa8d0a65dbcdf55403b0fa0a335a0748"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00007.wav",
+      "bytes": 322604,
+      "sha256": "c1c555277afe2d3928a7e6005f47ce746133547f6df0064ca6cd7b40e31372e2"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00008.wav",
+      "bytes": 280364,
+      "sha256": "68dcccafb29b88795928375fc93f10f547165e977ae814c703112987e7ce03a9"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00009.wav",
+      "bytes": 238124,
+      "sha256": "35c5ee3b368e7534213ddd69159846f2913a4f4ba0957c4eeb30dc63947fc37c"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00010.wav",
+      "bytes": 261164,
+      "sha256": "0a6877a2c78a9944e3ace4c795a05838a3b7047f58521ad866ecf631e979b30a"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00011.wav",
+      "bytes": 241964,
+      "sha256": "1c07dffda771e60fa2ad0cee1aaada143f2c80cf78c2ec4f4aef4568e56d86d9"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00012.wav",
+      "bytes": 249644,
+      "sha256": "2e7ce8dfecb7629d451bd48ff27f8b25a2ea4eaef8da0f54561d6f2ac0b4b74b"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00013.wav",
+      "bytes": 265004,
+      "sha256": "5ddb1f8566528c699fe01a524c73a92c5728308811806453c48074b5f457516d"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00014.wav",
+      "bytes": 825644,
+      "sha256": "b73f87cb691a680d3a8575a07f27ca588ad4b3c496427007bb6ece3620ff29fd"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00015.wav",
+      "bytes": 660524,
+      "sha256": "74b919b5de6ba9486fbee2a807f8985b7f17fef44aa90932be16894c930682b5"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00016.wav",
+      "bytes": 157484,
+      "sha256": "0323ed93506209c440a461e9c525727f4ad528b78569959b9b885c9ea630cfd1"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00017.wav",
+      "bytes": 203564,
+      "sha256": "f98043889471b6c8b1f0958257b2b087c3977f1b5921620a228585093de82b95"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00018.wav",
+      "bytes": 291884,
+      "sha256": "e78b7bbe7320c9646da5fe828c84bc9d44ffe845dafa50f0da8d8bb10aeb40c4"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00019.wav",
+      "bytes": 249644,
+      "sha256": "996a9e61a9ab53900594b61f3d42d97481dc30886c5dc5cd5703f3e76ab72c7c"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00020.wav",
+      "bytes": 330284,
+      "sha256": "a3a36b7e3a304e59d1105838e499eab47fb484d3dcd6ab46c6386b8a9137c481"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00021.wav",
+      "bytes": 142124,
+      "sha256": "1f417b313a4fd94146c731b2176195f13424dd685b3ee89e5bd246e3dd6c06d1"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00022.wav",
+      "bytes": 249644,
+      "sha256": "e31092ddecc8822f22f6debfd2c7e281f06cbbeed1d50b17f61a4e5843c7482f"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00023.wav",
+      "bytes": 203564,
+      "sha256": "7badd310b6742f84fed01d946d57c2b24508b88816bc09e163e89a74e2c0895f"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00024.wav",
+      "bytes": 276524,
+      "sha256": "d63bb50a850c09d8d9b8193e89cba2df9aec000b97d45e251e446d8f0468eba6"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00025.wav",
+      "bytes": 272684,
+      "sha256": "2749eba4c5ff4ca3bf24180241405e49730797fe35d76dcdf954d9aa9587cfcf"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00026.wav",
+      "bytes": 288044,
+      "sha256": "96c030eaa65f047c85bcdfe1e96ecb459a72b91aefccb739efd386353f569ab1"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00027.wav",
+      "bytes": 218924,
+      "sha256": "fdf1fbfb567f89409e47f38a7418de6750564423fe8c8b65a98cba5865bdf493"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00028.wav",
+      "bytes": 326444,
+      "sha256": "8b1235322eb1095ea0a7899e30819103642c1a85856657d9fa28a438787b644f"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00029.wav",
+      "bytes": 345644,
+      "sha256": "43e2f14533e5c479030ad9b92149fab0348419e584381717cb540afe658051ba"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00030.wav",
+      "bytes": 664364,
+      "sha256": "3c9cfdb8b45422dd63ab4b90ce9984851acb888f1f4325706173790d260085dd"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/00031.wav",
+      "bytes": 633644,
+      "sha256": "91c40eaabab65c16085aa85a3753ba4002ed5853f5b22ade35d844281304aecc"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/warmup/00000.wav",
+      "bytes": 165164,
+      "sha256": "a21026b8b7305d38ef37fe40a352f4b9321835e622a9b7359530935b139edc2a"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/warmup/00001.wav",
+      "bytes": 165164,
+      "sha256": "b2eec24b4120f07ad56da0de5abfd288b8714624d875707daa3d3cff585df13a"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/warmup/00002.wav",
+      "bytes": 349484,
+      "sha256": "9b79e4a2cbe11c745ac99096e3ea59187762519d9ded2d5e928693f8d0e365bf"
+    },
+    {
+      "path": "/work/q1-attempt04/generated/r1-reference/c4/warmup/00003.wav",
+      "bytes": 215084,
+      "sha256": "eb1d9cea0a8fc96513cbf578eb0a827a5f67b11c505807de3d8c5817efeff841"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00000.wav",
+      "bytes": 238124,
+      "sha256": "fbad7f0d512d0fd6cd97b0ec5d54663f361cbad0ffbca6f269e297d496679dc7"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00001.wav",
+      "bytes": 119084,
+      "sha256": "ad4dd4117b25afe7522cdaa7a55942fa34fb1962f4f36e22792a399b85ad2481"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00002.wav",
+      "bytes": 395564,
+      "sha256": "eb82af44f32dc1086a979433dc817ceef7321e400b4bcd895e0f34c4533333b1"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00003.wav",
+      "bytes": 138284,
+      "sha256": "89466275dfae03c943a8765fcbc808db287c291b8fb22a8cfa6dbe0fec05f64b"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00004.wav",
+      "bytes": 1935404,
+      "sha256": "b4f8cf96b9132a7b969fdac6fde3d2fb89da9b2a608e0f318b08afd0588ee1e0"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00005.wav",
+      "bytes": 741164,
+      "sha256": "be4f260d4e538848e4bdf87c25b17e0d56d3338735575a70fd4fc827a46e5acf"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00006.wav",
+      "bytes": 399404,
+      "sha256": "bee3542473a8f7d48cd41577fda1a9faaa2ad178b4564b787cd9cfd983d22805"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00007.wav",
+      "bytes": 299564,
+      "sha256": "18ab3620ab525c73e671b0a458e337f3c16705505f5cdc4959cd4cb9cd77fa1e"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00008.wav",
+      "bytes": 245804,
+      "sha256": "ecd96a4686b44354532b22f108f53061ef993245179a40dbfbbebf4e704f5a3d"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00009.wav",
+      "bytes": 272684,
+      "sha256": "d175fe846d6d2d9273874527c8592a0c5b7f3273935053b9ac9851f2a76a6335"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00010.wav",
+      "bytes": 265004,
+      "sha256": "753c91bd41a908944246c58f14b15606aec0739977754b76877add6b498c9af5"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00011.wav",
+      "bytes": 284204,
+      "sha256": "c902cfc559ae261bf1dccdad05f7055df41e7151ca1110092ea6e4c0069200b4"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00012.wav",
+      "bytes": 295724,
+      "sha256": "e5ad7a1255f250bd6074b01a92e5ae60ae614a27db07194a88e411197da354fb"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00013.wav",
+      "bytes": 295724,
+      "sha256": "8df582226622b5da6a1aade518c44e5dd9278467aa22596e7fdfa3731e812c10"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00014.wav",
+      "bytes": 1048364,
+      "sha256": "7fd43b929d06f1cf9f78814cd23d256e5f9546610c79703ac0f5c37cbd3620af"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00015.wav",
+      "bytes": 633644,
+      "sha256": "7a311f3c4250ba346c7d032f3ecaee4ed9962b9dfb2e371a601368eb27891a80"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00016.wav",
+      "bytes": 126764,
+      "sha256": "04572b42772e405e7f0bd105bd4460340b4145029886aea60e11c70257945497"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00017.wav",
+      "bytes": 169004,
+      "sha256": "4707731f59e5e78788df566d4d172f7a4d2a0a1d226288ce6030b6d571966287"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00018.wav",
+      "bytes": 337964,
+      "sha256": "f4c00151bad92f91df189b81d7eade253e4b42d3a92af5ad4a8650419e6fdb4b"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00019.wav",
+      "bytes": 288044,
+      "sha256": "4f10e2b5f99f535d731450515f4800088d4fac5d920e5a34d4c780c0d61098c5"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00020.wav",
+      "bytes": 253484,
+      "sha256": "3b453082f70de866b0c5063af4631d8f7f9142a251321e21cf4dad4b150ca071"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00021.wav",
+      "bytes": 161324,
+      "sha256": "bf22f05c1ea216384c5b99bb87b857a914e761edfb6aa4edb0e86e6fda9351b7"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00022.wav",
+      "bytes": 238124,
+      "sha256": "7fe6549b3f474f9467d85dc1cd234e8cf231be4ddd5c875930f1f94c5e99bed5"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00023.wav",
+      "bytes": 253484,
+      "sha256": "69999222a0b55c7846c9679a0819c75eabe0c650d5e5bb2d114b87300bcf5a66"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00024.wav",
+      "bytes": 299564,
+      "sha256": "c83ffdad9138a50b07e1ff433420288330204884eee3aa97ab023512c960c858"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00025.wav",
+      "bytes": 280364,
+      "sha256": "fa454f57c852403856bd387bd1e099c8277c8773e143bdf8399ee662c2805086"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00026.wav",
+      "bytes": 299564,
+      "sha256": "a88d0af99a88d01f54f05afffeb21885310883a77a2a2db01d960915eed668f5"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00027.wav",
+      "bytes": 199724,
+      "sha256": "5178c3cf0d2f37e5e4a6719fa13b4110588a6e421fbeecc402521fc315e7bc28"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00028.wav",
+      "bytes": 288044,
+      "sha256": "f20765244fc3cd45eb8d07d79dfc17daad812ef10769ca25f561cb1f3b1ecbcc"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00029.wav",
+      "bytes": 280364,
+      "sha256": "433f9e78ca78e01c74001d43f306063d9f01612682c3465983348dc78a27ca29"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00030.wav",
+      "bytes": 702764,
+      "sha256": "b9d4711aefa59c825bfbc5e15fca371b72daf9daaf58b4585e6e7bd011760f88"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/00031.wav",
+      "bytes": 718124,
+      "sha256": "56a5eec6f1b8903d5268cf66fe5b3d630bdbff7a9a5305845b706ccc822ff453"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/warmup/00000.wav",
+      "bytes": 238124,
+      "sha256": "fbad7f0d512d0fd6cd97b0ec5d54663f361cbad0ffbca6f269e297d496679dc7"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/warmup/00001.wav",
+      "bytes": 119084,
+      "sha256": "ad4dd4117b25afe7522cdaa7a55942fa34fb1962f4f36e22792a399b85ad2481"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/warmup/00002.wav",
+      "bytes": 380204,
+      "sha256": "0b812346bf7f5f14f05cc69f907692fc4360f22853c31bcb9735971f3a34fbdf"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/warmup/00003.wav",
+      "bytes": 138284,
+      "sha256": "89466275dfae03c943a8765fcbc808db287c291b8fb22a8cfa6dbe0fec05f64b"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/warmup/00004.wav",
+      "bytes": 3813164,
+      "sha256": "b9ec53d838b74b35ac48147efddb1208be0cab5877f58d703dd6bbd7453b60e0"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/warmup/00005.wav",
+      "bytes": 660524,
+      "sha256": "f7f225d070d6588afb9e4ef66870149e10cc6b15a8da3c0d234edda52e94772a"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/warmup/00006.wav",
+      "bytes": 407084,
+      "sha256": "283ec6201a7cec3ce9135e4f8af31dd2f070a6f36c62e014e71881ef484c2764"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/warmup/00007.wav",
+      "bytes": 299564,
+      "sha256": "18ab3620ab525c73e671b0a458e337f3c16705505f5cdc4959cd4cb9cd77fa1e"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/warmup/00008.wav",
+      "bytes": 245804,
+      "sha256": "ecd96a4686b44354532b22f108f53061ef993245179a40dbfbbebf4e704f5a3d"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/warmup/00009.wav",
+      "bytes": 272684,
+      "sha256": "d175fe846d6d2d9273874527c8592a0c5b7f3273935053b9ac9851f2a76a6335"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/warmup/00010.wav",
+      "bytes": 265004,
+      "sha256": "753c91bd41a908944246c58f14b15606aec0739977754b76877add6b498c9af5"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/warmup/00011.wav",
+      "bytes": 284204,
+      "sha256": "3f7d70b8d039dc3442c37b798656c8c0f03212303b4f7f74e917211281046cd5"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/warmup/00012.wav",
+      "bytes": 295724,
+      "sha256": "a23efd88eeb56c6d6bc614b95ec3d9a5201e2420e142e2a233952e309361f861"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/warmup/00013.wav",
+      "bytes": 295724,
+      "sha256": "16bee1a624a44b9e90a06e909a94d2ae3d92e25b6b2bd143c84fed5ba6be5ec5"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/warmup/00014.wav",
+      "bytes": 698924,
+      "sha256": "b25570fbd85070f48a29e2a66e968dce7e4b9d81d9cc673b3ccfa9efd933d660"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c16/warmup/00015.wav",
+      "bytes": 625964,
+      "sha256": "ebcd425133839c5ce006afa38780d218d9a5b029293efe8240b2047b6e4872d2"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00000.wav",
+      "bytes": 165164,
+      "sha256": "a21026b8b7305d38ef37fe40a352f4b9321835e622a9b7359530935b139edc2a"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00001.wav",
+      "bytes": 165164,
+      "sha256": "b2eec24b4120f07ad56da0de5abfd288b8714624d875707daa3d3cff585df13a"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00002.wav",
+      "bytes": 349484,
+      "sha256": "9b79e4a2cbe11c745ac99096e3ea59187762519d9ded2d5e928693f8d0e365bf"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00003.wav",
+      "bytes": 215084,
+      "sha256": "eb1d9cea0a8fc96513cbf578eb0a827a5f67b11c505807de3d8c5817efeff841"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00004.wav",
+      "bytes": 257324,
+      "sha256": "648c3ecb08ebfb56691f4d45986ac8cbe530fb920bef9c2d48a48637a4d21828"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00005.wav",
+      "bytes": 245804,
+      "sha256": "563c67b0df5611ba2d8aa36ea7ef05fba25e448d26cfa7f8ef45e0a7ebbb7b40"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00006.wav",
+      "bytes": 1536044,
+      "sha256": "fc95be27a5802d7a5822f284539737faaa8d0a65dbcdf55403b0fa0a335a0748"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00007.wav",
+      "bytes": 322604,
+      "sha256": "c1c555277afe2d3928a7e6005f47ce746133547f6df0064ca6cd7b40e31372e2"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00008.wav",
+      "bytes": 280364,
+      "sha256": "68dcccafb29b88795928375fc93f10f547165e977ae814c703112987e7ce03a9"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00009.wav",
+      "bytes": 238124,
+      "sha256": "35c5ee3b368e7534213ddd69159846f2913a4f4ba0957c4eeb30dc63947fc37c"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00010.wav",
+      "bytes": 261164,
+      "sha256": "0a6877a2c78a9944e3ace4c795a05838a3b7047f58521ad866ecf631e979b30a"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00011.wav",
+      "bytes": 241964,
+      "sha256": "1c07dffda771e60fa2ad0cee1aaada143f2c80cf78c2ec4f4aef4568e56d86d9"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00012.wav",
+      "bytes": 249644,
+      "sha256": "2e7ce8dfecb7629d451bd48ff27f8b25a2ea4eaef8da0f54561d6f2ac0b4b74b"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00013.wav",
+      "bytes": 265004,
+      "sha256": "5ddb1f8566528c699fe01a524c73a92c5728308811806453c48074b5f457516d"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00014.wav",
+      "bytes": 825644,
+      "sha256": "b73f87cb691a680d3a8575a07f27ca588ad4b3c496427007bb6ece3620ff29fd"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00015.wav",
+      "bytes": 660524,
+      "sha256": "74b919b5de6ba9486fbee2a807f8985b7f17fef44aa90932be16894c930682b5"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00016.wav",
+      "bytes": 157484,
+      "sha256": "0323ed93506209c440a461e9c525727f4ad528b78569959b9b885c9ea630cfd1"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00017.wav",
+      "bytes": 203564,
+      "sha256": "f98043889471b6c8b1f0958257b2b087c3977f1b5921620a228585093de82b95"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00018.wav",
+      "bytes": 291884,
+      "sha256": "e78b7bbe7320c9646da5fe828c84bc9d44ffe845dafa50f0da8d8bb10aeb40c4"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00019.wav",
+      "bytes": 249644,
+      "sha256": "996a9e61a9ab53900594b61f3d42d97481dc30886c5dc5cd5703f3e76ab72c7c"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00020.wav",
+      "bytes": 330284,
+      "sha256": "a3a36b7e3a304e59d1105838e499eab47fb484d3dcd6ab46c6386b8a9137c481"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00021.wav",
+      "bytes": 142124,
+      "sha256": "1f417b313a4fd94146c731b2176195f13424dd685b3ee89e5bd246e3dd6c06d1"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00022.wav",
+      "bytes": 249644,
+      "sha256": "e31092ddecc8822f22f6debfd2c7e281f06cbbeed1d50b17f61a4e5843c7482f"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00023.wav",
+      "bytes": 203564,
+      "sha256": "7badd310b6742f84fed01d946d57c2b24508b88816bc09e163e89a74e2c0895f"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00024.wav",
+      "bytes": 276524,
+      "sha256": "d63bb50a850c09d8d9b8193e89cba2df9aec000b97d45e251e446d8f0468eba6"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00025.wav",
+      "bytes": 272684,
+      "sha256": "2749eba4c5ff4ca3bf24180241405e49730797fe35d76dcdf954d9aa9587cfcf"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00026.wav",
+      "bytes": 288044,
+      "sha256": "96c030eaa65f047c85bcdfe1e96ecb459a72b91aefccb739efd386353f569ab1"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00027.wav",
+      "bytes": 218924,
+      "sha256": "fdf1fbfb567f89409e47f38a7418de6750564423fe8c8b65a98cba5865bdf493"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00028.wav",
+      "bytes": 326444,
+      "sha256": "8b1235322eb1095ea0a7899e30819103642c1a85856657d9fa28a438787b644f"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00029.wav",
+      "bytes": 345644,
+      "sha256": "43e2f14533e5c479030ad9b92149fab0348419e584381717cb540afe658051ba"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00030.wav",
+      "bytes": 664364,
+      "sha256": "3c9cfdb8b45422dd63ab4b90ce9984851acb888f1f4325706173790d260085dd"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/00031.wav",
+      "bytes": 633644,
+      "sha256": "91c40eaabab65c16085aa85a3753ba4002ed5853f5b22ade35d844281304aecc"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/warmup/00000.wav",
+      "bytes": 165164,
+      "sha256": "a21026b8b7305d38ef37fe40a352f4b9321835e622a9b7359530935b139edc2a"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/warmup/00001.wav",
+      "bytes": 165164,
+      "sha256": "b2eec24b4120f07ad56da0de5abfd288b8714624d875707daa3d3cff585df13a"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/warmup/00002.wav",
+      "bytes": 349484,
+      "sha256": "9b79e4a2cbe11c745ac99096e3ea59187762519d9ded2d5e928693f8d0e365bf"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-native/c4/warmup/00003.wav",
+      "bytes": 215084,
+      "sha256": "eb1d9cea0a8fc96513cbf578eb0a827a5f67b11c505807de3d8c5817efeff841"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00000.wav",
+      "bytes": 238124,
+      "sha256": "fbad7f0d512d0fd6cd97b0ec5d54663f361cbad0ffbca6f269e297d496679dc7"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00001.wav",
+      "bytes": 119084,
+      "sha256": "ad4dd4117b25afe7522cdaa7a55942fa34fb1962f4f36e22792a399b85ad2481"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00002.wav",
+      "bytes": 395564,
+      "sha256": "eb82af44f32dc1086a979433dc817ceef7321e400b4bcd895e0f34c4533333b1"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00003.wav",
+      "bytes": 138284,
+      "sha256": "89466275dfae03c943a8765fcbc808db287c291b8fb22a8cfa6dbe0fec05f64b"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00004.wav",
+      "bytes": 1935404,
+      "sha256": "b4f8cf96b9132a7b969fdac6fde3d2fb89da9b2a608e0f318b08afd0588ee1e0"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00005.wav",
+      "bytes": 741164,
+      "sha256": "be4f260d4e538848e4bdf87c25b17e0d56d3338735575a70fd4fc827a46e5acf"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00006.wav",
+      "bytes": 399404,
+      "sha256": "bee3542473a8f7d48cd41577fda1a9faaa2ad178b4564b787cd9cfd983d22805"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00007.wav",
+      "bytes": 299564,
+      "sha256": "18ab3620ab525c73e671b0a458e337f3c16705505f5cdc4959cd4cb9cd77fa1e"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00008.wav",
+      "bytes": 245804,
+      "sha256": "ecd96a4686b44354532b22f108f53061ef993245179a40dbfbbebf4e704f5a3d"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00009.wav",
+      "bytes": 272684,
+      "sha256": "d175fe846d6d2d9273874527c8592a0c5b7f3273935053b9ac9851f2a76a6335"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00010.wav",
+      "bytes": 265004,
+      "sha256": "753c91bd41a908944246c58f14b15606aec0739977754b76877add6b498c9af5"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00011.wav",
+      "bytes": 284204,
+      "sha256": "c902cfc559ae261bf1dccdad05f7055df41e7151ca1110092ea6e4c0069200b4"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00012.wav",
+      "bytes": 295724,
+      "sha256": "e5ad7a1255f250bd6074b01a92e5ae60ae614a27db07194a88e411197da354fb"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00013.wav",
+      "bytes": 295724,
+      "sha256": "8df582226622b5da6a1aade518c44e5dd9278467aa22596e7fdfa3731e812c10"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00014.wav",
+      "bytes": 1048364,
+      "sha256": "7fd43b929d06f1cf9f78814cd23d256e5f9546610c79703ac0f5c37cbd3620af"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00015.wav",
+      "bytes": 633644,
+      "sha256": "7a311f3c4250ba346c7d032f3ecaee4ed9962b9dfb2e371a601368eb27891a80"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00016.wav",
+      "bytes": 126764,
+      "sha256": "04572b42772e405e7f0bd105bd4460340b4145029886aea60e11c70257945497"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00017.wav",
+      "bytes": 169004,
+      "sha256": "4707731f59e5e78788df566d4d172f7a4d2a0a1d226288ce6030b6d571966287"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00018.wav",
+      "bytes": 337964,
+      "sha256": "f4c00151bad92f91df189b81d7eade253e4b42d3a92af5ad4a8650419e6fdb4b"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00019.wav",
+      "bytes": 288044,
+      "sha256": "4f10e2b5f99f535d731450515f4800088d4fac5d920e5a34d4c780c0d61098c5"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00020.wav",
+      "bytes": 253484,
+      "sha256": "3b453082f70de866b0c5063af4631d8f7f9142a251321e21cf4dad4b150ca071"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00021.wav",
+      "bytes": 161324,
+      "sha256": "bf22f05c1ea216384c5b99bb87b857a914e761edfb6aa4edb0e86e6fda9351b7"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00022.wav",
+      "bytes": 238124,
+      "sha256": "7fe6549b3f474f9467d85dc1cd234e8cf231be4ddd5c875930f1f94c5e99bed5"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00023.wav",
+      "bytes": 253484,
+      "sha256": "69999222a0b55c7846c9679a0819c75eabe0c650d5e5bb2d114b87300bcf5a66"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00024.wav",
+      "bytes": 299564,
+      "sha256": "c83ffdad9138a50b07e1ff433420288330204884eee3aa97ab023512c960c858"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00025.wav",
+      "bytes": 280364,
+      "sha256": "fa454f57c852403856bd387bd1e099c8277c8773e143bdf8399ee662c2805086"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00026.wav",
+      "bytes": 299564,
+      "sha256": "a88d0af99a88d01f54f05afffeb21885310883a77a2a2db01d960915eed668f5"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00027.wav",
+      "bytes": 199724,
+      "sha256": "5178c3cf0d2f37e5e4a6719fa13b4110588a6e421fbeecc402521fc315e7bc28"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00028.wav",
+      "bytes": 288044,
+      "sha256": "f20765244fc3cd45eb8d07d79dfc17daad812ef10769ca25f561cb1f3b1ecbcc"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00029.wav",
+      "bytes": 280364,
+      "sha256": "433f9e78ca78e01c74001d43f306063d9f01612682c3465983348dc78a27ca29"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00030.wav",
+      "bytes": 702764,
+      "sha256": "b9d4711aefa59c825bfbc5e15fca371b72daf9daaf58b4585e6e7bd011760f88"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/00031.wav",
+      "bytes": 718124,
+      "sha256": "56a5eec6f1b8903d5268cf66fe5b3d630bdbff7a9a5305845b706ccc822ff453"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/warmup/00000.wav",
+      "bytes": 238124,
+      "sha256": "fbad7f0d512d0fd6cd97b0ec5d54663f361cbad0ffbca6f269e297d496679dc7"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/warmup/00001.wav",
+      "bytes": 119084,
+      "sha256": "ad4dd4117b25afe7522cdaa7a55942fa34fb1962f4f36e22792a399b85ad2481"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/warmup/00002.wav",
+      "bytes": 380204,
+      "sha256": "0b812346bf7f5f14f05cc69f907692fc4360f22853c31bcb9735971f3a34fbdf"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/warmup/00003.wav",
+      "bytes": 138284,
+      "sha256": "89466275dfae03c943a8765fcbc808db287c291b8fb22a8cfa6dbe0fec05f64b"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/warmup/00004.wav",
+      "bytes": 3813164,
+      "sha256": "b9ec53d838b74b35ac48147efddb1208be0cab5877f58d703dd6bbd7453b60e0"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/warmup/00005.wav",
+      "bytes": 660524,
+      "sha256": "f7f225d070d6588afb9e4ef66870149e10cc6b15a8da3c0d234edda52e94772a"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/warmup/00006.wav",
+      "bytes": 407084,
+      "sha256": "283ec6201a7cec3ce9135e4f8af31dd2f070a6f36c62e014e71881ef484c2764"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/warmup/00007.wav",
+      "bytes": 299564,
+      "sha256": "18ab3620ab525c73e671b0a458e337f3c16705505f5cdc4959cd4cb9cd77fa1e"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/warmup/00008.wav",
+      "bytes": 245804,
+      "sha256": "ecd96a4686b44354532b22f108f53061ef993245179a40dbfbbebf4e704f5a3d"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/warmup/00009.wav",
+      "bytes": 272684,
+      "sha256": "d175fe846d6d2d9273874527c8592a0c5b7f3273935053b9ac9851f2a76a6335"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/warmup/00010.wav",
+      "bytes": 265004,
+      "sha256": "753c91bd41a908944246c58f14b15606aec0739977754b76877add6b498c9af5"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/warmup/00011.wav",
+      "bytes": 284204,
+      "sha256": "3f7d70b8d039dc3442c37b798656c8c0f03212303b4f7f74e917211281046cd5"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/warmup/00012.wav",
+      "bytes": 295724,
+      "sha256": "a23efd88eeb56c6d6bc614b95ec3d9a5201e2420e142e2a233952e309361f861"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/warmup/00013.wav",
+      "bytes": 295724,
+      "sha256": "16bee1a624a44b9e90a06e909a94d2ae3d92e25b6b2bd143c84fed5ba6be5ec5"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/warmup/00014.wav",
+      "bytes": 698924,
+      "sha256": "b25570fbd85070f48a29e2a66e968dce7e4b9d81d9cc673b3ccfa9efd933d660"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c16/warmup/00015.wav",
+      "bytes": 625964,
+      "sha256": "ebcd425133839c5ce006afa38780d218d9a5b029293efe8240b2047b6e4872d2"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00000.wav",
+      "bytes": 165164,
+      "sha256": "a21026b8b7305d38ef37fe40a352f4b9321835e622a9b7359530935b139edc2a"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00001.wav",
+      "bytes": 165164,
+      "sha256": "b2eec24b4120f07ad56da0de5abfd288b8714624d875707daa3d3cff585df13a"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00002.wav",
+      "bytes": 349484,
+      "sha256": "9b79e4a2cbe11c745ac99096e3ea59187762519d9ded2d5e928693f8d0e365bf"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00003.wav",
+      "bytes": 215084,
+      "sha256": "eb1d9cea0a8fc96513cbf578eb0a827a5f67b11c505807de3d8c5817efeff841"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00004.wav",
+      "bytes": 257324,
+      "sha256": "648c3ecb08ebfb56691f4d45986ac8cbe530fb920bef9c2d48a48637a4d21828"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00005.wav",
+      "bytes": 245804,
+      "sha256": "563c67b0df5611ba2d8aa36ea7ef05fba25e448d26cfa7f8ef45e0a7ebbb7b40"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00006.wav",
+      "bytes": 1536044,
+      "sha256": "fc95be27a5802d7a5822f284539737faaa8d0a65dbcdf55403b0fa0a335a0748"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00007.wav",
+      "bytes": 322604,
+      "sha256": "c1c555277afe2d3928a7e6005f47ce746133547f6df0064ca6cd7b40e31372e2"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00008.wav",
+      "bytes": 280364,
+      "sha256": "68dcccafb29b88795928375fc93f10f547165e977ae814c703112987e7ce03a9"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00009.wav",
+      "bytes": 238124,
+      "sha256": "35c5ee3b368e7534213ddd69159846f2913a4f4ba0957c4eeb30dc63947fc37c"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00010.wav",
+      "bytes": 261164,
+      "sha256": "0a6877a2c78a9944e3ace4c795a05838a3b7047f58521ad866ecf631e979b30a"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00011.wav",
+      "bytes": 241964,
+      "sha256": "1c07dffda771e60fa2ad0cee1aaada143f2c80cf78c2ec4f4aef4568e56d86d9"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00012.wav",
+      "bytes": 249644,
+      "sha256": "2e7ce8dfecb7629d451bd48ff27f8b25a2ea4eaef8da0f54561d6f2ac0b4b74b"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00013.wav",
+      "bytes": 265004,
+      "sha256": "5ddb1f8566528c699fe01a524c73a92c5728308811806453c48074b5f457516d"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00014.wav",
+      "bytes": 825644,
+      "sha256": "b73f87cb691a680d3a8575a07f27ca588ad4b3c496427007bb6ece3620ff29fd"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00015.wav",
+      "bytes": 660524,
+      "sha256": "74b919b5de6ba9486fbee2a807f8985b7f17fef44aa90932be16894c930682b5"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00016.wav",
+      "bytes": 157484,
+      "sha256": "0323ed93506209c440a461e9c525727f4ad528b78569959b9b885c9ea630cfd1"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00017.wav",
+      "bytes": 203564,
+      "sha256": "f98043889471b6c8b1f0958257b2b087c3977f1b5921620a228585093de82b95"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00018.wav",
+      "bytes": 291884,
+      "sha256": "e78b7bbe7320c9646da5fe828c84bc9d44ffe845dafa50f0da8d8bb10aeb40c4"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00019.wav",
+      "bytes": 249644,
+      "sha256": "996a9e61a9ab53900594b61f3d42d97481dc30886c5dc5cd5703f3e76ab72c7c"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00020.wav",
+      "bytes": 330284,
+      "sha256": "a3a36b7e3a304e59d1105838e499eab47fb484d3dcd6ab46c6386b8a9137c481"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00021.wav",
+      "bytes": 142124,
+      "sha256": "1f417b313a4fd94146c731b2176195f13424dd685b3ee89e5bd246e3dd6c06d1"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00022.wav",
+      "bytes": 249644,
+      "sha256": "e31092ddecc8822f22f6debfd2c7e281f06cbbeed1d50b17f61a4e5843c7482f"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00023.wav",
+      "bytes": 203564,
+      "sha256": "7badd310b6742f84fed01d946d57c2b24508b88816bc09e163e89a74e2c0895f"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00024.wav",
+      "bytes": 276524,
+      "sha256": "d63bb50a850c09d8d9b8193e89cba2df9aec000b97d45e251e446d8f0468eba6"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00025.wav",
+      "bytes": 272684,
+      "sha256": "2749eba4c5ff4ca3bf24180241405e49730797fe35d76dcdf954d9aa9587cfcf"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00026.wav",
+      "bytes": 288044,
+      "sha256": "96c030eaa65f047c85bcdfe1e96ecb459a72b91aefccb739efd386353f569ab1"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00027.wav",
+      "bytes": 218924,
+      "sha256": "fdf1fbfb567f89409e47f38a7418de6750564423fe8c8b65a98cba5865bdf493"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00028.wav",
+      "bytes": 326444,
+      "sha256": "8b1235322eb1095ea0a7899e30819103642c1a85856657d9fa28a438787b644f"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00029.wav",
+      "bytes": 345644,
+      "sha256": "43e2f14533e5c479030ad9b92149fab0348419e584381717cb540afe658051ba"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00030.wav",
+      "bytes": 664364,
+      "sha256": "3c9cfdb8b45422dd63ab4b90ce9984851acb888f1f4325706173790d260085dd"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/00031.wav",
+      "bytes": 633644,
+      "sha256": "91c40eaabab65c16085aa85a3753ba4002ed5853f5b22ade35d844281304aecc"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/warmup/00000.wav",
+      "bytes": 165164,
+      "sha256": "a21026b8b7305d38ef37fe40a352f4b9321835e622a9b7359530935b139edc2a"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/warmup/00001.wav",
+      "bytes": 165164,
+      "sha256": "b2eec24b4120f07ad56da0de5abfd288b8714624d875707daa3d3cff585df13a"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/warmup/00002.wav",
+      "bytes": 349484,
+      "sha256": "9b79e4a2cbe11c745ac99096e3ea59187762519d9ded2d5e928693f8d0e365bf"
+    },
+    {
+      "path": "/work/q1-attempt05/generated/r1-reference/c4/warmup/00003.wav",
+      "bytes": 215084,
+      "sha256": "eb1d9cea0a8fc96513cbf578eb0a827a5f67b11c505807de3d8c5817efeff841"
+    }
+  ],
+  "validators": [
+    {
+      "path": "/work/q1-archive-final.py",
+      "bytes": 3517,
+      "sha256": "d57de0ce2e3cdea41bae4d12e0ee0a13a9522dc80d78c0e9553a5349fb8a0ffa"
+    },
+    {
+      "path": "/work/q1-archive.py",
+      "bytes": 3295,
+      "sha256": "bf5e731be157131aabc03b5df84209a05e8820401d0de7a4e01de18123bf45b6"
+    },
+    {
+      "path": "/work/q1-compatibility-generic.py",
+      "bytes": 1408,
+      "sha256": "f332e7ca7dfafb659c7a53d32241a56e735d8f5c62c66e6775a52fd59ccbf297"
+    },
+    {
+      "path": "/work/q1-compatibility.py",
+      "bytes": 1335,
+      "sha256": "c6863d8e9d08bfffb05764912d997c5c616b4b40d6a6ce02f4a5081176e03e67"
+    },
+    {
+      "path": "/work/q1-device-watch.py",
+      "bytes": 2067,
+      "sha256": "8325582d3bae5af5c2c09b37985ba9205a37f4ac70b55c73e209242a9acc2ba5"
+    },
+    {
+      "path": "/work/q1-followup.py",
+      "bytes": 6532,
+      "sha256": "a4376b748b9b5be35b2b998e07f92c7f815416db193c09d3e74dfe446f8bd803"
+    },
+    {
+      "path": "/work/q1-negative-controls-corrected.py",
+      "bytes": 3340,
+      "sha256": "cd8b25eba5152e799a2bdcbb1253ce790d226ad8ed0d0861ea8d386abc061c3c"
+    },
+    {
+      "path": "/work/q1-negative-controls-full.py",
+      "bytes": 3278,
+      "sha256": "c8df1345449e7cdba7d5c06b069063c359321b384ba22414c889e20333454513"
+    },
+    {
+      "path": "/work/q1-negative-controls-generic.py",
+      "bytes": 3182,
+      "sha256": "7ae9a9030d1245dd9dcea545d7446b30df72eb77144c432af1a70d41f238e689"
+    },
+    {
+      "path": "/work/q1-negative-controls.py",
+      "bytes": 3074,
+      "sha256": "51dd24a8a26b22f696d7c8a845fd50f97ff020dad66043ea6b5b123b19085b27"
+    },
+    {
+      "path": "/work/q1-validate-all.py",
+      "bytes": 6795,
+      "sha256": "5d176f310b62088229dac9013a5409fd3632ea8d6ce42bb7651ad5feb12cbc3b"
+    },
+    {
+      "path": "/work/q1-validate-evaluate.py",
+      "bytes": 6555,
+      "sha256": "bde21e14a436980ff988454c7e7ae17c45b6be507691dc4b5f616d6b17c116b3"
+    },
+    {
+      "path": "/work/q1-validate-final.py",
+      "bytes": 6605,
+      "sha256": "43179702db73b3de8192b3c88e95ea9a1d2f9367c8ba203394f0eaa72010ff24"
+    },
+    {
+      "path": "/work/q1-validate-graded.py",
+      "bytes": 7267,
+      "sha256": "1925823a89c14f13bc2146960b57e9e5a421bc40290fe6edebec9a3e05ea2fca"
+    },
+    {
+      "path": "/work/q1-validate-prepare.py",
+      "bytes": 6197,
+      "sha256": "12da315c4f0940f2e86fbad3d2458cdf3f73aa616d91bc4056a886b769f25b6f"
+    },
+    {
+      "path": "/work/q1-validate.py",
+      "bytes": 6197,
+      "sha256": "12da315c4f0940f2e86fbad3d2458cdf3f73aa616d91bc4056a886b769f25b6f"
+    },
+    {
+      "path": "/work/q1-whisper-api.py",
+      "bytes": 3509,
+      "sha256": "6d1acd320429700752d7affbd9d0db95eb2207be0455917784761c2f207ad85c"
+    }
+  ]
+}

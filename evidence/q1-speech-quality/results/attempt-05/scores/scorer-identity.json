@@ -1,0 +1,26 @@
+{
+  "classes": [
+    "WhisperForConditionalGeneration",
+    "WavLMForXVector"
+  ],
+  "device": "cpu",
+  "dtype": "float32",
+  "threads": 4,
+  "seed": 20261019,
+  "loading_info": {
+    "asr": {
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "mismatched_keys": [],
+      "error_msgs": []
+    },
+    "speaker": {
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "mismatched_keys": [],
+      "error_msgs": []
+    }
+  },
+  "attention": "eager",
+  "remote_code": false
+}
