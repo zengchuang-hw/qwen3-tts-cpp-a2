@@ -1,0 +1,24 @@
+[W1019 02:15:28.263351810 FunctionLoader.cpp:48] Warning: LD_PRELOAD detected, FunctionLoader prefers RTLD_DEFAULT for symbol resolution. (function operator())
+ModuleNotFoundError: No module named 'qwen_tts'
+
+At:
+  /work/reference/qwen3_tts_engine/model.py(6): <module>
+  <frozen importlib._bootstrap>(488): _call_with_frames_removed
+  <frozen importlib._bootstrap_external>(999): exec_module
+  <frozen importlib._bootstrap>(950): _load_unlocked
+  <frozen importlib._bootstrap>(1334): _find_and_load_unlocked
+  <frozen importlib._bootstrap>(1360): _find_and_load
+  /work/reference/qwen3_tts_engine/continuous.py(7): <module>
+  <frozen importlib._bootstrap>(488): _call_with_frames_removed
+  <frozen importlib._bootstrap_external>(999): exec_module
+  <frozen importlib._bootstrap>(950): _load_unlocked
+  <frozen importlib._bootstrap>(1334): _find_and_load_unlocked
+  <frozen importlib._bootstrap>(1360): _find_and_load
+  /work/engine/graph_model.py(9): <module>
+  <frozen importlib._bootstrap>(488): _call_with_frames_removed
+  <frozen importlib._bootstrap_external>(999): exec_module
+  <frozen importlib._bootstrap>(950): _load_unlocked
+  <frozen importlib._bootstrap>(1333): _find_and_load_unlocked
+  <frozen importlib._bootstrap>(1360): _find_and_load
+  /work/engine/cli_bootstrap.py(25): initialize
+

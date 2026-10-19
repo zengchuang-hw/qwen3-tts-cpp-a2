@@ -1,0 +1,36 @@
+[W1019 02:17:08.282102830 FunctionLoader.cpp:48] Warning: LD_PRELOAD detected, FunctionLoader prefers RTLD_DEFAULT for symbol resolution. (function operator())
+/bin/sh: 1: sox: not found
+SoX could not be found!
+
+    If you do not have SoX, proceed here:
+     - - - http://sox.sourceforge.net/ - - -
+
+    If you do (or think that you should) have SoX, double-check your
+    path variables.
+    
+RuntimeError: Initialize:../torch_npu/csrc/core/npu/sys_ctrl/npu_sys_ctrl.cpp:165 NPU function error: aclInit, error code is 500000
+[ERROR] 2026-10-19-02:18:21 (PID:21235, Device:0, RankID:-1) ERR00100 PTA call acl api failed
+[Error]: Unknown internal error.
+        Rectify the fault based on the error information in the ascend log.
+[PID: 21235] 2026-10-19-02:18:21.086.798 Invalid_Argument(EE1001): The argument is invalid. Reason: rtGetDevMsg execution failed, the context is a null pointer.
+        Solution: 1. Check the input parameter range of the function. 2. Check the function invocation relationship.
+TraceBack (most recent call last):
+        [AdxDataDumpServer][Init]dump server run failed, adx errorCode = -1[FUNC:ReportInnerError][FILE:log_inner.cpp][LINE:132]
+        [Process][DumpConfig]process HandleDumpConfig failed[FUNC:ReportInnerError][FILE:log_inner.cpp][LINE:132]
+        ctx is NULL![FUNC:GetDevErrMsg][FILE:api_impl.cc][LINE:6047]
+        The argument is invalid. Reason: rtGetDevMsg execution failed, the context is a null pointer.
+
+
+At:
+  /usr/local/python3.12.13/lib/python3.12/site-packages/torch_npu/npu/__init__.py(273): _lazy_init
+  /usr/local/python3.12.13/lib/python3.12/site-packages/torch_npu/npu/utils.py(91): set_device
+  /work/reference/qwen3_tts_engine/model.py(15): __init__
+  /work/reference/qwen3_tts_engine/continuous.py(254): __init__
+  /work/engine/graph_model.py(20): __init__
+  /work/engine/cli_bootstrap.py(33): initialize
+
+
+********
+Warning: flash-attn is not installed. Will only run the manual PyTorch version. Please install flash-attn for faster inference.
+********
+ 
