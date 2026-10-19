@@ -1,0 +1,18 @@
+[W1019 05:13:59.363616800 FunctionLoader.cpp:48] Warning: LD_PRELOAD detected, FunctionLoader prefers RTLD_DEFAULT for symbol resolution. (function operator())
+/bin/sh: 1: sox: not found
+SoX could not be found!
+
+    If you do not have SoX, proceed here:
+     - - - http://sox.sourceforge.net/ - - -
+
+    If you do (or think that you should) have SoX, double-check your
+    path variables.
+    
+[W1019 05:14:11.486826990 NPUCachingAllocator.cpp:202] Warning: The current CANN and HDK(driver) versions require processing for 32 padding size, with memory allocation. (function operator())
+[W1019 05:14:14.440501260 TensorFactories.cpp:423] Warning: Cannot create tensor with interal format while allow_internel_format=False, tensor will be created with base format. (function operator())
+
+********
+Warning: flash-attn is not installed. Will only run the manual PyTorch version. Please install flash-attn for faster inference.
+********
+ 
+{"status": "INCONCLUSIVE", "scope": "development complete-model probe", "engine": "native", "records": [{"id": 0, "pcm_sha256": "cf44a9cecfd27f48710aa0befecf36272e5714793585da0b84649925e66eceeb", "pcm_bytes": 88320, "frames": 23, "first_audio_seconds": 1.0190387899056077, "elapsed_seconds": 1.3961507899221033, "finish_reason": "stop"}, {"id": 1, "pcm_sha256": "926a3bf5a53f89c2746c13af9a70f7cfc1966ab2584b4fc3910d98c054e33bb9", "pcm_bytes": 161280, "frames": 42, "first_audio_seconds": 1.0190693999174982, "elapsed_seconds": 1.7493559399154037, "finish_reason": "stop"}, {"id": 64, "pcm_sha256": "c077afd10a9804f6650a257b8dd377cd0a96a7dd069f871e0ce2dec23ff42d3f", "pcm_bytes": 264960, "frames": 69, "first_audio_seconds": 1.0190846200566739, "elapsed_seconds": 2.96062378003262, "finish_reason": "stop"}, {"id": 65, "pcm_sha256": "0b63e4a7767247c799753bca06c3a8fc8aefb29008379a068c64cdbebb7a5935", "pcm_bytes": 295680, "frames": 77, "first_audio_seconds": 1.019096750067547, "elapsed_seconds": 3.770927550038323, "finish_reason": "stop"}], "wall_seconds": 3.7710235700942576, "cancel_and_reuse": false, "quality": "NOT_SCORED", "performance_acceptance": "NOT_EVALUATED", "audio_delivery": "inline", "callback_checks": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true], "rejected_callback_mutations": ["cancel", "step", "close"]}

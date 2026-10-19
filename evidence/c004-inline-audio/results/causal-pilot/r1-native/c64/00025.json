@@ -1,0 +1,67 @@
+{
+  "index": 25,
+  "input": "Thousands of people die every year as a consequence of air pollution.",
+  "success": true,
+  "audio_seconds": 5.2,
+  "ttfa_seconds": 0.7597487100865692,
+  "chunks": [
+    {
+      "seconds": 0.7597487100865692,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.9895253500435501,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.2941161501221359,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.7621341801714152,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.287798559991643,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.909892860101536,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.532055930001661,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.291446760063991,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.164394620107487,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.983835430117324,
+      "bytes": 30720
+    },
+    {
+      "seconds": 6.092525100102648,
+      "bytes": 3840
+    },
+    {
+      "seconds": 6.1496422700583935,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 65
+  },
+  "peak": 14271,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 6.1501319201197475,
+  "pcm_sha256": "07f4cf6bac21e34d09fd2fae31a4dff1c006470c5e2a9cfb0200157b470de78a",
+  "pcm_bytes": 249600
+}

@@ -1,0 +1,71 @@
+{
+  "index": 33,
+  "input": "I heard the land where the hobbits live, the Shire, has actually been filmed in New Zealand.",
+  "success": true,
+  "audio_seconds": 6.4,
+  "ttfa_seconds": 0.7785419600550085,
+  "chunks": [
+    {
+      "seconds": 0.7785419600550085,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.0084236999973655,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.3166466201655567,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.7910166101064533,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.3168001901358366,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.9388362399768084,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.5610327501781285,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.305804800009355,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.1647075701039284,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.997624480165541,
+      "bytes": 30720
+    },
+    {
+      "seconds": 6.735457109985873,
+      "bytes": 30720
+    },
+    {
+      "seconds": 7.371177130145952,
+      "bytes": 30720
+    },
+    {
+      "seconds": 7.403191860066727,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 80
+  },
+  "peak": 12607,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 7.403944680001587,
+  "pcm_sha256": "afd1b3c1ed7ae7f7405331a09dfee92437d4812498d9d9e59d17c1f001ffed00",
+  "pcm_bytes": 307200
+}

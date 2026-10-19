@@ -1,0 +1,63 @@
+{
+  "index": 21,
+  "input": "A thin circle of bright metal showed between the top and the body of the cylinder.",
+  "success": true,
+  "audio_seconds": 4.8,
+  "ttfa_seconds": 1.1620561599265784,
+  "chunks": [
+    {
+      "seconds": 1.1620561599265784,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.3907233099453151,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.6921008799690753,
+      "bytes": 15360
+    },
+    {
+      "seconds": 2.1548281798604876,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.6677806398365647,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.1829714698251337,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.6873602599371225,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.219091429840773,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.716359440004453,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.898719880031422,
+      "bytes": 15360
+    },
+    {
+      "seconds": 4.901668000034988,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 60
+  },
+  "peak": 12287,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 4.902484739897773,
+  "pcm_sha256": "32679dd596a7328357af2dd69900aeed872afc69f0935a931e647a8b9a44fc66",
+  "pcm_bytes": 230400
+}

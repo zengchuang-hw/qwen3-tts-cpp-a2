@@ -1,0 +1,71 @@
+{
+  "index": 40,
+  "input": "If my stepfather sold this old sculpture, he'd probably become a millionaire.",
+  "success": true,
+  "audio_seconds": 6.4,
+  "ttfa_seconds": 0.1450527599081397,
+  "chunks": [
+    {
+      "seconds": 0.1450527599081397,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.23499932000413537,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.5485108101274818,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.0359683099668473,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.556328000035137,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.0536390100605786,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.5245501101017,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.0105170500464737,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.5174070899374783,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.023500049952418,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.499179539969191,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.031152150128037,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.033893710002303,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 80
+  },
+  "peak": 14143,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 5.034667940111831,
+  "pcm_sha256": "b09798cf19dfa87f0b24148f54f5ea76ffc459ecfbc4fe0eb4d44ceafe10aa59",
+  "pcm_bytes": 307200
+}

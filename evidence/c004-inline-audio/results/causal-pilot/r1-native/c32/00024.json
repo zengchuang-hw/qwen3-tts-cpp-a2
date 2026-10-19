@@ -1,0 +1,43 @@
+{
+  "index": 24,
+  "input": "Get out of this!",
+  "success": true,
+  "audio_seconds": 1.36,
+  "ttfa_seconds": 0.4365285998210311,
+  "chunks": [
+    {
+      "seconds": 0.4365285998210311,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.5746538899838924,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.7747828899882734,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.1015613300260156,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.163787579862401,
+      "bytes": 3840
+    },
+    {
+      "seconds": 1.166608429979533,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 17
+  },
+  "peak": 18815,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 1.1670741098932922,
+  "pcm_sha256": "34eab14f835aaee9f4f2cf9529af2fce6a0f1edc11c3a122164ba014035c9d01",
+  "pcm_bytes": 65280
+}

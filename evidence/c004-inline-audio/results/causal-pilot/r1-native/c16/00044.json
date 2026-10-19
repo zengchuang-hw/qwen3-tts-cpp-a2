@@ -1,0 +1,59 @@
+{
+  "index": 44,
+  "input": "It was such a thrill, her veins were pumped full of adrenaline.",
+  "success": true,
+  "audio_seconds": 4.4,
+  "ttfa_seconds": 0.13267402001656592,
+  "chunks": [
+    {
+      "seconds": 0.13267402001656592,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.24729360011406243,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.42101193009875715,
+      "bytes": 15360
+    },
+    {
+      "seconds": 0.741904109949246,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.0576025201007724,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.4045987599529326,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.7383321600500494,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.026526360074058,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.2472979000303894,
+      "bytes": 26880
+    },
+    {
+      "seconds": 2.2634741100482643,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 55
+  },
+  "peak": 13055,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 2.264190400019288,
+  "pcm_sha256": "33a3bda70ae3a85f52c53369f8fd96e9340a4f46a49560f51e2b7f707027e69c",
+  "pcm_bytes": 211200
+}

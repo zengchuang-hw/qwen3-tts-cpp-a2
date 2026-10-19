@@ -1,0 +1,59 @@
+{
+  "index": 7,
+  "input": "The only shadow was that of the few scattered pine trees.",
+  "success": true,
+  "audio_seconds": 4.0,
+  "ttfa_seconds": 0.595853139879182,
+  "chunks": [
+    {
+      "seconds": 0.595853139879182,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.7281964600551873,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.9166042099241167,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.222580729983747,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.567349359858781,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.9122263200115412,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.266516519943252,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.6292475399095565,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.733683180063963,
+      "bytes": 7680
+    },
+    {
+      "seconds": 2.7364769999403507,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 50
+  },
+  "peak": 12735,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 2.7373528499156237,
+  "pcm_sha256": "a4746a4666fe91e5156cb08af6127645b1ede76952a5bb67bbe38ad7d3c6bb7d",
+  "pcm_bytes": 192000
+}

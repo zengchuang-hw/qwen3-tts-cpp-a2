@@ -1,0 +1,63 @@
+{
+  "index": 43,
+  "input": "Regarding your request, I have decided to heed your warnings.",
+  "success": true,
+  "audio_seconds": 4.8,
+  "ttfa_seconds": 0.13450209004804492,
+  "chunks": [
+    {
+      "seconds": 0.13450209004804492,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.24914183001965284,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.42289443011395633,
+      "bytes": 15360
+    },
+    {
+      "seconds": 0.7439131799619645,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.0596316701266915,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.40663228998892,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.7404653599951416,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.028552219970152,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.309115670155734,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.4963565000798553,
+      "bytes": 15360
+    },
+    {
+      "seconds": 2.5124422900844365,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 60
+  },
+  "peak": 12607,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 2.513114480068907,
+  "pcm_sha256": "dc31d0ec71591513bf4155a3efce691830be863a5b238fc343e04f600f0756df",
+  "pcm_bytes": 230400
+}

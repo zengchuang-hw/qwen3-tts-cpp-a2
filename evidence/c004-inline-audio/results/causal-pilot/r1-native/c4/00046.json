@@ -1,0 +1,59 @@
+{
+  "index": 46,
+  "input": "Ninety five lines and no more, that's it.",
+  "success": true,
+  "audio_seconds": 4.08,
+  "ttfa_seconds": 0.06756523996591568,
+  "chunks": [
+    {
+      "seconds": 0.06756523996591568,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.1077458499930799,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.2124894300941378,
+      "bytes": 15360
+    },
+    {
+      "seconds": 0.43329802993685007,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.6143216900527477,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.7900938400998712,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.9526428401004523,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.1154577699489892,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.1722241200041026,
+      "bytes": 11520
+    },
+    {
+      "seconds": 1.1743628000840545,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 51
+  },
+  "peak": 17279,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 1.1750150700099766,
+  "pcm_sha256": "d1d673783ffd6677313f0070246ca07d0423f9cbddeab13681515637e9dd5662",
+  "pcm_bytes": 195840
+}

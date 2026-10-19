@@ -1,0 +1,59 @@
+{
+  "index": 12,
+  "input": "The two men hurried back and found the cylinder still lying in the same position.",
+  "success": true,
+  "audio_seconds": 4.0,
+  "ttfa_seconds": 0.7226229198276997,
+  "chunks": [
+    {
+      "seconds": 0.7226229198276997,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.9521981198340654,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.2495231998618692,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.7053408499341458,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.2436226799618453,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.8666213299147785,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.4877504999749362,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.262160799931735,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.5515355200041085,
+      "bytes": 7680
+    },
+    {
+      "seconds": 4.5920420999173075,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 50
+  },
+  "peak": 10815,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 4.592466749949381,
+  "pcm_sha256": "01c16a207832aae4af0ac411253ddba538fbffbcd3b54b8defb64f755dd34797",
+  "pcm_bytes": 192000
+}

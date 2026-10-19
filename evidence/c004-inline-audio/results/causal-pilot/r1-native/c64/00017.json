@@ -1,0 +1,63 @@
+{
+  "index": 17,
+  "input": "I do not like sushi, so I did not really enjoy the meal.",
+  "success": true,
+  "audio_seconds": 4.72,
+  "ttfa_seconds": 0.7410125301685184,
+  "chunks": [
+    {
+      "seconds": 0.7410125301685184,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.9706661701202393,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.2715265799779445,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.733270650031045,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.2586893001571298,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.8945247700903565,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.5031269202008843,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.277046340052038,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.150747460080311,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.491004250012338,
+      "bytes": 11520
+    },
+    {
+      "seconds": 5.527589230099693,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 59
+  },
+  "peak": 20351,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 5.5280953401234,
+  "pcm_sha256": "4db7ec3c060d9576258d828dd5cbcbb6953ad85a3e8550391f7871b49fe979b1",
+  "pcm_bytes": 226560
+}

@@ -1,0 +1,59 @@
+{
+  "index": 18,
+  "input": "Large brown dog walks up a blue staircase.",
+  "success": true,
+  "audio_seconds": 4.08,
+  "ttfa_seconds": 0.7410793299786747,
+  "chunks": [
+    {
+      "seconds": 0.7410793299786747,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.9707329000812024,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.2716094700153917,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.7335125501267612,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.2589499200694263,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.8947989700827748,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.5034061099868268,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.277306400006637,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.658905870048329,
+      "bytes": 11520
+    },
+    {
+      "seconds": 4.685521570034325,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 51
+  },
+  "peak": 10943,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 4.685945739969611,
+  "pcm_sha256": "bdc9a8bcdaabaa24cfe94512a452b1ed7ecf3662179c23d00d05b3413cb04f35",
+  "pcm_bytes": 195840
+}

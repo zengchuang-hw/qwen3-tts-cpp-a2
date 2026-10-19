@@ -1,0 +1,59 @@
+{
+  "index": 35,
+  "input": "To her amazement, she found a supermarket trolley lying on the seabed.",
+  "success": true,
+  "audio_seconds": 4.08,
+  "ttfa_seconds": 0.12621313007548451,
+  "chunks": [
+    {
+      "seconds": 0.12621313007548451,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.20158028998412192,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.3574949400499463,
+      "bytes": 15360
+    },
+    {
+      "seconds": 0.6706098499707878,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.9788491299841553,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.3404162600636482,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.7390258200466633,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.071346089942381,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.156441380036995,
+      "bytes": 11520
+    },
+    {
+      "seconds": 2.1752427199389786,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 51
+  },
+  "peak": 16639,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 2.175969540141523,
+  "pcm_sha256": "e39f47cc841b3396d2a6f1bb9934aabc806334fede39260a9f362073c12917a1",
+  "pcm_bytes": 195840
+}

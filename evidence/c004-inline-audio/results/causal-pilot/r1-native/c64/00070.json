@@ -1,0 +1,59 @@
+{
+  "index": 70,
+  "input": "\u76ee\u524d\u4e2d\u56fd\u4e92\u8054\u7f51\u56fd\u9645\u5316\u8fd8\u5728\u5f00\u62d3\u9636\u6bb5\u3002",
+  "success": true,
+  "audio_seconds": 4.0,
+  "ttfa_seconds": 0.16582332993857563,
+  "chunks": [
+    {
+      "seconds": 0.16582332993857563,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.25490701012313366,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.67233104002662,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.4318754901178181,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.269636149983853,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.0782954399473965,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.7753147301264107,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.415997530100867,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.581771760014817,
+      "bytes": 7680
+    },
+    {
+      "seconds": 4.625866660149768,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 50
+  },
+  "peak": 21631,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 4.626293220091611,
+  "pcm_sha256": "5d4e651ce2059559f55f6a8eae1b679c8e182bc3bdc22b7f1d17f5eb31f88c5e",
+  "pcm_bytes": 192000
+}

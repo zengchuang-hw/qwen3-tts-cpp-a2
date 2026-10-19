@@ -1,0 +1,43 @@
+{
+  "index": 41,
+  "input": "Can we please leave now?",
+  "success": true,
+  "audio_seconds": 1.92,
+  "ttfa_seconds": 1.2069677801337093,
+  "chunks": [
+    {
+      "seconds": 1.2069677801337093,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.4355966600123793,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.7461637400556356,
+      "bytes": 15360
+    },
+    {
+      "seconds": 2.225101009942591,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.738686460070312,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.817578179994598,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 24
+  },
+  "peak": 11391,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 2.818123540142551,
+  "pcm_sha256": "35212526fed8deffd7141297cd73648cf4d635914edbbb126dc0e0779650201a",
+  "pcm_bytes": 92160
+}

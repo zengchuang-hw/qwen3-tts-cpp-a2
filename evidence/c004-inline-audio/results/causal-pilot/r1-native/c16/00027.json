@@ -1,0 +1,59 @@
+{
+  "index": 27,
+  "input": "I was well, but I'm all the better for being here.",
+  "success": true,
+  "audio_seconds": 4.4,
+  "ttfa_seconds": 0.11637065000832081,
+  "chunks": [
+    {
+      "seconds": 0.11637065000832081,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.2079955800436437,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.3512466298416257,
+      "bytes": 15360
+    },
+    {
+      "seconds": 0.724277890054509,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.1371668898500502,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.4528803499415517,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.7411756699439138,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.094338780036196,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.371872739866376,
+      "bytes": 26880
+    },
+    {
+      "seconds": 2.382252180017531,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 55
+  },
+  "peak": 15615,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 2.382875100011006,
+  "pcm_sha256": "82b28742d62d8fbbd4948d6cbbf0deb03b452f49bc30fa8b95e6d88d5ee7de25",
+  "pcm_bytes": 211200
+}

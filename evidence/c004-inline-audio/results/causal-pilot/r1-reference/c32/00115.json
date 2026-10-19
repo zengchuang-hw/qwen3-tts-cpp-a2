@@ -1,0 +1,99 @@
+{
+  "index": 115,
+  "input": "\u6211\u4eec\u5f53\u8fce\u7740\u9633\u5149\u8f9b\u52e4\u8015\u4f5c\uff0c\u53bb\u6458\u53d6\uff0c\u53bb\u5236\u4f5c\uff0c\u53bb\u54c1\u5c1d\uff0c\u53bb\u9988\u8d60\u3002",
+  "success": true,
+  "audio_seconds": 10.32,
+  "ttfa_seconds": 0.17296565999276936,
+  "chunks": [
+    {
+      "seconds": 0.17296565999276936,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.30341680999845266,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.5338727401103824,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.0290037000086159,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.475581320002675,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.9309026200789958,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.346832470037043,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.6879711700603366,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.028975000139326,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.397894819965586,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.730836129980162,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.044641660060734,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.291865450097248,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.498674710048363,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.707633920013905,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.848369810031727,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.988375700078905,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.128263550112024,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.150815770030022,
+      "bytes": 3840
+    },
+    {
+      "seconds": 5.1511314699891955,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 129
+  },
+  "peak": 18303,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 5.15288029005751,
+  "pcm_sha256": "6bc3fcf4be75c44d5911191be71fc4ab4a1e232168bcb2c5e77f57d10527fc26",
+  "pcm_bytes": 495360
+}

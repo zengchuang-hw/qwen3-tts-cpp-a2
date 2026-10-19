@@ -1,0 +1,55 @@
+{
+  "index": 60,
+  "input": "Worryingly, the radio signal became weaker.",
+  "success": true,
+  "audio_seconds": 3.52,
+  "ttfa_seconds": 0.1396814698819071,
+  "chunks": [
+    {
+      "seconds": 0.1396814698819071,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.26002712990157306,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.49676656001247466,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.002449489897117,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.5355757800862193,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.019746369915083,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.4992941298987716,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.7266399799846113,
+      "bytes": 15360
+    },
+    {
+      "seconds": 2.7587309300433844,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 44
+  },
+  "peak": 11391,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 2.7595276900101453,
+  "pcm_sha256": "d8f900f4681c504a1b3e1a509bf5dedc3b26fb3ddcc6eb6b425fbe906c4d7598",
+  "pcm_bytes": 168960
+}

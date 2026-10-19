@@ -1,0 +1,75 @@
+{
+  "index": 22,
+  "input": "Replace the Ts in Tim Tebow's name with any other consonant to get a Star Wars character",
+  "success": true,
+  "audio_seconds": 7.04,
+  "ttfa_seconds": 0.631722410209477,
+  "chunks": [
+    {
+      "seconds": 0.631722410209477,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.7644279100932181,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.9598996001295745,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.2784589801449329,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.6236896601039916,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.9683184002060443,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.310328290099278,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.641315079992637,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.9173402301967144,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.1669401901308447,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.374087940203026,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.54077317006886,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.7059962099883705,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.7092048600316048,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 88
+  },
+  "peak": 15295,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 3.7102636301424354,
+  "pcm_sha256": "912d9f29436fb766a278c316f3c4206fedd40b3e95431365c62d6b9573ac8f4c",
+  "pcm_bytes": 337920
+}

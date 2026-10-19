@@ -1,0 +1,55 @@
+{
+  "index": 1,
+  "input": "The stained glass offered a hypnotic atmosphere.",
+  "success": true,
+  "audio_seconds": 3.28,
+  "ttfa_seconds": 0.3894996400922537,
+  "chunks": [
+    {
+      "seconds": 0.3894996400922537,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.5272421000991017,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.7184686600230634,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.0290343700908124,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.420322640100494,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.8087473001796752,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.293003070168197,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.4058941199909896,
+      "bytes": 3840
+    },
+    {
+      "seconds": 2.4200001801364124,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 41
+  },
+  "peak": 15935,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 2.420381380012259,
+  "pcm_sha256": "627dc663c657d160f9a218db6bcefffbd251e2d59a654095619cc85cb179624e",
+  "pcm_bytes": 157440
+}

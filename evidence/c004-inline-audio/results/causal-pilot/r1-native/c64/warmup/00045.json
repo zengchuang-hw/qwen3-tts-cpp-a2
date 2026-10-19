@@ -1,0 +1,63 @@
+{
+  "index": 45,
+  "input": "Nora finds herself ugly, because she has pimples.",
+  "success": true,
+  "audio_seconds": 4.96,
+  "ttfa_seconds": 1.2160187000408769,
+  "chunks": [
+    {
+      "seconds": 1.2160187000408769,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.4446642200928181,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.757121240021661,
+      "bytes": 15360
+    },
+    {
+      "seconds": 2.239048680057749,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.75287011009641,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.2676687301136553,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.773033960023895,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.212082500103861,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.709262210177258,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.958182450151071,
+      "bytes": 23040
+    },
+    {
+      "seconds": 4.965421759989113,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 62
+  },
+  "peak": 11967,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 4.965895690023899,
+  "pcm_sha256": "b816acb0bedbda5228aff19d6b5889985986701295c75d6dddf6cdc9e45e1e41",
+  "pcm_bytes": 238080
+}

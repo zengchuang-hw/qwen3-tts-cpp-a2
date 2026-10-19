@@ -1,0 +1,67 @@
+{
+  "index": 49,
+  "input": "Ladies and gentlemen, this wagon is going to be detached.",
+  "success": true,
+  "audio_seconds": 5.76,
+  "ttfa_seconds": 0.20124406996183097,
+  "chunks": [
+    {
+      "seconds": 0.20124406996183097,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.2962251999415457,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.5793242498766631,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.103697049897164,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.577728419797495,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.0408071998972446,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.550901070004329,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.0831534599419683,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.5552467599045485,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.046562839997932,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.554009779822081,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.556901869829744,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 72
+  },
+  "peak": 17535,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 4.557690199930221,
+  "pcm_sha256": "87042c930cef2a0a0def6d9b88cdb0f31510082b5aa9972f16cf81dee45a7b4a",
+  "pcm_bytes": 276480
+}

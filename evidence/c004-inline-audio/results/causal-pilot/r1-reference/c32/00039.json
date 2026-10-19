@@ -1,0 +1,55 @@
+{
+  "index": 39,
+  "input": "The more you read, the better you will be understood.",
+  "success": true,
+  "audio_seconds": 3.36,
+  "ttfa_seconds": 0.14042190997861326,
+  "chunks": [
+    {
+      "seconds": 0.14042190997861326,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.3196002400945872,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.537040859926492,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.03877212991938,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.554019490024075,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.0728866499848664,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.5557989198714495,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.6725983798969537,
+      "bytes": 7680
+    },
+    {
+      "seconds": 2.6742963599972427,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 42
+  },
+  "peak": 13567,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 2.6748189399950206,
+  "pcm_sha256": "0c50efabc1cabfa1bbefb1cb20d2336c8766e33d088269ad1fc0ad02bac41909",
+  "pcm_bytes": 161280
+}

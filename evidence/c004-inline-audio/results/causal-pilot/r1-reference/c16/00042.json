@@ -1,0 +1,83 @@
+{
+  "index": 42,
+  "input": "Contrary to common belief, children won't gain computer literacy, if you just hand them tablet computers and smartphones.",
+  "success": true,
+  "audio_seconds": 8.24,
+  "ttfa_seconds": 0.15799334994517267,
+  "chunks": [
+    {
+      "seconds": 0.15799334994517267,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.25848721992224455,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.43746036011725664,
+      "bytes": 15360
+    },
+    {
+      "seconds": 0.7394192200154066,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.0438410500064492,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.3720189100131392,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.720220309915021,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.0093853699509054,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.2756303099449724,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.6465204400010407,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.924990320112556,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.299802209949121,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.638997819973156,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.9891989899333566,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.216315689962357,
+      "bytes": 26880
+    },
+    {
+      "seconds": 4.216406560037285,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 103
+  },
+  "peak": 16895,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 4.217631730018184,
+  "pcm_sha256": "38ee5e425aaf51f2cb25e4b71c90f7a4f32d99b30336f6b22a6a1b162bcc8bbb",
+  "pcm_bytes": 395520
+}

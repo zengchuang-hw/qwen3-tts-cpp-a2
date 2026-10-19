@@ -1,0 +1,119 @@
+{
+  "index": 93,
+  "input": "\u6b64\u5916\uff0c\u8fd8\u6709\u6bd2\u86c7\uff0c\u87d2\u86c7\u7ecf\u5e38\u51fa\u73b0\uff0c\u7ed9\u53d1\u5c55\u751f\u9020\u6210\u8bb8\u591a\u56f0\u96be\u3002",
+  "success": true,
+  "audio_seconds": 13.92,
+  "ttfa_seconds": 0.1471396000124514,
+  "chunks": [
+    {
+      "seconds": 0.1471396000124514,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.23595272982493043,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.4429972099605948,
+      "bytes": 15360
+    },
+    {
+      "seconds": 0.7358559998683631,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.0418347399681807,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.397584909806028,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.700486309826374,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.998819219879806,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.2942567598074675,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.5951214300002903,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.9083149898797274,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.19133079983294,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.5018892099615186,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.812161979964003,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.119196570012718,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.402197899995372,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.716040819883347,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.049817809835076,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.370476610027254,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.656830239808187,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.927188499830663,
+      "bytes": 30720
+    },
+    {
+      "seconds": 6.181115380022675,
+      "bytes": 30720
+    },
+    {
+      "seconds": 6.459170219954103,
+      "bytes": 30720
+    },
+    {
+      "seconds": 6.643203009851277,
+      "bytes": 23040
+    },
+    {
+      "seconds": 6.643412249861285,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 174
+  },
+  "peak": 15231,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 6.645296619972214,
+  "pcm_sha256": "d266199853b4b90ed724c5d7776507095b76c4c41434615f6db8aa186e1d1619",
+  "pcm_bytes": 668160
+}

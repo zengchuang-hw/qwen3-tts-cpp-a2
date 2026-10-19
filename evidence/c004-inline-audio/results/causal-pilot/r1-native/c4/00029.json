@@ -1,0 +1,47 @@
+{
+  "index": 29,
+  "input": "Take these capsules over to Mrs. David's house.",
+  "success": true,
+  "audio_seconds": 2.56,
+  "ttfa_seconds": 0.06646279990673065,
+  "chunks": [
+    {
+      "seconds": 0.06646279990673065,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.12559983995743096,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.2329774599056691,
+      "bytes": 15360
+    },
+    {
+      "seconds": 0.3985790000297129,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.5651420298963785,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.7604353898204863,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.7624481099192053,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 32
+  },
+  "peak": 19199,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 0.7629686398431659,
+  "pcm_sha256": "be9c93105090e92cac57896425e2f23593937be454a1c55596a017091b1721d1",
+  "pcm_bytes": 122880
+}

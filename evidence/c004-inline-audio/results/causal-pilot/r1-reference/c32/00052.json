@@ -1,0 +1,75 @@
+{
+  "index": 52,
+  "input": "With skin and hair completely, thoroughly out and out.",
+  "success": true,
+  "audio_seconds": 6.96,
+  "ttfa_seconds": 0.19125190004706383,
+  "chunks": [
+    {
+      "seconds": 0.19125190004706383,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.3342448300682008,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.5784238700289279,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.0689984699711204,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.5271801899652928,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.0176267300266773,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.5536457700654864,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.0263094699475914,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.505491629941389,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.032103750156239,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.491666010115296,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.905355490045622,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.340473510092124,
+      "bytes": 26880
+    },
+    {
+      "seconds": 5.34216025006026,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 87
+  },
+  "peak": 11711,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 5.3430150100030005,
+  "pcm_sha256": "dea641babacee8efdc3bfc04b0002bd3287a859c3cdb6de2d3712f3a163ac498",
+  "pcm_bytes": 334080
+}

@@ -1,0 +1,25 @@
+{
+  "source": {
+    "CMakeLists.txt": "81d3b399e5c30b1e9aa036e55fe815498797094bef108cfcdd5a69010d1e07e8",
+    "assess.py": "98e2091f335210479abf605cd263ddcbc2707b4f3e175db668bef83d1982040b",
+    "campaign.py": "da1de8db29ea053bfef0e2699900650e8bfdacf92f7c48fa777d9aaa9e1776b1",
+    "cli_bootstrap.py": "28c85aa36274325be32b7c774d1543ac98f2e6da882b6921eeebd25850bab230",
+    "graph_model.py": "d0911661660dab53b5fb3abf21716850c47afb38c859cb60f2efccfec4f5242d",
+    "native/main.cpp": "671bb2239916ea405c330fbc62c800b188f2036e7214e4e88dc3eb78b46e2a8a",
+    "native/runtime.cpp": "1a7ba000d450e60532aa0381a61fd3c1235b8981a791a6d585793d1fdc11dc7a",
+    "native/runtime_api.h": "e03af5fa11244eccb22674a144021c0950d432724b4243a7d68e6f40c1b7269a",
+    "predictor_rope.py": "392bebdac9aa10033422cbbd4fe53cea3e50afdc0e898f08cea7f934711408c4",
+    "probe.py": "9a4859778c328660a823e81e840c6e63702ad9b75e1915e5629942a758b715cc",
+    "profile_native.py": "8c07533b899876851ee8736c164b4165096a796de5eea6085402ae2f402c2501",
+    "requirements-a2.txt": "c1dff492279d286eb40c137987a85452f6ca206c0bdd84dd57a0eb27fba4eb87",
+    "rope_probe.py": "7e42caf5e939f60b2581a33ce40ee5bfb5fc0243f7c901c1eae571f89e9fc0b7",
+    "serve.py": "48ba10e9216943f2237f67830c7cd7209be9b673afe1685f6824a7119f4f4cbb",
+    "test_native_state.py": "fa3173fb552580bf6f9c590610d839de466697bd381aaa3636a0f116cbd7ccc7",
+    "tests/test_evidence_contracts.py": "c5518a8ebc1b8437ea24ed1c8aa731e60a5e1be78099aefe56786bb0abe35dc6"
+  },
+  "binaries": {
+    "_qtts_native.cpython-312-aarch64-linux-gnu.so": "b78ad8a207cd1528301c4768d6cee27167a5eebc1b1a138b93ef7e44b050b656",
+    "qtts": "476f164d6d4538e14b16b04bae1d6e5da28e86ebe2fdfa2bdf64d0ef10dab7ff"
+  },
+  "reference_revision": "b4451682abac651f26046f8d27467de3f007e1e7"
+}

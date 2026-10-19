@@ -1,0 +1,83 @@
+{
+  "index": 59,
+  "input": "As independent studies document, the Neanderthals developed simple tools such as spears.",
+  "success": true,
+  "audio_seconds": 7.76,
+  "ttfa_seconds": 0.8353763699997216,
+  "chunks": [
+    {
+      "seconds": 0.8353763699997216,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.065691500203684,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.3856413301546127,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.8784343199804425,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.4049693301785737,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.0252736799884588,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.652286200085655,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.386186300078407,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.128659859998152,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.976266760146245,
+      "bytes": 30720
+    },
+    {
+      "seconds": 6.716219670139253,
+      "bytes": 30720
+    },
+    {
+      "seconds": 7.35147920018062,
+      "bytes": 30720
+    },
+    {
+      "seconds": 8.076247180113569,
+      "bytes": 30720
+    },
+    {
+      "seconds": 8.644442520104349,
+      "bytes": 30720
+    },
+    {
+      "seconds": 8.708606070140377,
+      "bytes": 3840
+    },
+    {
+      "seconds": 8.749648380093277,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 97
+  },
+  "peak": 19583,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 8.750332250026986,
+  "pcm_sha256": "7afb943e8729abd6a3ab9b551773c12a72247ce5701e74e363f2b1caa98ab470",
+  "pcm_bytes": 372480
+}

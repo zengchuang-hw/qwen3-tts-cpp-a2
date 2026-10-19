@@ -1,0 +1,67 @@
+{
+  "index": 11,
+  "input": "Later, we simply let life proceed, in its own direction, toward its own fate.",
+  "success": true,
+  "audio_seconds": 5.6,
+  "ttfa_seconds": 0.4592499800492078,
+  "chunks": [
+    {
+      "seconds": 0.4592499800492078,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.5470816399902105,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.6849368300754577,
+      "bytes": 15360
+    },
+    {
+      "seconds": 0.9205125800799578,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.1598378999624401,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.401015360141173,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.62660944997333,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.8409583801403642,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.0981915399897844,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.28220543009229,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.3900826501194388,
+      "bytes": 23040
+    },
+    {
+      "seconds": 2.390312100062147,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 70
+  },
+  "peak": 15551,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 2.3914732299745083,
+  "pcm_sha256": "97489629bcd764736c57d231420142a94c3bcdab37369e0ad6dcb75dd849b42f",
+  "pcm_bytes": 268800
+}

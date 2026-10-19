@@ -1,0 +1,63 @@
+{
+  "index": 62,
+  "input": "Strip down the rig until you know exactly where the error is located.",
+  "success": true,
+  "audio_seconds": 5.12,
+  "ttfa_seconds": 1.1901513799093664,
+  "chunks": [
+    {
+      "seconds": 1.1901513799093664,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.41900747991167,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.73990886984393,
+      "bytes": 15360
+    },
+    {
+      "seconds": 2.2359112699050456,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.517867829883471,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.0344253999646753,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.537940440000966,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.070181539980695,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.566835399949923,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.962495140032843,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.038021609885618,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 64
+  },
+  "peak": 12991,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 5.038514189887792,
+  "pcm_sha256": "594d140bed6f5b81ac7b24cc14697fd15cd878abb89ba3d88888dfee93acd732",
+  "pcm_bytes": 245760
+}

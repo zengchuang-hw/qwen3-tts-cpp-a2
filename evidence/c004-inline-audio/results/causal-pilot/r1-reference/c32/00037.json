@@ -1,0 +1,75 @@
+{
+  "index": 37,
+  "input": "Try to make eye contact with a stranger on the bus, and hold it for five seconds, without speaking.",
+  "success": true,
+  "audio_seconds": 6.56,
+  "ttfa_seconds": 0.1537340299692005,
+  "chunks": [
+    {
+      "seconds": 0.1537340299692005,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.24197308998554945,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.5350722500588745,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.0226466201711446,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.5280280301813036,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.0465507900808007,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.546758559998125,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.0007407201919705,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.488628559978679,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.0181904300116,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.501230290159583,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.978810910135508,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.085977950133383,
+      "bytes": 7680
+    },
+    {
+      "seconds": 5.088135660160333,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 82
+  },
+  "peak": 18175,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 5.08896567998454,
+  "pcm_sha256": "a5e338558b9b0f179919b1849a69a51b669084f5475c0653fc370871044021b5",
+  "pcm_bytes": 314880
+}

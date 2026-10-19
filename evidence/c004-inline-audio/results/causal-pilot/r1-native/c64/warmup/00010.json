@@ -1,0 +1,67 @@
+{
+  "index": 10,
+  "input": "After all, who doesn\u2019t want to overcome new challenges and achieve great heights?",
+  "success": true,
+  "audio_seconds": 5.6,
+  "ttfa_seconds": 1.1351159298792481,
+  "chunks": [
+    {
+      "seconds": 1.1351159298792481,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.3636466700118035,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.6597865500953048,
+      "bytes": 15360
+    },
+    {
+      "seconds": 2.1131431700196117,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.6246194699779153,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.1411135299131274,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.64482110994868,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.176909849978983,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.674076189985499,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.06967477989383,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.278972619911656,
+      "bytes": 23040
+    },
+    {
+      "seconds": 5.280961479991674,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 70
+  },
+  "peak": 19455,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 5.281603120034561,
+  "pcm_sha256": "6363f48c494129fe8d1da18c5ba9c5c98d7985ca72fc9a935adaa8b7fc5e2001",
+  "pcm_bytes": 268800
+}

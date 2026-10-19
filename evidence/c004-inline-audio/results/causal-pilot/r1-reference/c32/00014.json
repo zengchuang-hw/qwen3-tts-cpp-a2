@@ -1,0 +1,59 @@
+{
+  "index": 14,
+  "input": "Elvis Presley is often called the \"King of Rock and Roll\".",
+  "success": true,
+  "audio_seconds": 4.32,
+  "ttfa_seconds": 0.4591966299340129,
+  "chunks": [
+    {
+      "seconds": 0.4591966299340129,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.5952849599998444,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.7977965001482517,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.1294626600574702,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.5194019901100546,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.8921353500336409,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.366533529944718,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.8561697599943727,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.1943359000142664,
+      "bytes": 23040
+    },
+    {
+      "seconds": 3.197341850027442,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 54
+  },
+  "peak": 20351,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 3.197799209970981,
+  "pcm_sha256": "b78e20c8cfb392b154ec36b37dbf717685bd4a8b296ef296ed75085911a2e70e",
+  "pcm_bytes": 207360
+}

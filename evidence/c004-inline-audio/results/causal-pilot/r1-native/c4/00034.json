@@ -1,0 +1,55 @@
+{
+  "index": 34,
+  "input": "The salesman was like the rest of them, untrustworthy.",
+  "success": true,
+  "audio_seconds": 3.52,
+  "ttfa_seconds": 0.075657979818061,
+  "chunks": [
+    {
+      "seconds": 0.075657979818061,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.13643227983266115,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.2258852298837155,
+      "bytes": 15360
+    },
+    {
+      "seconds": 0.3912148999515921,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.5803042098414153,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.7490538798738271,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.912133099976927,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.9996834199409932,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.001743609784171,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 44
+  },
+  "peak": 14143,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 1.0023015597835183,
+  "pcm_sha256": "4c225d512ef8d5dbdd6130e7664dc9b069624505d35afdc9fb8c4200ca46e074",
+  "pcm_bytes": 168960
+}

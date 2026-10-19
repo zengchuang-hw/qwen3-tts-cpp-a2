@@ -1,0 +1,79 @@
+{
+  "index": 6,
+  "input": "I'm never more aware of a room's acoustics than when I'm trying to enjoy a snack I have no intention of sharing.",
+  "success": true,
+  "audio_seconds": 7.6,
+  "ttfa_seconds": 0.45858356985263526,
+  "chunks": [
+    {
+      "seconds": 0.45858356985263526,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.5946880797855556,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.7966281198896468,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.127329769777134,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.5171323497779667,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.8903266999404877,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.364705119980499,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.855281309923157,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.3614910198375583,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.8634698200039566,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.3791789098177105,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.8415522198192775,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.316881909966469,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.740041799843311,
+      "bytes": 26880
+    },
+    {
+      "seconds": 5.7418109299615026,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 95
+  },
+  "peak": 18047,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 5.742966549936682,
+  "pcm_sha256": "fe024fe0552aac0f824a97b79fb1e1bf167c9e0b486139dc65f4f2bb67e94c3b",
+  "pcm_bytes": 364800
+}

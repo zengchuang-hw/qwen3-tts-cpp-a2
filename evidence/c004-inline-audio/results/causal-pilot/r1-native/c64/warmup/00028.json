@@ -1,0 +1,59 @@
+{
+  "index": 28,
+  "input": "what is the forecast for California for rain",
+  "success": true,
+  "audio_seconds": 4.16,
+  "ttfa_seconds": 1.1712139800656587,
+  "chunks": [
+    {
+      "seconds": 1.1712139800656587,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.399864689912647,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.7034917001146823,
+      "bytes": 15360
+    },
+    {
+      "seconds": 2.1698670499026775,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.6958302001003176,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.2110800200607628,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.715602699900046,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.2472959901206195,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.4812440299429,
+      "bytes": 15360
+    },
+    {
+      "seconds": 4.491007510107011,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 52
+  },
+  "peak": 14911,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 4.491445980034769,
+  "pcm_sha256": "114342474d195be3038c1b1c75d042ecb369602636a0f2d9cfda883915cab80c",
+  "pcm_bytes": 199680
+}

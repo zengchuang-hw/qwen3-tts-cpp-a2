@@ -1,0 +1,47 @@
+{
+  "index": 56,
+  "input": "Where did that come from?",
+  "success": true,
+  "audio_seconds": 2.56,
+  "ttfa_seconds": 0.1367109699640423,
+  "chunks": [
+    {
+      "seconds": 0.1367109699640423,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.2220998101402074,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.4062714399769902,
+      "bytes": 15360
+    },
+    {
+      "seconds": 0.7199638499878347,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.0825177100487053,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.4443049100227654,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.4462367501109838,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 32
+  },
+  "peak": 10687,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 1.4476277900394052,
+  "pcm_sha256": "44f1afb39fe1a58dbec4f9cada859d6d6dcb85b9325e90d60da54f5f39a00fee",
+  "pcm_bytes": 122880
+}

@@ -1,0 +1,51 @@
+{
+  "index": 20,
+  "input": "They set off running wildly into the trees.",
+  "success": true,
+  "audio_seconds": 2.72,
+  "ttfa_seconds": 0.06751511991024017,
+  "chunks": [
+    {
+      "seconds": 0.06751511991024017,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.12460646987892687,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.20683600008487701,
+      "bytes": 15360
+    },
+    {
+      "seconds": 0.394291739910841,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.5955830200109631,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.7677512499503791,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.8079252098686993,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.8101007998920977,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 34
+  },
+  "peak": 21119,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 0.8106388400774449,
+  "pcm_sha256": "f6d7e0cef9d70aca97cb07dff8cd820991bcc4068bd24ebe59be513b6369ab2d",
+  "pcm_bytes": 130560
+}

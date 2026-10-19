@@ -1,0 +1,59 @@
+{
+  "index": 5,
+  "input": "The primary coil has fifty turns.",
+  "success": true,
+  "audio_seconds": 4.32,
+  "ttfa_seconds": 0.1996684498153627,
+  "chunks": [
+    {
+      "seconds": 0.1996684498153627,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.2878430199343711,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.421559999929741,
+      "bytes": 15360
+    },
+    {
+      "seconds": 0.6497065199073404,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.9066553299780935,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.159808849915862,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.4870090098120272,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.7489116799551994,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.001836559968069,
+      "bytes": 23040
+    },
+    {
+      "seconds": 2.0148693998344243,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 54
+  },
+  "peak": 19199,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 2.0157140200026333,
+  "pcm_sha256": "479a1befbbf2eae7d8434d8089c17d23c92ede6257a0cf2de409aa086188cae7",
+  "pcm_bytes": 207360
+}

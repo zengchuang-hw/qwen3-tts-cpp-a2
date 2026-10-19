@@ -1,0 +1,55 @@
+{
+  "index": 4,
+  "input": "When it comes to the crunch, our company will become insolvent.",
+  "success": true,
+  "audio_seconds": 3.44,
+  "ttfa_seconds": 0.08543337997980416,
+  "chunks": [
+    {
+      "seconds": 0.08543337997980416,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.12542198016308248,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.19946088013239205,
+      "bytes": 15360
+    },
+    {
+      "seconds": 0.41147631010971963,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.6021660200785846,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.7585546900518239,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.9157979900483042,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.9758981701452285,
+      "bytes": 11520
+    },
+    {
+      "seconds": 0.9868338201195002,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 43
+  },
+  "peak": 13823,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 0.9874661001376808,
+  "pcm_sha256": "cf7740d24d3325a33b3f62253e6a0c49d193b72ee55c7d31c0237cbea5f962c9",
+  "pcm_bytes": 165120
+}

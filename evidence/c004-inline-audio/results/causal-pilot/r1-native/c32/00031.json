@@ -1,0 +1,55 @@
+{
+  "index": 31,
+  "input": "He must be disguised to avoid encounters with thieves.",
+  "success": true,
+  "audio_seconds": 3.6,
+  "ttfa_seconds": 0.4545306200161576,
+  "chunks": [
+    {
+      "seconds": 0.4545306200161576,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.5926463999785483,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.7974544898606837,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.1315215099602938,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.492242369800806,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.8802376599051058,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.350703749805689,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.620402929838747,
+      "bytes": 19200
+    },
+    {
+      "seconds": 2.631548099918291,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 45
+  },
+  "peak": 14015,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 2.6322778498288244,
+  "pcm_sha256": "85d9da3a453f92a31656ddbf63918672c2cb05bbd1c5c4a40f3ce4564a6f35d0",
+  "pcm_bytes": 172800
+}

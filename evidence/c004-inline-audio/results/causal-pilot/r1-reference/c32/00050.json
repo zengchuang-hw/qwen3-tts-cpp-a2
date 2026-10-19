@@ -1,0 +1,55 @@
+{
+  "index": 50,
+  "input": "Three weeks later, he was feeling a lot better.",
+  "success": true,
+  "audio_seconds": 3.28,
+  "ttfa_seconds": 0.20771324005909264,
+  "chunks": [
+    {
+      "seconds": 0.20771324005909264,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.32269886997528374,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.585811150027439,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.0986763499677181,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.5727021899074316,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.032768870005384,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.5410590800456703,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.618009180063382,
+      "bytes": 3840
+    },
+    {
+      "seconds": 2.621072039939463,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 41
+  },
+  "peak": 12479,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 2.6217743600718677,
+  "pcm_sha256": "5bb0f811a4612e1741cf3e029f9bcab93df655d7035e493037f8e5c750177ab6",
+  "pcm_bytes": 157440
+}

@@ -1,0 +1,441 @@
+{
+  "status": "PASS",
+  "tested_commit": "18a87390ef8411f627a3ce1627e5ffe986bc6d90",
+  "scope": "inline callbacks, full-generation parity and bounded causal pilot; not upstream performance acceptance",
+  "physical_device": 3,
+  "logical_device": 0,
+  "commands": [
+    {
+      "name": "cpu-suite",
+      "argv": [
+        "/work/venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/work/c004/source",
+      "exit": 0,
+      "wall_seconds": 0.2645698601845652
+    },
+    {
+      "name": "configure",
+      "argv": [
+        "cmake",
+        "-S",
+        "/work/c004/source",
+        "-B",
+        "/work/c004/build",
+        "-DPython3_EXECUTABLE=/work/venv/bin/python",
+        "-DCMAKE_BUILD_TYPE=Release"
+      ],
+      "cwd": "/work/c004/source",
+      "exit": 0,
+      "wall_seconds": 18.439885130152106
+    },
+    {
+      "name": "build",
+      "argv": [
+        "cmake",
+        "--build",
+        "/work/c004/build",
+        "-j",
+        "2"
+      ],
+      "cwd": "/work/c004/source",
+      "exit": 0,
+      "wall_seconds": 50.2844416401349
+    },
+    {
+      "name": "ownership",
+      "argv": [
+        "/work/venv/bin/python",
+        "/work/c004/source/test_native_state.py",
+        "-v"
+      ],
+      "cwd": "/work/c004/source",
+      "exit": 0,
+      "wall_seconds": 8.526645160047337
+    },
+    {
+      "name": "rotary",
+      "argv": [
+        "/work/venv/bin/python",
+        "/work/c004/source/rope_probe.py",
+        "--output",
+        "/work/c004/results/rotary.json"
+      ],
+      "cwd": "/work/c004/source",
+      "exit": 0,
+      "wall_seconds": 12.382728450000286
+    },
+    {
+      "name": "reference",
+      "argv": [
+        "/work/venv/bin/python",
+        "/work/c004/source/probe.py",
+        "--reference-root",
+        "/work/reference",
+        "--native-build",
+        "/work/c004/build",
+        "--model",
+        "/model",
+        "--workload",
+        "/work/reference/evidence/campaign-20261017/plan/workload-128.jsonl",
+        "--engine",
+        "reference",
+        "--output",
+        "/work/c004/results/reference",
+        "--predictor-rope",
+        "paired"
+      ],
+      "cwd": "/work/c004/source",
+      "exit": 0,
+      "wall_seconds": 32.81253943010233
+    },
+    {
+      "name": "native",
+      "argv": [
+        "/work/venv/bin/python",
+        "/work/c004/source/probe.py",
+        "--reference-root",
+        "/work/reference",
+        "--native-build",
+        "/work/c004/build",
+        "--model",
+        "/model",
+        "--workload",
+        "/work/reference/evidence/campaign-20261017/plan/workload-128.jsonl",
+        "--engine",
+        "native",
+        "--output",
+        "/work/c004/results/native",
+        "--predictor-rope",
+        "paired",
+        "--audio-delivery",
+        "inline",
+        "--verify-inline"
+      ],
+      "cwd": "/work/c004/source",
+      "exit": 0,
+      "wall_seconds": 32.86317141004838
+    },
+    {
+      "name": "reference-cancel",
+      "argv": [
+        "/work/venv/bin/python",
+        "/work/c004/source/probe.py",
+        "--reference-root",
+        "/work/reference",
+        "--native-build",
+        "/work/c004/build",
+        "--model",
+        "/model",
+        "--workload",
+        "/work/reference/evidence/campaign-20261017/plan/workload-128.jsonl",
+        "--engine",
+        "reference",
+        "--output",
+        "/work/c004/results/reference-cancel",
+        "--predictor-rope",
+        "paired",
+        "--cancel-and-reuse"
+      ],
+      "cwd": "/work/c004/source",
+      "exit": 0,
+      "wall_seconds": 33.51504405983724
+    },
+    {
+      "name": "native-cancel",
+      "argv": [
+        "/work/venv/bin/python",
+        "/work/c004/source/probe.py",
+        "--reference-root",
+        "/work/reference",
+        "--native-build",
+        "/work/c004/build",
+        "--model",
+        "/model",
+        "--workload",
+        "/work/reference/evidence/campaign-20261017/plan/workload-128.jsonl",
+        "--engine",
+        "native",
+        "--output",
+        "/work/c004/results/native-cancel",
+        "--predictor-rope",
+        "paired",
+        "--audio-delivery",
+        "inline",
+        "--verify-inline",
+        "--cancel-and-reuse"
+      ],
+      "cwd": "/work/c004/source",
+      "exit": 0,
+      "wall_seconds": 33.5641103698872
+    },
+    {
+      "name": "cli",
+      "argv": [
+        "/work/c004/build/qtts",
+        "--reference-root",
+        "/work/reference",
+        "--model",
+        "/model",
+        "--workload",
+        "/work/reference/evidence/campaign-20261017/plan/workload-128.jsonl",
+        "--slots",
+        "4",
+        "--requests",
+        "4",
+        "--predictor-rope",
+        "paired",
+        "--output",
+        "/work/c004/results/cli"
+      ],
+      "cwd": "/work/c004/source",
+      "exit": 0,
+      "wall_seconds": 33.36526463995688
+    },
+    {
+      "name": "emit-error",
+      "argv": [
+        "/work/venv/bin/python",
+        "/work/c004/source/probe.py",
+        "--reference-root",
+        "/work/reference",
+        "--native-build",
+        "/work/c004/build",
+        "--model",
+        "/model",
+        "--workload",
+        "/work/reference/evidence/campaign-20261017/plan/workload-128.jsonl",
+        "--engine",
+        "native",
+        "--predictor-rope",
+        "paired",
+        "--audio-delivery",
+        "inline",
+        "--verify-inline",
+        "--fail-emit",
+        "--output",
+        "/work/c004/results/emit-error"
+      ],
+      "cwd": "/work/c004/source",
+      "exit": 0,
+      "wall_seconds": 29.407640209887177
+    },
+    {
+      "name": "causal-pilot",
+      "argv": [
+        "/work/venv/bin/python",
+        "/work/c004/source/campaign.py",
+        "--reference-root",
+        "/work/reference",
+        "--native-build",
+        "/work/c004/build",
+        "--model",
+        "/model",
+        "--workload",
+        "/work/reference/evidence/campaign-20261017/plan/workload-128.jsonl",
+        "--predictor-rope",
+        "paired",
+        "--audio-delivery",
+        "inline",
+        "--reference-engine",
+        "native-buffered",
+        "--concurrencies",
+        "4",
+        "16",
+        "32",
+        "64",
+        "--requests",
+        "128",
+        "--repetitions",
+        "1",
+        "--output",
+        "/work/c004/results/causal-pilot"
+      ],
+      "cwd": "/work/c004/source",
+      "exit": 0,
+      "wall_seconds": 316.4563923999667
+    }
+  ],
+  "environment_before": {
+    "packages": {
+      "torch": "2.10.0+cpu",
+      "torch_npu": "2.10.0.post4",
+      "qwen-tts": "0.1.1",
+      "transformers": "4.57.3",
+      "tokenizers": "0.22.2",
+      "numpy": "2.5.3",
+      "aiohttp": "3.14.3",
+      "triton": "3.5.0",
+      "triton_ascend": "3.2.2",
+      "huggingface-hub": "0.36.2"
+    },
+    "system_libraries": "libc6:arm64=2.35-0ubuntu3.15\nlibstdc++6:arm64=12.3.0-1ubuntu1~22.04.3\n",
+    "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+    "cann_install_sha256": "a9b17ef608ebeb70ade09cde1c12a545eb5e8f3e5312f6806ca0d368b0464848",
+    "variables": {
+      "ASCEND_RT_VISIBLE_DEVICES": "3",
+      "ASCEND_HOME_PATH": "/usr/local/Ascend/cann-9.1.0",
+      "LD_LIBRARY_PATH": "/usr/local/Ascend/cann-9.1.0/lib64:/usr/local/Ascend/cann-9.1.0/lib64/plugin/opskernel:/usr/local/Ascend/cann-9.1.0/lib64/plugin/nnengine:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64/plugin:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/opskernel:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/nnengine:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/python3.12.13/lib:",
+      "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2",
+      "OMP_NUM_THREADS": "4",
+      "PYTHONPATH": "/work/c004/build:/work/reference:/usr/local/Ascend/ascend-toolkit/latest/python/site-packages:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe:/usr/local/Ascend/cann-9.1.0/python/site-packages:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe:",
+      "HF_HUB_OFFLINE": "1",
+      "TASK_QUEUE_ENABLE": "1"
+    },
+    "model_assets": {
+      "config.json": "17a07f527a1c25ea30b4e023a184482a23d3e279d697b1dc81b1bde498d29cf9",
+      "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+      "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "model.safetensors": "38b1d5971bdbd982b561cccec982669a53b0537c3cf5e9bd4778ed07bb2f5137",
+      "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+      "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+      "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+      "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+      "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+      "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  },
+  "binaries": {
+    "_qtts_native.cpython-312-aarch64-linux-gnu.so": "b78ad8a207cd1528301c4768d6cee27167a5eebc1b1a138b93ef7e44b050b656",
+    "qtts": "476f164d6d4538e14b16b04bae1d6e5da28e86ebe2fdfa2bdf64d0ef10dab7ff"
+  },
+  "comparison": {
+    "status": "PASS",
+    "scope": "four complete PCM waveforms",
+    "rows": [
+      {
+        "file": "00000.wav",
+        "pcm_sha256": "cf44a9cecfd27f48710aa0befecf36272e5714793585da0b84649925e66eceeb",
+        "bytes": 88320
+      },
+      {
+        "file": "00001.wav",
+        "pcm_sha256": "926a3bf5a53f89c2746c13af9a70f7cfc1966ab2584b4fc3910d98c054e33bb9",
+        "bytes": 161280
+      },
+      {
+        "file": "00064.wav",
+        "pcm_sha256": "c077afd10a9804f6650a257b8dd377cd0a96a7dd069f871e0ce2dec23ff42d3f",
+        "bytes": 264960
+      },
+      {
+        "file": "00065.wav",
+        "pcm_sha256": "0b63e4a7767247c799753bca06c3a8fc8aefb29008379a068c64cdbebb7a5935",
+        "bytes": 295680
+      }
+    ]
+  },
+  "comparison-cancel": {
+    "status": "PASS",
+    "scope": "four complete PCM waveforms",
+    "rows": [
+      {
+        "file": "00000.wav",
+        "pcm_sha256": "97fc0c6cd8b705d4bdfb1f415c65618b70e857006b45475dabde396512ab7256",
+        "bytes": 88320
+      },
+      {
+        "file": "00002.wav",
+        "pcm_sha256": "071ada2228a85591d2fb6223b8ec44eb938b386944590695554c544073dfb639",
+        "bytes": 326400
+      },
+      {
+        "file": "00064.wav",
+        "pcm_sha256": "cefe6b3bd19390487e452829273657cdce7d8618a2fc39ac41508e4cede595af",
+        "bytes": 264960
+      },
+      {
+        "file": "00065.wav",
+        "pcm_sha256": "6cc0687e9a1aea5e1af06d6d690f2e21c8040615f13ac17d4adfcb7635d630d4",
+        "bytes": 295680
+      }
+    ]
+  },
+  "causal_pilot_nonregression": [
+    {
+      "concurrency": 4,
+      "throughput_ratio": 1.001698481874449,
+      "p95_ratio": 0.9788776019072168,
+      "pass": true
+    },
+    {
+      "concurrency": 16,
+      "throughput_ratio": 0.9776615605014841,
+      "p95_ratio": 0.9559993932812305,
+      "pass": true
+    },
+    {
+      "concurrency": 32,
+      "throughput_ratio": 0.9958100584641255,
+      "p95_ratio": 0.9612804467815658,
+      "pass": true
+    },
+    {
+      "concurrency": 64,
+      "throughput_ratio": 0.9941554006806833,
+      "p95_ratio": 0.9822857736371103,
+      "pass": true
+    }
+  ],
+  "environment_after": {
+    "packages": {
+      "torch": "2.10.0+cpu",
+      "torch_npu": "2.10.0.post4",
+      "qwen-tts": "0.1.1",
+      "transformers": "4.57.3",
+      "tokenizers": "0.22.2",
+      "numpy": "2.5.3",
+      "aiohttp": "3.14.3",
+      "triton": "3.5.0",
+      "triton_ascend": "3.2.2",
+      "huggingface-hub": "0.36.2"
+    },
+    "system_libraries": "libc6:arm64=2.35-0ubuntu3.15\nlibstdc++6:arm64=12.3.0-1ubuntu1~22.04.3\n",
+    "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+    "cann_install_sha256": "a9b17ef608ebeb70ade09cde1c12a545eb5e8f3e5312f6806ca0d368b0464848",
+    "variables": {
+      "ASCEND_RT_VISIBLE_DEVICES": "3",
+      "ASCEND_HOME_PATH": "/usr/local/Ascend/cann-9.1.0",
+      "LD_LIBRARY_PATH": "/usr/local/Ascend/cann-9.1.0/lib64:/usr/local/Ascend/cann-9.1.0/lib64/plugin/opskernel:/usr/local/Ascend/cann-9.1.0/lib64/plugin/nnengine:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/lib:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/examples:/usr/local/Ascend/nnal/atb/latest/atb/cxx_abi_1/tests/atbopstest:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64:/usr/local/Ascend/ascend-toolkit/latest/tools/aml/lib64/plugin:/usr/local/Ascend/ascend-toolkit/latest/lib64:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/opskernel:/usr/local/Ascend/ascend-toolkit/latest/lib64/plugin/nnengine:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe/op_tiling:/usr/local/python3.12.13/lib:",
+      "LD_PRELOAD": "/usr/lib/aarch64-linux-gnu/libjemalloc.so.2",
+      "OMP_NUM_THREADS": "4",
+      "PYTHONPATH": "/work/c004/build:/work/reference:/usr/local/Ascend/ascend-toolkit/latest/python/site-packages:/usr/local/Ascend/ascend-toolkit/latest/opp/built-in/op_impl/ai_core/tbe:/usr/local/Ascend/cann-9.1.0/python/site-packages:/usr/local/Ascend/cann-9.1.0/opp/built-in/op_impl/ai_core/tbe:",
+      "HF_HUB_OFFLINE": "1",
+      "TASK_QUEUE_ENABLE": "1"
+    },
+    "model_assets": {
+      "config.json": "17a07f527a1c25ea30b4e023a184482a23d3e279d697b1dc81b1bde498d29cf9",
+      "generation_config.json": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa",
+      "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "model.safetensors": "38b1d5971bdbd982b561cccec982669a53b0537c3cf5e9bd4778ed07bb2f5137",
+      "preprocessor_config.json": "efdde1022ea9d76928bf7a9cd53139138f5ba2e466e837f08f6105ab1af1c119",
+      "speech_tokenizer/config.json": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167",
+      "speech_tokenizer/configuration.json": "6bc26d64eb5024b4d1dab5a52371958b429256d6c9d59787f1f5294a54e0cebd",
+      "speech_tokenizer/model.safetensors": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258",
+      "speech_tokenizer/preprocessor_config.json": "fcb3805e597e786d4067706e602f6688524640f8d3396790e2e09b5942fcbdfb",
+      "tokenizer_config.json": "dc3c31c3bdaedd5016382bb3cbe07323026775ad51f5a4fb564505992ae4a670",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  },
+  "log_sha256": {
+    "causal-pilot.log": "6e03297ec29e20c2be763cd36c276daaacddbcce1c97b819724cffc805ac0635",
+    "configure.log": "3103596da449fc25488438b599f5b7baa59bd06c7f2fd7d8656c7ae0673d33d6",
+    "cli.log": "a0b1cf54007fca0c953dd8282ad66f4225ca8327b54bce5446cc32c19f0a3f39",
+    "native-cancel.log": "fc00c384758b8926cc61594ed05f2fbfd27a5deaed3f3b72900112d5a9b82381",
+    "rotary.log": "4b256588b11a21afb41fc835d71d90ed13bbdf5c0d4d0e1c8c38288ff5567f71",
+    "reference.log": "0da368f919aaedc511b54576980428ec6b1b24e48490a315108acb3b54104b69",
+    "emit-error.log": "6d616b99c5bce097d5b9a9342e3a13489a65d3fd1ef217537ba02cc97c16f0a1",
+    "reference-cancel.log": "1c0b14e875c1f49926fc8543a9061a307cf605df9364de3c700f97ab88ff7d0e",
+    "build.log": "fa090d14b4ad049673d5afaf945cb79d36c9f48bcb9ef0e83934977ac25b6e22",
+    "native.log": "2d15206573dfc2ae88a564b482fccbf8ddcdad9a19482cafbc3d3e8fde610a23",
+    "ownership.log": "6de377c7fc0ec736cf12e17eb0e776c6c265f1ecd446c3ea694f7942170ed6e3",
+    "cpu-suite.log": "4bdd1c5f71cd844daec444ca933c19323143bfcd33a690cde88f0417c0bc53b4"
+  }
+}

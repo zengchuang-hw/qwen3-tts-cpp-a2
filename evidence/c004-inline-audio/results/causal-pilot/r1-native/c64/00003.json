@@ -1,0 +1,47 @@
+{
+  "index": 3,
+  "input": "The boy knew the desert sensed his fear.",
+  "success": true,
+  "audio_seconds": 2.4,
+  "ttfa_seconds": 0.7038374200928956,
+  "chunks": [
+    {
+      "seconds": 0.7038374200928956,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.9332771098706871,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.2268362799659371,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.6763772999402136,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.2014125399291515,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.718709730077535,
+      "bytes": 23040
+    },
+    {
+      "seconds": 2.7258680099621415,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 30
+  },
+  "peak": 9151,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 2.7261802500579506,
+  "pcm_sha256": "a9c4242b6a20e745536451d6f89476b41ede115f09364f3619daa358b88c7f0c",
+  "pcm_bytes": 115200
+}

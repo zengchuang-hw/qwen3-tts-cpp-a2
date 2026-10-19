@@ -1,0 +1,47 @@
+{
+  "index": 8,
+  "input": "The work of the tailor is seen on each side.",
+  "success": true,
+  "audio_seconds": 2.48,
+  "ttfa_seconds": 0.20015949010849,
+  "chunks": [
+    {
+      "seconds": 0.20015949010849,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.28851203992962837,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.42229317012242973,
+      "bytes": 15360
+    },
+    {
+      "seconds": 0.6507831800263375,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.9208139800466597,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.107181689934805,
+      "bytes": 26880
+    },
+    {
+      "seconds": 1.109442220069468,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 31
+  },
+  "peak": 11007,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 1.110016450053081,
+  "pcm_sha256": "c3c16fd8ab30be912a80bf8359874f65fcbf5a9eeb59a11a2efbf38f3e752754",
+  "pcm_bytes": 119040
+}

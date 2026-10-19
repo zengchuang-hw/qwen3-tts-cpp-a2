@@ -1,0 +1,47 @@
+{
+  "index": 57,
+  "input": "Did you really think it through?",
+  "success": true,
+  "audio_seconds": 2.32,
+  "ttfa_seconds": 0.12987106991931796,
+  "chunks": [
+    {
+      "seconds": 0.12987106991931796,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.22835505986586213,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.40833084005862474,
+      "bytes": 15360
+    },
+    {
+      "seconds": 0.7225841898471117,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.079790169838816,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.301182139897719,
+      "bytes": 19200
+    },
+    {
+      "seconds": 1.3073890400119126,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 29
+  },
+  "peak": 7999,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 1.3077697998378426,
+  "pcm_sha256": "8f8401153706a5c0166a078b041b62605b8112fdab9379677365a18bd889ba81",
+  "pcm_bytes": 111360
+}

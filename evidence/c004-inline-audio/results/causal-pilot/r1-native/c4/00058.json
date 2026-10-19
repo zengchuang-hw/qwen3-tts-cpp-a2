@@ -1,0 +1,55 @@
+{
+  "index": 58,
+  "input": "Despite years of research, the problem remained intractable.",
+  "success": true,
+  "audio_seconds": 3.52,
+  "ttfa_seconds": 0.0891345301643014,
+  "chunks": [
+    {
+      "seconds": 0.0891345301643014,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.14439130015671253,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.2335653800982982,
+      "bytes": 15360
+    },
+    {
+      "seconds": 0.40938644018024206,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.6279033801984042,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.7897550500929356,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.9527876100037247,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.0346869300119579,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.0453646001406014,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 44
+  },
+  "peak": 21247,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 1.0460079300682992,
+  "pcm_sha256": "ee2dcb000f45b3cb9f1075b0edf1a68cc3239b4c2952f4a855078ff999bcdc4c",
+  "pcm_bytes": 168960
+}

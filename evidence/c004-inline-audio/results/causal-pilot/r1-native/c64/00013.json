@@ -1,0 +1,59 @@
+{
+  "index": 13,
+  "input": "I thought about the difficulties in translation that might arise.",
+  "success": true,
+  "audio_seconds": 4.32,
+  "ttfa_seconds": 0.7315765698440373,
+  "chunks": [
+    {
+      "seconds": 0.7315765698440373,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.961156559875235,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.2602494398597628,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.7186335199512541,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.2440456899348646,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.8799249599687755,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.4882238798309118,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.262563839787617,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.955458489945158,
+      "bytes": 23040
+    },
+    {
+      "seconds": 4.958188299788162,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 54
+  },
+  "peak": 18687,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 4.958949719788507,
+  "pcm_sha256": "703e2601e2c79c5ac57f349df41e7f666cfb80e9db15ebcd66d056eea51443e5",
+  "pcm_bytes": 207360
+}

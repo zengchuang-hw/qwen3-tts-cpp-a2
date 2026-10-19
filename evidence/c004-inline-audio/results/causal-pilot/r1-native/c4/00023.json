@@ -1,0 +1,59 @@
+{
+  "index": 23,
+  "input": "Tyler, Lucy, Michelle, we're going to space!",
+  "success": true,
+  "audio_seconds": 4.0,
+  "ttfa_seconds": 0.07545376988127828,
+  "chunks": [
+    {
+      "seconds": 0.07545376988127828,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.13257850985974073,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.20597950997762382,
+      "bytes": 15360
+    },
+    {
+      "seconds": 0.640905809821561,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.8146327699068934,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.9981927599292248,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.1641131599899381,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.3587755798362195,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.4075552599970251,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.418477619998157,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 50
+  },
+  "peak": 23295,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 1.4190736999735236,
+  "pcm_sha256": "7ddf9e215e8a42f43ddb2c679ea5f7ae49e5e6631a55508d7af0e5c7af043a53",
+  "pcm_bytes": 192000
+}

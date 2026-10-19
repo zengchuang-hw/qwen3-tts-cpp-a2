@@ -1,0 +1,47 @@
+{
+  "index": 9,
+  "input": "NASA plans to launch the rocket tomorrow.",
+  "success": true,
+  "audio_seconds": 2.56,
+  "ttfa_seconds": 0.7220550200436264,
+  "chunks": [
+    {
+      "seconds": 0.7220550200436264,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.9516752900090069,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.248812329955399,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.7042439999058843,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.229470550082624,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.865382809890434,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.050552099943161,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 32
+  },
+  "peak": 17535,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 3.051104740006849,
+  "pcm_sha256": "6edb710b57798808aeb57c7418a621357cf4081942c74bfb50734b7c7031d9c3",
+  "pcm_bytes": 122880
+}

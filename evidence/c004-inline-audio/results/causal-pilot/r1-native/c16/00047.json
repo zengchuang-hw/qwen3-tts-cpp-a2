@@ -1,0 +1,67 @@
+{
+  "index": 47,
+  "input": "If possible, we'd like the papers a week before and after each of these dates please.",
+  "success": true,
+  "audio_seconds": 5.76,
+  "ttfa_seconds": 0.10915572987869382,
+  "chunks": [
+    {
+      "seconds": 0.10915572987869382,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.1890697400085628,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.33452991978265345,
+      "bytes": 15360
+    },
+    {
+      "seconds": 0.6651718898210675,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.0121983899734914,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.345734359929338,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.6340573099441826,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.9150251699611545,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.293380099814385,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.5932577399071306,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.9557074399199337,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.958456530002877,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 72
+  },
+  "peak": 16319,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 2.9593130799476057,
+  "pcm_sha256": "92c71beaa565fef0a2f64b97115831a72577e70dfc1bfa23bb79176532fd219d",
+  "pcm_bytes": 276480
+}

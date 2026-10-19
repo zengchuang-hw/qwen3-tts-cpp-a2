@@ -1,0 +1,67 @@
+{
+  "index": 61,
+  "input": "This swallow is twittering without Internet connection and has a swarm of followers.",
+  "success": true,
+  "audio_seconds": 5.6,
+  "ttfa_seconds": 0.0730613199993968,
+  "chunks": [
+    {
+      "seconds": 0.0730613199993968,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.11306929006241262,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.21110367006622255,
+      "bytes": 15360
+    },
+    {
+      "seconds": 0.37436788994818926,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.5445238000247627,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.7301948398817331,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.8956901698838919,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.0624079799745232,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.2762951098848134,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.4537764799315482,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.5781101000029594,
+      "bytes": 23040
+    },
+    {
+      "seconds": 1.5886379000730813,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 70
+  },
+  "peak": 18047,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 1.5893707799259573,
+  "pcm_sha256": "b3d38d5b91f198e75dbcfef7cce21a24263dce3f5d89bdf5ba32f0119aebee12",
+  "pcm_bytes": 268800
+}

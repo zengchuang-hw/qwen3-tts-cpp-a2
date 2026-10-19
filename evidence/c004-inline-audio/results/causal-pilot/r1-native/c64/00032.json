@@ -1,0 +1,67 @@
+{
+  "index": 32,
+  "input": "The area was swirling in dust so intense that it hid the moon from view.",
+  "success": true,
+  "audio_seconds": 5.6,
+  "ttfa_seconds": 0.7696962300688028,
+  "chunks": [
+    {
+      "seconds": 0.7696962300688028,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.9996135500259697,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.3061504901852459,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.777755810180679,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.316519150044769,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.9385299901477993,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.547791740158573,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.305497520137578,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.164414450060576,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.997330300044268,
+      "bytes": 30720
+    },
+    {
+      "seconds": 6.559065280016512,
+      "bytes": 23040
+    },
+    {
+      "seconds": 6.577997390180826,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 70
+  },
+  "peak": 15103,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 6.578738620039076,
+  "pcm_sha256": "e53cdd5f6443124bc3f3d94d8a4ed111c21a07f09d20d3392a7768165d3ac90c",
+  "pcm_bytes": 268800
+}

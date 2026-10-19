@@ -1,0 +1,55 @@
+{
+  "index": 26,
+  "input": "History teaches us that humans do not learn from history.",
+  "success": true,
+  "audio_seconds": 3.76,
+  "ttfa_seconds": 0.11986821005120873,
+  "chunks": [
+    {
+      "seconds": 0.11986821005120873,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.20811596000567079,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.35859059006907046,
+      "bytes": 15360
+    },
+    {
+      "seconds": 0.7332363999448717,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.1472635599784553,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.4522986400406808,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.7539463499560952,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.028091449989006,
+      "bytes": 26880
+    },
+    {
+      "seconds": 2.044162190053612,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 47
+  },
+  "peak": 18175,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 2.044755829963833,
+  "pcm_sha256": "7c0d6aa0f061c85998c915f294db3412a6ed0d252d430839ba7365de4f9f5cd6",
+  "pcm_bytes": 180480
+}

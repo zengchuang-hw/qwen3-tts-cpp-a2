@@ -1,0 +1,59 @@
+{
+  "index": 51,
+  "input": "Little thieves are hanged, but great ones escape.",
+  "success": true,
+  "audio_seconds": 4.0,
+  "ttfa_seconds": 0.816577689955011,
+  "chunks": [
+    {
+      "seconds": 0.816577689955011,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.046700970036909,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.362714400049299,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.8494728200603276,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.375881559913978,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.0098829800263047,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.6201427199412137,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.362466820050031,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.55246466002427,
+      "bytes": 7680
+    },
+    {
+      "seconds": 4.581668289843947,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 50
+  },
+  "peak": 11135,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 4.58247034996748,
+  "pcm_sha256": "cb218b19ef0d5bd6a3f0dc0ff099a7156c1326f8264b2cca3e5ee5622f1e852f",
+  "pcm_bytes": 192000
+}

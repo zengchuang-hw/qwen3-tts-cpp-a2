@@ -1,0 +1,75 @@
+{
+  "index": 30,
+  "input": "Lions hunt their prey with sprints, whereas wolves take advantage of their stamina.",
+  "success": true,
+  "audio_seconds": 6.56,
+  "ttfa_seconds": 0.7693326100707054,
+  "chunks": [
+    {
+      "seconds": 0.7693326100707054,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.9992513100150973,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.3057116600684822,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.7769663501530886,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.3026703600771725,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.9377506501041353,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.5466963201761246,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.30531125003472,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.164185659959912,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.997062020003796,
+      "bytes": 30720
+    },
+    {
+      "seconds": 6.735457460163161,
+      "bytes": 30720
+    },
+    {
+      "seconds": 7.371225430164486,
+      "bytes": 30720
+    },
+    {
+      "seconds": 7.542226420016959,
+      "bytes": 7680
+    },
+    {
+      "seconds": 7.58059231005609,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 82
+  },
+  "peak": 14335,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 7.581199200125411,
+  "pcm_sha256": "8aee9a3b91b91ea36a3bcb84920a51310114acc651024e29f433ac6e9d8e179a",
+  "pcm_bytes": 314880
+}

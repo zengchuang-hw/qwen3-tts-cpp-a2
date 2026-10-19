@@ -1,0 +1,63 @@
+{
+  "index": 16,
+  "input": "Also, will numbers be written as digits or as words?",
+  "success": true,
+  "audio_seconds": 4.88,
+  "ttfa_seconds": 0.4177191199269146,
+  "chunks": [
+    {
+      "seconds": 0.4177191199269146,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.5557384700514376,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.7524089699145406,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.0729400699492544,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.4646016000770032,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.8525336699094623,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.3368949899449944,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.8303815498948097,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.337442379910499,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.6360098000150174,
+      "bytes": 19200
+    },
+    {
+      "seconds": 3.6550859599374235,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 61
+  },
+  "peak": 17663,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 3.655964379897341,
+  "pcm_sha256": "ec9fdba7f7b5c0f289cac90705e7337c54545383c27432ec57f258e3612036b6",
+  "pcm_bytes": 234240
+}

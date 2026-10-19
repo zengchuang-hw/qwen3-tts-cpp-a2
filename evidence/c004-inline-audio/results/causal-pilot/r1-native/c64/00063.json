@@ -1,0 +1,55 @@
+{
+  "index": 63,
+  "input": "I like the avenger of the new episode, he really is a badass.",
+  "success": true,
+  "audio_seconds": 3.84,
+  "ttfa_seconds": 0.8443135099951178,
+  "chunks": [
+    {
+      "seconds": 0.8443135099951178,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.0747953499667346,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.3977179899811745,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.8947366098873317,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.4026606099214405,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.0235503499861807,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.6352584299165756,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.3757381099276245,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.390859329840168,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 48
+  },
+  "peak": 16639,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 4.39167599985376,
+  "pcm_sha256": "4d2eb58cf72fd760f552df3530574ef2947a5d77c00a16c2e043af55e08358d7",
+  "pcm_bytes": 184320
+}

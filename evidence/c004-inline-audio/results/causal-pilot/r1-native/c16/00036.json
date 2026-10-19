@@ -1,0 +1,51 @@
+{
+  "index": 36,
+  "input": "This pepperoni tastes off, she said.",
+  "success": true,
+  "audio_seconds": 2.8,
+  "ttfa_seconds": 0.12468322995118797,
+  "chunks": [
+    {
+      "seconds": 0.12468322995118797,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.20004666992463171,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.35598868993110955,
+      "bytes": 15360
+    },
+    {
+      "seconds": 0.6681885800790042,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.9782425400335342,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.3396510200109333,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.4442152499686927,
+      "bytes": 11520
+    },
+    {
+      "seconds": 1.4727123000193387,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 35
+  },
+  "peak": 15551,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 1.473496549995616,
+  "pcm_sha256": "78adb2b5256b227e84989eb819dfe5731b581956172a58669bf786ce4525a4f8",
+  "pcm_bytes": 134400
+}

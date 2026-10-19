@@ -1,0 +1,59 @@
+{
+  "index": 15,
+  "input": "We don't have the budget to produce it in studio quality.",
+  "success": true,
+  "audio_seconds": 4.4,
+  "ttfa_seconds": 0.07506993017159402,
+  "chunks": [
+    {
+      "seconds": 0.07506993017159402,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.12506669014692307,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.2124036701861769,
+      "bytes": 15360
+    },
+    {
+      "seconds": 0.37563120014965534,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.5383910001255572,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.7566037501674145,
+      "bytes": 30720
+    },
+    {
+      "seconds": 0.9172381199896336,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.0803547902032733,
+      "bytes": 30720
+    },
+    {
+      "seconds": 1.2320366201456636,
+      "bytes": 26880
+    },
+    {
+      "seconds": 1.2341396701522171,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 55
+  },
+  "peak": 21631,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 1.234962180024013,
+  "pcm_sha256": "f922c28ca4e26c38cad41e42008a93333280f72de51b57871cc57ba4edcaecff",
+  "pcm_bytes": 211200
+}

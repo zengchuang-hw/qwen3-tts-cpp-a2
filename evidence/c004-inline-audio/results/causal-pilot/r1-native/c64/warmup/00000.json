@@ -1,0 +1,43 @@
+{
+  "index": 0,
+  "input": "Get the trust fund to the bank early.",
+  "success": true,
+  "audio_seconds": 1.92,
+  "ttfa_seconds": 1.0783621098380536,
+  "chunks": [
+    {
+      "seconds": 1.0783621098380536,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.3067294999491423,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.598021699814126,
+      "bytes": 15360
+    },
+    {
+      "seconds": 2.042010139906779,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.549820249900222,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.5525032898876816,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 24
+  },
+  "peak": 14911,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 2.5529059099499136,
+  "pcm_sha256": "aaf3fcb814f59f535d2ccb1aee240bb2f6f4bc2acf40fd3f3a7f5cc054b3d6a9",
+  "pcm_bytes": 92160
+}

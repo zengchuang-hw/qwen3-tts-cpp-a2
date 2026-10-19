@@ -1,0 +1,55 @@
+{
+  "index": 19,
+  "input": "A sky jumper falls toward the sea and the earth.",
+  "success": true,
+  "audio_seconds": 3.36,
+  "ttfa_seconds": 0.74124242994003,
+  "chunks": [
+    {
+      "seconds": 0.74124242994003,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.9709032699465752,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.271859539905563,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.7338805999606848,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.2593380198813975,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.89516175002791,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.51691609993577,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.795115099987015,
+      "bytes": 7680
+    },
+    {
+      "seconds": 3.819008579943329,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 42
+  },
+  "peak": 14591,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 3.819394289981574,
+  "pcm_sha256": "7983f3c891713f78c5f484bf345c3b00bad06b2e7c1e32ea8ada3face922a857",
+  "pcm_bytes": 161280
+}

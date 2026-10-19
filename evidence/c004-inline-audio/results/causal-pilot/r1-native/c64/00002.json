@@ -1,0 +1,83 @@
+{
+  "index": 2,
+  "input": "One by one, the campfires were extinguished, and the oasis fell as quiet as the desert.",
+  "success": true,
+  "audio_seconds": 7.76,
+  "ttfa_seconds": 0.7036805099342018,
+  "chunks": [
+    {
+      "seconds": 0.7036805099342018,
+      "bytes": 7680
+    },
+    {
+      "seconds": 0.9331173398531973,
+      "bytes": 7680
+    },
+    {
+      "seconds": 1.2266052798368037,
+      "bytes": 15360
+    },
+    {
+      "seconds": 1.6759938800241798,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.2010224799159914,
+      "bytes": 30720
+    },
+    {
+      "seconds": 2.8373850600328296,
+      "bytes": 30720
+    },
+    {
+      "seconds": 3.4592329999431968,
+      "bytes": 30720
+    },
+    {
+      "seconds": 4.234496699878946,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.123334679985419,
+      "bytes": 30720
+    },
+    {
+      "seconds": 5.970969469984993,
+      "bytes": 30720
+    },
+    {
+      "seconds": 6.724321819841862,
+      "bytes": 30720
+    },
+    {
+      "seconds": 7.35963483992964,
+      "bytes": 30720
+    },
+    {
+      "seconds": 8.085028829984367,
+      "bytes": 30720
+    },
+    {
+      "seconds": 8.653230160009116,
+      "bytes": 30720
+    },
+    {
+      "seconds": 8.718185369856656,
+      "bytes": 3840
+    },
+    {
+      "seconds": 8.761182389920577,
+      "bytes": 0
+    }
+  ],
+  "terminal": {
+    "type": "speech.audio.done",
+    "finish_reason": "stop",
+    "codec_frames": 97
+  },
+  "peak": 9791,
+  "clipped_fraction": 0.0,
+  "elapsed_seconds": 8.761862459825352,
+  "pcm_sha256": "6e93e04c4120250d003a281b906f0aa9292355fc8fd97bf752fa715563e8988b",
+  "pcm_bytes": 372480
+}
