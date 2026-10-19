@@ -7,10 +7,11 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 from quality_core import (ASR_NEW_TOKENS, MODEL_REVISIONS, PROTOCOL, audit_boundary, audit_score,
                           compare_group, edit_distance, units, windows)
-from speech_quality import assets, workload_rows
+from speech_quality import assets, environment, workload_rows
 
 
 def record():
@@ -24,6 +25,11 @@ def record():
 
 
 class QualityContracts(unittest.TestCase):
+    def test_different_pre_freeze_dependency_versions_are_unqualified(self):
+        with patch('speech_quality.importlib.metadata.version', return_value='unqualified'):
+            with self.assertRaisesRegex(ValueError, 'requalification needed'):
+                environment()
+
     def test_old_audio_and_mismatched_generation_boundary_never_pass(self):
         lock = {'frozen_unix_ns': 10}
         boundary = {'status': 'STARTED', 'protocol': PROTOCOL, 'lock_sha256': 'L',

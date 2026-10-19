@@ -17,8 +17,9 @@ from quality_core import (MODEL_REVISIONS, PROTOCOL, audit_boundary, audit_score
 from serve import load_reference
 
 ROOT = Path(__file__).resolve().parent
-PACKAGES = ('torch', 'transformers', 'tokenizers', 'numpy', 'scipy', 'librosa',
-            'safetensors', 'huggingface-hub')
+EXPECTED_PACKAGES = {'torch': '2.10.0+cpu', 'transformers': '4.57.3', 'tokenizers': '0.22.2',
+                     'numpy': '2.5.3', 'scipy': '1.18.1', 'librosa': '1.0.0',
+                     'safetensors': '0.8.0', 'huggingface-hub': '0.36.2'}
 
 
 def read(path):
@@ -31,8 +32,11 @@ def write_new(path, record):
 
 
 def environment():
+    packages = {name: importlib.metadata.version(name) for name in EXPECTED_PACKAGES}
+    if packages != EXPECTED_PACKAGES or sys.version_info[:3] != (3, 12, 13):
+        raise ValueError('Q1 requires the prior RFC17 Python/package versions; requalification needed')
     return {'python': sys.version, 'platform': platform.platform(),
-            'packages': {name: importlib.metadata.version(name) for name in PACKAGES}}
+            'packages': packages}
 
 
 def workload_rows(path):
