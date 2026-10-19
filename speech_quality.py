@@ -106,7 +106,7 @@ def freeze(args):
             **{name: str(getattr(args, name).resolve()) for name in (
                 'models_root', 'model_lock', 'native_build', 'model', 'reference_root', 'workload')},
             'predictor_rope': args.predictor_rope, 'rotary_head_tile': args.rotary_head_tile,
-            'audio_delivery': args.audio_delivery}
+            'audio_delivery': args.audio_delivery, 'score_all': args.score_all}
     load_reference(Path(lock['reference_root']))
     workload_rows(lock['workload'])
     lock['identity'] = current_identity(lock)
@@ -169,7 +169,7 @@ def score(args):
     from speech_scorer import SpeechScorer
     scorer = None
     summaries, pairs, observed_failure = [], [], terminal['actual_exit'] != 0
-    args.observed_execution_failure = observed_failure
+    args.observed_failure = observed_failure
     for repetition in range(1, spec['repetitions'] + 1):
         roots = {arm: args.run / f'r{repetition}-{arm}' for arm in ('reference', 'native')}
         for root in roots.values():
@@ -177,7 +177,7 @@ def score(args):
             if life['server_exit'] is None:
                 raise ValueError('actual server exit evidence missing')
             observed_failure |= life['server_exit'] != 0 or life['status'] != 'COMPLETED'
-            args.observed_execution_failure |= observed_failure
+            args.observed_failure |= observed_failure
             if sorted(c['concurrency'] for c in life['cohorts']) != sorted(spec['concurrencies']):
                 raise ValueError('server cohort coverage incomplete')
             observed_failure |= any(c['exit'] != 0 for c in life['cohorts'])
@@ -189,7 +189,7 @@ def score(args):
                 if any(row['input'] != workload[row['index']]['input'] for row in actual):
                     raise EvidenceViolation('recorded generation input differs from frozen ground truth')
             inexact = [i for i in range(spec['requests']) if hashes['reference'][i] != hashes['native'][i]]
-            if not inexact:
+            if not inexact and not lock['score_all']:
                 summaries.append({'repetition': repetition, 'concurrency': concurrency,
                                   'exact_pcm': spec['requests'], 'status': 'PASS_EXACT_PCM'})
                 continue
@@ -231,6 +231,7 @@ def score(args):
                               exact_pcm=sum(row['exact_pcm'] for row in rows))
                 summaries.append(result)
                 observed_failure |= result['status'] == 'FAIL'
+                args.observed_failure |= observed_failure
     unchanged = current_identity(lock) == lock['identity']
     if not unchanged:
         raise ValueError('source/environment/assets changed while scoring')
@@ -238,6 +239,7 @@ def score(args):
             'scope': 'Q1 relative quality only; no performance or subjective-quality acceptance',
             'lock_sha256': digest, 'boundary_sha256': sha256(args.boundary),
             'groups': summaries, 'scored_pairs': len(pairs), 'identity_unchanged': unchanged,
+            'score_all': lock['score_all'],
             'generation_actual_exit': terminal['actual_exit']}
 
 
@@ -251,6 +253,7 @@ def main():
     f.add_argument('--predictor-rope', choices=['native', 'paired'], default='paired')
     f.add_argument('--rotary-head-tile', choices=['4', '8', '16', 'auto'], default='auto')
     f.add_argument('--audio-delivery', choices=['buffered', 'inline'], default='inline')
+    f.add_argument('--score-all', action='store_true', help='require independent scores even for exact PCM pairs')
     g = sub.add_parser('generate')
     for name in ('freeze', 'boundary', 'run'):
         g.add_argument('--' + name, type=Path, required=True)
@@ -271,7 +274,7 @@ def main():
     except EvidenceViolation as error:
         result = {'status': 'FAIL', 'error': f'{type(error).__name__}: {error}'}
     except Exception as error:
-        result = {'status': 'FAIL' if getattr(args, 'observed_execution_failure', False) else 'INCONCLUSIVE',
+        result = {'status': 'FAIL' if getattr(args, 'observed_failure', False) else 'INCONCLUSIVE',
                   'relative_quality': 'INCONCLUSIVE', 'error': f'{type(error).__name__}: {error}'}
     if args.action == 'score':
         args.output.mkdir(parents=True, exist_ok=True)

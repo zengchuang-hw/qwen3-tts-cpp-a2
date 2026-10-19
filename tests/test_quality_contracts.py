@@ -1,16 +1,20 @@
 """Negative Q1 evidence contracts; synthetic data never claims speech quality."""
 
 import copy
+from contextlib import redirect_stdout
+import io
 import json
 from pathlib import Path
 import subprocess
 import sys
 import tempfile
 import unittest
+from types import SimpleNamespace
 from unittest.mock import patch
 
 from quality_core import (ASR_NEW_TOKENS, MODEL_REVISIONS, PROTOCOL, audit_boundary, audit_score,
                           compare_group, edit_distance, units, windows)
+import speech_quality
 from speech_quality import assets, environment, workload_rows
 
 
@@ -25,6 +29,34 @@ def record():
 
 
 class QualityContracts(unittest.TestCase):
+    def test_known_failure_survives_downstream_missing_evidence(self):
+        with tempfile.TemporaryDirectory() as directory:
+            for known, expected in ((True, 'FAIL'), (False, 'INCONCLUSIVE')):
+                output = Path(directory) / expected
+                def interrupted(args):
+                    args.observed_failure = known
+                    raise ValueError('later language scores are unavailable')
+                argv = ['speech_quality.py', 'score', '--freeze', 'fixture', '--boundary', 'fixture',
+                        '--run', 'fixture', '--output', str(output)]
+                with patch.object(speech_quality, 'score', side_effect=interrupted), \
+                        patch.object(sys, 'argv', argv), redirect_stdout(io.StringIO()):
+                    self.assertEqual(speech_quality.main(), 1)
+                self.assertEqual(json.loads((output / 'assessment.json').read_text())['status'], expected)
+
+    def test_score_all_is_locked_before_generation(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            workload = root / 'workload.jsonl'
+            workload.write_text(json.dumps({'input': 'test', 'language': 'English'}))
+            args = SimpleNamespace(**{name: root / name for name in (
+                'models_root', 'model_lock', 'native_build', 'model', 'reference_root')},
+                workload=workload, predictor_rope='paired', rotary_head_tile='auto',
+                audio_delivery='inline', score_all=True, output=root / 'freeze.json')
+            with patch.object(speech_quality, 'load_reference'), \
+                    patch.object(speech_quality, 'current_identity', return_value={'scope': 'CPU fixture'}):
+                speech_quality.freeze(args)
+            self.assertIs(json.loads(args.output.read_text())['score_all'], True)
+
     def test_different_pre_freeze_dependency_versions_are_unqualified(self):
         with patch('speech_quality.importlib.metadata.version', return_value='unqualified'):
             with self.assertRaisesRegex(ValueError, 'requalification needed'):
