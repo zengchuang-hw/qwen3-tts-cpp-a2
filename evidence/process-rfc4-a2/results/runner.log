@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "scope": "CPU control tests and process-document checks executed on A2; no NPU inference/performance claim",
+  "tested_commit": "6119f1ae52f9d296fdf211cf6b7152a6d2d03fcc",
+  "host": "8.92.7.131",
+  "container": "zc-qwen3-tts-cpp-20261019",
+  "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+  "executable": "/work/venv/bin/python",
+  "platform": "Linux-5.10.0-136.108.0.188.oe2203sp1.aarch64-aarch64-with-glibc2.35",
+  "npu_inference_executed": false,
+  "started_utc": "2026-10-19T04:08:04.159287+00:00",
+  "environment": {
+    "ASCEND_RT_VISIBLE_DEVICES": "2",
+    "ASCEND_HOME_PATH": "/usr/local/Ascend/cann-9.1.0",
+    "OMP_NUM_THREADS": "1"
+  },
+  "commands": [
+    {
+      "name": "cpu-suite",
+      "argv": [
+        "/work/venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/work/policy-review-6119f1a/source",
+      "exit": 0,
+      "log": "cpu-suite.log"
+    },
+    {
+      "name": "syntax",
+      "argv": [
+        "/work/venv/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "cwd": "/work/policy-review-6119f1a/source",
+      "exit": 0,
+      "log": "syntax.log"
+    }
+  ],
+  "source_before_sha256": "397bcf3eba5108e79c7780d9e64ca42c9e01b0bf776bfe2d45c583836cba68e7",
+  "local_links": {
+    "status": "PASS",
+    "count": 5,
+    "evidence": "local-links.json"
+  },
+  "source_after_sha256": "397bcf3eba5108e79c7780d9e64ca42c9e01b0bf776bfe2d45c583836cba68e7",
+  "finished_utc": "2026-10-19T04:08:04.526961+00:00",
+  "runner_exit": 0,
+  "log_sha256": {
+    "syntax.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local-links.json": "9c0681a2d232b705071fa2a3de4f1454cea2a2e603fd2a20237addbceb98bf08",
+    "cpu-suite.log": "8eee6c6dfb56cee48422994a12b8fb57f143b608297affc4c4d9e5cb9140938e"
+  }
+}

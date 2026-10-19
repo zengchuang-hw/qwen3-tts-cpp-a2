@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "links": [
+    {
+      "file": "AGENTS.md",
+      "target": "docs/pr-review-checklist.md"
+    },
+    {
+      "file": "README.md",
+      "target": "docs/plan.md"
+    },
+    {
+      "file": "README.md",
+      "target": "docs/pr-review-checklist.md"
+    },
+    {
+      "file": "README.md",
+      "target": "docs/iterations/c001.md"
+    },
+    {
+      "file": ".github/pull_request_template.md",
+      "target": "../docs/pr-review-checklist.md"
+    }
+  ]
+}

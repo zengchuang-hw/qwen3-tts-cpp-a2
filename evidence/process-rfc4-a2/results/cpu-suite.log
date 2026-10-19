@@ -1,0 +1,8 @@
+test_audio_tampering_truncation_and_aggregate_forgery_reject (test_evidence_contracts.NativeEvidenceContracts.test_audio_tampering_truncation_and_aggregate_forgery_reject) ... ok
+test_incomplete_or_failed_lifecycle_rejects_comparison (test_evidence_contracts.NativeEvidenceContracts.test_incomplete_or_failed_lifecycle_rejects_comparison) ... ok
+test_small_exact_probe_cannot_become_formal_pass (test_evidence_contracts.NativeEvidenceContracts.test_small_exact_probe_cannot_become_formal_pass) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.021s
+
+OK
