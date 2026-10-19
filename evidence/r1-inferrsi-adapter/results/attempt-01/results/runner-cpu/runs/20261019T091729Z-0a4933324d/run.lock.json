@@ -1,0 +1,40 @@
+{
+  "repo": "/work/r1-attempt01/results/runner-cpu/baseline",
+  "baseline_command": [
+    "/work/venv/bin/python",
+    "/work/r1-attempt01/results/runner-cpu/baseline/helper.py",
+    "/work/r1-attempt01/inferrsi/src"
+  ],
+  "candidate_command": [
+    "/work/venv/bin/python",
+    "/work/r1-attempt01/results/runner-cpu/candidate/helper.py",
+    "/work/r1-attempt01/inferrsi/src"
+  ],
+  "candidate_repo": "/work/r1-attempt01/results/runner-cpu/candidate",
+  "repo_type": "qwen3_tts_cpp",
+  "backend": "cpu",
+  "scenario": "cpu_fixture_only",
+  "mode": "config",
+  "validation_command": [
+    "/work/venv/bin/python",
+    "-c",
+    "pass"
+  ],
+  "metric_key": "metrics.value",
+  "metric_unit": "synthetic",
+  "comparison_scope": "CPU fixture; no inference",
+  "direction": "maximize",
+  "repetitions": 1,
+  "min_improvement_pct": 5,
+  "max_minutes": 0.05,
+  "workload_id": null,
+  "model": null,
+  "model_revision": null,
+  "agent": "manual",
+  "device_ids": [],
+  "revision": "",
+  "device": "",
+  "executor": "default",
+  "snapshot_id": "",
+  "output_dir": "/work/r1-attempt01/results/runner-cpu/runs"
+}

@@ -1,0 +1,254 @@
+{
+  "metrics": {
+    "requests": 4,
+    "successful_requests": 4,
+    "failed_requests": 0,
+    "wall_seconds": 2.089267369825393,
+    "throughput_frames_s": 101.94961309226838,
+    "ttfa_p50_ms": 105.29655497521162,
+    "ttfa_p95_ms": 105.36793189821765,
+    "rtf_mean": 0.2751667262657913,
+    "request_completion_pass": true,
+    "quality": "NOT_EVALUATED",
+    "server_lifecycle": "NOT_EVALUATED",
+    "status": "INCONCLUSIVE"
+  },
+  "requests": [
+    {
+      "index": 0,
+      "input": "Get the trust fund to the bank early.",
+      "success": true,
+      "audio_seconds": 1.92,
+      "ttfa_seconds": 0.07865476002916694,
+      "chunks": [
+        {
+          "seconds": 0.07865476002916694,
+          "bytes": 7680
+        },
+        {
+          "seconds": 0.13141296012327075,
+          "bytes": 7680
+        },
+        {
+          "seconds": 0.2214201302267611,
+          "bytes": 15360
+        },
+        {
+          "seconds": 0.38782995007932186,
+          "bytes": 30720
+        },
+        {
+          "seconds": 0.5578959002159536,
+          "bytes": 30720
+        },
+        {
+          "seconds": 0.5607839301228523,
+          "bytes": 0
+        }
+      ],
+      "terminal": {
+        "type": "speech.audio.done",
+        "finish_reason": "stop",
+        "codec_frames": 24
+      },
+      "peak": 14463,
+      "clipped_fraction": 0.0,
+      "elapsed_seconds": 0.5612269600387663,
+      "pcm_sha256": "26792c74a16d1d02549709495f5b5a5e1fd02ce999ebb4e6ace4b22371e13c15",
+      "pcm_bytes": 92160
+    },
+    {
+      "index": 1,
+      "input": "The stained glass offered a hypnotic atmosphere.",
+      "success": true,
+      "audio_seconds": 3.12,
+      "ttfa_seconds": 0.10523412004113197,
+      "chunks": [
+        {
+          "seconds": 0.10523412004113197,
+          "bytes": 7680
+        },
+        {
+          "seconds": 0.15809384011663496,
+          "bytes": 7680
+        },
+        {
+          "seconds": 0.25097738998010755,
+          "bytes": 15360
+        },
+        {
+          "seconds": 0.42101751011796296,
+          "bytes": 30720
+        },
+        {
+          "seconds": 0.5948782700579613,
+          "bytes": 30720
+        },
+        {
+          "seconds": 0.7574710899498314,
+          "bytes": 30720
+        },
+        {
+          "seconds": 0.8964985399506986,
+          "bytes": 26880
+        },
+        {
+          "seconds": 0.8968385600019246,
+          "bytes": 0
+        }
+      ],
+      "terminal": {
+        "type": "speech.audio.done",
+        "finish_reason": "stop",
+        "codec_frames": 39
+      },
+      "peak": 20479,
+      "clipped_fraction": 0.0,
+      "elapsed_seconds": 0.8973586701322347,
+      "pcm_sha256": "bb88b7202d9db2a0c3b72da15ae60bcc8c2a14bae839811644170ac278aec709",
+      "pcm_bytes": 149760
+    },
+    {
+      "index": 2,
+      "input": "One by one, the campfires were extinguished, and the oasis fell as quiet as the desert.",
+      "success": true,
+      "audio_seconds": 9.28,
+      "ttfa_seconds": 0.10536950989626348,
+      "chunks": [
+        {
+          "seconds": 0.10536950989626348,
+          "bytes": 7680
+        },
+        {
+          "seconds": 0.15824142983183265,
+          "bytes": 7680
+        },
+        {
+          "seconds": 0.2512860898859799,
+          "bytes": 15360
+        },
+        {
+          "seconds": 0.42141756997443736,
+          "bytes": 30720
+        },
+        {
+          "seconds": 0.5952521299477667,
+          "bytes": 30720
+        },
+        {
+          "seconds": 0.7578408899717033,
+          "bytes": 30720
+        },
+        {
+          "seconds": 0.9211309398524463,
+          "bytes": 30720
+        },
+        {
+          "seconds": 1.0435738498345017,
+          "bytes": 30720
+        },
+        {
+          "seconds": 1.1658598298672587,
+          "bytes": 30720
+        },
+        {
+          "seconds": 1.2883413499221206,
+          "bytes": 30720
+        },
+        {
+          "seconds": 1.4106364899780601,
+          "bytes": 30720
+        },
+        {
+          "seconds": 1.5327478498220444,
+          "bytes": 30720
+        },
+        {
+          "seconds": 1.6547974098939449,
+          "bytes": 30720
+        },
+        {
+          "seconds": 1.7768560799304396,
+          "bytes": 30720
+        },
+        {
+          "seconds": 1.898981429869309,
+          "bytes": 30720
+        },
+        {
+          "seconds": 2.020822289865464,
+          "bytes": 30720
+        },
+        {
+          "seconds": 2.0858789598569274,
+          "bytes": 15360
+        },
+        {
+          "seconds": 2.0865354898851365,
+          "bytes": 0
+        }
+      ],
+      "terminal": {
+        "type": "speech.audio.done",
+        "finish_reason": "stop",
+        "codec_frames": 116
+      },
+      "peak": 5375,
+      "clipped_fraction": 0.0,
+      "elapsed_seconds": 2.087494779843837,
+      "pcm_sha256": "4de8ab60f3c2071aa6a4c4662598fd210b1faf1d72942156c855bda70d10be8b",
+      "pcm_bytes": 445440
+    },
+    {
+      "index": 3,
+      "input": "The boy knew the desert sensed his fear.",
+      "success": true,
+      "audio_seconds": 2.72,
+      "ttfa_seconds": 0.10535898990929127,
+      "chunks": [
+        {
+          "seconds": 0.10535898990929127,
+          "bytes": 7680
+        },
+        {
+          "seconds": 0.15824745991267264,
+          "bytes": 7680
+        },
+        {
+          "seconds": 0.25137115991674364,
+          "bytes": 15360
+        },
+        {
+          "seconds": 0.4216209501028061,
+          "bytes": 30720
+        },
+        {
+          "seconds": 0.5937870300840586,
+          "bytes": 30720
+        },
+        {
+          "seconds": 0.7564331300090998,
+          "bytes": 30720
+        },
+        {
+          "seconds": 0.8010775099974126,
+          "bytes": 7680
+        },
+        {
+          "seconds": 0.8040340601000935,
+          "bytes": 0
+        }
+      ],
+      "terminal": {
+        "type": "speech.audio.done",
+        "finish_reason": "stop",
+        "codec_frames": 34
+      },
+      "peak": 15039,
+      "clipped_fraction": 0.0,
+      "elapsed_seconds": 0.8045778500381857,
+      "pcm_sha256": "320e24da5b19399d79930c08dd199c05f6b2d167fbe4656b7378bd77613df253",
+      "pcm_bytes": 130560
+    }
+  ]
+}

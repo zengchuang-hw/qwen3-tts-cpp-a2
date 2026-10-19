@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "scope": "A2-host CPU subprocess order/source and hard-timeout ownership only; no NPU",
+  "normal_fixture_run": "/work/r1-attempt02/results/runner-cpu/runs/20261019T094016Z-db4e43f06a",
+  "normal_fixture_primary_verdict": "PASS",
+  "order": [
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B"
+  ],
+  "timeout_fixture_run": "/work/r1-attempt02/results/runner-cpu/runs/20261019T094017Z-86004993a3",
+  "expected_timeout_verdict": "INCONCLUSIVE",
+  "actual_timeout_exit": -9,
+  "ownership": {
+    "mode": "inferrsi_trial_group",
+    "server_pid": 102201,
+    "helper_pid": 102200,
+    "process_group_id": 102200,
+    "helper_process_group_id": 102200,
+    "server_start_new_session": false
+  },
+  "pids": {
+    "server": 102201,
+    "child": 102202,
+    "group": 102200
+  },
+  "owned_workers_live_after_timeout": []
+}

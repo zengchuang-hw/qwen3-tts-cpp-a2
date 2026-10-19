@@ -1,0 +1,5 @@
+{"time": "2026-10-19T09:40:24.836694+00:00", "phase": "source_snapshot"}
+{"time": "2026-10-19T09:40:24.883284+00:00", "phase": "measurement", "side": "baseline", "trial": 1}
+{"time": "2026-10-19T09:41:11.561897+00:00", "phase": "measurement", "side": "candidate", "trial": 1}
+{"time": "2026-10-19T09:42:00.096011+00:00", "phase": "quality_validation"}
+{"time": "2026-10-19T09:42:00.406281+00:00", "phase": "complete", "state": "completed", "verdict": "PASS"}

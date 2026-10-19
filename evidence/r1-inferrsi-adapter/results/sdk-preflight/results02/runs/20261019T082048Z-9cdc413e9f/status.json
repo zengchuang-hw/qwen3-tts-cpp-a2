@@ -1,0 +1,8 @@
+{
+  "state": "timeout",
+  "phase": "complete",
+  "verdict": "INCONCLUSIVE",
+  "run_dir": "/work/r1-sdk-preflight/results02/runs/20261019T082048Z-9cdc413e9f",
+  "elapsed_seconds": 3.040013700025156,
+  "error": null
+}

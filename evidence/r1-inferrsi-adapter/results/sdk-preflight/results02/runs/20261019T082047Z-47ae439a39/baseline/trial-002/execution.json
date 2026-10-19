@@ -1,0 +1,19 @@
+{
+  "status": "completed",
+  "argv": [
+    "/work/venv/bin/python",
+    "/work/r1-sdk-preflight/results02/baseline/fixture.py",
+    "A",
+    "/work/r1-sdk-preflight/results02/order.log"
+  ],
+  "cwd": "/work/r1-sdk-preflight/results02/baseline",
+  "returncode": 0,
+  "result_path": "/work/r1-sdk-preflight/results02/runs/20261019T082047Z-47ae439a39/baseline/trial-002/result.json",
+  "stdout_path": "/work/r1-sdk-preflight/results02/runs/20261019T082047Z-47ae439a39/baseline/trial-002/stdout.log",
+  "stderr_path": "/work/r1-sdk-preflight/results02/runs/20261019T082047Z-47ae439a39/baseline/trial-002/stderr.log",
+  "metric": 100.0,
+  "metric_error": null,
+  "pid": 96061,
+  "process_group_id": 96061,
+  "elapsed_seconds": 0.06497801002115011
+}

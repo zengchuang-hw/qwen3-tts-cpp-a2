@@ -1,0 +1,76 @@
+{
+  "arm": "native",
+  "reference_engine": "upstream",
+  "server_command": [
+    "/work/venv/bin/python",
+    "/work/r1-attempt02/source-git/serve.py",
+    "--reference-root",
+    "/work/reference",
+    "--native-build",
+    "/work/r1-attempt02/build",
+    "--model",
+    "/model",
+    "--port",
+    "8199",
+    "--max-batch-size",
+    "64",
+    "--prewarm-decode",
+    "--predictor-rope",
+    "paired",
+    "--audio-delivery",
+    "inline",
+    "--rotary-head-tile",
+    "auto"
+  ],
+  "server_exit": 0,
+  "status": "COMPLETED",
+  "cohorts": [
+    {
+      "concurrency": 4,
+      "command": [
+        "/work/venv/bin/python",
+        "-m",
+        "qwen3_tts_engine.benchmark",
+        "--endpoint",
+        "http://127.0.0.1:8199/v1/audio/speech",
+        "--model",
+        "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+        "--engine",
+        "native",
+        "--source-revision",
+        "c61a25f29d9d236d495f6e312e386ea3fdfb56406274301113b9dba05080f7b3",
+        "--workload",
+        "/work/reference/evidence/campaign-20261017/plan/workload-128.jsonl",
+        "--output",
+        "/work/r1-attempt02/results/runs/20261019T094024Z-391a8d3649/candidate/trial-001/tts/c4",
+        "--concurrency",
+        "4",
+        "--requests",
+        "4",
+        "--warmup",
+        "4",
+        "--frame-rate",
+        "12.5"
+      ],
+      "exit": 0
+    }
+  ],
+  "process_ownership": {
+    "mode": "inferrsi_trial_group",
+    "server_pid": 102590,
+    "helper_pid": 102584,
+    "process_group_id": 102584,
+    "helper_process_group_id": 102584,
+    "server_start_new_session": false
+  },
+  "server_pid": 102590,
+  "cleanup": {
+    "status": "completed",
+    "mode": "inferrsi_trial_group",
+    "process_group_id": 102584,
+    "term_sent": true,
+    "kill_sent": false,
+    "remaining_pids": [],
+    "server_returncode": 0
+  }
+}

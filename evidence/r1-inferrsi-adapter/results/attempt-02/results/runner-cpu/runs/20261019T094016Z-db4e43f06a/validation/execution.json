@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "argv": [
+    "/work/venv/bin/python",
+    "-c",
+    "pass"
+  ],
+  "cwd": "/work/r1-attempt02/results/runner-cpu/candidate",
+  "returncode": 0,
+  "result_path": "/work/r1-attempt02/results/runner-cpu/runs/20261019T094016Z-db4e43f06a/validation/result.json",
+  "stdout_path": "/work/r1-attempt02/results/runner-cpu/runs/20261019T094016Z-db4e43f06a/validation/stdout.log",
+  "stderr_path": "/work/r1-attempt02/results/runner-cpu/runs/20261019T094016Z-db4e43f06a/validation/stderr.log",
+  "metric": null,
+  "metric_error": null,
+  "pid": 102175,
+  "process_group_id": 102175,
+  "elapsed_seconds": 0.06514380988664925
+}

@@ -1,0 +1,9 @@
+{"time": "2026-10-19T08:20:47.369655+00:00", "phase": "source_snapshot"}
+{"time": "2026-10-19T08:20:47.392897+00:00", "phase": "measurement", "side": "baseline", "trial": 1}
+{"time": "2026-10-19T08:20:47.481973+00:00", "phase": "measurement", "side": "candidate", "trial": 1}
+{"time": "2026-10-19T08:20:47.571083+00:00", "phase": "measurement", "side": "candidate", "trial": 2}
+{"time": "2026-10-19T08:20:47.659691+00:00", "phase": "measurement", "side": "baseline", "trial": 2}
+{"time": "2026-10-19T08:20:47.748384+00:00", "phase": "measurement", "side": "baseline", "trial": 3}
+{"time": "2026-10-19T08:20:47.837271+00:00", "phase": "measurement", "side": "candidate", "trial": 3}
+{"time": "2026-10-19T08:20:47.925892+00:00", "phase": "quality_validation"}
+{"time": "2026-10-19T08:20:48.037722+00:00", "phase": "complete", "state": "completed", "verdict": "PASS"}

@@ -1,0 +1,26 @@
+[
+  {
+    "path": "/work/r1-attempt02/results/runner-cpu/runs/20261019T094017Z-86004993a3/baseline/trial-001",
+    "side": "baseline",
+    "before": {
+      "path": "/work/r1-attempt02/results/runner-cpu/baseline",
+      "available": true,
+      "head": "0b51bdb36900df7ef4aa2526432e581a9b336ac2",
+      "git_root": "/work/r1-attempt02/results/runner-cpu/baseline",
+      "dirty": false,
+      "dirty_hash": "098fc404b17cd30c582e11aaf0c10bcccf89561e04925b707fc7490d18877adb",
+      "untracked": [],
+      "snapshot_hash": "d930ec16487d5d5e78f12cc7b417e97f859e678755f774cc10d99b2b709bbf4d"
+    },
+    "after": {
+      "path": "/work/r1-attempt02/results/runner-cpu/baseline",
+      "available": true,
+      "head": "0b51bdb36900df7ef4aa2526432e581a9b336ac2",
+      "git_root": "/work/r1-attempt02/results/runner-cpu/baseline",
+      "dirty": false,
+      "dirty_hash": "098fc404b17cd30c582e11aaf0c10bcccf89561e04925b707fc7490d18877adb",
+      "untracked": [],
+      "snapshot_hash": "d930ec16487d5d5e78f12cc7b417e97f859e678755f774cc10d99b2b709bbf4d"
+    }
+  }
+]

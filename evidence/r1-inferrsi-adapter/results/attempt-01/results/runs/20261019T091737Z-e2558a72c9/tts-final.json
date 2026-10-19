@@ -1,0 +1,10 @@
+{
+  "status": "INCONCLUSIVE",
+  "scope": "authoritative seven-cohort TTS acceptance; generic report is primary-cohort only",
+  "generic_primary_verdict": "PASS",
+  "tts_verdict": "INCONCLUSIVE",
+  "formal_coverage": false,
+  "infer_rsi_revision": "bd5e356ac9267362c80f27adba61d76e047583c7",
+  "run_directory": "/work/r1-attempt01/results/runs/20261019T091737Z-e2558a72c9",
+  "primary_concurrency": 4
+}

@@ -1,0 +1,19 @@
+{
+  "status": "timeout",
+  "argv": [
+    "/work/venv/bin/python",
+    "/work/r1-attempt01/results/runner-cpu/baseline/helper.py",
+    "/work/r1-attempt01/inferrsi/src"
+  ],
+  "cwd": "/work/r1-attempt01/results/runner-cpu/baseline",
+  "returncode": -9,
+  "result_path": "/work/r1-attempt01/results/runner-cpu/runs/20261019T091729Z-0a4933324d/baseline/trial-001/result.json",
+  "stdout_path": "/work/r1-attempt01/results/runner-cpu/runs/20261019T091729Z-0a4933324d/baseline/trial-001/stdout.log",
+  "stderr_path": "/work/r1-attempt01/results/runner-cpu/runs/20261019T091729Z-0a4933324d/baseline/trial-001/stderr.log",
+  "metric": null,
+  "metric_error": "[Errno 2] No such file or directory: '/work/r1-attempt01/results/runner-cpu/runs/20261019T091729Z-0a4933324d/baseline/trial-001/result.json'",
+  "pid": 100816,
+  "process_group_id": 100816,
+  "error": "whole-run deadline exceeded",
+  "elapsed_seconds": 2.944175989832729
+}

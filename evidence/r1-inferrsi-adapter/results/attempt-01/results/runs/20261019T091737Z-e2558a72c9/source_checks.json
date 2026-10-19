@@ -1,0 +1,74 @@
+[
+  {
+    "path": "/work/r1-attempt01/results/runs/20261019T091737Z-e2558a72c9/baseline/trial-001",
+    "side": "baseline",
+    "before": {
+      "path": "/work/reference",
+      "available": true,
+      "head": "b4451682abac651f26046f8d27467de3f007e1e7",
+      "git_root": "/work/reference",
+      "dirty": false,
+      "dirty_hash": "098fc404b17cd30c582e11aaf0c10bcccf89561e04925b707fc7490d18877adb",
+      "untracked": [],
+      "snapshot_hash": "eb9427ff51522cef2022e3b2706d385d62369aea43beb0d26b251eaf166749bd"
+    },
+    "after": {
+      "path": "/work/reference",
+      "available": true,
+      "head": "b4451682abac651f26046f8d27467de3f007e1e7",
+      "git_root": "/work/reference",
+      "dirty": false,
+      "dirty_hash": "098fc404b17cd30c582e11aaf0c10bcccf89561e04925b707fc7490d18877adb",
+      "untracked": [],
+      "snapshot_hash": "eb9427ff51522cef2022e3b2706d385d62369aea43beb0d26b251eaf166749bd"
+    }
+  },
+  {
+    "path": "/work/r1-attempt01/results/runs/20261019T091737Z-e2558a72c9/candidate/trial-001",
+    "side": "candidate",
+    "before": {
+      "path": "/work/r1-attempt01/source-git",
+      "available": true,
+      "head": "dd3ed597211d988ca51a16db32c9e368c9471446",
+      "git_root": "/work/r1-attempt01/source-git",
+      "dirty": false,
+      "dirty_hash": "098fc404b17cd30c582e11aaf0c10bcccf89561e04925b707fc7490d18877adb",
+      "untracked": [],
+      "snapshot_hash": "92076a8d966162ad0c141277e2b1c0616d5b5bdd92cf51ab7a10ceaa839c2954"
+    },
+    "after": {
+      "path": "/work/r1-attempt01/source-git",
+      "available": true,
+      "head": "dd3ed597211d988ca51a16db32c9e368c9471446",
+      "git_root": "/work/r1-attempt01/source-git",
+      "dirty": false,
+      "dirty_hash": "098fc404b17cd30c582e11aaf0c10bcccf89561e04925b707fc7490d18877adb",
+      "untracked": [],
+      "snapshot_hash": "92076a8d966162ad0c141277e2b1c0616d5b5bdd92cf51ab7a10ceaa839c2954"
+    }
+  },
+  {
+    "path": "/work/r1-attempt01/results/runs/20261019T091737Z-e2558a72c9/validation",
+    "side": "candidate",
+    "before": {
+      "path": "/work/r1-attempt01/source-git",
+      "available": true,
+      "head": "dd3ed597211d988ca51a16db32c9e368c9471446",
+      "git_root": "/work/r1-attempt01/source-git",
+      "dirty": false,
+      "dirty_hash": "098fc404b17cd30c582e11aaf0c10bcccf89561e04925b707fc7490d18877adb",
+      "untracked": [],
+      "snapshot_hash": "92076a8d966162ad0c141277e2b1c0616d5b5bdd92cf51ab7a10ceaa839c2954"
+    },
+    "after": {
+      "path": "/work/r1-attempt01/source-git",
+      "available": true,
+      "head": "dd3ed597211d988ca51a16db32c9e368c9471446",
+      "git_root": "/work/r1-attempt01/source-git",
+      "dirty": false,
+      "dirty_hash": "098fc404b17cd30c582e11aaf0c10bcccf89561e04925b707fc7490d18877adb",
+      "untracked": [],
+      "snapshot_hash": "92076a8d966162ad0c141277e2b1c0616d5b5bdd92cf51ab7a10ceaa839c2954"
+    }
+  }
+]

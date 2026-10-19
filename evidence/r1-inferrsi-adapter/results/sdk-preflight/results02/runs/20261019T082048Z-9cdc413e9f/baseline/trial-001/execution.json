@@ -1,0 +1,19 @@
+{
+  "status": "timeout",
+  "argv": [
+    "/work/venv/bin/python",
+    "/work/r1-sdk-preflight/results02/baseline/helper.py",
+    "/work/r1-sdk-preflight/inferrsi-shallow02/src"
+  ],
+  "cwd": "/work/r1-sdk-preflight/results02/baseline",
+  "returncode": -9,
+  "result_path": "/work/r1-sdk-preflight/results02/runs/20261019T082048Z-9cdc413e9f/baseline/trial-001/result.json",
+  "stdout_path": "/work/r1-sdk-preflight/results02/runs/20261019T082048Z-9cdc413e9f/baseline/trial-001/stdout.log",
+  "stderr_path": "/work/r1-sdk-preflight/results02/runs/20261019T082048Z-9cdc413e9f/baseline/trial-001/stderr.log",
+  "metric": null,
+  "metric_error": "[Errno 2] No such file or directory: '/work/r1-sdk-preflight/results02/runs/20261019T082048Z-9cdc413e9f/baseline/trial-001/result.json'",
+  "pid": 96113,
+  "process_group_id": 96113,
+  "error": "whole-run deadline exceeded",
+  "elapsed_seconds": 2.9675516800489277
+}

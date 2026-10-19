@@ -1,0 +1,22 @@
+{
+  "baseline": {
+    "path": "/work/reference",
+    "available": true,
+    "head": "b4451682abac651f26046f8d27467de3f007e1e7",
+    "git_root": "/work/reference",
+    "dirty": false,
+    "dirty_hash": "098fc404b17cd30c582e11aaf0c10bcccf89561e04925b707fc7490d18877adb",
+    "untracked": [],
+    "snapshot_hash": "eb9427ff51522cef2022e3b2706d385d62369aea43beb0d26b251eaf166749bd"
+  },
+  "candidate": {
+    "path": "/work/r1-attempt02/source-git",
+    "available": true,
+    "head": "b628b2ac95b6c49a395cc792e5a770c7e9e1fdda",
+    "git_root": "/work/r1-attempt02/source-git",
+    "dirty": false,
+    "dirty_hash": "098fc404b17cd30c582e11aaf0c10bcccf89561e04925b707fc7490d18877adb",
+    "untracked": [],
+    "snapshot_hash": "06c2b19520e7cd90122907298ed0a40a11ab439ba37ccb00deb147c2ac57ce7a"
+  }
+}
