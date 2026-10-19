@@ -4,6 +4,10 @@ Research implementation. See [the frozen plan](docs/plan.md).
 Build, complete speech correctness and end-to-end performance must be qualified
 separately; no speed claim is made by this README.
 
+Every iteration starts with its own RFC design before a PR. Except for init PR
+#1, merging requires actual A2 validation and an itemized review comment on the
+PR. See the [mandatory review checklist](docs/pr-review-checklist.md).
+
 The C++ core owns active requests, frame advancement, decode graph replay, codec
 replay, slot compaction and PCM conversion. Python loads official weights,
 tokenizes prompts, prepares prefill and captures NPU graphs. The original

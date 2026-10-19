@@ -1,0 +1,6 @@
+{
+  "tested_commit": "6119f1ae52f9d296fdf211cf6b7152a6d2d03fcc",
+  "changes": "AGENTS.md, README.md, .github/pull_request_template.md, docs/pr-review-checklist.md",
+  "build": "not required: documentation/process-only; no runtime or binary changes",
+  "final_head_mapping": "subsequent evidence-only commit must be reviewed explicitly"
+}
