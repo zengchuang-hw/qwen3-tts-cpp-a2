@@ -1,0 +1,19 @@
+{
+  "reference_root": "/work/reference",
+  "native_build": "/work/build",
+  "model": "/model",
+  "workload": "/work/reference/evidence/campaign-20261017/plan/workload-128.jsonl",
+  "output": "/work/pilot-c002-c4-01",
+  "concurrencies": [
+    4
+  ],
+  "requests": 128,
+  "repetitions": 1,
+  "port": 8199,
+  "readiness_timeout": 900,
+  "benchmark_timeout": 3600,
+  "predictor_rope": "paired",
+  "candidate_identity": "0f1f9f4911a8e7312608474a305875aa0b19758ad71c6f30da85bf7479a285a8",
+  "workload_sha256": "5007716c83b29d0247b2c6291b9704c652e01a94362c19e90ea3cb34987060c7",
+  "formal_coverage": false
+}

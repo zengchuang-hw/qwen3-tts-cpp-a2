@@ -17,7 +17,52 @@ assess = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(assess)
 
 
+def load_script(name):
+    spec = importlib.util.spec_from_file_location("qtts_" + name, SOURCE.with_name(name + ".py"))
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+serve = load_script("serve")
+with patch.dict(sys.modules, {"serve": serve}):
+    campaign = load_script("campaign")
+
+
 class NativeEvidenceContracts(unittest.TestCase):
+    def test_public_request_bound_is_checked_before_native_admission(self):
+        serve.validate_native_limit({"max_new_tokens": 2048}, 2048)
+        for payload in ({"max_new_tokens": 4096}, {"max_new_tokens": 1}, {}):
+            with self.subTest(payload=payload), self.assertRaisesRegex(ValueError, "native arena"):
+                serve.validate_native_limit(payload, 1024)
+
+    def test_environment_and_model_identity_detect_actual_drift(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            model, reference, cann = root / "model", root / "reference", root / "cann"
+            model.mkdir()
+            install = cann / "aarch64-linux/ascend_toolkit_install.info"
+            install.parent.mkdir(parents=True)
+            install.write_text("test-cann")
+            records = []
+            for index in range(11):
+                name = f"asset-{index}.bin"
+                data = bytes([index])
+                (model / name).write_bytes(data)
+                records.append({"path": name, "sha256": hashlib.sha256(data).hexdigest(), "bytes": 1})
+            manifest = reference / "evidence/campaign-20261017/results/model-audit.json"
+            manifest.parent.mkdir(parents=True)
+            manifest.write_text(json.dumps({"files": records}))
+            with patch.object(campaign.importlib.metadata, "version", return_value="fixture"), \
+                    patch.object(campaign.subprocess, "check_output", return_value="libc6=14\n") as dpkg, \
+                    patch.dict(campaign.os.environ, {"ASCEND_HOME_PATH": str(cann)}):
+                first = campaign.runtime_identity(model, reference)
+                dpkg.return_value = "libc6=15\n"
+                self.assertNotEqual(first, campaign.runtime_identity(model, reference))
+                (model / "asset-0.bin").write_bytes(b"changed")
+                with self.assertRaisesRegex(ValueError, "model asset differs"):
+                    campaign.runtime_identity(model, reference)
+
     def fixture(self, root):
         def write(path, value):
             path.write_text(json.dumps(value))

@@ -13,6 +13,6 @@ Strata was studied at `477ac13cbe8e582c20484871ce459d20d82df09d` for runtime and
 resource-ownership ideas. No Strata CUDA performance claim is imported as Ascend
 evidence, and no MoE placement implementation is applied to this dense model.
 
-The new C++ core and C API are research artifacts.
+The new C++ core, C API and paired rotary implementation are research artifacts.
 Their actual validation scope is recorded in the campaign plan and results,
 separately from the upstream source licenses and reported measurements.
