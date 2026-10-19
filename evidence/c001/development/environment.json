@@ -1,0 +1,22 @@
+{
+  "python": "3.12.13 (main, Aug  3 2026, 03:44:26) [GCC 11.4.0]",
+  "python_executable": "/work/venv/bin/python",
+  "platform": "Linux-5.10.0-136.108.0.188.oe2203sp1.aarch64-aarch64-with-glibc2.35",
+  "packages": {
+    "torch": "2.10.0+cpu",
+    "torch_npu": "2.10.0.post4",
+    "qwen-tts": "0.1.1",
+    "transformers": "4.57.3",
+    "numpy": "2.5.3",
+    "aiohttp": "3.14.3",
+    "triton": "3.5.0",
+    "triton_ascend": "3.2.2",
+    "tokenizers": "0.22.2",
+    "huggingface-hub": "0.36.2"
+  },
+  "physical_device": 2,
+  "visible_devices": "2",
+  "container": "zc-qwen3-tts-cpp-20261019",
+  "model_root": "/model",
+  "scope": "same isolated environment for both arms"
+}

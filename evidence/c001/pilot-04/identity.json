@@ -1,0 +1,20 @@
+{
+  "source": {
+    "CMakeLists.txt": "81d3b399e5c30b1e9aa036e55fe815498797094bef108cfcdd5a69010d1e07e8",
+    "assess.py": "e68d7e60ff216252e472305ee91b27ba527dd4cfec1093741416d207f0ca13ed",
+    "campaign.py": "5bb549ce8fb8ea0a1c0030146299e48c80ffa08cfb07d4a330e6027b573e01c4",
+    "cli_bootstrap.py": "161ed42b3c6974694cfa790ba1bda70715f9e071b939c1a3766995aa827edf10",
+    "graph_model.py": "6cc6fe868601be087e9eda702304332955d4a8b9ec76c4d338d215c114867e73",
+    "native/main.cpp": "671bb2239916ea405c330fbc62c800b188f2036e7214e4e88dc3eb78b46e2a8a",
+    "native/runtime.cpp": "5908882d45848e1026b65917cba850c1280e1b09a2ef23a18e1259fb42a515fe",
+    "native/runtime_api.h": "e03af5fa11244eccb22674a144021c0950d432724b4243a7d68e6f40c1b7269a",
+    "probe.py": "2f6dbd66be62657811acda7fc85c51215ad9c8f8678eb8dc8b8e314ac34f9b59",
+    "requirements-a2.txt": "c1dff492279d286eb40c137987a85452f6ca206c0bdd84dd57a0eb27fba4eb87",
+    "serve.py": "62ccc37638d186a366edd951bc6b5d7d6fb920d1baf87dade17cc3fcbcc21285",
+    "test_native_state.py": "2fdd71733deaf284f020854b60d7e2b9605b136206687b5e18269d3211f0aa9c"
+  },
+  "binaries": {
+    "_qtts_native.cpython-312-aarch64-linux-gnu.so": "42d5ef3b7e75e663c6bbcb1ecf59ad13550ea1bd021008cdbfedbffb56c1325c"
+  },
+  "reference_revision": "b4451682abac651f26046f8d27467de3f007e1e7"
+}

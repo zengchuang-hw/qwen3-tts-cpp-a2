@@ -1,0 +1,47 @@
+{
+  "status": "INCONCLUSIVE",
+  "scope": "development complete-model probe",
+  "engine": "native",
+  "records": [
+    {
+      "id": 0,
+      "pcm_sha256": "97fc0c6cd8b705d4bdfb1f415c65618b70e857006b45475dabde396512ab7256",
+      "pcm_bytes": 88320,
+      "frames": 23,
+      "first_audio_seconds": 0.94782435009256,
+      "elapsed_seconds": 1.4071350700687617,
+      "finish_reason": "stop"
+    },
+    {
+      "id": 64,
+      "pcm_sha256": "cefe6b3bd19390487e452829273657cdce7d8618a2fc39ac41508e4cede595af",
+      "pcm_bytes": 264960,
+      "frames": 69,
+      "first_audio_seconds": 0.9478447099681944,
+      "elapsed_seconds": 2.320695189991966,
+      "finish_reason": "stop"
+    },
+    {
+      "id": 65,
+      "pcm_sha256": "6cc0687e9a1aea5e1af06d6d690f2e21c8040615f13ac17d4adfcb7635d630d4",
+      "pcm_bytes": 295680,
+      "frames": 77,
+      "first_audio_seconds": 0.9478466399013996,
+      "elapsed_seconds": 3.1651852598879486,
+      "finish_reason": "stop"
+    },
+    {
+      "id": 2,
+      "pcm_sha256": "071ada2228a85591d2fb6223b8ec44eb938b386944590695554c544073dfb639",
+      "pcm_bytes": 326400,
+      "frames": 85,
+      "first_audio_seconds": 1.1140475699212402,
+      "elapsed_seconds": 4.03412672993727,
+      "finish_reason": "stop"
+    }
+  ],
+  "wall_seconds": 4.034230999881402,
+  "cancel_and_reuse": true,
+  "quality": "NOT_SCORED",
+  "performance_acceptance": "NOT_EVALUATED"
+}

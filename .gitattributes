@@ -1,3 +1,5 @@
 * text=auto eol=lf
 *.wav binary
 *.so binary
+# Preserve raw measurement/log bytes, including their original whitespace.
+evidence/** -whitespace
