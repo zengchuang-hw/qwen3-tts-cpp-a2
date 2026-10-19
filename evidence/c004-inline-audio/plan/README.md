@@ -44,3 +44,14 @@ that isolated c004 directory. `../results/validation.json` retains commands,
 true exits, binary hashes, model/runtime and local-scope outcomes. Assessment
 reads actual WAV bytes. No failed requests, cancelled probes or missing scorer
 outputs have been relabeled as a global PASS.
+
+The modified assessor also replayed the immutable historical C002 evidence on
+A2. Its real exit was 1 and its global verdict remained FAIL; all cohort values,
+formal coverage and quality/performance outcomes matched the old assessment.
+`legacy-replay-check.json` records the comparison. This is a compatibility replay,
+not a fresh NPU measurement or a newly passing performance campaign.
+
+Git retains complete cohort results.json request records; redundant individual
+sidecar JSONs (including warmup sidecars) remain in the immutable metadata tar
+identified by metadata-manifest.json. No raw records were dropped from that
+archive. The raw audio tar and raw metadata tar are separately retrievable.
