@@ -89,6 +89,10 @@ command JSON is imported provenance, not a user configuration entrypoint.
 
 ## Iteration record
 
-See [C001](docs/iterations/c001.md). CPU evidence tests run with
+See [C001](docs/iterations/c001.md), [C002](docs/iterations/c002.md), and
+[C003](docs/iterations/c003.md). The paired predictor rotary path is opt-in via
+`--predictor-rope paired` on the HTTP/CLI/probe/campaign entrypoints; `native`
+remains the default. C002's formal performance result was FAIL.
+CPU evidence tests run with
 `python -m unittest discover -s tests -v`; compiled ownership tests require the
 A2-built extension and run separately with `test_native_state.py -v`.

@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "scope": "limited full-generation differential correctness",
+  "comparisons": [
+    {
+      "reference": "probe-reference-01",
+      "candidate": "probe-c002-01",
+      "exact_requests": 4
+    },
+    {
+      "reference": "probe-reference-cancel-01",
+      "candidate": "probe-c002-cancel-01",
+      "exact_requests": 4
+    }
+  ]
+}
