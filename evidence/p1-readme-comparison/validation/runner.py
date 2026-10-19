@@ -8,7 +8,7 @@ import subprocess
 import sys
 import time
 
-base = Path('/work/p1-readme')
+base = Path('/work/p1-readme-final')
 out = base/'validation'
 out.mkdir(exist_ok=False)
 source = base/'source'

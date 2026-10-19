@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "commands": [
+    {
+      "name": "cpu",
+      "argv": [
+        "/work/venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/work/p1-readme/source",
+      "exit": 0
+    },
+    {
+      "name": "content",
+      "argv": [
+        "/work/venv/bin/python",
+        "/work/p1-readme/inputs/validator.py",
+        "--source",
+        "/work/p1-readme/source",
+        "--inputs",
+        "/work/p1-readme/inputs",
+        "--output",
+        "/work/p1-readme/validation/content.json"
+      ],
+      "cwd": "/work/p1-readme/source",
+      "exit": 0
+    }
+  ],
+  "tested_commit": "baa5fe5d5768a2e87acb84132fbf753d3af79b79",
+  "original_c005_files_crosschecked": 92,
+  "fresh_npu_inference": false
+}

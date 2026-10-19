@@ -25,6 +25,6 @@ test_nonfinite_deadlines_are_rejected_before_sdk_or_hardware (test_rsi_adapter.I
 test_result_path_requires_real_supervised_runner_context (test_rsi_adapter.InferRsiAdapterContracts.test_result_path_requires_real_supervised_runner_context) ... ok
 
 ----------------------------------------------------------------------
-Ran 25 tests in 0.256s
+Ran 25 tests in 0.258s
 
 OK

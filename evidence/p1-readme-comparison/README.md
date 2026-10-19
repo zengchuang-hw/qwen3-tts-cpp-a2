@@ -5,12 +5,13 @@ Prior design: [RFC #20](https://github.com/zengchuang-hw/qwen3-tts-cpp-a2/issues
 Scope: README publication of the frozen C005 single-910B3 comparison, not a new
 NPU benchmark or new audio-quality qualification.
 
-Tested T: `baa5fe5d5768a2e87acb84132fbf753d3af79b79`.
+Final tested T: `ddbdae91eb9bc6aed4f066558fcb9365d40532da`.
 Base B: `f69c00c02bd590f0e1fdcd5fd19b69035570a88d`.
 The 44 deployed canonical non-evidence source files are bound by
 [source-manifest.json](validation/source-manifest.json). The validator is the
 canonical committed T blob, verified against [input-manifest.json](validation/input-manifest.json).
-The 92 historical C005 inputs are canonical Git blobs from T, already retained
+The 92 historical C005 inputs are canonical Git blobs from initial source
+`baa5fe5d5768a2e87acb84132fbf753d3af79b79`, unchanged at final T, already retained
 under `evidence/c005-rotary-tiling/results/formal/`; this iteration does not
 duplicate those request records. On A2 each was also compared to the original
 `/work/c005-formal/results/` JSON; see [crosscheck](validation/original-c005-crosscheck.json).
@@ -42,9 +43,9 @@ the historical measured binary identities stay in C005's formal plan.
 ## Retrieval and final-head applicability
 
 Raw A2 metadata archive:
-`/work/p1-readme/validation-metadata.tar` (host prefix
+`/work/p1-readme-final/validation-metadata.tar` (host prefix
 `/home/zhuangzeliang/zc/qwen3-tts-cpp-20261019/`), 184,320 bytes,
-SHA256 `05f26f4520b7855bc6567a728eeb03b8c66aa2d575c64d7b39535a0d96aed668`.
+SHA256 `8e86bf4d770d410af3eed3c49066455f17f7c01f5569d1550e860fd210564d54`.
 All archive files are committed under `validation/`. The raw input bundle stays
 at `/work/p1-readme/qtts-p1-inputs.tar`; its per-file hashes are in the manifest.
 The archive was downloaded and its SHA256 independently matched locally.
@@ -61,3 +62,15 @@ Packaging was corrected by running `cp`/`tar` inside the dedicated container;
 see [collection attempts](collection-attempts.json). Clock-skew warnings appeared
 during transfer/extraction; [sync.log](sync.log) retains the source-transfer
 warning. Source identities use content hashes, not timestamps; clocks were not changed.
+
+Initial epoch 01 at `baa5fe5d5768a2e87acb84132fbf753d3af79b79` passed the same
+checks; its full records remain under `epoch01/`, raw archive
+`/work/p1-readme/validation-metadata.tar`, SHA256
+`05f26f4520b7855bc6567a728eeb03b8c66aa2d575c64d7b39535a0d96aed668` (184,320 bytes).
+Review then corrected README wording from package/library "hashes" to
+"identities": the manifest records package versions, not wheel-file hashes.
+Both required A2 commands and the complete content audit were rerun at final T.
+The final run's host log includes the initial observation of the same container;
+`host-recheck.log` supplies a fresh post-run observation. See
+`canonical-applicability.json` for raw archive -> canonical Git file hashes,
+including explicit CRLF normalization of JSON manifests and logs where present.

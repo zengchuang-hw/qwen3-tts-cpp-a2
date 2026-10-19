@@ -1,7 +1,7 @@
 {
   "status": "PASS",
   "scope": "P1 documentation audit; CPU metadata replay, not fresh NPU/WAV validation.",
-  "tested_commit": "baa5fe5d5768a2e87acb84132fbf753d3af79b79",
+  "tested_commit": "ddbdae91eb9bc6aed4f066558fcb9365d40532da",
   "source_files": 44,
   "input_files": 92,
   "timed_records_recomputed": 5376,
