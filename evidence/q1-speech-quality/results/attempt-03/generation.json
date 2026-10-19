@@ -1,0 +1,42 @@
+{
+  "status": "STARTED",
+  "protocol": "Q1-balanced-v1",
+  "lock_sha256": "3fd45d51dcb53a06d5e0bd4bb93a99e938f5cdb7562bb1e46f2bcaf99de9b096",
+  "run": "/work/q1-attempt03/generated",
+  "command": [
+    "/work/venv/bin/python",
+    "/work/q1-attempt03/source/campaign.py",
+    "--reference-root",
+    "/work/reference",
+    "--native-build",
+    "/work/q1-attempt03/build",
+    "--model",
+    "/model",
+    "--workload",
+    "/work/c007/source/data/heldout-32.jsonl",
+    "--output",
+    "/work/q1-attempt03/generated",
+    "--predictor-rope",
+    "paired",
+    "--rotary-head-tile",
+    "auto",
+    "--audio-delivery",
+    "inline",
+    "--requests",
+    "32",
+    "--repetitions",
+    "1",
+    "--concurrencies",
+    "4",
+    "16",
+    "--port",
+    "8199"
+  ],
+  "requests": 32,
+  "repetitions": 1,
+  "concurrencies": [
+    4,
+    16
+  ],
+  "started_unix_ns": 1792398466943166500
+}

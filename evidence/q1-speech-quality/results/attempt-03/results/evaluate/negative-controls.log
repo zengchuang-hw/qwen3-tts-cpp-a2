@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/work/q1-negative-controls-generic.py", line 24, in <module>
+    raise ValueError('no real independent scores available for negative controls')
+ValueError: no real independent scores available for negative controls
