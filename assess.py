@@ -73,7 +73,7 @@ def audit_cohort(path, requests, concurrency, workload_sha):
     return actual, hashes
 
 
-def assess(root):
+def assess(root, trial_directories=None):
     spec = load(root / "runspec.json")
     campaign = load(root / "campaign.json")
     repetitions = spec["repetitions"]
@@ -84,9 +84,16 @@ def assess(root):
         raise EvidenceViolation("campaign execution failed")
     if set(campaign["completed"]) != expected:
         raise ValueError("campaign did not complete all requested arms")
+    folders = {name: root / name for name in expected}
+    if trial_directories is not None:
+        if set(trial_directories) != expected:
+            raise ValueError("explicit trial mapping coverage differs")
+        folders = {name: Path(path).resolve() for name, path in trial_directories.items()}
+        if len(set(folders.values())) != len(expected):
+            raise EvidenceViolation("distinct trials alias the same artifact directory")
     cohorts = {}
     for name in sorted(expected):
-        lifecycle = load(root / name / "lifecycle.json")
+        lifecycle = load(folders[name] / "lifecycle.json")
         if lifecycle["status"] != "COMPLETED" or lifecycle["server_exit"] != 0:
             raise EvidenceViolation("server lifecycle did not complete cleanly")
         if sorted(c["concurrency"] for c in lifecycle["cohorts"]) != sorted(spec["concurrencies"]):
@@ -94,7 +101,7 @@ def assess(root):
         if any(c["exit"] != 0 for c in lifecycle["cohorts"]):
             raise EvidenceViolation("benchmark process failed")
         for concurrency in spec["concurrencies"]:
-            cohorts[name, concurrency] = audit_cohort(root / name / f"c{concurrency}",
+            cohorts[name, concurrency] = audit_cohort(folders[name] / f"c{concurrency}",
                 spec["requests"], concurrency, spec["workload_sha256"])
     rows = []
     quality_exact = True
