@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "scope": "evaluator rejection contracts, not candidate quality",
+  "source_score": "/work/q1-attempt05/scores/ae3336f2ac2ef3446ed60bde3679e6466694ecd89a7873f95c6abce6440d19fd-English.json",
+  "source_score_sha256": "4b28ccb3665a7bd84b8c1bbfdfc164c69f54a3c779a792a949a4e25461cdd8e4",
+  "controls": [
+    {
+      "control": "missing-window",
+      "status": "REJECTED",
+      "error": "ASR coverage incomplete"
+    },
+    {
+      "control": "wrong-PCM",
+      "status": "REJECTED",
+      "error": "score identity, source lock or scope differs"
+    },
+    {
+      "control": "wrong-model",
+      "status": "REJECTED",
+      "error": "score identity, source lock or scope differs"
+    },
+    {
+      "control": "wrong-lock",
+      "status": "REJECTED",
+      "error": "score identity, source lock or scope differs"
+    },
+    {
+      "control": "truncated-ASR",
+      "status": "REJECTED",
+      "error": "ASR transcript, EOS or coverage incomplete"
+    },
+    {
+      "control": "token-limit",
+      "status": "REJECTED",
+      "error": "ASR window 0:93440 reached 444 new-token limit"
+    },
+    {
+      "control": "NaN-embedding",
+      "status": "REJECTED",
+      "error": "finite embedding vector required"
+    },
+    {
+      "control": "speaker-coverage",
+      "status": "REJECTED",
+      "error": "speaker real sample coverage differs"
+    },
+    {
+      "control": "large-ASR-regression",
+      "status": "REJECTED"
+    },
+    {
+      "control": "opposite-speaker-vector",
+      "status": "REJECTED"
+    }
+  ]
+}

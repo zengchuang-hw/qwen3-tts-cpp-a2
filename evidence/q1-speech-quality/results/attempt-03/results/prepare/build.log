@@ -1,0 +1,69 @@
+[W1019 08:25:05.627308870 FunctionLoader.cpp:48] Warning: LD_PRELOAD detected, FunctionLoader prefers RTLD_DEFAULT for symbol resolution. (function operator())
+CMake Warning at /usr/local/python3.12.13/lib/python3.12/site-packages/torch/share/cmake/Torch/TorchConfig.cmake:22 (message):
+  static library kineto_LIBRARY-NOTFOUND not found.
+Call Stack (most recent call first):
+  /usr/local/python3.12.13/lib/python3.12/site-packages/torch/share/cmake/Torch/TorchConfig.cmake:125 (append_torchlib_if_found)
+  CMakeLists.txt:8 (find_package)
+
+
+[W1019 08:25:13.297874700 FunctionLoader.cpp:48] Warning: LD_PRELOAD detected, FunctionLoader prefers RTLD_DEFAULT for symbol resolution. (function operator())
+-- Configuring done (17.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /work/q1-attempt03/build
+gmake[2]: Warning: File '/work/q1-attempt03/source/native/main.cpp' has modification time 50 s in the future
+gmake[2]: Warning: File '/work/q1-attempt03/source/native/runtime.cpp' has modification time 50 s in the future
+[ 25%] Building CXX object CMakeFiles/_qtts_native.dir/native/runtime.cpp.o
+[ 50%] Building CXX object CMakeFiles/qtts.dir/native/main.cpp.o
+[ 75%] Linking CXX executable qtts
+gmake[2]: warning:  Clock skew detected.  Your build may be incomplete.
+[ 75%] Built target qtts
+In file included from /work/q1-attempt03/source/native/runtime.cpp:2:
+/usr/local/python3.12.13/lib/python3.12/site-packages/torch_npu/include/torch_npu/csrc/core/npu/NPUGraph.h:59:59: warning: ‘visibility’ attribute ignored [-Wattributes]
+   59 | typedef TORCH_NPU_API void (*NPUCallbackFunc)(void *fnData);
+      |                                                           ^
+In file included from /usr/local/python3.12.13/lib/python3.12/site-packages/torch_npu/include/torch_npu/csrc/core/npu/npu_log.h:7,
+                 from /usr/local/python3.12.13/lib/python3.12/site-packages/torch_npu/include/torch_npu/csrc/core/npu/NPUException.h:22,
+                 from /usr/local/python3.12.13/lib/python3.12/site-packages/torch_npu/include/torch_npu/csrc/core/npu/NPUGraphsUtils.h:6,
+                 from /usr/local/python3.12.13/lib/python3.12/site-packages/torch_npu/include/torch_npu/csrc/core/npu/NPUGraph.h:11,
+                 from /work/q1-attempt03/source/native/runtime.cpp:2:
+/usr/local/python3.12.13/lib/python3.12/site-packages/torch_npu/include/torch_npu/csrc/core/npu/register/OptionsManager.h:99:49: warning: ‘std::unordered_map<int, std::__cxx11::basic_string<char> > c10_npu::option::getAclOpInitMode()’ defined but not used [-Wunused-function]
+   99 | static std::unordered_map<int32_t, std::string> getAclOpInitMode()
+      |                                                 ^~~~~~~~~~~~~~~~
+/usr/local/python3.12.13/lib/python3.12/site-packages/torch_npu/include/torch_npu/csrc/core/npu/register/OptionsManager.h:93:49: warning: ‘std::unordered_map<int, std::__cxx11::basic_string<char> > c10_npu::option::getTaskQueueEnableMode()’ defined but not used [-Wunused-function]
+   93 | static std::unordered_map<int32_t, std::string> getTaskQueueEnableMode()
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~
+/usr/local/python3.12.13/lib/python3.12/site-packages/torch_npu/include/torch_npu/csrc/core/npu/register/OptionsManager.h:87:49: warning: ‘std::unordered_map<int, std::__cxx11::basic_string<char> > c10_npu::option::getMemoryCacheMode()’ defined but not used [-Wunused-function]
+   87 | static std::unordered_map<int32_t, std::string> getMemoryCacheMode()
+      |                                                 ^~~~~~~~~~~~~~~~~~
+/usr/local/python3.12.13/lib/python3.12/site-packages/torch_npu/include/torch_npu/csrc/core/npu/register/OptionsManager.h:81:49: warning: ‘std::unordered_map<int, std::__cxx11::basic_string<char> > c10_npu::option::getLogLevelMode()’ defined but not used [-Wunused-function]
+   81 | static std::unordered_map<int32_t, std::string> getLogLevelMode()
+      |                                                 ^~~~~~~~~~~~~~~
+/usr/local/python3.12.13/lib/python3.12/site-packages/torch_npu/include/torch_npu/csrc/core/npu/register/OptionsManager.h:75:49: warning: ‘std::unordered_map<int, std::__cxx11::basic_string<char> > c10_npu::option::getDesyncDebugMode()’ defined but not used [-Wunused-function]
+   75 | static std::unordered_map<int32_t, std::string> getDesyncDebugMode()
+      |                                                 ^~~~~~~~~~~~~~~~~~
+In file included from /usr/local/python3.12.13/lib/python3.12/site-packages/torch_npu/include/torch_npu/csrc/core/npu/npu_log.h:7,
+                 from /usr/local/python3.12.13/lib/python3.12/site-packages/torch_npu/include/torch_npu/csrc/core/npu/NPUException.h:22,
+                 from /usr/local/python3.12.13/lib/python3.12/site-packages/torch_npu/include/torch_npu/csrc/core/npu/NPUGraphsUtils.h:6,
+                 from /usr/local/python3.12.13/lib/python3.12/site-packages/torch_npu/include/torch_npu/csrc/core/npu/NPUGraph.h:11,
+                 from /work/q1-attempt03/source/native/runtime.cpp:2:
+/usr/local/python3.12.13/lib/python3.12/site-packages/torch_npu/include/torch_npu/csrc/core/npu/register/OptionsManager.h:69:49: warning: ‘std::unordered_map<int, std::__cxx11::basic_string<char> > c10_npu::option::getAsyncErrorHandlingMode()’ defined but not used [-Wunused-function]
+   69 | static std::unordered_map<int32_t, std::string> getAsyncErrorHandlingMode()
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/python3.12.13/lib/python3.12/site-packages/torch_npu/include/torch_npu/csrc/core/npu/register/OptionsManager.h:63:49: warning: ‘std::unordered_map<int, std::__cxx11::basic_string<char> > c10_npu::option::getLaunchBlockingMode()’ defined but not used [-Wunused-function]
+   63 | static std::unordered_map<int32_t, std::string> getLaunchBlockingMode()
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~
+/usr/local/python3.12.13/lib/python3.12/site-packages/torch_npu/include/torch_npu/csrc/core/npu/register/OptionsManager.h:57:49: warning: ‘std::unordered_map<int, std::__cxx11::basic_string<char> > c10_npu::option::getCombinedEnableMode()’ defined but not used [-Wunused-function]
+   57 | static std::unordered_map<int32_t, std::string> getCombinedEnableMode()
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~
+/usr/local/python3.12.13/lib/python3.12/site-packages/torch_npu/include/torch_npu/csrc/core/npu/register/OptionsManager.h:51:49: warning: ‘std::unordered_map<int, std::__cxx11::basic_string<char> > c10_npu::option::getDisableInfNanMode()’ defined but not used [-Wunused-function]
+   51 | static std::unordered_map<int32_t, std::string> getDisableInfNanMode()
+      |                                                 ^~~~~~~~~~~~~~~~~~~~
+/usr/local/python3.12.13/lib/python3.12/site-packages/torch_npu/include/torch_npu/csrc/core/npu/register/OptionsManager.h:45:49: warning: ‘std::unordered_map<int, std::__cxx11::basic_string<char> > c10_npu::option::getInfNanMode()’ defined but not used [-Wunused-function]
+   45 | static std::unordered_map<int32_t, std::string> getInfNanMode()
+      |                                                 ^~~~~~~~~~~~~
+/usr/local/python3.12.13/lib/python3.12/site-packages/torch_npu/include/torch_npu/csrc/core/npu/register/OptionsManager.h:39:49: warning: ‘std::unordered_map<int, std::__cxx11::basic_string<char> > c10_npu::option::getHcclZeroCopyMode()’ defined but not used [-Wunused-function]
+   39 | static std::unordered_map<int32_t, std::string> getHcclZeroCopyMode()
+      |                                                 ^~~~~~~~~~~~~~~~~~~
+[100%] Linking CXX shared module _qtts_native.cpython-312-aarch64-linux-gnu.so
+gmake[2]: warning:  Clock skew detected.  Your build may be incomplete.
+[100%] Built target _qtts_native

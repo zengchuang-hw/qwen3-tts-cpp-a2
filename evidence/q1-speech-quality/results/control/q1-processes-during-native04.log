@@ -1,0 +1,4 @@
+PID                 PPID                COMMAND
+1004067             1004048             sleep infinity
+2357257             1004048             /work/venv/bin/python /work/q1-validate-all.py --root /work/q1-attempt04 --phase evaluate
+2365413             2357257             /work/venv/bin/python /work/q1-attempt04/source/speech_quality.py score --freeze /work/q1-attempt04/freeze.json --boundary /work/q1-attempt04/generation.json --run /work/q1-attempt04/generated --output /work/q1-attempt04/scores

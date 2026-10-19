@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/work/q1-negative-controls-full.py", line 27, in <module>
+    audit_score(original, original['pcm_sha256'], original['language'], digest)
+                          ~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'pcm_sha256'

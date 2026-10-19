@@ -1,0 +1,16 @@
+{
+  "repetition": 1,
+  "concurrency": 4,
+  "index": 4,
+  "text": "The parcel weighs 2.5 kilograms; its label says fragile.",
+  "language": "English",
+  "exact_pcm": true,
+  "reference_pcm_sha256": "10860176893e8287c08aeef1b1759e82bf04e43be7d9409d7b4590bc3f85aaf7",
+  "candidate_pcm_sha256": "10860176893e8287c08aeef1b1759e82bf04e43be7d9409d7b4590bc3f85aaf7",
+  "score_files": {
+    "reference": "10860176893e8287c08aeef1b1759e82bf04e43be7d9409d7b4590bc3f85aaf7-English.json",
+    "native": "10860176893e8287c08aeef1b1759e82bf04e43be7d9409d7b4590bc3f85aaf7-English.json"
+  },
+  "status": "INCONCLUSIVE",
+  "error": "ValueError: scorer incomplete: ValueError: ASR window 0:85760 reached 444 new-token limit"
+}

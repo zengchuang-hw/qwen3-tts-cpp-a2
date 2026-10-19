@@ -1,0 +1,10 @@
+[W1019 08:39:47.780220460 FunctionLoader.cpp:48] Warning: LD_PRELOAD detected, FunctionLoader prefers RTLD_DEFAULT for symbol resolution. (function operator())
+test_bounds_and_missing_graph_do_not_advance_live_requests (__main__.NativeStateTests.test_bounds_and_missing_graph_do_not_advance_live_requests) ... ok
+test_cancel_compacts_all_state_and_reuse_resets_history (__main__.NativeStateTests.test_cancel_compacts_all_state_and_reuse_resets_history) ... ok
+test_cancel_unknown_empty_and_full_capacity (__main__.NativeStateTests.test_cancel_unknown_empty_and_full_capacity) ... ok
+test_invalid_callback_rejected_before_state_advances (__main__.NativeStateTests.test_invalid_callback_rejected_before_state_advances) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.014s
+
+OK

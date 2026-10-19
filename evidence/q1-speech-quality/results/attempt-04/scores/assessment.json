@@ -1,0 +1,5 @@
+{
+  "status": "INCONCLUSIVE",
+  "relative_quality": "INCONCLUSIVE",
+  "error": "ValueError: ASR transcript, EOS or coverage incomplete"
+}

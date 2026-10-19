@@ -1,0 +1,20 @@
+START cpu-suite
+END cpu-suite exit 0
+START configure
+END configure exit 0
+START build
+END build exit 0
+START ownership
+END ownership exit 0
+VALIDATION PASS 
+START freeze
+END freeze exit 0
+START compatibility
+END compatibility exit 0
+START generation
+END generation exit 0
+START quality-score
+END quality-score exit 1
+START negative-controls
+END negative-controls exit 1
+VALIDATION FAIL required command failed: negative-controls

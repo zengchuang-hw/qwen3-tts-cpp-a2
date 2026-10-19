@@ -1,0 +1,15 @@
+{
+  "endpoint": "http://127.0.0.1:8199/v1/audio/speech",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+  "engine": "reference",
+  "source_revision": "b4451682abac651f26046f8d27467de3f007e1e7",
+  "workload": "/work/c007/source/data/heldout-32.jsonl",
+  "output": "/work/q1-attempt04/generated/r1-reference/c4",
+  "concurrency": 4,
+  "requests": 32,
+  "warmup": 4,
+  "sample_rate": 24000,
+  "frame_rate": 12.5,
+  "timeout": 1800,
+  "workload_sha256": "51ee03d4ed7d893045c64ea8944a5edc2dd59fc93a202f0419bced624ff49d0d"
+}

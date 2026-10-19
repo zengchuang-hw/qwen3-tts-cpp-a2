@@ -1,0 +1,104 @@
+[
+  {
+    "file": "q1-archive-final.py",
+    "raw_sha256": "d57de0ce2e3cdea41bae4d12e0ee0a13a9522dc80d78c0e9553a5349fb8a0ffa",
+    "git_lf_sha256": "819b9a1444147b9107dff086113075f223653ace0ea0edfd76154302abc8295c",
+    "scope": "raw bytes preserved in metadata.tar; Git normalizes CRLF to LF"
+  },
+  {
+    "file": "q1-archive.py",
+    "raw_sha256": "bf5e731be157131aabc03b5df84209a05e8820401d0de7a4e01de18123bf45b6",
+    "git_lf_sha256": "bf5e731be157131aabc03b5df84209a05e8820401d0de7a4e01de18123bf45b6",
+    "scope": "raw bytes preserved in metadata.tar; Git normalizes CRLF to LF"
+  },
+  {
+    "file": "q1-compatibility-generic.py",
+    "raw_sha256": "f332e7ca7dfafb659c7a53d32241a56e735d8f5c62c66e6775a52fd59ccbf297",
+    "git_lf_sha256": "0a2f93ccfc3ac9863f2fa45b635ed11ce53e00182840a7c4a371f4f0dbb0137e",
+    "scope": "raw bytes preserved in metadata.tar; Git normalizes CRLF to LF"
+  },
+  {
+    "file": "q1-compatibility.py",
+    "raw_sha256": "c6863d8e9d08bfffb05764912d997c5c616b4b40d6a6ce02f4a5081176e03e67",
+    "git_lf_sha256": "d9358ee35fed60eaa5e642749fee5661087a84dc44cc8d8f853b0664ba5dacd5",
+    "scope": "raw bytes preserved in metadata.tar; Git normalizes CRLF to LF"
+  },
+  {
+    "file": "q1-device-watch.py",
+    "raw_sha256": "8325582d3bae5af5c2c09b37985ba9205a37f4ac70b55c73e209242a9acc2ba5",
+    "git_lf_sha256": "8325582d3bae5af5c2c09b37985ba9205a37f4ac70b55c73e209242a9acc2ba5",
+    "scope": "raw bytes preserved in metadata.tar; Git normalizes CRLF to LF"
+  },
+  {
+    "file": "q1-followup.py",
+    "raw_sha256": "a4376b748b9b5be35b2b998e07f92c7f815416db193c09d3e74dfe446f8bd803",
+    "git_lf_sha256": "a4376b748b9b5be35b2b998e07f92c7f815416db193c09d3e74dfe446f8bd803",
+    "scope": "raw bytes preserved in metadata.tar; Git normalizes CRLF to LF"
+  },
+  {
+    "file": "q1-negative-controls-corrected.py",
+    "raw_sha256": "cd8b25eba5152e799a2bdcbb1253ce790d226ad8ed0d0861ea8d386abc061c3c",
+    "git_lf_sha256": "7e499fc2bc7aec4efe14b393c75063bccd87b344b8d58ccf2b86a2d043cc545a",
+    "scope": "raw bytes preserved in metadata.tar; Git normalizes CRLF to LF"
+  },
+  {
+    "file": "q1-negative-controls-full.py",
+    "raw_sha256": "c8df1345449e7cdba7d5c06b069063c359321b384ba22414c889e20333454513",
+    "git_lf_sha256": "ca3ff918b11f4a6f94d42c96ab59f8d6574ff2fa542fc6d5edb895b5be108ab3",
+    "scope": "raw bytes preserved in metadata.tar; Git normalizes CRLF to LF"
+  },
+  {
+    "file": "q1-negative-controls-generic.py",
+    "raw_sha256": "7ae9a9030d1245dd9dcea545d7446b30df72eb77144c432af1a70d41f238e689",
+    "git_lf_sha256": "05ba5cee4bee5af1ccca429ac2d3dbcfd7a97fa7faa08dfa36f673be1a861ee1",
+    "scope": "raw bytes preserved in metadata.tar; Git normalizes CRLF to LF"
+  },
+  {
+    "file": "q1-negative-controls.py",
+    "raw_sha256": "51dd24a8a26b22f696d7c8a845fd50f97ff020dad66043ea6b5b123b19085b27",
+    "git_lf_sha256": "e1dac074480644b8b8a4153c9b3bd58485bda1b444fa3c5f1354826b191be235",
+    "scope": "raw bytes preserved in metadata.tar; Git normalizes CRLF to LF"
+  },
+  {
+    "file": "q1-validate-all.py",
+    "raw_sha256": "5d176f310b62088229dac9013a5409fd3632ea8d6ce42bb7651ad5feb12cbc3b",
+    "git_lf_sha256": "b659536294ddd578fa9b6f4bacdec72fa51099c7ffed1468c297279353e84a07",
+    "scope": "raw bytes preserved in metadata.tar; Git normalizes CRLF to LF"
+  },
+  {
+    "file": "q1-validate-evaluate.py",
+    "raw_sha256": "bde21e14a436980ff988454c7e7ae17c45b6be507691dc4b5f616d6b17c116b3",
+    "git_lf_sha256": "43e29f5d8c28f56b9c263380ed1cbdeda15f783456dd45b34ee31d3c1baefba1",
+    "scope": "raw bytes preserved in metadata.tar; Git normalizes CRLF to LF"
+  },
+  {
+    "file": "q1-validate-final.py",
+    "raw_sha256": "43179702db73b3de8192b3c88e95ea9a1d2f9367c8ba203394f0eaa72010ff24",
+    "git_lf_sha256": "3d2c8b0dd61b00740eb97e38c43c33a88bd711680bbb836e77d1dd0200638ea6",
+    "scope": "raw bytes preserved in metadata.tar; Git normalizes CRLF to LF"
+  },
+  {
+    "file": "q1-validate-graded.py",
+    "raw_sha256": "1925823a89c14f13bc2146960b57e9e5a421bc40290fe6edebec9a3e05ea2fca",
+    "git_lf_sha256": "2ede93730a76e65d1968c7c6e88076bb226448b7156210ed567370b2b23136be",
+    "scope": "raw bytes preserved in metadata.tar; Git normalizes CRLF to LF"
+  },
+  {
+    "file": "q1-validate-prepare.py",
+    "raw_sha256": "12da315c4f0940f2e86fbad3d2458cdf3f73aa616d91bc4056a886b769f25b6f",
+    "git_lf_sha256": "12da315c4f0940f2e86fbad3d2458cdf3f73aa616d91bc4056a886b769f25b6f",
+    "scope": "raw bytes preserved in metadata.tar; Git normalizes CRLF to LF"
+  },
+  {
+    "file": "q1-validate.py",
+    "raw_sha256": "12da315c4f0940f2e86fbad3d2458cdf3f73aa616d91bc4056a886b769f25b6f",
+    "git_lf_sha256": "12da315c4f0940f2e86fbad3d2458cdf3f73aa616d91bc4056a886b769f25b6f",
+    "scope": "raw bytes preserved in metadata.tar; Git normalizes CRLF to LF"
+  },
+  {
+    "file": "q1-whisper-api.py",
+    "raw_sha256": "6d1acd320429700752d7affbd9d0db95eb2207be0455917784761c2f207ad85c",
+    "git_lf_sha256": "6d1acd320429700752d7affbd9d0db95eb2207be0455917784761c2f207ad85c",
+    "scope": "raw bytes preserved in metadata.tar; Git normalizes CRLF to LF"
+  }
+]

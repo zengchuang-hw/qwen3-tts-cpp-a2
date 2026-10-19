@@ -1,0 +1,31 @@
+{
+  "source": {
+    "CMakeLists.txt": "81d3b399e5c30b1e9aa036e55fe815498797094bef108cfcdd5a69010d1e07e8",
+    "assess.py": "98e2091f335210479abf605cd263ddcbc2707b4f3e175db668bef83d1982040b",
+    "campaign.py": "ccaaf50a7568a9f9da0bb8cb9313506886772eeb8c6514a6fc2835089abeefd2",
+    "cli_bootstrap.py": "22196f5d7f6eb51f00ad8e77ebceb22e3083297bc1773eb22c7fe24f3bf30b1e",
+    "graph_model.py": "98866ec922d19b00201396a33489815be1ed9d22d10ddf9b5a3e8d0528245836",
+    "native/main.cpp": "671bb2239916ea405c330fbc62c800b188f2036e7214e4e88dc3eb78b46e2a8a",
+    "native/runtime.cpp": "1a7ba000d450e60532aa0381a61fd3c1235b8981a791a6d585793d1fdc11dc7a",
+    "native/runtime_api.h": "e03af5fa11244eccb22674a144021c0950d432724b4243a7d68e6f40c1b7269a",
+    "predictor_rope.py": "39634dad763f1c7b98a7b2bcc21ba3268adb48f48988b5a682e3a82249eb5375",
+    "probe.py": "93ed2610352006a46b43dbae0feb45853697a0c393d9088cc2678091064c9eab",
+    "profile_native.py": "8c07533b899876851ee8736c164b4165096a796de5eea6085402ae2f402c2501",
+    "quality_core.py": "936e4244bc5d9434c01ddeccd493431e3557d7c6555f98e467571eb92943e184",
+    "requirements-a2.txt": "c1dff492279d286eb40c137987a85452f6ca206c0bdd84dd57a0eb27fba4eb87",
+    "rope_probe.py": "7e42caf5e939f60b2581a33ce40ee5bfb5fc0243f7c901c1eae571f89e9fc0b7",
+    "rotary_policy.py": "47d447ff64d66b9cd7908d3cc1c08d7905ff1446e69f77046faf8bf3db23edc8",
+    "serve.py": "98808691cae2e86c19be32b8e6f65cb56ad450f581486bc47e05d2f878dbc02e",
+    "speech_quality.py": "1dd6e09c48e916cb98191db43825577e44205cf4ec14d2970b9dd23b292f1924",
+    "speech_scorer.py": "e62d553a4c6c7d7837a227735e42edbae2948e20001996467c7abbd2ccad9e10",
+    "test_native_state.py": "fa3173fb552580bf6f9c590610d839de466697bd381aaa3636a0f116cbd7ccc7",
+    "tests/test_evidence_contracts.py": "776279b4f2594216b2028c27385479b42ecd7085438db1d361d6ce7fbd30fa00",
+    "tests/test_quality_contracts.py": "92050d359eff09769794fd5c2aa3014394a619cdb494e68ef2963600416c48d9",
+    "tiling_probe.py": "fa536dba84e016f06a237701e165a46ac1c50dc271248441b21d3463e001d20b"
+  },
+  "binaries": {
+    "_qtts_native.cpython-312-aarch64-linux-gnu.so": "727fbfe11f46611772234b5b93db98a65302fe7cb88ccbaf06545bc05eb7fbf0",
+    "qtts": "3d00c7dea00b75d666b9e169cf1223d13fcf6a0d651d7968e9c276b9bc6e9fc8"
+  },
+  "reference_revision": "b4451682abac651f26046f8d27467de3f007e1e7"
+}
