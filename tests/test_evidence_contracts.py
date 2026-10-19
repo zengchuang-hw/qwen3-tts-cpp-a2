@@ -9,6 +9,7 @@ import unittest
 from unittest.mock import patch
 import wave
 import sys
+from types import SimpleNamespace
 
 
 SOURCE = Path(__file__).resolve().parents[1] / "assess.py"
@@ -30,6 +31,48 @@ with patch.dict(sys.modules, {"serve": serve}):
 
 
 class NativeEvidenceContracts(unittest.TestCase):
+    def test_native_control_command_does_not_inherit_candidate_delivery(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            command = root / "evidence/campaign-20261017/plan/continuous-direct-prompt-command.json"
+            command.parent.mkdir(parents=True)
+            command.write_text(json.dumps(["python", "-m", "qwen3_tts_engine.server", "--model", "old", "--port", "1"]))
+            args = SimpleNamespace(reference_root=root, model=root / "model", port=8199,
+                                   native_build=root / "build", predictor_rope="paired",
+                                   reference_engine="native-buffered", audio_delivery="inline")
+            control = campaign.server_command(args, "reference")
+            candidate = campaign.server_command(args, "native")
+            self.assertEqual(control[control.index("--audio-delivery") + 1], "buffered")
+            self.assertEqual(candidate[candidate.index("--audio-delivery") + 1], "inline")
+            args.reference_engine = "upstream"
+            upstream = campaign.server_command(args, "reference")
+            self.assertNotIn("--audio-delivery", upstream)
+            self.assertIn("qwen3_tts_engine.server", upstream)
+
+    def test_full_native_control_cannot_become_upstream_performance_pass(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            cs = [1, 2, 4, 8, 16, 32, 64]
+            names = [f"r{r}-{arm}" for r in range(1, 4) for arm in ("reference", "native")]
+            (root / "runspec.json").write_text(json.dumps({"repetitions": 3, "requests": 128,
+                "concurrencies": cs, "workload_sha256": "fixture", "formal_coverage": True,
+                "reference_engine": "native-buffered"}))
+            (root / "campaign.json").write_text(json.dumps({"status": "INCONCLUSIVE", "completed": names}))
+            for name in names:
+                (root / name).mkdir()
+                (root / name / "lifecycle.json").write_text(json.dumps({"status": "COMPLETED", "server_exit": 0,
+                    "cohorts": [{"concurrency": c, "exit": 0} for c in cs]}))
+
+            def metrics(path, *unused):
+                candidate = "-native" in str(path)
+                return ({"throughput_frames_s": 200. if candidate else 100.,
+                         "ttfa_p95_ms": 1. if candidate else 2.}, {0: "same-pcm"})
+
+            with patch.object(assess, "audit_cohort", side_effect=metrics):
+                result = assess.assess(root)
+            self.assertEqual(result["status"], "INCONCLUSIVE")
+            self.assertEqual(result["performance"], "INCONCLUSIVE")
+            self.assertFalse(result["formal_coverage"])
     def test_public_request_bound_is_checked_before_native_admission(self):
         serve.validate_native_limit({"max_new_tokens": 2048}, 2048)
         for payload in ({"max_new_tokens": 4096}, {"max_new_tokens": 1}, {}):

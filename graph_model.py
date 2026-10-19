@@ -19,9 +19,12 @@ LOGGER = logging.getLogger(__name__)
 class NativeModel(ContinuousModel):
     def __init__(self, model_path, device, *, max_slots=64, max_frames=2048,
                  text_capacity=256, codec_batch_size=4, prewarm_decode=False,
-                 predictor_rope="native"):
+                 predictor_rope="native", audio_delivery="buffered"):
         if predictor_rope not in {"native", "paired"}:
             raise ValueError("predictor_rope must be native or paired")
+        if audio_delivery not in {"buffered", "inline"}:
+            raise ValueError("audio_delivery must be buffered or inline")
+        self.audio_delivery = audio_delivery
         self.core = None
         super().__init__(
             model_path, device, max_slots=max_slots, pack_qkv=True,
@@ -216,7 +219,8 @@ class NativeModel(ContinuousModel):
         if not self.core.ready():
             self.prepare_native()
         results = []
-        for identifier, frames, done, pcm, reason in self.core.step():
+        callback = emit if self.audio_delivery == "inline" else None
+        for identifier, frames, done, pcm, reason in self.core.step(callback):
             if done:
                 results.append((identifier, {"pcm": pcm, "sample_rate": 24000,
                                               "codec_frames": frames, "finish_reason": reason}))
