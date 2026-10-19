@@ -7,6 +7,8 @@ import torch
 import triton
 import triton.language as tl
 
+from rotary_policy import resolve_head_tile
+
 
 @triton.jit
 def _rotate_one(X, C, S, Y, row, tile, H: tl.constexpr, HEAD_TILE: tl.constexpr, D: tl.constexpr,
@@ -71,11 +73,12 @@ def paired_rotary(query, key, cos, sin, *, round_bf16=False, head_tile=4):
 
 
 class PredictorAttention(torch.nn.Module):
-    def __init__(self, packed):
+    def __init__(self, packed, head_tile=4):
         super().__init__()
         if packed.multimodal or not packed.native_gqa or not packed.native_rope:
             raise ValueError("paired rotary only replaces native-GQA predictor attention")
         self.packed = packed
+        self.head_tile = head_tile
 
     def forward(self, hidden_states, position_embeddings, attention_mask,
                 past_key_values=None, cache_position=None, **kwargs):
@@ -88,7 +91,8 @@ class PredictorAttention(torch.nn.Module):
         key = reference.k_norm(key.reshape(heads))
         value = value.reshape(heads).transpose(1, 2)
         cos, sin = position_embeddings
-        query, key = paired_rotary(query, key, cos, sin)
+        query, key = paired_rotary(query, key, cos, sin,
+                                    head_tile=resolve_head_tile(self.head_tile, *query.shape[:2], query.shape[-1]))
         query, key = query.transpose(1, 2), key.transpose(1, 2)
         if past_key_values is not None:
             key, value = past_key_values.update(key, value, reference.layer_idx,
@@ -98,13 +102,13 @@ class PredictorAttention(torch.nn.Module):
         return reference.o_proj(output.reshape(*shape, -1).contiguous()), weights
 
 
-def install(predictor):
+def install(predictor, head_tile=4):
     replacements = []
     for parent in list(predictor.modules()):
         for name, child in list(parent.named_children()):
             if type(child).__name__ == "PackedAttention" and not child.multimodal:
                 replacements.append((parent, name, child))
-                setattr(parent, name, PredictorAttention(child))
+                setattr(parent, name, PredictorAttention(child, head_tile))
     if not replacements:
         raise ValueError("no predictor attention modules were replaced")
     return replacements

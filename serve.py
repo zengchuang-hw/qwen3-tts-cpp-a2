@@ -44,6 +44,7 @@ def main():
     parser.add_argument("--prefill-per-tick", type=int, default=64)
     parser.add_argument("--prewarm-decode", action="store_true")
     parser.add_argument("--predictor-rope", choices=["native", "paired"], default="native")
+    parser.add_argument("--rotary-head-tile", choices=["4", "8", "16", "auto"], default="4")
     parser.add_argument("--audio-delivery", choices=["buffered", "inline"], default="buffered")
     options = parser.parse_args()
     if (options.max_batch_size < 1 or options.max_batch_size & (options.max_batch_size - 1)
@@ -64,7 +65,7 @@ def main():
                       max_frames=options.max_new_tokens, text_capacity=options.text_capacity,
                       codec_batch_size=options.codec_batch_size,
                       prewarm_decode=options.prewarm_decode, predictor_rope=options.predictor_rope,
-                      audio_delivery=options.audio_delivery)
+                      audio_delivery=options.audio_delivery, rotary_head_tile=options.rotary_head_tile)
     service = SpeechService(options, factory)
 
     async def bounded_speech(incoming):

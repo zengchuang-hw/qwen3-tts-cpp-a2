@@ -92,6 +92,7 @@ def main():
                                     values.append(begin.elapsed_time(end) * 1000 / (args.iterations * args.chain))
                             finally:
                                 graph.reset()
+                            print(json.dumps({'batch': batch, 'length': length, 'variant': label, 'pair_us': values}), flush=True)
                             timings.append({'batch': batch, 'length': length, 'width': width, 'shared': shared,
                                             'variant': label, 'pair_us': values, 'mean_pair_us': statistics.mean(values),
                                             'sample_sd_us': statistics.stdev(values)})
