@@ -1,0 +1,16 @@
+{
+  "attempts": [
+    {
+      "operation": "host-side copy source manifest into root-owned validation directory",
+      "exit": 1,
+      "error": "cp: cannot create regular file 'validation/source-manifest.json': Permission denied",
+      "subsequent_download": "archive not created; scp and local extraction failed",
+      "scope": "metadata packaging only; completed A2 tests unchanged"
+    },
+    {
+      "operation": "copy and tar inside dedicated container, then download and verify SHA256",
+      "exit": 0,
+      "archive_sha256": "05f26f4520b7855bc6567a728eeb03b8c66aa2d575c64d7b39535a0d96aed668"
+    }
+  ]
+}
