@@ -1,0 +1,6 @@
+{
+  "archive": "/work/c003/media-trace.tar.gz",
+  "sha256": "71a75983d3d1a461f78d254601de9e874a54de08bf0cfdcc7d9a6625dede131d",
+  "bytes": 11518592,
+  "scope": "raw C003 profiler tree and retained full WAVs; retrievable archive readable through host mount"
+}

@@ -1,0 +1,20 @@
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Python3: /work/venv/bin/python (found version "3.12.13") found components: Interpreter Development Development.Module Development.Embed
+[W1019 04:50:46.908036670 FunctionLoader.cpp:48] Warning: LD_PRELOAD detected, FunctionLoader prefers RTLD_DEFAULT for symbol resolution. (function operator())
+CMake Warning at /usr/local/python3.12.13/lib/python3.12/site-packages/torch/share/cmake/Torch/TorchConfig.cmake:22 (message):
+  static library kineto_LIBRARY-NOTFOUND not found.
+Call Stack (most recent call first):
+  /usr/local/python3.12.13/lib/python3.12/site-packages/torch/share/cmake/Torch/TorchConfig.cmake:125 (append_torchlib_if_found)
+  CMakeLists.txt:8 (find_package)
+
+
+-- Found Torch: /usr/local/python3.12.13/lib/python3.12/site-packages/torch/lib/libtorch.so
+[W1019 04:50:55.797149360 FunctionLoader.cpp:48] Warning: LD_PRELOAD detected, FunctionLoader prefers RTLD_DEFAULT for symbol resolution. (function operator())
+-- Configuring done (18.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: /work/c003/build

@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "scope": "updated results-document UTF8 and local-link check only; runtime evidence remains for original source snapshot",
+  "doc_sha256": "3cd0057745e470a7805cac288625ea95130bf93247047cdcdef66ff6542c546d",
+  "local_links": [],
+  "exit": 0
+}
