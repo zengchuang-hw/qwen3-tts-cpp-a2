@@ -13,7 +13,7 @@ from types import SimpleNamespace
 from unittest.mock import patch
 
 from quality_core import (ASR_NEW_TOKENS, MODEL_REVISIONS, PROTOCOL, audit_boundary, audit_score,
-                          compare_group, edit_distance, units, windows)
+                          compare_group, edit_distance, summarize_group, units, windows)
 import speech_quality
 from speech_quality import assets, environment, workload_rows
 
@@ -29,6 +29,16 @@ def record():
 
 
 class QualityContracts(unittest.TestCase):
+    def test_incomplete_group_cannot_pass_on_its_valid_subset(self):
+        complete = {'status': 'SCORED', 'index': 0, 'text': 'test',
+                    'reference_transcript': 'test', 'candidate_transcript': 'test', 'exact_pcm': True}
+        self.assertEqual(summarize_group([complete], 'English')['status'], 'PASS')
+        missing = {'status': 'INCONCLUSIVE', 'index': 1, 'error': 'actual ASR did not finish'}
+        result = summarize_group([complete, missing], 'English')
+        self.assertEqual(result['status'], 'INCONCLUSIVE')
+        self.assertEqual(result['inconclusive_indices'], [1])
+        self.assertNotIn('candidate_error_rate', result)
+
     def test_known_failure_survives_downstream_missing_evidence(self):
         with tempfile.TemporaryDirectory() as directory:
             for known, expected in ((True, 'FAIL'), (False, 'INCONCLUSIVE')):

@@ -91,9 +91,11 @@ def pooled_embedding(rows, samples):
 
 
 def audit_score(record, pcm_sha, language, lock_sha):
+    if record.get('status') != 'SCORED':
+        raise ValueError('scorer incomplete: ' + record.get('error', 'no complete raw score'))
     if (record['protocol'] != PROTOCOL or record['lock_sha256'] != lock_sha
             or record['pcm_sha256'] != pcm_sha or record['language'] != language
-            or record['status'] != 'SCORED' or record['models'] != MODEL_REVISIONS):
+            or record['models'] != MODEL_REVISIONS):
         raise ValueError('score identity, source lock or scope differs')
     samples = record['samples_16k']
     pcm_bytes = record['pcm_bytes']
@@ -106,8 +108,10 @@ def audit_score(record, pcm_sha, language, lock_sha):
     transcripts = []
     for row, (start, end) in zip(rows, bounds):
         tokens = row['generated_tokens']
+        if isinstance(tokens, list) and len(tokens) >= ASR_NEW_TOKENS:
+            raise ValueError(f'ASR window {start}:{end} reached {ASR_NEW_TOKENS} new-token limit')
         if ((row['start'], row['end']) != (start, end) or not row['transcript'].strip()
-                or not isinstance(tokens, list) or not tokens or len(tokens) >= ASR_NEW_TOKENS
+                or not isinstance(tokens, list) or not tokens
                 or any(type(token) is not int or not 0 <= token < 51865 for token in tokens)
                 or row.get('prefix') != PREFIX[language] or row['eos_token_id'] != 50257
                 or tokens.count(50257) != 1 or tokens[-1] != 50257):
@@ -147,3 +151,15 @@ def compare_group(rows, language):
             'speaker_cosines': cosines, 'speaker_min': min(cosines) if cosines else None,
             'speaker_mean': math.fsum(cosines) / len(cosines) if cosines else None,
             'status': 'PASS' if asr_pass and speaker_pass else 'FAIL'}
+
+
+def summarize_group(rows, language):
+    """Never calculate acceptance on a selected subset of attempted outputs."""
+    if not rows:
+        raise ValueError('empty quality group')
+    missing = [row['index'] for row in rows if row.get('status') != 'SCORED']
+    if missing:
+        return {'status': 'INCONCLUSIVE', 'language': language, 'utterances': len(rows),
+                'scored_utterances': len(rows) - len(missing), 'inconclusive_indices': missing,
+                'reason': 'incomplete independent scores; no subset error-rate acceptance'}
+    return compare_group(rows, language)

@@ -13,7 +13,7 @@ import time
 
 from assess import EvidenceViolation, audit_cohort
 from campaign import runtime_identity, source_identity
-from quality_core import (MODEL_REVISIONS, PROTOCOL, audit_boundary, audit_score, compare_group, sha256)
+from quality_core import (MODEL_REVISIONS, PROTOCOL, audit_boundary, audit_score, sha256, summarize_group)
 from serve import load_reference
 
 ROOT = Path(__file__).resolve().parent
@@ -168,6 +168,7 @@ def score(args):
     # Dependencies are imported only after all control/identity checks pass.
     from speech_scorer import SpeechScorer
     scorer = None
+    retained_scores = {}
     summaries, pairs, observed_failure = [], [], terminal['actual_exit'] != 0
     args.observed_failure = observed_failure
     for repetition in range(1, spec['repetitions'] + 1):
@@ -208,25 +209,40 @@ def score(args):
                     if arm == 'native' and exact:
                         records[arm] = records['reference']
                         continue
-                    record = scorer.score(roots[arm] / f'c{concurrency}' / f'{index:05d}.wav', language)
-                    audit_score(record, hashes[arm][index], language, digest)
+                    cache_key = (hashes[arm][index], language)
+                    if cache_key in retained_scores:
+                        record = retained_scores[cache_key]
+                    else:
+                        try:
+                            record = scorer.score(roots[arm] / f'c{concurrency}' / f'{index:05d}.wav', language)
+                        except Exception as error:
+                            record = {'status': 'INCONCLUSIVE', 'protocol': PROTOCOL,
+                                      'models': MODEL_REVISIONS, 'lock_sha256': digest,
+                                      'pcm_sha256': hashes[arm][index], 'language': language,
+                                      'error': f'{type(error).__name__}: {error}',
+                                      'scope': 'actual scorer exception; no invented transcript or embedding'}
+                        retained_scores[cache_key] = record
                     records[arm] = record
-                    key = f"{record['pcm_sha256']}-{language}.json"
+                    key = f"{hashes[arm][index]}-{language}.json"
                     if not (args.output / key).exists():
                         write_new(args.output / key, record)
-                ref_text, ref_embedding = audit_score(records['reference'], hashes['reference'][index], language, digest)
-                cand_text, cand_embedding = audit_score(records['native'], hashes['native'][index], language, digest)
                 row = {'repetition': repetition, 'concurrency': concurrency, 'index': index,
                        'text': item['input'], 'language': language, 'exact_pcm': exact,
                        'reference_pcm_sha256': hashes['reference'][index],
                        'candidate_pcm_sha256': hashes['native'][index],
-                       'reference_transcript': ref_text, 'candidate_transcript': cand_text,
-                       'reference_embedding': ref_embedding, 'candidate_embedding': cand_embedding}
+                       'score_files': {arm: f"{hashes[arm][index]}-{language}.json" for arm in records}}
+                try:
+                    ref_text, ref_embedding = audit_score(records['reference'], hashes['reference'][index], language, digest)
+                    cand_text, cand_embedding = audit_score(records['native'], hashes['native'][index], language, digest)
+                    row.update(status='SCORED', reference_transcript=ref_text, candidate_transcript=cand_text,
+                               reference_embedding=ref_embedding, candidate_embedding=cand_embedding)
+                except (ValueError, KeyError, TypeError) as error:
+                    row.update(status='INCONCLUSIVE', error=f'{type(error).__name__}: {error}')
                 groups.setdefault(language, []).append(row)
                 pairs.append(row)
                 write_new(args.output / f'r{repetition}-c{concurrency}-{index:05d}.json', row)
             for language, rows in groups.items():
-                result = compare_group(rows, language)
+                result = summarize_group(rows, language)
                 result.update(repetition=repetition, concurrency=concurrency,
                               exact_pcm=sum(row['exact_pcm'] for row in rows))
                 summaries.append(result)
@@ -235,10 +251,15 @@ def score(args):
     unchanged = current_identity(lock) == lock['identity']
     if not unchanged:
         raise ValueError('source/environment/assets changed while scoring')
-    return {'status': 'FAIL' if observed_failure else 'PASS', 'protocol': PROTOCOL,
+    incomplete = any(row['status'] == 'INCONCLUSIVE' for row in summaries)
+    quality = 'FAIL' if any(row['status'] == 'FAIL' for row in summaries) else 'INCONCLUSIVE' if incomplete else 'PASS'
+    return {'status': 'FAIL' if observed_failure else 'INCONCLUSIVE' if incomplete else 'PASS', 'protocol': PROTOCOL,
             'scope': 'Q1 relative quality only; no performance or subjective-quality acceptance',
             'lock_sha256': digest, 'boundary_sha256': sha256(args.boundary),
-            'groups': summaries, 'scored_pairs': len(pairs), 'identity_unchanged': unchanged,
+            'relative_quality': quality, 'groups': summaries, 'attempted_pairs': len(pairs),
+            'scored_pairs': sum(row['status'] == 'SCORED' for row in pairs),
+            'inconclusive_pairs': sum(row['status'] == 'INCONCLUSIVE' for row in pairs),
+            'identity_unchanged': unchanged,
             'score_all': lock['score_all'],
             'generation_actual_exit': terminal['actual_exit']}
 

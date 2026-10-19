@@ -111,6 +111,10 @@ class SpeechScorer:
                 embedding = self.speaker(**inputs).embeddings[0].tolist()
                 record['speaker'].append({'start': start, 'end': end,
                                           'real_samples': real, 'embedding': embedding})
-        audit_score(record, digest, language, self.lock_sha)
+        # Retain real model outputs even when strict completeness rejects them.
+        try:
+            audit_score(record, digest, language, self.lock_sha)
+        except (ValueError, KeyError, TypeError) as error:
+            record.update(status='INCONCLUSIVE', error=f'{type(error).__name__}: {error}')
         self.cache[key] = record
         return record
