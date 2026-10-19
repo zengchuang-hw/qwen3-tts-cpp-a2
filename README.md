@@ -51,7 +51,7 @@ Both arms used the same single card, BF16 model, environment and workload:
   with `--prewarm-decode`, max batch 64, codec batch 4 and chunk 8. Conservative
   defaults are not the configuration measured in this table.
 - Runtime: Python 3.12.13, PyTorch 2.10.0, torch_npu 2.10.0.post4,
-  CANN 9.1.0, qwen-tts 0.1.1, transformers 4.57.3; full package/library hashes
+  CANN 9.1.0, qwen-tts 0.1.1, transformers 4.57.3; full package/library identities
   and environment variables are retained in the manifest.
 - Workload: 128 fixed texts (64 English/Ryan + 64 Chinese/Vivian), seed 42,
   `max_new_tokens=2048`; SHA256
