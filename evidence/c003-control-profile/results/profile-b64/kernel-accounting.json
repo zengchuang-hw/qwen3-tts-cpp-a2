@@ -1,0 +1,152 @@
+{
+  "status": "DIAGNOSTIC_ONLY",
+  "warning": "RECORD-stop warning; summed kernels do not prove critical-path or throughput",
+  "kernel_csv_sha256": "b49274383b5926335952ada279bfb0e1cb08ecbb95a57bb6afc74e5ca1050e0e",
+  "total_kernel_us": 874587.94,
+  "top_kernels": [
+    {
+      "name": "FusedInferAttentionScore",
+      "us": 135535.34,
+      "calls": 1648
+    },
+    {
+      "name": "aclnnMatmul_MatMulCommon_MatMulV2",
+      "us": 110839.82,
+      "calls": 8672
+    },
+    {
+      "name": "_snake_tiled",
+      "us": 98034.9,
+      "calls": 928
+    },
+    {
+      "name": "RmsNorm",
+      "us": 66297.54,
+      "calls": 6848
+    },
+    {
+      "name": "aclnnConvolution_TransData_TransData",
+      "us": 50848.1,
+      "calls": 3488
+    },
+    {
+      "name": "_paired",
+      "us": 37781.62,
+      "calls": 1200
+    },
+    {
+      "name": "aclnnAdd_AddAiCore_Add",
+      "us": 34410.76,
+      "calls": 5600
+    },
+    {
+      "name": "aclnnConvolution_ConvTranspose2dWithFlag_Conv2DTranspose",
+      "us": 32336.22,
+      "calls": 192
+    },
+    {
+      "name": "aclnnConvolution_Conv2dWithFlag_Conv2D",
+      "us": 25481.96,
+      "calls": 992
+    },
+    {
+      "name": "aclnnCat_ConcatD_ConcatD",
+      "us": 25466.04,
+      "calls": 4160
+    },
+    {
+      "name": "SwiGlu",
+      "us": 21798.7,
+      "calls": 1648
+    },
+    {
+      "name": "aclnnMul_MulAiCore_Mul",
+      "us": 17698.66,
+      "calls": 2944
+    },
+    {
+      "name": "aclnnInplaceIndexCopy_ScatterUpdateAiCore_ScatterUpdate",
+      "us": 16561.44,
+      "calls": 1216
+    },
+    {
+      "name": "aclnnFlashAttentionScore_FlashAttentionScore_FlashAttentionScore",
+      "us": 15544.22,
+      "calls": 256
+    },
+    {
+      "name": "aclnnCat_TransposeAiCore_Transpose",
+      "us": 12326.42,
+      "calls": 944
+    },
+    {
+      "name": "aclnnConvolution_TransData_MemSet",
+      "us": 11705.9,
+      "calls": 1120
+    },
+    {
+      "name": "aclnnInplaceCopy_CastAiCore_Cast",
+      "us": 9810.14,
+      "calls": 3072
+    },
+    {
+      "name": "aclnnInplaceCopy_SliceAiCore_Slice",
+      "us": 8694.32,
+      "calls": 1056
+    },
+    {
+      "name": "aclnnContiguous_SliceAiCore_Slice",
+      "us": 8366.66,
+      "calls": 3296
+    },
+    {
+      "name": "aclnnMul_TransposeAiCore_Transpose",
+      "us": 6833.78,
+      "calls": 512
+    },
+    {
+      "name": "aclnnNeg_TransposeAiCore_Transpose",
+      "us": 6750.1,
+      "calls": 512
+    },
+    {
+      "name": "aclnnAdd_TransposeAiCore_Transpose",
+      "us": 6709.78,
+      "calls": 576
+    },
+    {
+      "name": "_rotary",
+      "us": 6658.04,
+      "calls": 896
+    },
+    {
+      "name": "aclnnInplaceCopy_TransposeAiCore_Transpose",
+      "us": 6479.9,
+      "calls": 544
+    },
+    {
+      "name": "aclnnCumsum_CumsumAiCore_Cumsum",
+      "us": 6038.82,
+      "calls": 256
+    }
+  ],
+  "frame_host_us": [
+    33071.38,
+    30444.52,
+    30389.94,
+    30367.27,
+    30340.13,
+    30366.26,
+    30314.79,
+    247140.95,
+    30451.98,
+    30321.17,
+    30269.99,
+    30337.25,
+    30275.7,
+    30326.66,
+    30313.61,
+    245326.51
+  ],
+  "frame_host_mean_us": 57503.631875
+}

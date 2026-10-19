@@ -1,0 +1,42 @@
+{
+  "status": "INCONCLUSIVE",
+  "scope": "native executable complete generation",
+  "quality": "NOT_SCORED",
+  "performance_acceptance": "NOT_EVALUATED",
+  "workload_sha256": "5007716c83b29d0247b2c6291b9704c652e01a94362c19e90ea3cb34987060c7",
+  "wall_seconds": 4.14173417,
+  "records": [
+    {
+      "id": 0,
+      "frames": 27,
+      "pcm_bytes": 103680,
+      "finish_reason": "stop",
+      "first_audio_seconds": 0.98720186,
+      "elapsed_seconds": 1.43344527
+    },
+    {
+      "id": 3,
+      "frames": 34,
+      "pcm_bytes": 130560,
+      "finish_reason": "stop",
+      "first_audio_seconds": 0.98720225,
+      "elapsed_seconds": 1.56978998
+    },
+    {
+      "id": 1,
+      "frames": 39,
+      "pcm_bytes": 149760,
+      "finish_reason": "stop",
+      "first_audio_seconds": 0.98720256,
+      "elapsed_seconds": 2.41014125
+    },
+    {
+      "id": 2,
+      "frames": 116,
+      "pcm_bytes": 445440,
+      "finish_reason": "stop",
+      "first_audio_seconds": 0.98720229,
+      "elapsed_seconds": 4.14124479
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+[W1019 04:54:55.174627410 FunctionLoader.cpp:48] Warning: LD_PRELOAD detected, FunctionLoader prefers RTLD_DEFAULT for symbol resolution. (function operator())
+/bin/sh: 1: sox: not found
+SoX could not be found!
+
+    If you do not have SoX, proceed here:
+     - - - http://sox.sourceforge.net/ - - -
+
+    If you do (or think that you should) have SoX, double-check your
+    path variables.
+    
+[W1019 04:55:06.316608110 NPUCachingAllocator.cpp:202] Warning: The current CANN and HDK(driver) versions require processing for 32 padding size, with memory allocation. (function operator())
+[W1019 04:55:10.449619060 TensorFactories.cpp:423] Warning: Cannot create tensor with interal format while allow_internel_format=False, tensor will be created with base format. (function operator())
+
+********
+Warning: flash-attn is not installed. Will only run the manual PyTorch version. Please install flash-attn for faster inference.
+********
+ 
+[2026-10-19 04:55:25] [WARNING] [58950] profiler.py: Please use level1 or level2 if you want to collect aic metrics, reset aic metrics to None!
+[2026-10-19 04:55:25] [WARNING] [58950] profiler.py: Please use level1 or level2 if you want to collect aic metrics, reset aic metrics to None!
+[2026-10-19 04:55:26] [WARNING] [58950] profiler.py: Incorrect schedule: Stop profiler while current state is RECORD which may result in incomplete parsed data.
+[2026-10-19 04:55:27] [INFO] [59323] profiler.py: Start parsing profiling data in sync mode at: /work/c003/results/profile-b64/a5efb318cce9_58950_20261019045525826_ascend_pt
+|/-\|/-[2026-10-19 04:55:33] [INFO] [59332] profiler.py: CANN profiling data parsed in a total time of 0:00:06.043651
+\|/[2026-10-19 04:55:37] [INFO] [59323] profiler.py: All profiling data parsed in a total time of 0:00:09.814540

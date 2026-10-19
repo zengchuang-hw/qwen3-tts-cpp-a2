@@ -1,0 +1,18 @@
+[W1019 04:53:49.454542980 FunctionLoader.cpp:48] Warning: LD_PRELOAD detected, FunctionLoader prefers RTLD_DEFAULT for symbol resolution. (function operator())
+/bin/sh: 1: sox: not found
+SoX could not be found!
+
+    If you do not have SoX, proceed here:
+     - - - http://sox.sourceforge.net/ - - -
+
+    If you do (or think that you should) have SoX, double-check your
+    path variables.
+    
+[W1019 04:54:00.566171330 NPUCachingAllocator.cpp:202] Warning: The current CANN and HDK(driver) versions require processing for 32 padding size, with memory allocation. (function operator())
+[W1019 04:54:03.799010250 TensorFactories.cpp:423] Warning: Cannot create tensor with interal format while allow_internel_format=False, tensor will be created with base format. (function operator())
+
+********
+Warning: flash-attn is not installed. Will only run the manual PyTorch version. Please install flash-attn for faster inference.
+********
+ 
+{"status": "INCONCLUSIVE", "scope": "development complete-model probe", "engine": "native", "records": [{"id": 0, "pcm_sha256": "97fc0c6cd8b705d4bdfb1f415c65618b70e857006b45475dabde396512ab7256", "pcm_bytes": 88320, "frames": 23, "first_audio_seconds": 0.9577748500742018, "elapsed_seconds": 1.3846011999994516, "finish_reason": "stop"}, {"id": 64, "pcm_sha256": "cefe6b3bd19390487e452829273657cdce7d8618a2fc39ac41508e4cede595af", "pcm_bytes": 264960, "frames": 69, "first_audio_seconds": 0.9577886599581689, "elapsed_seconds": 2.2288222601637244, "finish_reason": "stop"}, {"id": 65, "pcm_sha256": "6cc0687e9a1aea5e1af06d6d690f2e21c8040615f13ac17d4adfcb7635d630d4", "pcm_bytes": 295680, "frames": 77, "first_audio_seconds": 0.9577903700992465, "elapsed_seconds": 3.133958789985627, "finish_reason": "stop"}, {"id": 2, "pcm_sha256": "071ada2228a85591d2fb6223b8ec44eb938b386944590695554c544073dfb639", "pcm_bytes": 326400, "frames": 85, "first_audio_seconds": 1.113606640137732, "elapsed_seconds": 4.035439060069621, "finish_reason": "stop"}], "wall_seconds": 4.03553956001997, "cancel_and_reuse": true, "quality": "NOT_SCORED", "performance_acceptance": "NOT_EVALUATED"}

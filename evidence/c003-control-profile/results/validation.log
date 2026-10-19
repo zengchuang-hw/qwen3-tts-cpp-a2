@@ -1,0 +1,23 @@
+START cpu-suite
+END cpu-suite exit 0
+START configure
+END configure exit 0
+START build
+END build exit 0
+START ownership
+END ownership exit 0
+START rotary
+END rotary exit 0
+START reference
+END reference exit 0
+START native
+END native exit 0
+START reference-cancel
+END reference-cancel exit 0
+START native-cancel
+END native-cancel exit 0
+START cli
+END cli exit 0
+START profile-b64
+END profile-b64 exit 0
+VALIDATION PASS 

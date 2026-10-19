@@ -21,6 +21,13 @@ def load_reference(path):
     sys.path.insert(0, str(path))
 
 
+def validate_native_limit(payload, capacity):
+    if isinstance(payload, dict):
+        limit = payload.get("max_new_tokens", 2048)
+        if type(limit) is int and not 2 <= limit <= capacity:
+            raise ValueError(f"max_new_tokens must fit the native arena [2,{capacity}]")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--reference-root", type=Path, required=True)
@@ -36,6 +43,7 @@ def main():
     parser.add_argument("--queue-size", type=int, default=128)
     parser.add_argument("--prefill-per-tick", type=int, default=64)
     parser.add_argument("--prewarm-decode", action="store_true")
+    parser.add_argument("--predictor-rope", choices=["native", "paired"], default="native")
     options = parser.parse_args()
     if (options.max_batch_size < 1 or options.max_batch_size & (options.max_batch_size - 1)
             or options.queue_size < 1 or options.prefill_per_tick < 1
@@ -54,11 +62,19 @@ def main():
     factory = partial(NativeModel, max_slots=options.max_batch_size,
                       max_frames=options.max_new_tokens, text_capacity=options.text_capacity,
                       codec_batch_size=options.codec_batch_size,
-                      prewarm_decode=options.prewarm_decode)
+                      prewarm_decode=options.prewarm_decode, predictor_rope=options.predictor_rope)
     service = SpeechService(options, factory)
+
+    async def bounded_speech(incoming):
+        try:
+            validate_native_limit(await incoming.json(), options.max_new_tokens)
+        except (ValueError, TypeError) as error:
+            return web.json_response({"error": str(error)}, status=400)
+        return await service.speech(incoming)
+
     app = web.Application(client_max_size=1024 * 1024)
     app.router.add_get("/health", service.health)
-    app.router.add_post("/v1/audio/speech", service.speech)
+    app.router.add_post("/v1/audio/speech", bounded_speech)
     app.on_startup.append(service.start)
     app.on_cleanup.append(service.stop)
     logging.basicConfig(level=logging.INFO)
