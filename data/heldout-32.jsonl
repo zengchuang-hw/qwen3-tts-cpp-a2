@@ -1,0 +1,32 @@
+{"input":"Good morning. The library opens at nine.","voice":"Ryan","language":"English","task_type":"CustomVoice","seed":17,"max_new_tokens":2048}
+{"input":"Please turn left after the small stone bridge.","voice":"Ryan","language":"English","task_type":"CustomVoice","seed":17,"max_new_tokens":2048}
+{"input":"On 19 October 2026, the clock read 08:45.","voice":"Ryan","language":"English","task_type":"CustomVoice","seed":17,"max_new_tokens":2048}
+{"input":"Room 204 has three blue chairs and one wooden table.","voice":"Ryan","language":"English","task_type":"CustomVoice","seed":17,"max_new_tokens":2048}
+{"input":"The parcel weighs 2.5 kilograms; its label says fragile.","voice":"Ryan","language":"English","task_type":"CustomVoice","seed":17,"max_new_tokens":2048}
+{"input":"Is the next train arriving on platform seven?","voice":"Ryan","language":"English","task_type":"CustomVoice","seed":17,"max_new_tokens":2048}
+{"input":"She asked, \"Could you read the final sentence again?\"","voice":"Ryan","language":"English","task_type":"CustomVoice","seed":17,"max_new_tokens":2048}
+{"input":"Quiet rain tapped the window, then slowly faded away.","voice":"Ryan","language":"English","task_type":"CustomVoice","seed":17,"max_new_tokens":2048}
+{"input":"CPU and NPU are abbreviations used in this demonstration.","voice":"Ryan","language":"English","task_type":"CustomVoice","seed":17,"max_new_tokens":2048}
+{"input":"First, open the folder. Next, check the name. Finally, save a copy.","voice":"Ryan","language":"English","task_type":"CustomVoice","seed":17,"max_new_tokens":2048}
+{"input":"We counted eleven red lanterns, thirteen white cups, and twenty empty seats.","voice":"Ryan","language":"English","task_type":"CustomVoice","seed":17,"max_new_tokens":2048}
+{"input":"The signal paused for a moment... then the familiar voice returned.","voice":"Ryan","language":"English","task_type":"CustomVoice","seed":17,"max_new_tokens":2048}
+{"input":"A small robot carried a notebook across the room without dropping a single page.","voice":"Ryan","language":"English","task_type":"CustomVoice","seed":17,"max_new_tokens":2048}
+{"input":"The narrator spoke softly: every journey begins with one careful step.","voice":"Ryan","language":"English","task_type":"CustomVoice","seed":17,"max_new_tokens":2048}
+{"input":"Before sunset, the team checked the cables, copied the recordings, and locked the studio. Outside, the last bus waited beside a row of bright trees.","voice":"Ryan","language":"English","task_type":"CustomVoice","seed":17,"max_new_tokens":2048}
+{"input":"Imagine a courtyard after the rain. Water glints on the leaves, a bicycle rests against the wall, and someone upstairs is practicing a slow, cheerful melody.","voice":"Ryan","language":"English","task_type":"CustomVoice","seed":17,"max_new_tokens":2048}
+{"input":"你好，欢迎来到今天的语音测试。","voice":"Vivian","language":"Chinese","task_type":"CustomVoice","seed":43,"max_new_tokens":2048}
+{"input":"请沿着小路向前走，在第二个路口右转。","voice":"Vivian","language":"Chinese","task_type":"CustomVoice","seed":43,"max_new_tokens":2048}
+{"input":"今天是2026年10月19日，会议将在上午九点十五分开始。","voice":"Vivian","language":"Chinese","task_type":"CustomVoice","seed":43,"max_new_tokens":2048}
+{"input":"二零四号房间里有三把蓝色椅子和一张木桌。","voice":"Vivian","language":"Chinese","task_type":"CustomVoice","seed":43,"max_new_tokens":2048}
+{"input":"这个包裹重2.5千克，外箱上标着“小心轻放”。","voice":"Vivian","language":"Chinese","task_type":"CustomVoice","seed":43,"max_new_tokens":2048}
+{"input":"下一班列车会停靠在七号站台吗？","voice":"Vivian","language":"Chinese","task_type":"CustomVoice","seed":43,"max_new_tokens":2048}
+{"input":"她轻声问：“最后一句话，可以再读一遍吗？”","voice":"Vivian","language":"Chinese","task_type":"CustomVoice","seed":43,"max_new_tokens":2048}
+{"input":"细雨敲着窗沿，远处的灯光渐渐亮了起来。","voice":"Vivian","language":"Chinese","task_type":"CustomVoice","seed":43,"max_new_tokens":2048}
+{"input":"这段录音包含CPU、NPU和C++等英文缩写。","voice":"Vivian","language":"Chinese","task_type":"CustomVoice","seed":43,"max_new_tokens":2048}
+{"input":"首先打开文件夹，然后核对名称，最后保存一份副本。","voice":"Vivian","language":"Chinese","task_type":"CustomVoice","seed":43,"max_new_tokens":2048}
+{"input":"我们数了十一盏红灯笼、十三只白杯子，还有二十个空座位。","voice":"Vivian","language":"Chinese","task_type":"CustomVoice","seed":43,"max_new_tokens":2048}
+{"input":"信号短暂停顿了一下……熟悉的声音又回来了。","voice":"Vivian","language":"Chinese","task_type":"CustomVoice","seed":43,"max_new_tokens":2048}
+{"input":"小机器人抱着一本厚厚的笔记本，稳稳地穿过了房间。","voice":"Vivian","language":"Chinese","task_type":"CustomVoice","seed":43,"max_new_tokens":2048}
+{"input":"讲述者放慢语速说：每一次远行，都从一个认真迈出的脚步开始。","voice":"Vivian","language":"Chinese","task_type":"CustomVoice","seed":43,"max_new_tokens":2048}
+{"input":"傍晚之前，大家检查电缆，备份录音，再把工作室的门锁好。街边最后一班公交车还在等候，树叶在灯光下轻轻摇动。","voice":"Vivian","language":"Chinese","task_type":"CustomVoice","seed":43,"max_new_tokens":2048}
+{"input":"想象一座雨后的院子：叶片上闪着水光，自行车靠在墙边，楼上的人正在练习一段舒缓又轻快的旋律。","voice":"Vivian","language":"Chinese","task_type":"CustomVoice","seed":43,"max_new_tokens":2048}

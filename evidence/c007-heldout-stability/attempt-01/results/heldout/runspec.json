@@ -1,0 +1,23 @@
+{
+  "reference_root": "/work/reference",
+  "native_build": "/work/c007/build",
+  "model": "/model",
+  "workload": "/work/c007/source/data/heldout-32.jsonl",
+  "output": "/work/c007/results/heldout",
+  "concurrencies": [
+    4,
+    16
+  ],
+  "requests": 32,
+  "repetitions": 1,
+  "port": 8199,
+  "readiness_timeout": 900,
+  "benchmark_timeout": 3600,
+  "predictor_rope": "paired",
+  "rotary_head_tile": "auto",
+  "audio_delivery": "inline",
+  "reference_engine": "upstream",
+  "candidate_identity": "edf683b03c1f4070b5f715d7d082092a8a1725fe7f52026fdecc07fcd99e9204",
+  "workload_sha256": "51ee03d4ed7d893045c64ea8944a5edc2dd59fc93a202f0419bced624ff49d0d",
+  "formal_coverage": false
+}

@@ -1,0 +1,8 @@
+{
+  "status": "FAIL",
+  "quality": "NOT_SCORED",
+  "completed": [
+    "r1-reference"
+  ],
+  "error": "RuntimeError: server did not complete and shut down cleanly"
+}
