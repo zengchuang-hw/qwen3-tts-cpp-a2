@@ -1,0 +1,84 @@
+# C009 frozen plan — codec batch granularity 4 vs 8
+
+RFC: [#22](https://github.com/zengchuang-hw/qwen3-tts-cpp-a2/issues/22), created
+2026-10-22T04:52:24Z, before this branch existed.
+Claim: [#22 comment](https://github.com/zengchuang-hw/qwen3-tts-cpp-a2/issues/22#issuecomment-6333036474).
+Review rulings: tts-SE review of the execution plan (relayed 2026-10-22), applied
+below verbatim before any measurement.
+
+## Scope
+
+Configuration plumbing only. No change to `native/runtime.cpp`, to codec grouping,
+incremental lengths, sampling or defaults.
+
+- `campaign.py`: `--codec-batch-size` (default 4, bounded `[1,8]`) appended to the
+  shared `serve.py` construction, so both arms of a native-engine campaign carry
+  the same granularity. The frozen upstream command is not touched.
+- `probe.py`: native arm passes the knob; the pinned upstream reference arm keeps
+  codec batch 4 and rejects any other value with a parser error.
+
+## Frozen measurement configuration
+
+- Host/container: `zhuangzeliang@8.92.7.131`, container
+  `zc-qwen3-tts-cpp-20261019`, physical card 3 (`ASCEND_RT_VISIBLE_DEVICES=3`),
+  serial with other jobs, `/work/c009`.
+- Source: branch `codex/c009-codec-batch`; fresh Release build in `/work/c009/build`.
+- Model: `Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice` revision
+  `0c0e3051f131929182e2c023b9537f8b1c68adfe`.
+- Reference checkout: `InferMatrixLab/qwen3-tts-engine@b4451682abac651f26046f8d27467de3f007e1e7`.
+- Workload: `evidence/campaign-20261017/plan/workload-128.jsonl`, SHA256
+  `5007716c83b29d0247b2c6291b9704c652e01a94362c19e90ea3cb34987060c7`.
+- Per campaign: `--concurrencies 16 32 64 --requests 128 --repetitions 1
+  --reference-engine native-buffered --predictor-rope paired --rotary-head-tile
+  auto --audio-delivery inline --codec-batch-size {4,8}`.
+
+## Arm selection (tts-SE ruling, item 3a)
+
+`--reference-engine native-buffered` forces the campaign's own reference arm to
+`--audio-delivery buffered` while the native arm keeps `inline`. A campaign-internal
+reference-vs-native delta therefore compares delivery modes, not codec batch.
+
+- Two campaigns, `codec4` and `codec8`, both with `--audio-delivery inline
+  --reference-engine native-buffered`.
+- C009 compares **only the `r1-native` arm of each campaign** (inline@4 vs inline@8).
+- The `r1-reference` arms (buffered) are retained for process/lifecycle evidence
+  only; they are **not** a C009 comparison basis and any campaign-internal
+  assessment gain number must not be cited as a C009 result.
+- `--requests 128 --repetitions 1` makes `formal_coverage=false`, so
+  `assessment.json` is expected to be INCONCLUSIVE. That is recorded as expected,
+  never presented as a pass, and never extrapolated to the seven-cohort gate.
+
+## Gates (frozen before measurement)
+
+1. Local CPU contracts (29) plus syntax/diff review.
+2. A2 fresh Release build exit 0; 4 compiled ownership tests pass.
+3. Exactness, cross-campaign same arm: inline@4 vs inline@8 equal per-file SHA256
+   for every `(cohort, index)` over C16/32/64 x 128. Any difference is FAIL and
+   stops the campaign.
+4. Local non-degradation: throughput ratio(8/4) >= 1.00 at C16/32/64, reported with
+   the real codec-due and ordinary-frame time distributions.
+5. Budget gate: one standalone `batch=8` server start, stop at readiness, record
+   `_capture_codecs` wall time and `max_memory_allocated` delta. Readiness beyond
+   12 minutes stops the iteration as INCONCLUSIVE.
+6. AB (4 then 8) is mandatory. BA (8 then 4) is added only if AB finishes within
+   30 minutes; otherwise the report states "AB only, no order control".
+7. Any capture failure must raise; no silent fallback to 4, and no record deletion
+   or rerun to hide a failed attempt.
+
+Wording boundary: gate 4 is a pilot "local non-degradation" result only. It is not
+a speedup claim and not a performance PASS. The formal seven-cohort AB/BA/AB gate
+(min(candidate TP)/max(reference TP) > 1.05, max(candidate p95)/min(reference p95)
+<= 1.05) remains separate under #3.
+
+## Recomputability (tts-SE requirement)
+
+Every delivered number must be recomputable by tts-SE from raw per-request records
+(cohort, index, timestamps, throughput, PCM SHA256 with a resolvable file path),
+not from `assessment.json` aggregates. Any aggregate that disagrees with the raw
+records is treated as a defect.
+
+## Evidence layout
+
+`evidence/c009-codec-batch/{plan,results,patch,validator}/` — plan (this file),
+results (identities, lifecycle, per-request records, PCM comparison, capture timing
+and memory), patch (diff), validator (comparison scripts and outputs).
