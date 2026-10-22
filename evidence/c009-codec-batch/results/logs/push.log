@@ -37,5 +37,20 @@ $ git ls-remote --heads origin codex/c009-codec-batch
 exit 0
 ```
 
-Local `git rev-parse HEAD` = `2ed751cb66eb8ea6fc9c0fa94c6bc8dfd1820309`, identical
-to the remote ref.
+(That verification was run at the time of the first push; the ref has since advanced
+through this branch's later commits.)
+
+## Correction record — a mistyped commit id reported to the reviewers
+
+An earlier status report quoted the build-exit correction commit as
+`e46a165b4f0d6d5b6a1e8c0d6f0c9f5b0a4b3c2d`. **That value never existed**; it was
+typed by hand instead of read from git, and the tail after the short prefix was
+fabricated.
+
+- Detected by: the reviewer, via the GitHub API, which returned the real object.
+- Actual value: `e46a165a723fa279071e13dd68c23efbf64c3bf1`
+  (`git log -1 --format=%H e46a165`).
+- Corrected: 2026-10-22, in this file and in the PR body, before any merge.
+- Rule adopted: commit ids are copied from `git rev-parse` / `git log --format=%H`
+  output, never from working memory; every id quoted in the PR body carries the
+  command that produces it.

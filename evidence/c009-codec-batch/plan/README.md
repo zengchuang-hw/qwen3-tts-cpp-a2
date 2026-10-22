@@ -142,8 +142,20 @@ Every delivered number must be recomputable by tts-SE from raw per-request recor
 not from `assessment.json` aggregates. Any aggregate that disagrees with the raw
 records is treated as a defect.
 
-## Evidence layout
+## Evidence layout (as delivered)
 
-`evidence/c009-codec-batch/{plan,results,patch,validator}/` — plan (this file),
-results (identities, lifecycle, per-request records, PCM comparison, capture timing
-and memory), patch (diff), validator (comparison scripts and outputs).
+`evidence/c009-codec-batch/`:
+
+- `plan/README.md` — this file (frozen scope, gates, rulings, deviations).
+- `results/` — `README.md` (outcome), `comparison.json`, the two campaign trees
+  (`codec4/`, `codec8/`: identity, environment, runspec, lifecycle, per-cohort
+  `results.json` + `runspec.json`, server and benchmark logs), the readiness gate
+  (`gate/`), and `logs/` (build, ownership, push, capture incident).
+- `validator/` — `c009_compare.py` and its README; the script that regenerates
+  `comparison.json` from the raw records.
+- `patch/` — **no runtime diff**: this iteration changed configuration plumbing and
+  tests only. `patch/README.md` says so explicitly and gives the command to inspect
+  the real code diff.
+
+WAV files are excluded from the repository (size) and stay on the A2 host; every
+file's `pcm_sha256` is recorded in the corresponding `results.json`.

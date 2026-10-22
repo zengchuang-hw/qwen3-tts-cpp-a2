@@ -24,8 +24,9 @@ Per cohort, matched requests out of 128, and the stop count on both sides:
 - `codec_frames` matched **128 / 128 in every cohort for both arms**: generated
   audio length is unchanged, while PCM samples differ.
 - Falsified hypothesis: RFC #22 assumed codec batch 4 -> 8 changes no audio
-  mathematics. Under this source/binary/model/workload it changed somewhere between
-  23 and 116 of 128 PCM streams per cohort, more as concurrency rises.
+  mathematics. Under this source/binary/model/workload the mismatched stream counts
+  per cohort were 23 / 70 / 116 of 128 at C16 / C32 / C64 (matched counts 105 / 58 /
+  12), with more divergence as concurrency rises.
 
 ## Throughput: raw values only, no promotion
 
@@ -106,14 +107,28 @@ iteration's campaigns ended at 13:16 and is not part of this evidence.
 
 ## Recompute
 
+The comparison script is in the tree: `../validator/c009_compare.py` (standard
+library only). It reads the A2 result trees and writes `comparison.json`, so it must
+run where those paths exist:
+
 ```
 # branch head
 git rev-parse refs/heads/codex/c009-codec-batch
-# per-cohort records
+# per-cohort record (identity of the raw input)
 sha256sum /work/c009/results/codec4/r1-native/c16/results.json   # cwd: /work/c009
-# rebuild the comparison
-cd /work/c009 && /work/venv/bin/python scripts/c009_compare.py   # writes results/comparison.json
+# rebuild the comparison from the in-tree script
+docker exec zc-qwen3-tts-cpp-20261019 bash -c \
+  'cd /work/c009 && /work/venv/bin/python /work/c009/scripts/c009_compare.py'
 ```
+
+`comparison.json` records `generated_by` as the in-tree path. Its exit status was 0
+(`logs/compare.exit`) and its stdout is `logs/compare.out`.
+
+Build and ownership evidence sits beside this file: `logs/build.log` (fresh
+configure+build), `logs/build-verify.log` (idempotent verification build),
+`logs/build.exit` (= 0), `logs/ownership.log` (4 compiled ownership tests, OK),
+`logs/ownership.exit` (= 0), `logs/binaries.txt` (binary SHA256 lines), plus the
+capture incident note and its verbatim transcript.
 
 WAV files stay on the A2 host under
 `/home/zhuangzeliang/zc/qwen3-tts-cpp-20261019/c009/results/<tag>/<arm>/c<cohort>/`

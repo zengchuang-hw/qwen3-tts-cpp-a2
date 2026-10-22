@@ -1,5 +1,5 @@
 {
-  "generated_by": "c009-compare.py",
+  "generated_by": "evidence/c009-codec-batch/validator/c009_compare.py",
   "arms": {
     "r1-native": {
       "delivery": "inline",
