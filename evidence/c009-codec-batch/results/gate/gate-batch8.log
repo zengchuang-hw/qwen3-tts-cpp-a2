@@ -1,0 +1,37 @@
+[W1022 04:58:12.284228910 FunctionLoader.cpp:48] Warning: LD_PRELOAD detected, FunctionLoader prefers RTLD_DEFAULT for symbol resolution. (function operator())
+/bin/sh: 1: sox: not found
+SoX could not be found!
+
+    If you do not have SoX, proceed here:
+     - - - http://sox.sourceforge.net/ - - -
+
+    If you do (or think that you should) have SoX, double-check your
+    path variables.
+    
+INFO:qwen_tts.core.models.configuration_qwen3_tts:speaker_encoder_config is None. Initializing talker model with default values
+INFO:qwen_tts.core.models.configuration_qwen3_tts:talker_config is None. Initializing talker model with default values
+INFO:qwen_tts.core.models.configuration_qwen3_tts:speaker_encoder_config is None. Initializing talker model with default values
+INFO:qwen_tts.core.models.configuration_qwen3_tts:code_predictor_config is None. Initializing code_predictor model with default values
+INFO:qwen_tts.core.models.configuration_qwen3_tts:code_predictor_config is None. Initializing code_predictor model with default values
+[W1022 04:58:31.149766920 NPUCachingAllocator.cpp:202] Warning: The current CANN and HDK(driver) versions require processing for 32 padding size, with memory allocation. (function operator())
+INFO:qwen_tts.core.tokenizer_12hz.configuration_qwen3_tts_tokenizer_v2:encoder_config is None. Initializing encoder with default values
+INFO:qwen_tts.core.tokenizer_12hz.configuration_qwen3_tts_tokenizer_v2:decoder_config is None. Initializing decoder with default values
+[W1022 04:58:34.214661820 TensorFactories.cpp:423] Warning: Cannot create tensor with interal format while allow_internel_format=False, tensor will be created with base format. (function operator())
+INFO:graph_model:Prepared 64 native codec graphs
+
+********
+Warning: flash-attn is not installed. Will only run the manual PyTorch version. Please install flash-attn for faster inference.
+********
+ 
+C009_CAPTURE seconds=508.018 batch=8
+INFO:graph_model:Prepared native decode B1 KV512
+INFO:graph_model:Prepared native decode B2 KV512
+INFO:graph_model:Prepared native decode B4 KV512
+INFO:graph_model:Prepared native decode B8 KV512
+INFO:graph_model:Prepared native decode B16 KV512
+INFO:graph_model:Prepared native decode B32 KV512
+INFO:graph_model:Prepared native decode B64 KV512
+INFO:aiohttp.access:127.0.0.1 [22/Oct/2026:05:07:13 +0000] "GET /health HTTP/1.1" 200 270 "-" "Python-urllib/3.12"
+INFO:qwen3_tts_engine.continuous:Captured graph shapes: prefill=[(1, 32), (1, 64), (1, 128), (2, 32), (2, 64), (2, 128), (4, 32), (4, 64), (4, 128)] talker=[] codec=[]
+======== Running on http://127.0.0.1:8199 ========
+(Press CTRL+C to quit)

@@ -1,0 +1,38 @@
+PID namespace check — raw capture (2026-10-22, after the C009 campaigns)
+=========================================================================
+
+$ docker exec zc-qwen3-tts-cpp-20261019 bash -c 'nohup sleep 240 >/dev/null 2>&1 & echo started'
+started
+
+$ docker exec zc-qwen3-tts-cpp-20261019 bash -c 'ps -eo pid,args | grep "sleep 240" | grep -v grep'
+ 277704 sleep 240
+
+$ docker top zc-qwen3-tts-cpp-20261019 -eo pid,args | grep "sleep 240"
+520432              sleep 240
+
+$ docker inspect -f 'host_init_pid={{.State.Pid}}' zc-qwen3-tts-cpp-20261019
+host_init_pid=1004067
+
+=> container-visible 277704 corresponds to host-visible 520432; the mapping is not a
+   constant offset, so a container-namespace PID cannot be matched to an npu-smi PID
+   by arithmetic.
+
+$ ps -o pid,ppid,lstart,cmd -p 261554,227061
+(ps: no such pid)          # both gate-era PIDs gone
+
+$ cat /proc/261554/cgroup ; cat /proc/227061/cgroup
+(absent) (absent)
+
+$ docker exec zc-qwen3-tts-cpp-20261019 ps -ef | grep -E 'python|serve' | grep -v defunct
+(no output)                # no live python or serve process left in this container
+
+$ npu-smi info -t proc-mem -i 3
+        NPU ID                         : 3
+        Chip Count                     : 1
+        Process id:472631  Process name:python            Process memory(MB):27940
+        Chip ID                        : 0
+
+$ ps -o pid,user,lstart,cmd -p 472631
+ 472631 townwish Thu Oct 22 14:45:49 2026 /home/townwish/workspace/projects/
+        hp-muon-p0c-20261021-venv/bin/python -u /tmp/bench_compare.py
+        --output /tmp/hp-veomni-muon-t131-20261022

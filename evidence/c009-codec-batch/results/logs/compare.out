@@ -1,0 +1,10 @@
+== r1-native inline
+  c16 pcm 105 /128 frames 128 /128 wav 105 /128 ratio 0.989468 stops [128, 128] succ [128, 128]
+  c32 pcm 58 /128 frames 128 /128 wav 58 /128 ratio 1.016819 stops [128, 128] succ [128, 128]
+  c64 pcm 12 /128 frames 128 /128 wav 12 /128 ratio 1.052858 stops [128, 128] succ [128, 128]
+== r1-reference buffered
+  c16 pcm 105 /128 frames 128 /128 wav 105 /128 ratio 0.951727 stops [128, 128] succ [128, 128]
+  c32 pcm 58 /128 frames 128 /128 wav 58 /128 ratio 0.977404 stops [128, 128] succ [128, 128]
+  c64 pcm 12 /128 frames 128 /128 wav 12 /128 ratio 1.018306 stops [128, 128] succ [128, 128]
+defects: [] count 0
+written: /work/c009/results/comparison.json

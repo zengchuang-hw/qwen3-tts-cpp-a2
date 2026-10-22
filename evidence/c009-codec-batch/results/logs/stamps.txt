@@ -1,0 +1,168 @@
+## binary-extension
+cwd: /work/c009
+command: sha256sum build/_qtts_native.cpython-312-aarch64-linux-gnu.so
+output:
+e354b87aa9e8bd78d154b9c83ce27c40c600823c86b1e9733ffd94bccc784c16  build/_qtts_native.cpython-312-aarch64-linux-gnu.so
+
+## binary-cli
+cwd: /work/c009
+command: sha256sum build/qtts
+output:
+4990eb094c1f46ca36c93c392637a04e2d46709803875a6afdda1815357b319a  build/qtts
+
+## workload
+cwd: /work/c009
+command: sha256sum /work/reference/evidence/campaign-20261017/plan/workload-128.jsonl
+output:
+5007716c83b29d0247b2c6291b9704c652e01a94362c19e90ea3cb34987060c7  /work/reference/evidence/campaign-20261017/plan/workload-128.jsonl
+
+## gate-record
+cwd: /work/c009
+command: sha256sum logs/gate-batch8.json
+output:
+0c204b10451dc3ac19647a6bd46721e2b064f911f15702fbdb58184b7bf60cae  logs/gate-batch8.json
+
+## gate-readiness
+cwd: /work/c009
+command: grep -n ready_seconds logs/gate-batch8.json
+output:
+43:  "ready_seconds": 543.341,
+
+## gate-capture
+cwd: /work/c009
+command: grep -n C009_CAPTURE logs/gate-batch8.log
+output:
+26:C009_CAPTURE seconds=508.018 batch=8
+
+## codec4-runspec
+cwd: /work/c009
+command: sha256sum results/codec4/runspec.json
+output:
+be1da3f5313df41ad7cd9c374dca42e3fb885a35af504e1437473bdfb0da0565  results/codec4/runspec.json
+
+## codec4-identity
+cwd: /work/c009
+command: sha256sum results/codec4/identity.json
+output:
+d940652bd13f6e176f1719e37015cccbf3e7d8f04f3f447d9f277c4aa8487c09  results/codec4/identity.json
+
+## codec4-environment
+cwd: /work/c009
+command: sha256sum results/codec4/environment-identity.json
+output:
+2b99ffa9231c4c0024384101c463eb580b35d81d58ae3d26525f5c59238f4c87  results/codec4/environment-identity.json
+
+## codec4-r1-reference-lifecycle
+cwd: /work/c009
+command: sha256sum results/codec4/r1-reference/lifecycle.json
+output:
+cb55a087e5df3ca2375b1351ced5a2fb5c805b2471e0d0065eb87dfca1067352  results/codec4/r1-reference/lifecycle.json
+
+## codec4-r1-reference-c16-results
+cwd: /work/c009
+command: sha256sum results/codec4/r1-reference/c16/results.json
+output:
+a3086b5160733b90818a0a9d721a0f5ea8842763d4127ca07df0905dfc1819ef  results/codec4/r1-reference/c16/results.json
+
+## codec4-r1-reference-c32-results
+cwd: /work/c009
+command: sha256sum results/codec4/r1-reference/c32/results.json
+output:
+1b18c54552aa8b814a2860e8dee5f0fa93158ac85b190789a2823f5ccd16e75c  results/codec4/r1-reference/c32/results.json
+
+## codec4-r1-reference-c64-results
+cwd: /work/c009
+command: sha256sum results/codec4/r1-reference/c64/results.json
+output:
+1d98764a7fa43d5e76d3b1c46583522989d3fd863564a88354ee973e1e4e7d87  results/codec4/r1-reference/c64/results.json
+
+## codec4-r1-native-lifecycle
+cwd: /work/c009
+command: sha256sum results/codec4/r1-native/lifecycle.json
+output:
+e4219dc58f673281c099429652a61b4d8a463041f59d34239836c214d3312432  results/codec4/r1-native/lifecycle.json
+
+## codec4-r1-native-c16-results
+cwd: /work/c009
+command: sha256sum results/codec4/r1-native/c16/results.json
+output:
+119307099d83215a0d61e6cda9a69eb6fd8a7e1bf3ac7cbfbfbf6b0439d20641  results/codec4/r1-native/c16/results.json
+
+## codec4-r1-native-c32-results
+cwd: /work/c009
+command: sha256sum results/codec4/r1-native/c32/results.json
+output:
+b153ead1ac663b3d5a97f56ea17b2e3362311676fd85fbd622e7c05ab3b4aef0  results/codec4/r1-native/c32/results.json
+
+## codec4-r1-native-c64-results
+cwd: /work/c009
+command: sha256sum results/codec4/r1-native/c64/results.json
+output:
+f9150aca009ed554885baaf35ec6c63d8688e068d398fcb8890a2996682d1b82  results/codec4/r1-native/c64/results.json
+
+## codec8-runspec
+cwd: /work/c009
+command: sha256sum results/codec8/runspec.json
+output:
+e8117559ca137010cd873f63760ea21d9fefc33f66887b668da6968c42dfd560  results/codec8/runspec.json
+
+## codec8-identity
+cwd: /work/c009
+command: sha256sum results/codec8/identity.json
+output:
+d940652bd13f6e176f1719e37015cccbf3e7d8f04f3f447d9f277c4aa8487c09  results/codec8/identity.json
+
+## codec8-environment
+cwd: /work/c009
+command: sha256sum results/codec8/environment-identity.json
+output:
+2b99ffa9231c4c0024384101c463eb580b35d81d58ae3d26525f5c59238f4c87  results/codec8/environment-identity.json
+
+## codec8-r1-reference-lifecycle
+cwd: /work/c009
+command: sha256sum results/codec8/r1-reference/lifecycle.json
+output:
+f4afa3acd10f843d23b9abd42b5fd190d6420d288b4a4c99088b023b96512fde  results/codec8/r1-reference/lifecycle.json
+
+## codec8-r1-reference-c16-results
+cwd: /work/c009
+command: sha256sum results/codec8/r1-reference/c16/results.json
+output:
+18ed12c6cf9c554307f57dd28350650a8ccc0da8fde8b5e5d0a46911031f1d6d  results/codec8/r1-reference/c16/results.json
+
+## codec8-r1-reference-c32-results
+cwd: /work/c009
+command: sha256sum results/codec8/r1-reference/c32/results.json
+output:
+8a7dc4667684e0a29acb60e6d658bbd7d95007e194b75b65751730683ebc6f3b  results/codec8/r1-reference/c32/results.json
+
+## codec8-r1-reference-c64-results
+cwd: /work/c009
+command: sha256sum results/codec8/r1-reference/c64/results.json
+output:
+49b17a5d50e821a9cc14376edf67eb0d79a83865e87864907cb3211248e4946d  results/codec8/r1-reference/c64/results.json
+
+## codec8-r1-native-lifecycle
+cwd: /work/c009
+command: sha256sum results/codec8/r1-native/lifecycle.json
+output:
+e58c0d2ac69f3ffe48cdae8fea5154dec48f30cf70040f12503a3139a8246dd6  results/codec8/r1-native/lifecycle.json
+
+## codec8-r1-native-c16-results
+cwd: /work/c009
+command: sha256sum results/codec8/r1-native/c16/results.json
+output:
+57f213271550b047c64d7162b83c7de6c66de22375da3ebd4639664a41d86637  results/codec8/r1-native/c16/results.json
+
+## codec8-r1-native-c32-results
+cwd: /work/c009
+command: sha256sum results/codec8/r1-native/c32/results.json
+output:
+80de3f99073c89fc0f5f2caee9b56c0afc7780819c1cee3e88e7ef59ed0760e3  results/codec8/r1-native/c32/results.json
+
+## codec8-r1-native-c64-results
+cwd: /work/c009
+command: sha256sum results/codec8/r1-native/c64/results.json
+output:
+6cae7319f003bca5d51c6e5b8f8ef74fa7a45f1a49815000053086edb2a41251  results/codec8/r1-native/c64/results.json
+

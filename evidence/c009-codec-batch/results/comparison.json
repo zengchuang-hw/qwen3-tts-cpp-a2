@@ -1,0 +1,2202 @@
+{
+  "generated_by": "evidence/c009-codec-batch/validator/c009_compare.py",
+  "arms": {
+    "r1-native": {
+      "delivery": "inline",
+      "cohorts": {
+        "c16": {
+          "requests": [
+            128,
+            128
+          ],
+          "stops": [
+            128,
+            128
+          ],
+          "successes": [
+            128,
+            128
+          ],
+          "pcm_sha256_matched": 105,
+          "pcm_sha256_mismatch_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            74,
+            75,
+            80,
+            81,
+            87,
+            88,
+            98,
+            116
+          ],
+          "codec_frames_matched": 128,
+          "codec_frames_mismatch_indices": [],
+          "wav_sha256_matched": 105,
+          "wav_sha256_mismatch_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            74,
+            75,
+            80,
+            81,
+            87,
+            88,
+            98,
+            116
+          ],
+          "mismatch_detail": [
+            {
+              "index": 1,
+              "codec_frames": [
+                36,
+                36
+              ],
+              "audio_seconds": [
+                2.88,
+                2.88
+              ],
+              "pcm_sha256": [
+                "c7a42a7969cb56650de9aa62ec57902f005315a367636d8ab6a8790571ffae94",
+                "8f6625d8e728f611371a292d47f85d35c74ac4463d5729194a92306ae97cba0a"
+              ]
+            },
+            {
+              "index": 2,
+              "codec_frames": [
+                80,
+                80
+              ],
+              "audio_seconds": [
+                6.4,
+                6.4
+              ],
+              "pcm_sha256": [
+                "d70e6033b396cf9fadda4cc764b46e9619ffe90221381f0243ebceaac9b9c39e",
+                "8dad5d4301f354e5fcd6f3deac85eb0da58e97763df754d778a85f56daff22dc"
+              ]
+            },
+            {
+              "index": 3,
+              "codec_frames": [
+                38,
+                38
+              ],
+              "audio_seconds": [
+                3.04,
+                3.04
+              ],
+              "pcm_sha256": [
+                "e3a70946fb4d4ba17477e1cfbae0483b133d715b5d082daf6e78929f643c581e",
+                "0b4e81a45414c8bfa248bbc5d1692acb749dc06a4aea8bfee9855b39c3dab949"
+              ]
+            },
+            {
+              "index": 4,
+              "codec_frames": [
+                49,
+                49
+              ],
+              "audio_seconds": [
+                3.92,
+                3.92
+              ],
+              "pcm_sha256": [
+                "ae339cd5a1f822700bed4ca4fdcb0e3c242f1a92d297482eb95f9f82eb1ac503",
+                "75ddb4e08f13e6017bacfa4faae60e32aa0afc866563d48ffd84a2c79c616dd2"
+              ]
+            },
+            {
+              "index": 5,
+              "codec_frames": [
+                54,
+                54
+              ],
+              "audio_seconds": [
+                4.32,
+                4.32
+              ],
+              "pcm_sha256": [
+                "479a1befbbf2eae7d8434d8089c17d23c92ede6257a0cf2de409aa086188cae7",
+                "509b1667c7b01aaebdbce1f5bcdcba3c9841411da8f2bab9b69e094304dd89a8"
+              ]
+            },
+            {
+              "index": 6,
+              "codec_frames": [
+                77,
+                77
+              ],
+              "audio_seconds": [
+                6.16,
+                6.16
+              ],
+              "pcm_sha256": [
+                "0ff5537878bc26d8cda6016dcbd03ce76fec36ada448fe299757705e210fd59e",
+                "5194ecf79fb368e1512b31b0cc8f216a52854fd71cd992204f9b903b95ea5a8c"
+              ]
+            },
+            {
+              "index": 7,
+              "codec_frames": [
+                58,
+                58
+              ],
+              "audio_seconds": [
+                4.64,
+                4.64
+              ],
+              "pcm_sha256": [
+                "73c7422d08ee5cd0412ca959bdb54e0c9f670e186578cdc9f5760930046bf188",
+                "8a28b2f515eee3fc0b98d4e2382156e035d7792511477e65f2ead56ed22f34a9"
+              ]
+            },
+            {
+              "index": 8,
+              "codec_frames": [
+                31,
+                31
+              ],
+              "audio_seconds": [
+                2.48,
+                2.48
+              ],
+              "pcm_sha256": [
+                "c3c16fd8ab30be912a80bf8359874f65fcbf5a9eeb59a11a2efbf38f3e752754",
+                "3435bea36914caa97a6605a70a6699b1e756224bbae966eacbf36e30de6dd9c3"
+              ]
+            },
+            {
+              "index": 9,
+              "codec_frames": [
+                34,
+                34
+              ],
+              "audio_seconds": [
+                2.72,
+                2.72
+              ],
+              "pcm_sha256": [
+                "9963a047bc218bff40fa09876d29e0c86dc91412d045c882a44e21a3b7da9ccf",
+                "55c539bbfc12ecfa9042a85cbf4a36daa6358e6b67efde1f7704f228243d487e"
+              ]
+            },
+            {
+              "index": 10,
+              "codec_frames": [
+                73,
+                73
+              ],
+              "audio_seconds": [
+                5.84,
+                5.84
+              ],
+              "pcm_sha256": [
+                "97a7351c581fb929907f85b1411f61fd23bf46ec1e46e2ebc6284e03d15bfaa6",
+                "8ddb9302d6d38d783606b8e60270616700bef59bf8ae9662725cfa59de787c72"
+              ]
+            },
+            {
+              "index": 11,
+              "codec_frames": [
+                68,
+                68
+              ],
+              "audio_seconds": [
+                5.44,
+                5.44
+              ],
+              "pcm_sha256": [
+                "5008bb8f1d4a96e59bad8aa89c7f601c81b8a4a848201cfddb52c7937130f8f9",
+                "e0e363db9b09c16d63ddb80588112d1d4914640af489983d54f3be1340f40849"
+              ]
+            },
+            {
+              "index": 12,
+              "codec_frames": [
+                53,
+                53
+              ],
+              "audio_seconds": [
+                4.24,
+                4.24
+              ],
+              "pcm_sha256": [
+                "4cebd27d78105b04a970415c3a73999b439b57def62b95ffd2352cbaba213064",
+                "75054029073d96eef31aea6c9a741b0ab0b1489af1c5ba609028f24b9fb45b6e"
+              ]
+            }
+          ],
+          "wall_seconds": [
+            20.708115729968995,
+            20.928527369862422
+          ],
+          "audio_total_seconds": [
+            630.0,
+            630.0
+          ],
+          "recomputed_throughput": [
+            380.28568618646557,
+            376.2806556251152
+          ],
+          "reported_throughput": [
+            380.28568618646557,
+            376.2806556251152
+          ],
+          "throughput_recompute_delta": [
+            0.0,
+            0.0
+          ],
+          "ratio_8_over_4": 0.9894683636359991
+        },
+        "c32": {
+          "requests": [
+            128,
+            128
+          ],
+          "stops": [
+            128,
+            128
+          ],
+          "successes": [
+            128,
+            128
+          ],
+          "pcm_sha256_matched": 58,
+          "pcm_sha256_mismatch_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            33,
+            35,
+            37,
+            45,
+            46,
+            47,
+            48,
+            49,
+            54,
+            55,
+            58,
+            59,
+            60,
+            61,
+            63,
+            65,
+            66,
+            69,
+            70,
+            73,
+            78,
+            79,
+            82,
+            83,
+            84,
+            85,
+            88,
+            92,
+            95,
+            104,
+            107,
+            109,
+            110,
+            111,
+            114,
+            115,
+            119,
+            121,
+            123
+          ],
+          "codec_frames_matched": 128,
+          "codec_frames_mismatch_indices": [],
+          "wav_sha256_matched": 58,
+          "wav_sha256_mismatch_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            33,
+            35,
+            37,
+            45,
+            46,
+            47,
+            48,
+            49,
+            54,
+            55,
+            58,
+            59,
+            60,
+            61,
+            63,
+            65,
+            66,
+            69,
+            70,
+            73,
+            78,
+            79,
+            82,
+            83,
+            84,
+            85,
+            88,
+            92,
+            95,
+            104,
+            107,
+            109,
+            110,
+            111,
+            114,
+            115,
+            119,
+            121,
+            123
+          ],
+          "mismatch_detail": [
+            {
+              "index": 1,
+              "codec_frames": [
+                41,
+                41
+              ],
+              "audio_seconds": [
+                3.28,
+                3.28
+              ],
+              "pcm_sha256": [
+                "627dc663c657d160f9a218db6bcefffbd251e2d59a654095619cc85cb179624e",
+                "ec58be9334a9f053bb04a82d04038d22b5c45ab3dcaf8e493daeede75542e688"
+              ]
+            },
+            {
+              "index": 2,
+              "codec_frames": [
+                92,
+                92
+              ],
+              "audio_seconds": [
+                7.36,
+                7.36
+              ],
+              "pcm_sha256": [
+                "9d16b10ed7e2cbbcf81f4d86391ae526f9c7094db07659d540b3a2ee5aa25101",
+                "6bc9da8e40a8a4ebd752cb40e940b771347fa88ae224a008e62c028449859e87"
+              ]
+            },
+            {
+              "index": 3,
+              "codec_frames": [
+                34,
+                34
+              ],
+              "audio_seconds": [
+                2.72,
+                2.72
+              ],
+              "pcm_sha256": [
+                "e212ecfaca5bb3fc3e78e68c8c8d1d92564dc21c539dcccb534c5d10188a7317",
+                "db6bf46fae5a5b3f8502f83f0dc5a6fc19b072bc3aba7e1f95940a5d8d6ab1cb"
+              ]
+            },
+            {
+              "index": 4,
+              "codec_frames": [
+                66,
+                66
+              ],
+              "audio_seconds": [
+                5.28,
+                5.28
+              ],
+              "pcm_sha256": [
+                "3a2b161a3215ab27811fc1bef1e262891c1c69f7cee25a695955c182f5084ab9",
+                "ed0ec9a58bfb352ac00a43855fb42ff01ae4ad285c75cba3fe15d08c7bf34ad3"
+              ]
+            },
+            {
+              "index": 5,
+              "codec_frames": [
+                36,
+                36
+              ],
+              "audio_seconds": [
+                2.88,
+                2.88
+              ],
+              "pcm_sha256": [
+                "98b174038d7927c84633409dab2a9d989487a169e4444bad5c6c3b6f547acb36",
+                "1e342cac81d536c48e5210ae12c6bee3378010dcbf14336b2653db13b3cba805"
+              ]
+            },
+            {
+              "index": 6,
+              "codec_frames": [
+                95,
+                95
+              ],
+              "audio_seconds": [
+                7.6,
+                7.6
+              ],
+              "pcm_sha256": [
+                "fe024fe0552aac0f824a97b79fb1e1bf167c9e0b486139dc65f4f2bb67e94c3b",
+                "003abb81ed28dc833ca91d21ecafd49aa0967415352bb3c7f47564bafea9eb78"
+              ]
+            },
+            {
+              "index": 7,
+              "codec_frames": [
+                50,
+                50
+              ],
+              "audio_seconds": [
+                4.0,
+                4.0
+              ],
+              "pcm_sha256": [
+                "a4746a4666fe91e5156cb08af6127645b1ede76952a5bb67bbe38ad7d3c6bb7d",
+                "f940854c9672a16bcc29558361a5c9b85249915cbc6ffeae66c8c7a927b950e7"
+              ]
+            },
+            {
+              "index": 8,
+              "codec_frames": [
+                53,
+                53
+              ],
+              "audio_seconds": [
+                4.24,
+                4.24
+              ],
+              "pcm_sha256": [
+                "6503f6a58425bb8e380f4d60494e1dad3b193e1b74a3ca2e36010a6b29b60871",
+                "fa271928b483c98b7acf15b6d8baf89c6348d937adda6e3ae45827f0cda1f2bc"
+              ]
+            },
+            {
+              "index": 9,
+              "codec_frames": [
+                31,
+                31
+              ],
+              "audio_seconds": [
+                2.48,
+                2.48
+              ],
+              "pcm_sha256": [
+                "b4554c6874e141a2fb77422fc009b6a01c7f585dfa8438657bce3039c00c96c0",
+                "31de5fa4c3833f67858d4d22456df31414d6fe92179ae36af27fce1c3845bd7c"
+              ]
+            },
+            {
+              "index": 10,
+              "codec_frames": [
+                60,
+                60
+              ],
+              "audio_seconds": [
+                4.8,
+                4.8
+              ],
+              "pcm_sha256": [
+                "1fdb8500588ab5bf4787bad64b3f86fb7ce5a578704379fe48ab794345284068",
+                "516a5135018eae0d0abce047676d2f2b35620e329e56d25f705ac5e9d6acc75a"
+              ]
+            },
+            {
+              "index": 11,
+              "codec_frames": [
+                114,
+                114
+              ],
+              "audio_seconds": [
+                9.12,
+                9.12
+              ],
+              "pcm_sha256": [
+                "51fa815d8abcae4866ca98b8cf4d65528d5caa05139ba74e6de8826be8f41ff7",
+                "d7e5ccfdafb0519449fdd1d2be3a2b6e8f63f756e495b7d4da4ffee5a6f82e9c"
+              ]
+            },
+            {
+              "index": 12,
+              "codec_frames": [
+                47,
+                47
+              ],
+              "audio_seconds": [
+                3.76,
+                3.76
+              ],
+              "pcm_sha256": [
+                "5f156dab46b521b1e23c0e864a8128356f4941d23ba6976a3680355ac9e35967",
+                "73a38bdf95bcc7f476eabdfb485485781943d583d8aa877b274c5407b0aeff90"
+              ]
+            }
+          ],
+          "wall_seconds": [
+            16.551034440053627,
+            16.27726320992224
+          ],
+          "audio_total_seconds": [
+            637.28,
+            637.28
+          ],
+          "recomputed_throughput": [
+            481.29922204271537,
+            489.3943101653669
+          ],
+          "reported_throughput": [
+            481.29922204271537,
+            489.3943101653669
+          ],
+          "throughput_recompute_delta": [
+            0.0,
+            0.0
+          ],
+          "ratio_8_over_4": 1.016819242067948
+        },
+        "c64": {
+          "requests": [
+            128,
+            128
+          ],
+          "stops": [
+            128,
+            128
+          ],
+          "successes": [
+            128,
+            128
+          ],
+          "pcm_sha256_matched": 12,
+          "pcm_sha256_mismatch_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            70,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            80,
+            81,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            97,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127
+          ],
+          "codec_frames_matched": 128,
+          "codec_frames_mismatch_indices": [],
+          "wav_sha256_matched": 12,
+          "wav_sha256_mismatch_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            70,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            80,
+            81,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            97,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127
+          ],
+          "mismatch_detail": [
+            {
+              "index": 1,
+              "codec_frames": [
+                49,
+                49
+              ],
+              "audio_seconds": [
+                3.92,
+                3.92
+              ],
+              "pcm_sha256": [
+                "f7c536c1f5f9e2cf9ff36018796856f94d4a6a02290831dac20e7321f007118f",
+                "56be77918fb0469924ac3055171e5a3e9a1a297ca8f7767d736c76c8ca0762ea"
+              ]
+            },
+            {
+              "index": 2,
+              "codec_frames": [
+                97,
+                97
+              ],
+              "audio_seconds": [
+                7.76,
+                7.76
+              ],
+              "pcm_sha256": [
+                "6e93e04c4120250d003a281b906f0aa9292355fc8fd97bf752fa715563e8988b",
+                "9eeb5b3b028192516f4e9d9589b88aed3791fe512a29656060a5d89640b4720a"
+              ]
+            },
+            {
+              "index": 3,
+              "codec_frames": [
+                30,
+                30
+              ],
+              "audio_seconds": [
+                2.4,
+                2.4
+              ],
+              "pcm_sha256": [
+                "a9c4242b6a20e745536451d6f89476b41ede115f09364f3619daa358b88c7f0c",
+                "63c043155726872f00cc25bfdcbbafbdb4f20841a3d06f8cce7d241638a85fa5"
+              ]
+            },
+            {
+              "index": 4,
+              "codec_frames": [
+                47,
+                47
+              ],
+              "audio_seconds": [
+                3.76,
+                3.76
+              ],
+              "pcm_sha256": [
+                "c2f40838a6a141d6a2ef9fd2457077983019bd0080b95836cb181f95a9f20d05",
+                "c097b986b9ec4d2562e728626296f92c00453111632163348fa9f7e4b3acf77d"
+              ]
+            },
+            {
+              "index": 5,
+              "codec_frames": [
+                34,
+                34
+              ],
+              "audio_seconds": [
+                2.72,
+                2.72
+              ],
+              "pcm_sha256": [
+                "a7386006d232d37de17fa786e50d3fe4d320f03b945a3f2c68c22e25decded92",
+                "131152d8b87bae43a291c3c2af9e96f9f69a0e07f9f2f234cb3b7eecd504ec6b"
+              ]
+            },
+            {
+              "index": 6,
+              "codec_frames": [
+                96,
+                96
+              ],
+              "audio_seconds": [
+                7.68,
+                7.68
+              ],
+              "pcm_sha256": [
+                "434c2e998e08a3e65cb44dfdbe141b760f5cae3b3a7b26fa70a1a2bd326d11ee",
+                "483633bd8898506b995ad130216725ad9fad1654235f25d4ce7d56ffcd90730c"
+              ]
+            },
+            {
+              "index": 7,
+              "codec_frames": [
+                53,
+                53
+              ],
+              "audio_seconds": [
+                4.24,
+                4.24
+              ],
+              "pcm_sha256": [
+                "977a8d55ad19d7067a3bbf9f2182f1efbe041ddf898fb1c633148cd8f5bee19a",
+                "120899f9303ae9c073a2d5e4fa24d06976010da5bd0cfe0cf05984d14f44c556"
+              ]
+            },
+            {
+              "index": 8,
+              "codec_frames": [
+                52,
+                52
+              ],
+              "audio_seconds": [
+                4.16,
+                4.16
+              ],
+              "pcm_sha256": [
+                "6510f2f2a3fa3392ef7851c161805319388292562a80dd18fe9579059d1d83d9",
+                "967fe285adef566d972741706dab8de2232571d953c260ab583289a46006943e"
+              ]
+            },
+            {
+              "index": 9,
+              "codec_frames": [
+                32,
+                32
+              ],
+              "audio_seconds": [
+                2.56,
+                2.56
+              ],
+              "pcm_sha256": [
+                "6edb710b57798808aeb57c7418a621357cf4081942c74bfb50734b7c7031d9c3",
+                "3a009c2b53fb635fa805aa5c7f25032e6c8dba1bd46a26a5f596dcbe695872f3"
+              ]
+            },
+            {
+              "index": 10,
+              "codec_frames": [
+                70,
+                70
+              ],
+              "audio_seconds": [
+                5.6,
+                5.6
+              ],
+              "pcm_sha256": [
+                "5d98be61a2e5b56e723431ff0dce563263f9bd41f90ad65497ae5366793fba36",
+                "0a9733a297bf0957acc241502f0da2a32bab6c6c491474e814966592291593fd"
+              ]
+            },
+            {
+              "index": 11,
+              "codec_frames": [
+                86,
+                86
+              ],
+              "audio_seconds": [
+                6.88,
+                6.88
+              ],
+              "pcm_sha256": [
+                "d422b671d9ed5b23214cf1758210335d77d2493b7d31af4c9f0952c94c34affc",
+                "dbda90a77104a7735b33fd84163133ddf6eff5de9aa9d10745818ebd95a48df6"
+              ]
+            },
+            {
+              "index": 12,
+              "codec_frames": [
+                50,
+                50
+              ],
+              "audio_seconds": [
+                4.0,
+                4.0
+              ],
+              "pcm_sha256": [
+                "01c16a207832aae4af0ac411253ddba538fbffbcd3b54b8defb64f755dd34797",
+                "4e7dc6c7abf0fb504eff0a54b912906a6cc171fda4d911371b104f9a24cd0d42"
+              ]
+            }
+          ],
+          "wall_seconds": [
+            12.56918941019103,
+            11.938157239928842
+          ],
+          "audio_total_seconds": [
+            620.4,
+            620.4
+          ],
+          "recomputed_throughput": [
+            616.9848943251892,
+            649.5977431141814
+          ],
+          "reported_throughput": [
+            616.9848943251892,
+            649.5977431141814
+          ],
+          "throughput_recompute_delta": [
+            0.0,
+            0.0
+          ],
+          "ratio_8_over_4": 1.0528584234216327
+        }
+      }
+    },
+    "r1-reference": {
+      "delivery": "buffered",
+      "cohorts": {
+        "c16": {
+          "requests": [
+            128,
+            128
+          ],
+          "stops": [
+            128,
+            128
+          ],
+          "successes": [
+            128,
+            128
+          ],
+          "pcm_sha256_matched": 105,
+          "pcm_sha256_mismatch_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            74,
+            75,
+            80,
+            81,
+            87,
+            88,
+            98,
+            116
+          ],
+          "codec_frames_matched": 128,
+          "codec_frames_mismatch_indices": [],
+          "wav_sha256_matched": 105,
+          "wav_sha256_mismatch_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            74,
+            75,
+            80,
+            81,
+            87,
+            88,
+            98,
+            116
+          ],
+          "mismatch_detail": [
+            {
+              "index": 1,
+              "codec_frames": [
+                36,
+                36
+              ],
+              "audio_seconds": [
+                2.88,
+                2.88
+              ],
+              "pcm_sha256": [
+                "c7a42a7969cb56650de9aa62ec57902f005315a367636d8ab6a8790571ffae94",
+                "8f6625d8e728f611371a292d47f85d35c74ac4463d5729194a92306ae97cba0a"
+              ]
+            },
+            {
+              "index": 2,
+              "codec_frames": [
+                80,
+                80
+              ],
+              "audio_seconds": [
+                6.4,
+                6.4
+              ],
+              "pcm_sha256": [
+                "d70e6033b396cf9fadda4cc764b46e9619ffe90221381f0243ebceaac9b9c39e",
+                "8dad5d4301f354e5fcd6f3deac85eb0da58e97763df754d778a85f56daff22dc"
+              ]
+            },
+            {
+              "index": 3,
+              "codec_frames": [
+                38,
+                38
+              ],
+              "audio_seconds": [
+                3.04,
+                3.04
+              ],
+              "pcm_sha256": [
+                "e3a70946fb4d4ba17477e1cfbae0483b133d715b5d082daf6e78929f643c581e",
+                "0b4e81a45414c8bfa248bbc5d1692acb749dc06a4aea8bfee9855b39c3dab949"
+              ]
+            },
+            {
+              "index": 4,
+              "codec_frames": [
+                49,
+                49
+              ],
+              "audio_seconds": [
+                3.92,
+                3.92
+              ],
+              "pcm_sha256": [
+                "ae339cd5a1f822700bed4ca4fdcb0e3c242f1a92d297482eb95f9f82eb1ac503",
+                "75ddb4e08f13e6017bacfa4faae60e32aa0afc866563d48ffd84a2c79c616dd2"
+              ]
+            },
+            {
+              "index": 5,
+              "codec_frames": [
+                54,
+                54
+              ],
+              "audio_seconds": [
+                4.32,
+                4.32
+              ],
+              "pcm_sha256": [
+                "479a1befbbf2eae7d8434d8089c17d23c92ede6257a0cf2de409aa086188cae7",
+                "509b1667c7b01aaebdbce1f5bcdcba3c9841411da8f2bab9b69e094304dd89a8"
+              ]
+            },
+            {
+              "index": 6,
+              "codec_frames": [
+                77,
+                77
+              ],
+              "audio_seconds": [
+                6.16,
+                6.16
+              ],
+              "pcm_sha256": [
+                "0ff5537878bc26d8cda6016dcbd03ce76fec36ada448fe299757705e210fd59e",
+                "5194ecf79fb368e1512b31b0cc8f216a52854fd71cd992204f9b903b95ea5a8c"
+              ]
+            },
+            {
+              "index": 7,
+              "codec_frames": [
+                58,
+                58
+              ],
+              "audio_seconds": [
+                4.64,
+                4.64
+              ],
+              "pcm_sha256": [
+                "73c7422d08ee5cd0412ca959bdb54e0c9f670e186578cdc9f5760930046bf188",
+                "8a28b2f515eee3fc0b98d4e2382156e035d7792511477e65f2ead56ed22f34a9"
+              ]
+            },
+            {
+              "index": 8,
+              "codec_frames": [
+                31,
+                31
+              ],
+              "audio_seconds": [
+                2.48,
+                2.48
+              ],
+              "pcm_sha256": [
+                "c3c16fd8ab30be912a80bf8359874f65fcbf5a9eeb59a11a2efbf38f3e752754",
+                "3435bea36914caa97a6605a70a6699b1e756224bbae966eacbf36e30de6dd9c3"
+              ]
+            },
+            {
+              "index": 9,
+              "codec_frames": [
+                34,
+                34
+              ],
+              "audio_seconds": [
+                2.72,
+                2.72
+              ],
+              "pcm_sha256": [
+                "9963a047bc218bff40fa09876d29e0c86dc91412d045c882a44e21a3b7da9ccf",
+                "55c539bbfc12ecfa9042a85cbf4a36daa6358e6b67efde1f7704f228243d487e"
+              ]
+            },
+            {
+              "index": 10,
+              "codec_frames": [
+                73,
+                73
+              ],
+              "audio_seconds": [
+                5.84,
+                5.84
+              ],
+              "pcm_sha256": [
+                "97a7351c581fb929907f85b1411f61fd23bf46ec1e46e2ebc6284e03d15bfaa6",
+                "8ddb9302d6d38d783606b8e60270616700bef59bf8ae9662725cfa59de787c72"
+              ]
+            },
+            {
+              "index": 11,
+              "codec_frames": [
+                68,
+                68
+              ],
+              "audio_seconds": [
+                5.44,
+                5.44
+              ],
+              "pcm_sha256": [
+                "5008bb8f1d4a96e59bad8aa89c7f601c81b8a4a848201cfddb52c7937130f8f9",
+                "e0e363db9b09c16d63ddb80588112d1d4914640af489983d54f3be1340f40849"
+              ]
+            },
+            {
+              "index": 12,
+              "codec_frames": [
+                53,
+                53
+              ],
+              "audio_seconds": [
+                4.24,
+                4.24
+              ],
+              "pcm_sha256": [
+                "4cebd27d78105b04a970415c3a73999b439b57def62b95ffd2352cbaba213064",
+                "75054029073d96eef31aea6c9a741b0ab0b1489af1c5ba609028f24b9fb45b6e"
+              ]
+            }
+          ],
+          "wall_seconds": [
+            19.975777519866824,
+            20.988974299980327
+          ],
+          "audio_total_seconds": [
+            630.0,
+            630.0
+          ],
+          "recomputed_throughput": [
+            394.2274583388783,
+            375.1969909271546
+          ],
+          "reported_throughput": [
+            394.2274583388783,
+            375.1969909271546
+          ],
+          "throughput_recompute_delta": [
+            0.0,
+            0.0
+          ],
+          "ratio_8_over_4": 0.9517271894456294
+        },
+        "c32": {
+          "requests": [
+            128,
+            128
+          ],
+          "stops": [
+            128,
+            128
+          ],
+          "successes": [
+            128,
+            128
+          ],
+          "pcm_sha256_matched": 58,
+          "pcm_sha256_mismatch_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            33,
+            35,
+            37,
+            45,
+            46,
+            47,
+            48,
+            49,
+            54,
+            55,
+            58,
+            59,
+            60,
+            61,
+            63,
+            65,
+            66,
+            69,
+            70,
+            73,
+            78,
+            79,
+            82,
+            83,
+            84,
+            85,
+            88,
+            92,
+            95,
+            104,
+            107,
+            109,
+            110,
+            111,
+            114,
+            115,
+            119,
+            121,
+            123
+          ],
+          "codec_frames_matched": 128,
+          "codec_frames_mismatch_indices": [],
+          "wav_sha256_matched": 58,
+          "wav_sha256_mismatch_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            33,
+            35,
+            37,
+            45,
+            46,
+            47,
+            48,
+            49,
+            54,
+            55,
+            58,
+            59,
+            60,
+            61,
+            63,
+            65,
+            66,
+            69,
+            70,
+            73,
+            78,
+            79,
+            82,
+            83,
+            84,
+            85,
+            88,
+            92,
+            95,
+            104,
+            107,
+            109,
+            110,
+            111,
+            114,
+            115,
+            119,
+            121,
+            123
+          ],
+          "mismatch_detail": [
+            {
+              "index": 1,
+              "codec_frames": [
+                41,
+                41
+              ],
+              "audio_seconds": [
+                3.28,
+                3.28
+              ],
+              "pcm_sha256": [
+                "627dc663c657d160f9a218db6bcefffbd251e2d59a654095619cc85cb179624e",
+                "ec58be9334a9f053bb04a82d04038d22b5c45ab3dcaf8e493daeede75542e688"
+              ]
+            },
+            {
+              "index": 2,
+              "codec_frames": [
+                92,
+                92
+              ],
+              "audio_seconds": [
+                7.36,
+                7.36
+              ],
+              "pcm_sha256": [
+                "9d16b10ed7e2cbbcf81f4d86391ae526f9c7094db07659d540b3a2ee5aa25101",
+                "6bc9da8e40a8a4ebd752cb40e940b771347fa88ae224a008e62c028449859e87"
+              ]
+            },
+            {
+              "index": 3,
+              "codec_frames": [
+                34,
+                34
+              ],
+              "audio_seconds": [
+                2.72,
+                2.72
+              ],
+              "pcm_sha256": [
+                "e212ecfaca5bb3fc3e78e68c8c8d1d92564dc21c539dcccb534c5d10188a7317",
+                "db6bf46fae5a5b3f8502f83f0dc5a6fc19b072bc3aba7e1f95940a5d8d6ab1cb"
+              ]
+            },
+            {
+              "index": 4,
+              "codec_frames": [
+                66,
+                66
+              ],
+              "audio_seconds": [
+                5.28,
+                5.28
+              ],
+              "pcm_sha256": [
+                "3a2b161a3215ab27811fc1bef1e262891c1c69f7cee25a695955c182f5084ab9",
+                "ed0ec9a58bfb352ac00a43855fb42ff01ae4ad285c75cba3fe15d08c7bf34ad3"
+              ]
+            },
+            {
+              "index": 5,
+              "codec_frames": [
+                36,
+                36
+              ],
+              "audio_seconds": [
+                2.88,
+                2.88
+              ],
+              "pcm_sha256": [
+                "98b174038d7927c84633409dab2a9d989487a169e4444bad5c6c3b6f547acb36",
+                "1e342cac81d536c48e5210ae12c6bee3378010dcbf14336b2653db13b3cba805"
+              ]
+            },
+            {
+              "index": 6,
+              "codec_frames": [
+                95,
+                95
+              ],
+              "audio_seconds": [
+                7.6,
+                7.6
+              ],
+              "pcm_sha256": [
+                "fe024fe0552aac0f824a97b79fb1e1bf167c9e0b486139dc65f4f2bb67e94c3b",
+                "003abb81ed28dc833ca91d21ecafd49aa0967415352bb3c7f47564bafea9eb78"
+              ]
+            },
+            {
+              "index": 7,
+              "codec_frames": [
+                50,
+                50
+              ],
+              "audio_seconds": [
+                4.0,
+                4.0
+              ],
+              "pcm_sha256": [
+                "a4746a4666fe91e5156cb08af6127645b1ede76952a5bb67bbe38ad7d3c6bb7d",
+                "f940854c9672a16bcc29558361a5c9b85249915cbc6ffeae66c8c7a927b950e7"
+              ]
+            },
+            {
+              "index": 8,
+              "codec_frames": [
+                53,
+                53
+              ],
+              "audio_seconds": [
+                4.24,
+                4.24
+              ],
+              "pcm_sha256": [
+                "6503f6a58425bb8e380f4d60494e1dad3b193e1b74a3ca2e36010a6b29b60871",
+                "fa271928b483c98b7acf15b6d8baf89c6348d937adda6e3ae45827f0cda1f2bc"
+              ]
+            },
+            {
+              "index": 9,
+              "codec_frames": [
+                31,
+                31
+              ],
+              "audio_seconds": [
+                2.48,
+                2.48
+              ],
+              "pcm_sha256": [
+                "b4554c6874e141a2fb77422fc009b6a01c7f585dfa8438657bce3039c00c96c0",
+                "31de5fa4c3833f67858d4d22456df31414d6fe92179ae36af27fce1c3845bd7c"
+              ]
+            },
+            {
+              "index": 10,
+              "codec_frames": [
+                60,
+                60
+              ],
+              "audio_seconds": [
+                4.8,
+                4.8
+              ],
+              "pcm_sha256": [
+                "1fdb8500588ab5bf4787bad64b3f86fb7ce5a578704379fe48ab794345284068",
+                "516a5135018eae0d0abce047676d2f2b35620e329e56d25f705ac5e9d6acc75a"
+              ]
+            },
+            {
+              "index": 11,
+              "codec_frames": [
+                114,
+                114
+              ],
+              "audio_seconds": [
+                9.12,
+                9.12
+              ],
+              "pcm_sha256": [
+                "51fa815d8abcae4866ca98b8cf4d65528d5caa05139ba74e6de8826be8f41ff7",
+                "d7e5ccfdafb0519449fdd1d2be3a2b6e8f63f756e495b7d4da4ffee5a6f82e9c"
+              ]
+            },
+            {
+              "index": 12,
+              "codec_frames": [
+                47,
+                47
+              ],
+              "audio_seconds": [
+                3.76,
+                3.76
+              ],
+              "pcm_sha256": [
+                "5f156dab46b521b1e23c0e864a8128356f4941d23ba6976a3680355ac9e35967",
+                "73a38bdf95bcc7f476eabdfb485485781943d583d8aa877b274c5407b0aeff90"
+              ]
+            }
+          ],
+          "wall_seconds": [
+            15.97820528014563,
+            16.347587990108877
+          ],
+          "audio_total_seconds": [
+            637.28,
+            637.28
+          ],
+          "recomputed_throughput": [
+            498.5541154549114,
+            487.2890119826751
+          ],
+          "reported_throughput": [
+            498.5541154549114,
+            487.2890119826751
+          ],
+          "throughput_recompute_delta": [
+            0.0,
+            0.0
+          ],
+          "ratio_8_over_4": 0.9774044519480952
+        },
+        "c64": {
+          "requests": [
+            128,
+            128
+          ],
+          "stops": [
+            128,
+            128
+          ],
+          "successes": [
+            128,
+            128
+          ],
+          "pcm_sha256_matched": 12,
+          "pcm_sha256_mismatch_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            70,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            80,
+            81,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            97,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127
+          ],
+          "codec_frames_matched": 128,
+          "codec_frames_mismatch_indices": [],
+          "wav_sha256_matched": 12,
+          "wav_sha256_mismatch_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            70,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            80,
+            81,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            97,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127
+          ],
+          "mismatch_detail": [
+            {
+              "index": 1,
+              "codec_frames": [
+                49,
+                49
+              ],
+              "audio_seconds": [
+                3.92,
+                3.92
+              ],
+              "pcm_sha256": [
+                "f7c536c1f5f9e2cf9ff36018796856f94d4a6a02290831dac20e7321f007118f",
+                "56be77918fb0469924ac3055171e5a3e9a1a297ca8f7767d736c76c8ca0762ea"
+              ]
+            },
+            {
+              "index": 2,
+              "codec_frames": [
+                97,
+                97
+              ],
+              "audio_seconds": [
+                7.76,
+                7.76
+              ],
+              "pcm_sha256": [
+                "6e93e04c4120250d003a281b906f0aa9292355fc8fd97bf752fa715563e8988b",
+                "9eeb5b3b028192516f4e9d9589b88aed3791fe512a29656060a5d89640b4720a"
+              ]
+            },
+            {
+              "index": 3,
+              "codec_frames": [
+                30,
+                30
+              ],
+              "audio_seconds": [
+                2.4,
+                2.4
+              ],
+              "pcm_sha256": [
+                "a9c4242b6a20e745536451d6f89476b41ede115f09364f3619daa358b88c7f0c",
+                "63c043155726872f00cc25bfdcbbafbdb4f20841a3d06f8cce7d241638a85fa5"
+              ]
+            },
+            {
+              "index": 4,
+              "codec_frames": [
+                47,
+                47
+              ],
+              "audio_seconds": [
+                3.76,
+                3.76
+              ],
+              "pcm_sha256": [
+                "c2f40838a6a141d6a2ef9fd2457077983019bd0080b95836cb181f95a9f20d05",
+                "c097b986b9ec4d2562e728626296f92c00453111632163348fa9f7e4b3acf77d"
+              ]
+            },
+            {
+              "index": 5,
+              "codec_frames": [
+                34,
+                34
+              ],
+              "audio_seconds": [
+                2.72,
+                2.72
+              ],
+              "pcm_sha256": [
+                "a7386006d232d37de17fa786e50d3fe4d320f03b945a3f2c68c22e25decded92",
+                "131152d8b87bae43a291c3c2af9e96f9f69a0e07f9f2f234cb3b7eecd504ec6b"
+              ]
+            },
+            {
+              "index": 6,
+              "codec_frames": [
+                96,
+                96
+              ],
+              "audio_seconds": [
+                7.68,
+                7.68
+              ],
+              "pcm_sha256": [
+                "434c2e998e08a3e65cb44dfdbe141b760f5cae3b3a7b26fa70a1a2bd326d11ee",
+                "483633bd8898506b995ad130216725ad9fad1654235f25d4ce7d56ffcd90730c"
+              ]
+            },
+            {
+              "index": 7,
+              "codec_frames": [
+                53,
+                53
+              ],
+              "audio_seconds": [
+                4.24,
+                4.24
+              ],
+              "pcm_sha256": [
+                "977a8d55ad19d7067a3bbf9f2182f1efbe041ddf898fb1c633148cd8f5bee19a",
+                "120899f9303ae9c073a2d5e4fa24d06976010da5bd0cfe0cf05984d14f44c556"
+              ]
+            },
+            {
+              "index": 8,
+              "codec_frames": [
+                52,
+                52
+              ],
+              "audio_seconds": [
+                4.16,
+                4.16
+              ],
+              "pcm_sha256": [
+                "6510f2f2a3fa3392ef7851c161805319388292562a80dd18fe9579059d1d83d9",
+                "967fe285adef566d972741706dab8de2232571d953c260ab583289a46006943e"
+              ]
+            },
+            {
+              "index": 9,
+              "codec_frames": [
+                32,
+                32
+              ],
+              "audio_seconds": [
+                2.56,
+                2.56
+              ],
+              "pcm_sha256": [
+                "6edb710b57798808aeb57c7418a621357cf4081942c74bfb50734b7c7031d9c3",
+                "3a009c2b53fb635fa805aa5c7f25032e6c8dba1bd46a26a5f596dcbe695872f3"
+              ]
+            },
+            {
+              "index": 10,
+              "codec_frames": [
+                70,
+                70
+              ],
+              "audio_seconds": [
+                5.6,
+                5.6
+              ],
+              "pcm_sha256": [
+                "5d98be61a2e5b56e723431ff0dce563263f9bd41f90ad65497ae5366793fba36",
+                "0a9733a297bf0957acc241502f0da2a32bab6c6c491474e814966592291593fd"
+              ]
+            },
+            {
+              "index": 11,
+              "codec_frames": [
+                86,
+                86
+              ],
+              "audio_seconds": [
+                6.88,
+                6.88
+              ],
+              "pcm_sha256": [
+                "d422b671d9ed5b23214cf1758210335d77d2493b7d31af4c9f0952c94c34affc",
+                "dbda90a77104a7735b33fd84163133ddf6eff5de9aa9d10745818ebd95a48df6"
+              ]
+            },
+            {
+              "index": 12,
+              "codec_frames": [
+                50,
+                50
+              ],
+              "audio_seconds": [
+                4.0,
+                4.0
+              ],
+              "pcm_sha256": [
+                "01c16a207832aae4af0ac411253ddba538fbffbcd3b54b8defb64f755dd34797",
+                "4e7dc6c7abf0fb504eff0a54b912906a6cc171fda4d911371b104f9a24cd0d42"
+              ]
+            }
+          ],
+          "wall_seconds": [
+            12.232632250059396,
+            12.012723670108244
+          ],
+          "audio_total_seconds": [
+            620.4,
+            620.4
+          ],
+          "recomputed_throughput": [
+            633.9600375023409,
+            645.5655031254141
+          ],
+          "reported_throughput": [
+            633.9600375023409,
+            645.5655031254141
+          ],
+          "throughput_recompute_delta": [
+            0.0,
+            0.0
+          ],
+          "ratio_8_over_4": 1.018306304714089
+        }
+      }
+    }
+  },
+  "defects": []
+}

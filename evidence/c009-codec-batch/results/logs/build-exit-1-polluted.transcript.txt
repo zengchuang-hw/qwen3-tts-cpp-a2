@@ -1,0 +1,17 @@
+First build.exit capture — transcript excerpt (job pwsh-145)
+==========================================================
+
+The status file `logs/build.exit` was overwritten by the verification re-run before
+it could be renamed, so the original file no longer exists on disk. This is the
+verbatim value the first capture produced, kept so the polluted result is not
+silently lost:
+
+    True
+
+Context: the capture line was `... ; echo $? > logs/build.exit` issued through
+PowerShell, which expanded `$?` in its own boolean scope and wrote `True` into a
+field that must hold a numeric exit status. The build itself had already printed
+`[100%] Built target _qtts_native`.
+
+Replacement record and checks: `build-exit-incident.md`, `build.exit` (= 0),
+`build.log`, `build-verify.log`.
