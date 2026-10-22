@@ -79,6 +79,31 @@ Both campaigns together took 8 min 04 s, inside the 45-minute budget measured fr
 shorter, so the earlier "structural overrun" prediction is withdrawn as measured
 wrong and is kept here rather than deleted.
 
+## Non-default codec batch is not shown to be audio-equivalent
+
+C009 measured different PCM at codec batch 8 versus the default 4 under an otherwise
+identical configuration. Therefore: **a non-default codec batch is not proven to
+produce byte-identical audio**, and the runtime default stays 4. Any later proposal
+that raises it must first re-establish byte identity, or run the independent quality
+route frozen for that iteration.
+
+## Cold versus warm capture (recorded for the attribution iteration)
+
+`gate-batch8.json` reports a 508.018 s capture, which is a **cold first-run** figure
+including Triton compilation. The warm campaign starts were much shorter: the codec8
+campaign (two arms, 64 graphs captured) took 4 min 16 s end to end, i.e. roughly
+60-85 s of model load plus capture per arm, derived from first/last cohort
+`results.json` mtimes rather than from an instrumented timer. The nature of this
+pair is *consistent with* the cold-start explanation, not proof of it; it is handed
+to #28 / C015 as the cheapest available corroboration.
+
+## Neighbour occupancy
+
+The gate snapshots show NPU 3 with no running process and 3419 MB before the start,
+and no running process again after exit. A later neighbour job (`townwish`,
+`/tmp/bench_compare.py`) occupies card 3 from 14:45:49; it started after this
+iteration's campaigns ended at 13:16 and is not part of this evidence.
+
 ## Recompute
 
 ```

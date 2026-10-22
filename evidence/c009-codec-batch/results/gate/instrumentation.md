@@ -33,22 +33,31 @@ host-visible     : 520432 sleep 240     (docker top)
 container init 1 -> host 1004067        (docker inspect .State.Pid)
 ```
 
-So the numeric difference between 261554 and 227061 is expected from the namespace
-boundary alone; it is not by itself evidence that another process held the device.
+The snapshots in `gate-batch8.json` close the question directly, without needing
+that mapping at all:
 
-State now (checked after the iteration finished):
+| Snapshot of NPU 3 process list | Text | Card 3 HBM |
+|---|---|---|
+| before (t0) | `No running processes found in NPU 3` | 3419 MB |
+| after readiness | `227061 ... 26383` | 29761 MB |
+| after exit | `No running processes found in NPU 3` | 9601 MB |
 
-- both PIDs from the gate are gone (`/proc/261554`, `/proc/227061` absent);
+So: the card had **no process at all** and 3419 MB before the gate started, the
+server that appeared at readiness is host PID 227061 with 26383 MB (which is the
+gate's own server; 29761 - 3419 = 26342, consistent with that process plus baseline),
+and the card was free again after exit. 261554 is the same server's
+container-namespace PID.
+
+State after the iteration:
+
+- both PID names from the gate are gone (`/proc/261554`, `/proc/227061` absent);
 - our container has no live python or serve process (`ps -ef` inside shows only
   pre-existing `<defunct>` entries from earlier work);
-- the only process on card 3 today is host PID 472631, user `townwish`, started
-  14:45:49, command `/home/townwish/workspace/.../python -u /tmp/bench_compare.py`,
-  i.e. another user's job outside this container, started well after this
-  iteration's campaigns ended at 13:16.
-
-Recorded as a fact: the mapping for the gate process cannot be recovered now that
-both processes have exited; what is recoverable is the namespace explanation and the
-current ownership of the card.
+- the only process on card 3 later that day is host PID 472631, user `townwish`,
+  started 14:45:49, command `/home/townwish/workspace/.../python -u
+  /tmp/bench_compare.py`, i.e. another user's job that started well after this
+  iteration's campaigns ended at 13:16. It is recorded as neighbour occupancy for
+  any later run, not as part of this evidence.
 
 ## 3. 9601 MB on card 3 after the server exited
 

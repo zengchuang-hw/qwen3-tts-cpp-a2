@@ -173,6 +173,15 @@ from authoritative seven-cohort `tts-final.json`. A short exact-audio smoke
 remains whole-target INCONCLUSIVE. C001-C005 used `campaign.py`; they were not
 retroactively executed by InferRSI.
 
+C009 exposed the codec batch granularity on `campaign.py` and `probe.py` (default
+stays 4, the pinned upstream reference arm keeps 4) and measured that batch 8 is
+**not** audio-equivalent to batch 4: matched PCM streams were 105/128, 58/128 and
+12/128 at C16/32/64 in both arms while frame counts matched 128/128. The RFC
+hypothesis is rejected and the iteration records FAIL. A non-default codec batch is
+not proven to produce byte-identical audio, so the conservative default remains 4.
+See [C009 evidence](evidence/c009-codec-batch/results/README.md) for the recorded
+numbers and retrieval paths.
+
 See [C001](docs/iterations/c001.md), [C002](docs/iterations/c002.md), and
 [C003](docs/iterations/c003.md). The paired predictor rotary path is opt-in via
 `--predictor-rope paired` on the HTTP/CLI/probe/campaign entrypoints; `native`
