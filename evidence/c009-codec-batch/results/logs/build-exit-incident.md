@@ -9,9 +9,9 @@ build itself.
 - The build itself had already reached `[100%] Built target _qtts_native`; the
   pollution affected only the recorded status file.
 - Because the verification re-run overwrote `logs/build.exit` before this note was
-  written, the polluted value no longer exists as a standalone file; the surviving
-  record is the original job transcript line `True` plus this note. It is recorded
-  here rather than deleted or silently replaced.
+  written, the polluted value no longer exists as a standalone file. The verbatim
+  value it held is kept in `build-exit-1-polluted.transcript.txt` (`True`), next to
+  this note, rather than deleted or silently replaced.
 
 ## Verification re-run (real exit code)
 
@@ -31,6 +31,12 @@ Checks:
 ```
 $ [ "$(cat /work/c009/logs/build.exit)" = "0" ] && echo build_ok
 build_ok
+```
+
+PowerShell equivalent, using the real native exit code rather than `$?`:
+
+```
+PS> cmake --build build -j 2; if ($LASTEXITCODE -eq 0) { "build_ok" }
 ```
 
 ## Rule adopted for the rest of this iteration
