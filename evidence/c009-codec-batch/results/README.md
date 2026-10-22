@@ -91,11 +91,11 @@ route frozen for that iteration.
 
 `gate-batch8.json` reports a 508.018 s capture, which is a **cold first-run** figure
 including Triton compilation. The warm campaign starts were much shorter: the codec8
-campaign (two arms, 64 graphs captured) took 4 min 16 s end to end, i.e. roughly
-60-85 s of model load plus capture per arm, derived from first/last cohort
-`results.json` mtimes rather than from an instrumented timer. The nature of this
-pair is *consistent with* the cold-start explanation, not proof of it; it is handed
-to #28 / C015 as the cheapest available corroboration.
+campaign (two arms, 64 graphs captured) took 4 min 16 s end to end, so per-arm model
+load plus capture is of the order of a minute (range reference only, derived from
+first/last cohort `results.json` mtimes rather than from an instrumented timer). The
+nature of this pair is *consistent with* the cold-start explanation, not proof of it;
+it is handed to #28 / C015 as the cheapest available corroboration.
 
 ## Neighbour occupancy
 
