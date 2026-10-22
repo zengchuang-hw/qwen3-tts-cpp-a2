@@ -50,13 +50,16 @@ reference-vs-native delta therefore compares delivery modes, not codec batch.
 
 ## Gates (frozen before measurement)
 
-1. Local CPU contracts (29) plus syntax/diff review.
+1. Local CPU contracts (29 frozen at the #22 baseline comment: 25 existing plus 4
+   new; only additions allowed) plus syntax/diff review.
 2. A2 fresh Release build exit 0; 4 compiled ownership tests pass.
 3. Exactness, cross-campaign same arm: inline@4 vs inline@8 equal per-file SHA256
    for every `(cohort, index)` over C16/32/64 x 128. Any difference is FAIL and
    stops the campaign.
-4. Local non-degradation: throughput ratio(8/4) >= 1.00 at C16/32/64, reported with
-   the real codec-due and ordinary-frame time distributions.
+4. Local non-degradation, recorded under the frozen n=1 rule below: throughput
+   ratio(8/4) per cohort together with the real codec-due and ordinary-frame time
+   distributions. The n=1 thresholds decide the recorded conclusion level; they
+   never turn an unresolved comparison into an accepted one.
 5. Budget gate: one standalone `batch=8` server start, stop at readiness, record
    `_capture_codecs` wall time and `max_memory_allocated` delta. Readiness beyond
    12 minutes stops the iteration as INCONCLUSIVE.
@@ -69,6 +72,50 @@ Wording boundary: gate 4 is a pilot "local non-degradation" result only. It is n
 a speedup claim and not a performance PASS. The formal seven-cohort AB/BA/AB gate
 (min(candidate TP)/max(reference TP) > 1.05, max(candidate p95)/min(reference p95)
 <= 1.05) remains separate under #3.
+
+## n=1 conclusion rule (tts-SE addition 1, binding)
+
+Each arm has exactly one campaign, so every cohort ratio(8/4) is a single
+observation without a repeat or an order control. The conclusion level is fixed
+before measurement:
+
+| Cohort ratio(8/4) | Recorded conclusion |
+|---|---|
+| > 1.02 | "worth taking to the formal seven-cohort gate" only; not a PASS |
+| 0.98 - 1.02 | INCONCLUSIVE: "this n=1 run could not separate the two" |
+| < 0.98 | degradation FAIL; stop, no follow-on promotion |
+
+The overall record uses the worst cohort. If only AB ran (BA skipped by the
+30-minute budget condition), the README states n=1 with no order control and the
+same thresholds apply; a favourable-looking number never upgrades the level.
+
+## Secondary consistency check (tts-SE addition 2, zero extra card time)
+
+Both campaigns also emit a buffered arm. A buffered@4 vs buffered@8 per-file
+SHA256 comparison over C16/32/64 is reported as independent evidence that the
+codec batch does not change audio. A buffered-arm difference that the inline arms
+happen to hide is reported as a defect, never as noise.
+
+## Environment snapshots (tts-SE addition 3)
+
+`npu-smi` on card 3 (AICore%, HBM, temperature), the container ID and a
+concurrent-job check are captured immediately before and after each campaign.
+Baseline reference is 3419 MB HBM / AICore 0%; any deviation is explained.
+
+## argv traceability (tts-SE addition 4)
+
+The PR body pastes the two campaign argv and the two serve argv verbatim. They
+must match `runspec.json` and `lifecycle.json` on `--audio-delivery inline` and
+`--codec-batch-size 4|8`; a mismatch between narrative and evidence is a
+blocking defect.
+
+## PR wording red lines (tts-SE addition 5)
+
+Even above 1.02 the PR may only say "the pilot observed 8 above 4; the formal
+seven-cohort gate is required". The words PASS, any percentage-improvement
+conclusion, or "faster" as a qualitative claim are forbidden. An INCONCLUSIVE
+record may not be restated as "ruled out" or "no impact" - only as "this n=1 run
+could not separate them".
 
 ## Recomputability (tts-SE requirement)
 
