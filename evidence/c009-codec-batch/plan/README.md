@@ -117,6 +117,21 @@ percentage-improvement conclusion, or a qualitative comparative claim are
 forbidden. An INCONCLUSIVE record may not be restated as "ruled out" or "no
 impact" - only as "this n=1 run could not separate them".
 
+## Deviation record (kept next to the plan, not after it)
+
+1. **`max_memory_allocated` not collected.** Gate 5 above asks for it before and
+   after capture. This round did not sample it: the timing wrapper logged only the
+   capture wall clock. The number is recorded as not collected, not estimated and
+   not back-filled. Substitute evidence is the card-3 device-side HBM series in
+   `results/gate/README.md`, which is labelled as device-side allocated HBM and is
+   never described as a torch allocator peak. Lesson for the next iteration:
+   instrument allocator peak sampling before the capture run starts.
+2. **Budget overrun is structural.** Each campaign runs one buffered reference arm
+   that C009 discards by ruling 3a, and one batch-8 capture is 508.018 s per server
+   start. Improvement for the next iteration: an arm-selection switch in
+   `campaign.py` (for example `--arms native`) so a pilot does not pay for the arm
+   it discards.
+
 ## Recomputability (tts-SE requirement)
 
 Every delivered number must be recomputable by tts-SE from raw per-request records
