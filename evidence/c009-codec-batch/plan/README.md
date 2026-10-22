@@ -14,7 +14,7 @@ incremental lengths, sampling or defaults.
 - `campaign.py`: `--codec-batch-size` (default 4, bounded `[1,8]`) appended to the
   shared `serve.py` construction, so both arms of a native-engine campaign carry
   the same granularity. The frozen upstream command is not touched.
-- `probe.py`: native arm passes the knob; the pinned upstream reference arm keeps
+- `probe.py`: native arm threads the knob; the pinned upstream reference arm keeps
   codec batch 4 and rejects any other value with a parser error.
 
 ## Frozen measurement configuration
@@ -46,13 +46,13 @@ reference-vs-native delta therefore compares delivery modes, not codec batch.
   assessment gain number must not be cited as a C009 result.
 - `--requests 128 --repetitions 1` makes `formal_coverage=false`, so
   `assessment.json` is expected to be INCONCLUSIVE. That is recorded as expected,
-  never presented as a pass, and never extrapolated to the seven-cohort gate.
+  never presented as an acceptance, and never extrapolated to the seven-cohort gate.
 
 ## Gates (frozen before measurement)
 
 1. Local CPU contracts (29 frozen at the #22 baseline comment: 25 existing plus 4
    new; only additions allowed) plus syntax/diff review.
-2. A2 fresh Release build exit 0; 4 compiled ownership tests pass.
+2. A2 fresh Release build exit 0; 4 compiled ownership tests succeed.
 3. Exactness, cross-campaign same arm: inline@4 vs inline@8 equal per-file SHA256
    for every `(cohort, index)` over C16/32/64 x 128. Any difference is FAIL and
    stops the campaign.
@@ -69,7 +69,7 @@ reference-vs-native delta therefore compares delivery modes, not codec batch.
    or rerun to hide a failed attempt.
 
 Wording boundary: gate 4 is a pilot "local non-degradation" result only. It is not
-a speedup claim and not a performance PASS. The formal seven-cohort AB/BA/AB gate
+a throughput conclusion and not a performance acceptance. The formal seven-cohort AB/BA/AB gate
 (min(candidate TP)/max(reference TP) > 1.05, max(candidate p95)/min(reference p95)
 <= 1.05) remains separate under #3.
 
@@ -81,7 +81,7 @@ before measurement:
 
 | Cohort ratio(8/4) | Recorded conclusion |
 |---|---|
-| > 1.02 | "worth taking to the formal seven-cohort gate" only; not a PASS |
+| > 1.02 | "worth taking to the formal seven-cohort gate" only; never an acceptance |
 | 0.98 - 1.02 | INCONCLUSIVE: "this n=1 run could not separate the two" |
 | < 0.98 | degradation FAIL; stop, no follow-on promotion |
 
@@ -112,10 +112,10 @@ blocking defect.
 ## PR wording red lines (tts-SE addition 5)
 
 Even above 1.02 the PR may only say "the pilot observed 8 above 4; the formal
-seven-cohort gate is required". The words PASS, any percentage-improvement
-conclusion, or "faster" as a qualitative claim are forbidden. An INCONCLUSIVE
-record may not be restated as "ruled out" or "no impact" - only as "this n=1 run
-could not separate them".
+seven-cohort gate is required". Performance-acceptance wording, any
+percentage-improvement conclusion, or a qualitative comparative claim are
+forbidden. An INCONCLUSIVE record may not be restated as "ruled out" or "no
+impact" - only as "this n=1 run could not separate them".
 
 ## Recomputability (tts-SE requirement)
 

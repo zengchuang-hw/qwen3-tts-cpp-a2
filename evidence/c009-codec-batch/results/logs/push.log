@@ -1,0 +1,41 @@
+# C009 branch push log
+
+Remote used: `origin` = https://github.com/zengchuang-hw/qwen3-tts-cpp-a2.git
+(no remote was added, changed, or rewritten).
+
+## Attempt 1 — failed, no credential available
+
+```
+$ git push -u origin codex/c009-codec-batch
+bash: line 1: /dev/tty: No such device or address
+error: failed to execute prompt script (exit code 1)
+fatal: could not read Username for 'https://github.com': No such file or directory
+exit 128
+```
+
+Cause: the environment's default credential helper needed a tty. No history was
+changed and no other remote was tried.
+
+## Attempt 2 — succeeded, non-interactive gh credential helper
+
+```
+$ GH_TOKEN=$(gh auth token) git -c credential.helper='!gh auth git-credential' \
+    push -u origin codex/c009-codec-batch
+branch 'codex/c009-codec-batch' set up to track 'origin/codex/c009-codec-batch'.
+remote: Create a pull request for 'codex/c009-codec-batch' on GitHub by visiting:
+remote:      https://github.com/zengchuang-hw/qwen3-tts-cpp-a2/pull/new/codex/c009-codec-batch
+To https://github.com/zengchuang-hw/qwen3-tts-cpp-a2.git
+ * [new branch]      codex/c009-codec-batch -> codex/c009-codec-batch
+exit 0
+```
+
+## Verification — remote ref is visible
+
+```
+$ git ls-remote --heads origin codex/c009-codec-batch
+2ed751cb66eb8ea6fc9c0fa94c6bc8dfd1820309	refs/heads/codex/c009-codec-batch
+exit 0
+```
+
+Local `git rev-parse HEAD` = `2ed751cb66eb8ea6fc9c0fa94c6bc8dfd1820309`, identical
+to the remote ref.
