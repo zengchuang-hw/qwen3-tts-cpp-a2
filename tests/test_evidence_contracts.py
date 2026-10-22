@@ -1,5 +1,6 @@
 """Native-engine evidence contracts; synthetic data is not accelerator evidence."""
 
+import argparse
 import hashlib
 import importlib.util
 import json
@@ -28,6 +29,7 @@ def load_script(name):
 serve = load_script("serve")
 with patch.dict(sys.modules, {"serve": serve}):
     campaign = load_script("campaign")
+    probe = load_script("probe")
 
 
 class NativeEvidenceContracts(unittest.TestCase):
@@ -53,7 +55,8 @@ class NativeEvidenceContracts(unittest.TestCase):
             command.write_text(json.dumps(["python", "-m", "qwen3_tts_engine.server", "--model", "old", "--port", "1"]))
             args = SimpleNamespace(reference_root=root, model=root / "model", port=8199,
                                    native_build=root / "build", predictor_rope="paired",
-                                   reference_engine="native-buffered", audio_delivery="inline", rotary_head_tile="auto")
+                                   reference_engine="native-buffered", audio_delivery="inline",
+                                   rotary_head_tile="auto", codec_batch_size=4)
             control = campaign.server_command(args, "reference")
             candidate = campaign.server_command(args, "native")
             self.assertEqual(control[control.index("--audio-delivery") + 1], "buffered")
@@ -67,6 +70,54 @@ class NativeEvidenceContracts(unittest.TestCase):
             upstream = campaign.server_command(args, "reference")
             self.assertNotIn("--audio-delivery", upstream)
             self.assertIn("qwen3_tts_engine.server", upstream)
+
+    def _campaign_args(self, root, **overrides):
+        frozen = root / "evidence/campaign-20261017/plan/continuous-direct-prompt-command.json"
+        frozen.parent.mkdir(parents=True, exist_ok=True)
+        frozen.write_text(json.dumps(["python", "-m", "qwen3_tts_engine.server", "--model", "old", "--port", "1"]))
+        values = dict(reference_root=root, model=root / "model", port=8199,
+                      native_build=root / "build", predictor_rope="paired",
+                      reference_engine="native-buffered", audio_delivery="inline",
+                      rotary_head_tile="auto", codec_batch_size=4)
+        values.update(overrides)
+        return SimpleNamespace(**values)
+
+    def test_codec_batch_size_is_always_explicit_and_bounded(self):
+        with tempfile.TemporaryDirectory() as temp:
+            args = self._campaign_args(Path(temp))
+            for arm in ("reference", "native"):
+                command = campaign.server_command(args, arm)
+                self.assertEqual(command.count("--codec-batch-size"), 1)
+                self.assertEqual(command[command.index("--codec-batch-size") + 1], "4")
+            self.assertEqual(campaign.codec_batch_size("4"), 4)
+            self.assertEqual(campaign.codec_batch_size("8"), 8)
+            for bad in ("0", "9", "-1"):
+                with self.assertRaises(argparse.ArgumentTypeError):
+                    campaign.codec_batch_size(bad)
+
+    def test_codec_batch_size_reaches_both_native_arms(self):
+        with tempfile.TemporaryDirectory() as temp:
+            args = self._campaign_args(Path(temp), codec_batch_size=8)
+            for arm in ("reference", "native"):
+                command = campaign.server_command(args, arm)
+                self.assertEqual(command[command.index("--codec-batch-size") + 1], "8")
+
+    def test_upstream_reference_command_stays_frozen(self):
+        with tempfile.TemporaryDirectory() as temp:
+            args = self._campaign_args(Path(temp), reference_engine="upstream")
+            command = campaign.server_command(args, "reference")
+            self.assertNotIn("--codec-batch-size", command)
+            self.assertIn("qwen3_tts_engine.server", command)
+
+    def test_reference_probe_keeps_pinned_codec_batch(self):
+        self.assertEqual(probe.pinned_codec_batch_size("reference", 4), 4)
+        self.assertEqual(probe.pinned_codec_batch_size("native", 8), 8)
+        self.assertEqual(probe.codec_batch_size("8"), 8)
+        with self.assertRaises(ValueError):
+            probe.pinned_codec_batch_size("reference", 8)
+        for bad in ("0", "9", "-1"):
+            with self.assertRaises(argparse.ArgumentTypeError):
+                probe.codec_batch_size(bad)
 
     def test_full_native_control_cannot_become_upstream_performance_pass(self):
         with tempfile.TemporaryDirectory() as temp:

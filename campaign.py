@@ -28,6 +28,14 @@ def write(path, value):
     path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
+def codec_batch_size(text):
+    """Bound the codec batch knob exactly as serve.py does."""
+    value = int(text)
+    if not 1 <= value <= 8:
+        raise argparse.ArgumentTypeError("codec batch size must be within [1,8]")
+    return value
+
+
 def source_identity(root, native_build):
     files = {str(p.relative_to(root)): sha256(p) for p in sorted(root.rglob("*"))
              if p.is_file() and p.suffix in {".py", ".cpp", ".h", ".txt"}
@@ -82,7 +90,12 @@ def server_command(args, arm):
                    "--prewarm-decode", "--predictor-rope", args.predictor_rope,
                    "--audio-delivery", args.audio_delivery if arm == "native" or args.reference_engine == "native-tile4" else "buffered",
                    "--rotary-head-tile", "4" if arm == "reference" and args.reference_engine == "native-tile4"
-                   else args.rotary_head_tile]
+                   else args.rotary_head_tile,
+                   # Both arms of a native-engine campaign run this same serve.py
+                   # construction, so the knob must reach reference and native
+                   # alike. A campaign-internal difference would otherwise compare
+                   # delivery modes instead of the codec batch granularity.
+                   "--codec-batch-size", str(args.codec_batch_size)]
     return command
 
 
@@ -178,6 +191,7 @@ def main():
     parser.add_argument("--benchmark-timeout", type=float, default=3600)
     parser.add_argument("--predictor-rope", choices=["native", "paired"], default="native")
     parser.add_argument("--rotary-head-tile", choices=["4", "8", "16", "auto"], default="4")
+    parser.add_argument("--codec-batch-size", type=codec_batch_size, default=4, metavar="N")
     parser.add_argument("--audio-delivery", choices=["buffered", "inline"], default="buffered")
     parser.add_argument("--reference-engine", choices=["upstream", "native-buffered", "native-tile4"], default="upstream")
     args = parser.parse_args()

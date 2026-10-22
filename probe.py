@@ -16,6 +16,21 @@ class ProbeEmitError(RuntimeError):
     """Intentional callback failure; never a completed speech request."""
 
 
+def codec_batch_size(text):
+    """Bound the codec batch knob exactly as serve.py does."""
+    value = int(text)
+    if not 1 <= value <= 8:
+        raise argparse.ArgumentTypeError("codec batch size must be within [1,8]")
+    return value
+
+
+def pinned_codec_batch_size(engine, size):
+    """The upstream reference arm keeps its frozen codec batch of 4."""
+    if engine == "reference" and size != 4:
+        raise ValueError("the pinned reference engine keeps codec batch size 4")
+    return size
+
+
 class StepWitness:
     def __init__(self, core):
         self.core = core
@@ -45,10 +60,15 @@ def main():
     p.add_argument("--cancel-and-reuse", action="store_true")
     p.add_argument("--predictor-rope", choices=["native", "paired"], default="native")
     p.add_argument("--rotary-head-tile", choices=["4", "8", "16", "auto"], default="4")
+    p.add_argument("--codec-batch-size", type=codec_batch_size, default=4, metavar="N")
     p.add_argument("--audio-delivery", choices=["buffered", "inline"], default="buffered")
     p.add_argument("--verify-inline", action="store_true")
     p.add_argument("--fail-emit", action="store_true", help="Test intentional callback exception propagation/cleanup")
     args = p.parse_args()
+    try:
+        pinned_codec_batch_size(args.engine, args.codec_batch_size)
+    except ValueError as error:
+        p.error(str(error))
     if (args.verify_inline or args.fail_emit) and (args.engine != "native" or args.audio_delivery != "inline"):
         p.error("callback witnesses require native inline delivery")
     args.output.mkdir(parents=True, exist_ok=False)
@@ -61,6 +81,7 @@ def main():
     if args.engine == "native":
         from graph_model import NativeModel
         model = NativeModel(str(args.model), "npu:0", max_slots=args.slots,
+                            codec_batch_size=args.codec_batch_size,
                             predictor_rope=args.predictor_rope, audio_delivery=args.audio_delivery,
                             rotary_head_tile=args.rotary_head_tile)
     else:
@@ -73,6 +94,8 @@ def main():
             incremental_codec=True, batch_prefill=True, graph_prefill=True,
             bucket_prefill=True, prewarm_prefill=True, direct_prompt=True,
             triton_snake=True, cache_codec_codebooks=True,
+            # Pinned baseline value: the upstream reference arm is never moved
+            # off 4, so a "vs reference" statement keeps meaning the same thing.
             codec_batch_size=4, triton_cdf=True, graph_embeddings=True,
             graph_sampling=True, prewarm_codec=True,
         )
