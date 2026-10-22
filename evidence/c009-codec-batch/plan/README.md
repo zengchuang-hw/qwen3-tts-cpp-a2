@@ -126,11 +126,14 @@ impact" - only as "this n=1 run could not separate them".
    `results/gate/README.md`, which is labelled as device-side allocated HBM and is
    never described as a torch allocator peak. Lesson for the next iteration:
    instrument allocator peak sampling before the capture run starts.
-2. **Budget overrun is structural.** Each campaign runs one buffered reference arm
-   that C009 discards by ruling 3a, and one batch-8 capture is 508.018 s per server
-   start. Improvement for the next iteration: an arm-selection switch in
-   `campaign.py` (for example `--arms native`) so a pilot does not pay for the arm
-   it discards.
+2. **Cold-versus-warm capture, corrected after measurement.** The 508.018 s capture
+   in the gate run is a cold first-run figure that includes Triton compilation; the
+   two campaigns together took 8 min 04 s, so the iteration stayed inside the
+   45-minute budget. An earlier draft prediction of a structural overrun is
+   therefore withdrawn as measured wrong, and is kept visible rather than deleted.
+   The improvement idea still stands for other reasons: an arm-selection switch in
+   `campaign.py` (for example `--arms native`) would stop a pilot paying for the
+   buffered arm that ruling 3a discards.
 
 ## Recomputability (tts-SE requirement)
 

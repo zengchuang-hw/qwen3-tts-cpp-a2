@@ -39,13 +39,14 @@ under the wording restriction stated above.
 Process lesson carried into the next iteration: instrument allocator peak sampling
 *before* starting the capture run, rather than adding it afterwards.
 
-## Budget attribution (structural, not incidental)
+## Budget: what this reading did and did not predict
 
-Each campaign runs one buffered reference arm that C009 explicitly discards as a
-comparison basis (ruling 3a), and the batch-8 capture alone is 508.018 s per server
-start, twice per campaign. Four server starts are therefore needed for AB, and AB
-cannot complete inside the 30-minute BA condition; BA is not attempted and results
-record "AB only, no order control". The 45-minute iteration budget is measured from
-12:55:41; any overrun is recorded as such rather than hidden by dropping cohorts.
-Improvement for the next iteration: give `campaign.py` an arm-selection switch such
-as `--arms native` so a pilot does not pay for an arm it will discard.
+This 508.018 s capture is a **cold first-run** figure that includes Triton
+compilation. Measured campaign starts were much shorter: codec4 took 3 min 48 s and
+codec8 4 min 16 s, so AB finished inside the 45-minute budget. An earlier draft
+here predicted a structural overrun from this number; that prediction is withdrawn
+as measured wrong and kept visible rather than deleted (see `../README.md`). The
+order-control (BA) pair was not started because the exactness gate failed first,
+not because of the budget. Improvement for the next iteration: give `campaign.py`
+an arm-selection switch such as `--arms native` so a pilot does not pay for an arm
+it will discard.
