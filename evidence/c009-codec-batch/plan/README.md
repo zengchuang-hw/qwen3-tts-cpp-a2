@@ -150,7 +150,9 @@ records is treated as a defect.
 - `results/` — `README.md` (outcome), `comparison.json`, the two campaign trees
   (`codec4/`, `codec8/`: identity, environment, runspec, lifecycle, per-cohort
   `results.json` + `runspec.json`, server and benchmark logs), the readiness gate
-  (`gate/`), and `logs/` (build, ownership, push, capture incident).
+  (`gate/`), and `results/logs/` (build, build verification, ownership, campaign
+  exits, environment snapshots and npu-smi pairs, compare output, stamps, push log,
+  capture incident).
 - `validator/` — `c009_compare.py` and its README; the script that regenerates
   `comparison.json` from the raw records.
 - `patch/` — **no runtime diff**: this iteration changed configuration plumbing and
